@@ -13,4 +13,6 @@
 #
 ---
 include:
-  - board: planck_rev6
+  - board: blackpill_f401ce 
+    shield: 
+      - mlego5x13_rev4
