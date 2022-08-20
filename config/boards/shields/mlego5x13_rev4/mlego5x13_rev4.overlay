@@ -13,9 +13,9 @@
 
     chosen {
         zmk,kscan = &kscan0;
-        zephyr,code-partition = &code_partition;
         zephyr,display = &oled;
 		    zmk,underglow = &led_strip;
+        zephyr,code-partition = &code_partition;
     };
 
     kscan0: kscan {
@@ -91,7 +91,7 @@
             reg = <0x00038000 0x00008000>;
         };
     };
-}; 
+};
 
 &i2c1{
   pinctrl-0 = <&i2c1_scl_pb8 &i2c1_sda_pb9>;
