@@ -14,5 +14,5 @@
 ---
 include:
   - board: blackpill_f401ce 
-    shield: 
-      - mlego5x13_rev4
+    shield:  mlego5x13_rev4
+
