@@ -1,10 +1,10 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_MLEGO5X13_REV4
+if SHIELD_MLEGO5X13
 
 config ZMK_KEYBOARD_NAME
-    default "mlego5x13_rev4"
+    default "mlego5x13"
 
 endif
 

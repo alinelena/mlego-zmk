@@ -3,3 +3,8 @@
 
 config SHIELD_MLEGO5X13
     def_bool $(shields_list_contains,mlego5x13)
+
+config USB_DEVICE_PID
+	default 0x6361
+config USB_DEVICE_VID
+	default 0xBABA

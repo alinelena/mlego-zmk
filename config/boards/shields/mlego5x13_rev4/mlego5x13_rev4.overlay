@@ -14,8 +14,8 @@
     chosen {
         zmk,kscan = &kscan0;
         zephyr,display = &oled;
-		    zmk,underglow = &led_strip;
-        zephyr,code-partition = &code_partition;
+        zmk,underglow = &led_strip;
+		zephyr,console = &cdc_acm_uart0;
     };
 
     kscan0: kscan {
@@ -55,6 +55,7 @@
         b-gpios = <&gpiob 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
         resolution = <4>;
     };
+
     sensors {
       compatible = "zmk,keymap-sensors";
       sensors = <&mlego_encoder>;
@@ -63,34 +64,6 @@
 
 &mlego_encoder {
     status = "okay";
-};
-
-&flash0 {
-    partitions {
-        compatible = "fixed-partitions";
-        #address-cells = <1>;
-        #size-cells = <1>;
-
-        boot_partition: partition@0 {
-            label = "adafruit_boot";
-            reg = <0x00000000 0x00010000>;
-        };
-
-        code_partition: partition@10000 {
-            label = "code_partition";
-            reg = <0x00010000 0x00028000>;
-        };
-
-        /*
-        * The final 32 KiB is reserved for the application.
-        * Storage partition will be used by FCB/LittleFS/NVS
-        * if enabled.
-        */
-        storage_partition: partition@38000 {
-            label = "storage";
-            reg = <0x00038000 0x00008000>;
-        };
-    };
 };
 
 &i2c1{
@@ -115,24 +88,31 @@
 };
 
 &spi1 {
-	status = "okay";
-	pinctrl-0 = <&spi1_sck_pa5 &spi1_nss_pa4
-		     &spi1_miso_pa6 &i2s2_sd_pb15>;
-	pinctrl-names = "default";
-	// Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
+  status = "okay";
+  pinctrl-0 = <&spi1_sck_pa5 &spi1_nss_pa4
+         &spi1_miso_pa6 &i2s2_sd_pb15>;
+  pinctrl-names = "default";
+  // Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
 
-	led_strip: ws2812@0 {
-		compatible = "worldsemi,ws2812-spi";
-		label = "WS2812";
+  led_strip: ws2812@0 {
+    compatible = "worldsemi,ws2812-spi";
+    label = "WS2812";
 
-		/* SPI */
-		reg = <0>; /* ignored, but necessary for SPI bindings */
-		spi-max-frequency = <4000000>;
+    /* SPI */
+    reg = <0>; /* ignored, but necessary for SPI bindings */
+    spi-max-frequency = <4000000>;
 
-		/* WS2812 */
-		chain-length = <8>; /* arbitrary; change at will as long as enough current*/
-		spi-one-frame = <0x70>;
-		spi-zero-frame = <0x40>;
-		color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+    /* WS2812 */
+    chain-length = <8>; /* arbitrary; change at will as long as enough current*/
+    spi-one-frame = <0x70>;
+    spi-zero-frame = <0x40>;
+    color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+  };
+};
+&zephyr_udc0 {
+	cdc_acm_uart0: cdc_acm_uart0 {
+		compatible = "zephyr,cdc-acm-uart";
+    label = "CDC_ACM_0";
+
 	};
 };
