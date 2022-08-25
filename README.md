@@ -7,12 +7,14 @@ zmk firmware for mlego
 
 - mlego 5x13
   - features stm32f401
+    - [x] matrix
     - [x] encoders
-    - [ ] oled
+    - [x] oled
     - [ ] led indicators
     - [ ] unicode
-    - [ ] rgblight, strip
+    - [x] rgblight, strip
   - features rp2040
+    - [x] matrix
     - [x] encoders
     - [ ] oled
     - [ ] led indicators
