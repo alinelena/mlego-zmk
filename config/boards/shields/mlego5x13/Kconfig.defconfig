@@ -1,12 +1,6 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
-
-if SHIELD_MLEGO5X13
-
-config ZMK_KEYBOARD_NAME
-    default "mlego5x13"
-
-endif
+if SHIELD_MLEGO5X13_REV4
 
 if BUILD_OUTPUT_UF2
 
@@ -22,37 +16,41 @@ if ZMK_RGB_UNDERGLOW
 
 config WS2812_STRIP
 
-	default y
+  default y
 
 endif
 
 if ZMK_DISPLAY
 
 config I2C
-	default y
+  default y
 
 config SSD1306
-	default y
+  default y
 
 config SSD1306_REVERSE_MODE
-	default y
+  default y
+
+config ZMK_DISPLAY_BLANK_ON_IDLE
+  default y
 
 endif # ZMK_DISPLAY
 
 if LVGL
 
 config LVGL_VDB_SIZE
-	default 64
+  default 100
 
 config LVGL_DPI
-	default 148
+  default 148
 
 config LVGL_BITS_PER_PIXEL
 	default 1
 
 choice LVGL_COLOR_DEPTH
-	default LVGL_COLOR_DEPTH_1
+  default LVGL_COLOR_DEPTH_1
 endchoice
 
 endif # LVGL
+endif 
 

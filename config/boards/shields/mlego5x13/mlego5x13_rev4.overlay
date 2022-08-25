@@ -15,7 +15,10 @@
         zmk,kscan = &kscan0;
         zephyr,display = &oled;
         zmk,underglow = &led_strip;
-		zephyr,console = &cdc_acm_uart0;
+        zephyr,console = &cdc_acm_uart0;
+        zmk,led-capslock = &led_capslock;
+        zmk,led-numlock = &led_numlock;
+        zmk,led-compose = &led_scrollock;
     };
 
     kscan0: kscan {
@@ -60,37 +63,58 @@
       compatible = "zmk,keymap-sensors";
       sensors = <&mlego_encoder>;
     };
+   
+      led_indicators {
+        compatible = "gpio-leds";
+        label = "LED indicators";
+        led_capslock: led_capslock {
+            gpios = <&gpioc 13 GPIO_ACTIVE_LOW>;
+            label = "Capslock LED";
+        };
+        led_numlock: led_numlock {
+            gpios = <&gpiob 13 GPIO_ACTIVE_HIGH>;
+            label = "Num lock LED";
+        };
+        led_scrollock: led_scrollock {
+            gpios = <&gpiob 12 GPIO_ACTIVE_HIGH>;
+            label = "Scroll lock LED";
+        };
+    };
+
 };
 
 &mlego_encoder {
     status = "okay";
 };
 
-&i2c1{
-  pinctrl-0 = <&i2c1_scl_pb8 &i2c1_sda_pb9>;
-  pinctrl-names = "default";
-  status = "okay";
-  oled: ssd1306@3c {
-    compatible = "solomon,ssd1306fb";
-    reg = <0x3c>;
-    label = "DISPLAY";
-    width = <128>;
-    height = <32>;
-    segment-offset = <0>;
-    page-offset = <0>;
-    display-offset = <0>;
-    multiplex-ratio = <31>;
-    segment-remap;
-    com-invdir;
-    com-sequential;
-    prechargep = <0x22>;
-  };
-};
+&spi1{
+                        status = "disabled";
 
-&spi1 {
+
+};
+&i2c1 {
+      status = "okay";
+       clock-frequency = <I2C_BITRATE_STANDARD>;
+
+      oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = < 0x3c >;
+        label="DISPLAY";
+        width = < 0x80 >;
+        height = < 0x20 >;
+        segment-offset = < 0x0 >;
+        page-offset = < 0x0 >;
+        display-offset = < 0x0 >;
+        multiplex-ratio = < 0x1f >;
+        com-sequential;
+        prechargep = < 0x22 >;
+      };
+    };
+
+&spi2 {
   status = "okay";
-  pinctrl-0 = <&spi1_sck_pa5 &spi1_nss_pa4
-         &spi1_miso_pa6 &i2s2_sd_pb15>;
+  pinctrl-0 = <&spi2_sck_pb13 &spi2_nss_pb12
+         &spi2_miso_pb14 &spi2_mosi_pb15>;
   pinctrl-names = "default";
   // Unused pins, needed for SPI definition, but not used by the ws2812 driver itself.
 
@@ -103,16 +127,17 @@
     spi-max-frequency = <4000000>;
 
     /* WS2812 */
-    chain-length = <8>; /* arbitrary; change at will as long as enough current*/
+    chain-length = <20>; /* arbitrary; change at will as long as enough current*/
     spi-one-frame = <0x70>;
     spi-zero-frame = <0x40>;
     color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
   };
 };
 &zephyr_udc0 {
-	cdc_acm_uart0: cdc_acm_uart0 {
-		compatible = "zephyr,cdc-acm-uart";
+  status="ok";
+  cdc_acm_uart0: cdc_acm_uart0 {
+    compatible = "zephyr,cdc-acm-uart";
     label = "CDC_ACM_0";
 
-	};
+  };
 };
