@@ -3,7 +3,7 @@
 zmk firmware for mlego
 
 
-![M65](https://i.imgur.com/2RF6mrj.jpg)
+![M65 rp2040](https://i.imgur.com/tufbaxG.jpg)
 
 - mlego m65 5x13
   - features stm32f401
@@ -21,7 +21,7 @@ zmk firmware for mlego
     - [ ] unicode
     - [ ] rgblight, strip
 
-![M4 2x2](https://imgur.com/Ms9mvcO)
+![M4 2x2](https://i.imgur.com/OLo1Bq0.jpg)
 
 - mlego m4 2x2
   - features seed xiao ble nrf52840
