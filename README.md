@@ -3,9 +3,9 @@
 zmk firmware for mlego
 
 
-![M65 rp2040](https://i.imgur.com/tufbaxG.jpg)
 
 - mlego m65 5x13
+![M65 stm32f401](https://i.imgur.com/P1SRKwC.jpg)
   - features stm32f401
     - [x] matrix
     - [x] encoders
@@ -13,6 +13,8 @@ zmk firmware for mlego
     - [ ] led indicators
     - [ ] unicode
     - [x] rgblight, strip
+
+![M65 rp2040](https://i.imgur.com/tufbaxG.jpg)
   - features rp2040
     - [x] matrix
     - [x] encoders
