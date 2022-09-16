@@ -15,5 +15,5 @@
 include:
   - board: blackpill_f401ce 
     shield:  mlego5x13_rev4
-  - board: seed_xiao_ble
+  - board: seeeduino_xiao_ble
     shhield: mlego2x2
