@@ -16,4 +16,4 @@ include:
   - board: blackpill_f401ce 
     shield:  mlego5x13_rev4
   - board: seeeduino_xiao_ble
-    shhield: mlego2x2_rev1
+    shield: mlego2x2_rev1
