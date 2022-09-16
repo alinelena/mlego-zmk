@@ -23,9 +23,9 @@ zmk firmware for mlego
     - [ ] unicode
     - [ ] rgblight, strip
 
-![M4 2x2](https://i.imgur.com/OLo1Bq0.jpg)
 
 - mlego m4 2x2
+![M4 2x2](https://i.imgur.com/OLo1Bq0.jpg)
   - features seed xiao ble nrf52840
     - [x] matrix
     - [x] encoders
