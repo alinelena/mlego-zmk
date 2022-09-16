@@ -1,5 +1,5 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-config SHIELD_MLEGO2x2
-   def_bool $(shields_list_contains,mlego2x2)
+config SHIELD_MLEGO2x2_REV1
+   def_bool $(shields_list_contains,mlego2x2_rev1)
