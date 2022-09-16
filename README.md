@@ -16,7 +16,7 @@ zmk firmware for mlego
   - features rp2040
     - [x] matrix
     - [x] encoders
-    - [ ] oled
+    - [x] oled
     - [ ] led indicators
     - [ ] unicode
     - [ ] rgblight, strip
