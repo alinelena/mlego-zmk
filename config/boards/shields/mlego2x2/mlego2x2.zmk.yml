@@ -1,10 +1,10 @@
 file_format: "1"
 id: mlego2x2
 name: mlego m4 2x2
-type: shield
-url: https://gitlab.com/m-lego/m65
+type: shield/
+url: https://mlego.elena.space/m4/
 requires:
-  - seeduino_xiao
+  - seeduino_xiao_ble
 exposes:
   - i2c_encoder
   - i2c_oled
