@@ -12,7 +12,6 @@
 
    chosen {
      zmk,kscan = &kscan;
-     zephyr,display = &oled;
      zmk,led-widgets-dev = &leds_i;
      zmk,led-capslock = &led_capslock;
    };
@@ -80,36 +79,6 @@
        label = "blue";
      };
    };
-
-   led-widgets {
-        compatible = "zmk,led-widgets";
-        boot {
-            boot {
-                priority = <100>;
-                blue { len-ms = <100>; brightness = <0 0 50>; };
-                off { len-ms = <100>; };
-                blue2 { len-ms = <100>; brightness = <0 0 50>; };
-            };
-        };
-        layer {
-            lower {
-                arg = <1>;
-                priority = <20>;
-                stat { brightness = <0 0 20>; };
-            };
-            raise {
-                arg = <2>;
-                priority = <20>;
-                stat { brightness = <0 20 0>; };
-            };
-            adjust {
-                arg = <3>;
-                priority = <20>;
-                stat { brightness = <20 0 0>; };
-            };
-        };
-   };
-
 };
 
 
@@ -147,21 +116,3 @@
   status = "disabled"; 
 };
 
-&i2c0 {
-  status = "okay";
-  clock-frequency = <I2C_BITRATE_STANDARD>;
-
-  oled: ssd1306@3c {
-    compatible = "solomon,ssd1306fb";
-    reg = <0x3c>;
-    label = "DISPLAY";
-    width = <0x80>;
-    height = <0x20>;
-    segment-offset = <0x0>;
-    page-offset = <0x0>;
-    display-offset = <0x0>;
-    multiplex-ratio = <0x1f>;
-    com-sequential;
-    prechargep = <0x22>;
-  };
-};
