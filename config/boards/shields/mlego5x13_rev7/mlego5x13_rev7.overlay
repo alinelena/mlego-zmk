@@ -66,16 +66,16 @@
    leds_i: leds_i {
      compatible = "pwm-leds";
      label = "leds layers";
-     red_led: led_r {
-       pwms = <&pwm0 6>;
+      blue_led: led_b {
+       pwms = <&pwm0 26>;
        label = "red";
      };
      green_led: led_g {
        pwms = <&pwm0 30>;
        label = "green";
      };
-     blue_led: led_b {
-       pwms = <&pwm0 26>;
+     red_led: led_r {
+       pwms = <&pwm0 6>;
        label = "blue";
      };
    };
