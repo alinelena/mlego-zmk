@@ -7,8 +7,6 @@ requires:
   - seeduino_xiao_ble
 exposes:
   - i2c_encoder
-  - i2c_oled
 features:
   - keys
   - encoder
-  - display
