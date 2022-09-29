@@ -16,9 +16,11 @@
         zephyr,display = &oled;
         zmk,underglow = &led_strip;
         zephyr,console = &cdc_acm_uart0;
+/*
         zmk,led-capslock = &led_capslock;
         zmk,led-numlock = &led_numlock;
         zmk,led-compose = &led_scrollock;
+*/
     };
 
     kscan0: kscan {
@@ -63,7 +65,7 @@
       compatible = "zmk,keymap-sensors";
       sensors = <&mlego_encoder>;
     };
-   
+ /*  
       led_indicators {
         compatible = "gpio-leds";
         label = "LED indicators";
@@ -80,7 +82,7 @@
             label = "Scroll lock LED";
         };
     };
-
+*/
 };
 
 &mlego_encoder {

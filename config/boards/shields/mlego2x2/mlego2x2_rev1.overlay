@@ -14,7 +14,9 @@
      zmk,kscan = &kscan;
      zephyr,display = &oled;
      zmk,led-widgets-dev = &leds_i;
+/*
      zmk,led-capslock = &led_capslock;
+*/
    };
 
    kscan: kscan {
@@ -41,6 +43,7 @@
      sensors = <&mlego_encoder>;
    };
 
+/*
    led_indicators {
      compatible = "pwm-leds";
      label = "leds layers";
@@ -48,7 +51,8 @@
        pwms = <&pwm0 6>;
        label = "caps";
      };
-};
+ };
+*/
 
    leds_i: leds_i {
      compatible = "pwm-leds";

@@ -13,7 +13,9 @@
    chosen {
      zmk,kscan = &kscan;
      zmk,led-widgets-dev = &leds_i;
+/*
      zmk,led-capslock = &led_capslock;
+*/
    };
 
    kscan: kscan {
@@ -53,15 +55,6 @@
      compatible = "zmk,keymap-sensors";
      sensors = <&mlego_encoder>;
    };
-
-   led_indicators {
-     compatible = "pwm-leds";
-     label = "leds layers";
-     led_capslock: led_capslock {
-       pwms = <&pwm0 6>;
-       label = "caps";
-     };
-};
 
    leds_i: leds_i {
      compatible = "pwm-leds";

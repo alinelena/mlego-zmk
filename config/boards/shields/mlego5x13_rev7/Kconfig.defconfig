@@ -8,4 +8,5 @@ config ZMK_KEYBOARD_NAME
 
 config SPI
 	default y
+
 endif 
