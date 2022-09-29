@@ -79,6 +79,37 @@
        label = "blue";
      };
    };
+
+  led-widgets {
+        compatible = "zmk,led-widgets";
+        boot {
+            boot {
+                priority = <100>;
+                blue { len-ms = <100>; brightness = <0 0 50>; };
+                off { len-ms = <100>; };
+                blue2 { len-ms = <100>; brightness = <0 0 50>; };
+            };
+        };
+        layer {
+            lower {
+                arg = <1>;
+                priority = <20>;
+                stat { brightness = <20 0 20>; };
+            };
+            raise {
+                arg = <2>;
+                priority = <20>;
+                stat { brightness = <0 20 0>; };
+            };
+            adjust {
+                arg = <3>;
+                priority = <20>;
+                stat { brightness = <20 20 0>; };
+            };
+        };
+   };
+
+
 };
 
 
