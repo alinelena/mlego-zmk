@@ -15,6 +15,12 @@
 #define RSE 1
 #define ADJ 3
 
+#define M1 "BTSEL 0"
+#define M2 "BTSEL 1"
+#define M3 "BTSEL 2"
+#define M4 "BTSEL 3"
+#define M5 "BTSEL 4"
+
 / {
 
     conditional_layers {
@@ -136,25 +142,25 @@ MS - mouse directions
 /*
 adj layer
  * ┌───┬────┬───┬───┬───┬───┬────┬───┬───┬───┬───┬────┬────┐
- * │TOG│    │   │   │   │   │    │   │   │   │   │ SPI│ SPD│
+ * │TOG│bt0 │bt1│bt2│bt3│bt4│    │   │   │   │   │ SPI│ SPD│
  * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
  * │HUI│HUD │   │   │rst│   │    │   │   │   │   │ EFF│ EFR│
  * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
  * │SAI│SAD │   │   │   │   │    │   │   │   │   │    │    │
  * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
- * │BRI│BRD │   │   │   │   │boot│   │   │   │   │    │    │
+ * │BRI│BRD │   │   │   │   │boot│   │   │   │   │bt  │    │
  * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
- * │ ON│OFF │   │   │   │   │    │   │   │   │   │    │ USB│
+ * │ ON│OFF │   │   │   │   │    │   │   │USB│btN│btC │ btP│
  * └───┴────┴───┴───┴───┴───┴────┴───┴───┴───┴───┴────┴────┘
 */
 
         adjust_layer {
             bindings = <
-                &rgb_ug RGB_TOG &trans           &trans &trans &trans &trans &trans      &trans &trans &trans &trans       &rgb_ug RGB_SPI &rgb_ug RGB_SPD 
-                &rgb_ug RGB_HUI &rgb_ug RGB_HUD  &trans &trans &reset &trans &trans      &trans &trans &trans &trans       &rgb_ug RGB_EFF &rgb_ug RGB_EFR
-                &rgb_ug RGB_SAI &rgb_ug RGB_SAD  &trans &trans &trans &trans &trans      &trans &trans &trans &trans       &trans          &trans
-                &rgb_ug RGB_BRI &rgb_ug RGB_BRD  &trans &trans &trans &trans &bootloader &trans &trans &trans &trans       &trans          &trans 
-                &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &trans &trans &trans &trans &trans      &trans &trans &trans &out OUT_USB &bt BT_CLR      &out OUT_BLE 
+                &rgb_ug RGB_TOG &bt M1           &bt M2 &bt M3 &bt M4 &bt M5 &trans      &trans &trans &trans       &trans     &rgb_ug RGB_SPI &rgb_ug RGB_SPD 
+                &rgb_ug RGB_HUI &rgb_ug RGB_HUD  &trans &trans &reset &trans &trans      &trans &trans &trans       &trans     &rgb_ug RGB_EFF &rgb_ug RGB_EFR
+                &rgb_ug RGB_SAI &rgb_ug RGB_SAD  &trans &trans &trans &trans &trans      &trans &trans &trans       &trans     &trans          &trans
+                &rgb_ug RGB_BRI &rgb_ug RGB_BRD  &trans &trans &trans &trans &bootloader &trans &trans &trans       &trans     &out OUT_BLE    &trans 
+                &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &trans &trans &trans &trans &trans      &trans &trans &out OUT_USB &bt BT_NXT &bt BT_CLR      &bt BT_PRV   
             >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
