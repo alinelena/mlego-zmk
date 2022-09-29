@@ -15,11 +15,6 @@
 #define RSE 1
 #define ADJ 3
 
-#define M1 "BTSEL 0"
-#define M2 "BTSEL 1"
-#define M3 "BTSEL 2"
-#define M4 "BTSEL 3"
-#define M5 "BTSEL 4"
 
 / {
 
