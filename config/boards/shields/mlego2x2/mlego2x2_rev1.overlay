@@ -14,7 +14,9 @@
      zmk,kscan = &kscan;
      zephyr,display = &oled;
      zmk,led-capslock = &led_capslock;
+     /*
      zmk,led-widgets-dev = &leds_i;
+     */
    };
 
    kscan: kscan {
