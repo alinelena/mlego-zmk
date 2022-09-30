@@ -14,7 +14,7 @@
      zmk,kscan = &kscan;
      zephyr,display = &oled;
      zmk,led-capslock = &led_capslock;
-     zmk,led-numlock = &led_numlock;
+     zmk,led-widgets-dev = &leds_i;
    };
 
    kscan: kscan {
@@ -48,12 +48,8 @@
             gpios = <&gpio0 26 GPIO_ACTIVE_HIGH>;
             label = "Caps lock LED";
         };
-        led_numlock: led_numlock {
-            gpios = <&gpio0 30 GPIO_ACTIVE_HIGH>;
-            label = "Num lock LED";
-        };
     };
-/*
+
    leds_i: leds_i {
      compatible = "pwm-leds";
      label = "leds layers";
@@ -99,7 +95,6 @@
             };
         };
    };
-*/
 };
 
 /*
