@@ -13,9 +13,10 @@
 #
 ---
 include:
+  - board: seeeduino_xiao_ble
+    shield: mlego2x2_rev1
   - board: blackpill_f401ce 
     shield:  mlego5x13_rev4
   - board: seeeduino_xiao_ble
-    shield: mlego2x2_rev1
-  - board: seeeduino_xiao_ble
     shield: mlego5x13_rev7
+

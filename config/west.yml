@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: mlego
+      revision: mlego_xiao
       import: app/west.yml
   self:
     path: config
