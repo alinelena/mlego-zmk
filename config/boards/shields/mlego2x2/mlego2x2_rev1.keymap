@@ -54,7 +54,7 @@
         };
         lower_layer {
             bindings = <
-                &kp N1   &kp N3  
+                &kp CAPS   &kp KP_NUM 
                 &trans    &trans   
             >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;

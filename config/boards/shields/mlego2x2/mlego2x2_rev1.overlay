@@ -13,10 +13,8 @@
    chosen {
      zmk,kscan = &kscan;
      zephyr,display = &oled;
-     zmk,led-widgets-dev = &leds_i;
-/*
      zmk,led-capslock = &led_capslock;
-*/
+     zmk,led-numlock = &led_numlock;
    };
 
    kscan: kscan {
@@ -43,17 +41,19 @@
      sensors = <&mlego_encoder>;
    };
 
+    led_indicators {
+        compatible = "gpio-leds";
+        label = "LED indicators";
+        led_capslock: led_capslock {
+            gpios = <&gpio0 26 GPIO_ACTIVE_HIGH>;
+            label = "Caps lock LED";
+        };
+        led_numlock: led_numlock {
+            gpios = <&gpio0 30 GPIO_ACTIVE_HIGH>;
+            label = "Num lock LED";
+        };
+    };
 /*
-   led_indicators {
-     compatible = "pwm-leds";
-     label = "leds layers";
-     led_capslock: led_capslock {
-       pwms = <&pwm0 6>;
-       label = "caps";
-     };
- };
-*/
-
    leds_i: leds_i {
      compatible = "pwm-leds";
      label = "leds layers";
@@ -99,10 +99,10 @@
             };
         };
    };
-
+*/
 };
 
-
+/*
 &pwm0 {
     status = "okay";
     ch0-pin = <26>;
@@ -112,7 +112,7 @@
     ch1-inverted;
     ch2-inverted;
 };
-
+*/
 &mlego_encoder { 
   status = "okay"; 
 };
