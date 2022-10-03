@@ -23,7 +23,7 @@ zmk firmware for mlego
     - [ ] rgblight, strip
 
 - mlego m65 5x13 rev7
-![M65 xiao ble](https://i.imgur.com/P1SRKwC.jpg)
+![M65 xiao ble](https://i.imgur.com/suDn7M2.jpg)
   - features stm32f401
     - [x] matrix
     - [x] encoders
