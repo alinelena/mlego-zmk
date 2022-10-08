@@ -19,4 +19,6 @@ include:
     shield:  mlego5x13_rev4
   - board: seeeduino_xiao_ble
     shield: mlego5x13_rev7
+  - board: boardsource4x12
+    shield: nice_nano_v2
 
