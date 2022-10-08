@@ -1,0 +1,8 @@
+file_format: "1"
+id: boardsource4x12
+name: Boardsource 4x12
+type: shield
+url: https://boardsource.xyz/store/5ecb78d286879c9a0c22dafd
+requires: [nice_nano_v2]
+features:
+  - keys

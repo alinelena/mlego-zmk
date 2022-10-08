@@ -1,0 +1,9 @@
+# Copyright (c) 2021 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_BOARDSOURCE4X12
+
+config ZMK_KEYBOARD_NAME
+    default "boardsource4x12"
+
+endif
