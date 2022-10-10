@@ -13,9 +13,7 @@
    chosen {
      zmk,kscan = &kscan;
      zmk,led-widgets-dev = &leds_i;
-/*
      zmk,led-capslock = &led_capslock;
-*/
    };
 
    kscan: kscan {
