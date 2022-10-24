@@ -1,0 +1,14 @@
+file_format: "1"
+id: mlego2x2
+name: mlego m4 2x2 rev2
+type: shield
+url: mlego.elena.space
+requires:
+  - seeduino_xiao_rp2040
+exposes:
+  - i2c_encoder
+  - i2c_oled
+features:
+  - keys
+  - encoder
+  - display

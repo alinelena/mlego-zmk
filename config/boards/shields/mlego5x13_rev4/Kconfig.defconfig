@@ -1,13 +1,16 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
+if SHIELD_MLEGO5X13_REV4
 
-if SHIELD_MLEGO2x2_REV1
+if BUILD_OUTPUT_UF2
 
-config ZMK_KEYBOARD_NAME
-    default "mlego m2x2 rev1"
+config BUILD_OUTPUT_UF2_USE_FLASH_BASE
+    default y
 
-config SPI
-	default y
+config BUILD_OUTPUT_UF2_USE_FLASH_OFFSET
+    default y
+
+endif # BUILD_OUTPUT_UF2
 
 if ZMK_RGB_UNDERGLOW
 
@@ -49,6 +52,5 @@ choice LV_COLOR_DEPTH
 endchoice
 
 endif # LVGL
+endif 
 
-
-endif # SHIELD_MLEGO2x2

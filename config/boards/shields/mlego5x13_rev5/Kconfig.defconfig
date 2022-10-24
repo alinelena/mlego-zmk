@@ -1,16 +1,6 @@
 # Copyright (c) 2022 The ZMK Contributors
 # SPDX-License-Identifier: MIT
-if SHIELD_MLEGO5X13_REV4
-
-if BUILD_OUTPUT_UF2
-
-config BUILD_OUTPUT_UF2_USE_FLASH_BASE
-    default y
-
-config BUILD_OUTPUT_UF2_USE_FLASH_OFFSET
-    default y
-
-endif # BUILD_OUTPUT_UF2
+if SHIELD_MLEGO5X13_REV5
 
 if ZMK_RGB_UNDERGLOW
 
@@ -38,17 +28,17 @@ endif # ZMK_DISPLAY
 
 if LVGL
 
-config LVGL_VDB_SIZE
-  default 100
+config LV_Z_VDB_SIZE
+  default 64
 
-config LVGL_DPI
+config LV_Z_DPI
   default 148
 
-config LVGL_BITS_PER_PIXEL
+config LV_Z_BITS_PER_PIXEL
 	default 1
 
-choice LVGL_COLOR_DEPTH
-  default LVGL_COLOR_DEPTH_1
+choice LV_COLOR_DEPTH
+  default LV_COLOR_DEPTH_1
 endchoice
 
 endif # LVGL

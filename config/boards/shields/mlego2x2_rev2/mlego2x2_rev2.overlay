@@ -1,0 +1,93 @@
+/*
+ * Copyright (c) 2022 alin m elena
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/led/led.h>
+
+/ {
+   model = "mlego m4, rev2";
+   compatible = "mlego", "seeduino,xiao_rp2040";
+
+   chosen {
+     zmk,kscan = &kscan;
+     zephyr,display = &oled;
+/*
+     zmk,led-widgets-dev = &leds_i;
+     zmk,led-capslock = &led_capslock;
+*/
+   };
+
+   kscan: kscan {
+     compatible = "zmk,kscan-gpio-matrix";
+     label = "kscan";
+     diode-direction = "col2row";
+     col-gpios = <&shift_reg 0 (GPIO_ACTIVE_HIGH)>
+                 , <&shift_reg 8 (GPIO_ACTIVE_HIGH)>
+                 ;
+     row-gpios = <&xiao_d 0(GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                 ,<&xiao_d 3(GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                 ;
+   };
+   mlego_encoder: mlego_encoder {
+     compatible = "alps,ec11";
+     label = "mlego encoder";
+     a-gpios = <&xiao_d 1(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+     b-gpios = <&xiao_d 2(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+     resolution = <4>;
+   };
+
+   sensors {
+     compatible = "zmk,keymap-sensors";
+     sensors = <&mlego_encoder>;
+   };
+};
+
+
+&mlego_encoder { 
+  status = "okay"; 
+};
+
+&xiao_spi {
+  status = "okay";
+
+  cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>, <&xiao_d 6 GPIO_ACTIVE_HIGH>;
+  shift_reg: 595@0 {
+    compatible = "zmk,gpio-595";
+    status = "okay";
+    gpio-controller;
+    spi-max-frequency = <200000>;
+    #gpio-cells = <2>;
+    reg = <0>;
+    label = "74HC595";
+    ngpios = <16>;
+  };
+};
+
+&i2c1_default{
+  group1 {
+    pinmux = <I2C1_SDA_P6>, <I2C1_SCL_P7>;
+    input-enable;
+    input-schmitt-enable;
+  };
+};
+
+&i2c1 {
+  status = "okay";
+  clock-frequency = <I2C_BITRATE_STANDARD>;
+
+  oled: ssd1306@3c {
+    compatible = "solomon,ssd1306fb";
+    reg = <0x3c>;
+    label = "DISPLAY";
+    width = <0x80>;
+    height = <0x20>;
+    segment-offset = <0x0>;
+    page-offset = <0x0>;
+    display-offset = <0x0>;
+    multiplex-ratio = <0x1f>;
+    com-sequential;
+    prechargep = <0x22>;
+  };
+};

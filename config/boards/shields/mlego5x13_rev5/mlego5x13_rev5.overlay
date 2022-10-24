@@ -1,0 +1,110 @@
+/*
+ * Copyright (c) 2022 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+#include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/led/led.h>
+
+/ {
+
+    model = "mlego m65, rev5";
+    compatible = "mlego,rev5", "st,rpi_pico";
+
+    chosen {
+        zmk,kscan = &kscan0;
+        zephyr,console = &cdc_acm_uart0;
+        zephyr,display = &oled;
+    };
+
+    kscan0: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "KSCAN";
+        diode-direction = "col2row";
+	
+        row-gpios
+            = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+            ;
+
+        col-gpios
+            = <&gpio0  1 GPIO_ACTIVE_HIGH>
+            , <&gpio0  6 GPIO_ACTIVE_HIGH>
+            , <&gpio0  7 GPIO_ACTIVE_HIGH>
+            , <&gpio0  8 GPIO_ACTIVE_HIGH>
+            , <&gpio0  9 GPIO_ACTIVE_HIGH>
+            , <&gpio0 15 GPIO_ACTIVE_HIGH>
+            , <&gpio0 14 GPIO_ACTIVE_HIGH>
+            , <&gpio0 13 GPIO_ACTIVE_HIGH>
+            , <&gpio0 12 GPIO_ACTIVE_HIGH>
+            , <&gpio0 11 GPIO_ACTIVE_HIGH>
+            , <&gpio0 10 GPIO_ACTIVE_HIGH>
+            , <&gpio0 17 GPIO_ACTIVE_HIGH>
+            , <&gpio0 21 GPIO_ACTIVE_HIGH>
+            ;
+    };
+	
+leds {
+		compatible = "gpio-leds";
+		blue_led: led_0 {
+			gpios = <&gpio0 15 GPIO_ACTIVE_HIGH>;
+			label = "Blue LED";
+		};
+	};
+
+    mlego_encoder: mlego_encoder {
+        compatible = "alps,ec11";
+        label = "MLEGO_ENCODER";
+        a-gpios = <&gpio0 4 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio0 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        resolution = <4>;
+    };
+
+    sensors {
+      compatible = "zmk,keymap-sensors";
+      sensors = <&mlego_encoder>;
+    };
+};
+
+&mlego_encoder {
+    status = "okay";
+};
+&zephyr_udc0 {
+  status="ok";
+  cdc_acm_uart0: cdc_acm_uart0 {
+    compatible = "zephyr,cdc-acm-uart";
+    label = "CDC_ACM_0";
+
+  };
+};
+
+&i2c1_default{
+  group1 {
+    pinmux = <I2C1_SDA_P2>, <I2C1_SCL_P3>;
+    input-enable;
+    input-schmitt-enable;
+  };
+};
+
+
+&i2c1 {
+      status = "okay";
+       clock-frequency = <I2C_BITRATE_STANDARD>;
+
+      oled: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = < 0x3c >;
+        label="DISPLAY";
+        width = < 0x80 >;
+        height = < 0x20 >;
+        segment-offset = < 0x0 >;
+        page-offset = < 0x0 >;
+        display-offset = < 0x0 >;
+        multiplex-ratio = < 0x1f >;
+        com-sequential;
+        prechargep = < 0x22 >;
+      };
+    };
