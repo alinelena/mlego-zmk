@@ -1,6 +1,0 @@
-# Copyright (c) 2022 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-if SHIELD_MLEGO5X13_REV8
-
-endif 
-

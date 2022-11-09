@@ -1,0 +1,12 @@
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_MLEGO5x13_REV8
+
+config ZMK_KEYBOARD_NAME
+    default "mlego m5x13 rev8"
+
+config SPI
+	default y
+
+endif 

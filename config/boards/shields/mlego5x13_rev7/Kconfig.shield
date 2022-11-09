@@ -1,5 +1,0 @@
-# Copyright (c) 2022 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-
-config  SHIELD_MLEGO5x13_REV7
-   def_bool $(shields_list_contains,mlego5x13_rev7)
