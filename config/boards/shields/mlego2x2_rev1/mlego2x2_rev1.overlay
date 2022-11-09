@@ -13,8 +13,8 @@
    chosen {
      zmk,kscan = &kscan;
      zephyr,display = &oled;
-     zmk,led-capslock = &led_capslock;
      /*
+     zmk,led-capslock = &led_capslock;
      zmk,led-widgets-dev = &leds_i;
      */
    };
@@ -42,7 +42,7 @@
      compatible = "zmk,keymap-sensors";
      sensors = <&mlego_encoder>;
    };
-
+/*
     led_indicators {
         compatible = "gpio-leds";
         label = "LED indicators";
@@ -97,6 +97,7 @@
             };
         };
    };
+*/
 };
 
 /*

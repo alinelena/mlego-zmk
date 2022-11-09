@@ -151,7 +151,7 @@ adj layer
         adjust_layer {
             bindings = <
                 &rgb_ug RGB_TOG &trans           &trans &trans &trans &trans &trans      &trans &trans &trans &trans &rgb_ug RGB_SPI &rgb_ug RGB_SPD 
-                &rgb_ug RGB_HUI &rgb_ug RGB_HUD  &trans &trans &reset &trans &trans      &trans &trans &trans &trans &rgb_ug RGB_EFF &rgb_ug RGB_EFR
+                &rgb_ug RGB_HUI &rgb_ug RGB_HUD  &trans &trans &sys_reset &trans &trans      &trans &trans &trans &trans &rgb_ug RGB_EFF &rgb_ug RGB_EFR
                 &rgb_ug RGB_SAI &rgb_ug RGB_SAD  &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans          &trans
                 &rgb_ug RGB_BRI &rgb_ug RGB_BRD  &kp KP_NUM &kp SLCK  &trans &trans &bootloader &trans &trans &trans &trans &trans          &trans 
                 &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &trans &trans &trans &trans &trans      &trans &trans &trans &trans &trans          &out OUT_USB

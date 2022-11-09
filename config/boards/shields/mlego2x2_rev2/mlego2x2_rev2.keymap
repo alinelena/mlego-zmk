@@ -69,7 +69,7 @@
 
         adjust_layer {
             bindings = <
-                &reset &bootloader  
+                &sys_reset &bootloader  
                 &trans &trans 
             >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;

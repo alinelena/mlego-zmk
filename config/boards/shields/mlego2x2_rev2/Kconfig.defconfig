@@ -50,5 +50,4 @@ endchoice
 
 endif # LVGL
 
-
 endif # SHIELD_MLEGO2x2
