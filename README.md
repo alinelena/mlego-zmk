@@ -24,7 +24,7 @@ zmk firmware for mlego
 
 - mlego m65 5x13 rev7
 ![M65 xiao ble](https://i.imgur.com/suDn7M2.jpg)
-  - features stm32f401
+  - features xiao seeduino rp2040
     - [x] matrix
     - [x] encoders
     - [x] led indicators
