@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: mlego_xiao
+      revision: zephyr/3.1-upgrade
       import: app/west.yml
   self:
     path: config
