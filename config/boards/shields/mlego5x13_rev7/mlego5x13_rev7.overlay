@@ -7,7 +7,7 @@
 //#include <dt-bindings/led/led.h>
 
 / {
-   model = "mlego m65, rev8";
+   model = "mlego m65, rev7";
    compatible = "mlego", "seeduino,xiao_rp2040";
 
    chosen {
