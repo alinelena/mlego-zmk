@@ -30,3 +30,12 @@ zmk firmware for mlego
     - [x] led indicators
     - [ ] unicode
 
+- mlego m65 5x13 rev8
+![M65 xiao ble](https://i.imgur.com/suDn7M2.jpg)
+  - features xiao seeduino nrf52840
+    - [x] matrix
+    - [x] encoders
+    - [x] led indicators
+    - [ ] unicode
+
+
