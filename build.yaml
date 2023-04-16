@@ -17,8 +17,6 @@ include:
     shield: mlego2x2_rev1
   - board: blackpill_f401ce 
     shield:  mlego5x13_rev4
-  - board: seeeduino_xiao_ble
-    shield: mlego5x13_rev7
   - board: seeeduino_xiao_rp2040
     shield: mlego2x2_rev2
   - board: rpi_pico
