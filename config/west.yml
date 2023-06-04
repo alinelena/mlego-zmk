@@ -1,7 +1,7 @@
 manifest:
   remotes:
     - name: alinelena
-      url-base: https://github.com/alinelena/zmk
+      url-base: https://github.com/alinelena/
   projects:
     - name: zmk
       remote: alinelena
