@@ -1,0 +1,78 @@
+/*
+ * Copyright (c) 2022 alin m elena
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+//#include <dt-bindings/led/led.h>
+
+/ {
+   model = "mlego m65, rev9";
+   compatible = "mlego", "seeduino,xiao_rp2040";
+
+   chosen {
+     zmk,kscan = &kscan;
+/*
+     zmk,led-widgets-dev = &leds_i;
+     zmk,led-capslock = &led_capslock;
+*/ 
+  };
+
+   kscan: kscan {
+     compatible = "zmk,kscan-gpio-matrix";
+     label = "kscan";
+     diode-direction = "col2row";
+     col-gpios = <&shift_reg 15 (GPIO_ACTIVE_HIGH)>
+                 , <&shift_reg 14 (GPIO_ACTIVE_HIGH)>
+                 , <&shift_reg 13 (GPIO_ACTIVE_HIGH)>
+                 , <&shift_reg 12 (GPIO_ACTIVE_HIGH)>
+                 , <&shift_reg 11 (GPIO_ACTIVE_HIGH)>
+                 , <&shift_reg 10 (GPIO_ACTIVE_HIGH)>
+                 , <&shift_reg 9 (GPIO_ACTIVE_HIGH)>
+                 , <&shift_reg 8 (GPIO_ACTIVE_HIGH)>
+                 , <&shift_reg 7 (GPIO_ACTIVE_HIGH)>
+                 , <&shift_reg 6 (GPIO_ACTIVE_HIGH)>
+                 , <&shift_reg 5 (GPIO_ACTIVE_HIGH)>
+                 , <&shift_reg 4 (GPIO_ACTIVE_HIGH)>
+                 , <&shift_reg 0 (GPIO_ACTIVE_HIGH)>
+                 ;
+     row-gpios = <&xiao_d 0(GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                 ,<&xiao_d 1(GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                 ,<&xiao_d 2(GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                 ,<&xiao_d 3(GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                 ,<&xiao_d 4(GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                 ;
+   };
+
+   mlego_encoder: mlego_encoder {
+     compatible = "alps,ec11";
+     label = "mlego encoder";
+     a-gpios = <&xiao_d 5(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+     b-gpios = <&xiao_d 6(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+     resolution = <4>;
+   };
+   sensors {
+     compatible = "zmk,keymap-sensors";
+     sensors = <&mlego_encoder>;
+   };
+};
+
+&mlego_encoder { 
+  status = "okay"; 
+};
+
+&xiao_spi {
+  status = "okay";
+
+  cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>, <&xiao_d 6 GPIO_ACTIVE_HIGH>;
+  shift_reg: 595@0 {
+    compatible = "zmk,gpio-595";
+    status = "okay";
+    gpio-controller;
+    spi-max-frequency = <200000>;
+    #gpio-cells = <2>;
+    reg = <0>;
+    label = "4HC595";
+    ngpios = <16>;
+  };
+};
