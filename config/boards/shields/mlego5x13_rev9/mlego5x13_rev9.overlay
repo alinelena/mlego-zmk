@@ -22,18 +22,18 @@
      compatible = "zmk,kscan-gpio-matrix";
      label = "kscan";
      diode-direction = "col2row";
-     col-gpios = <&sr_sipo 15 (GPIO_ACTIVE_HIGH)>
+     col-gpios = <&sr_sipo 1 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 2 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 3 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 4 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 5 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 6 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 7 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 0 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 15 (GPIO_ACTIVE_HIGH)>
                  , <&sr_sipo 14 (GPIO_ACTIVE_HIGH)>
                  , <&sr_sipo 13 (GPIO_ACTIVE_HIGH)>
                  , <&sr_sipo 12 (GPIO_ACTIVE_HIGH)>
-                 , <&sr_sipo 11 (GPIO_ACTIVE_HIGH)>
-                 , <&sr_sipo 10 (GPIO_ACTIVE_HIGH)>
-                 , <&sr_sipo 9 (GPIO_ACTIVE_HIGH)>
-                 , <&sr_sipo 8 (GPIO_ACTIVE_HIGH)>
-                 , <&sr_sipo 7 (GPIO_ACTIVE_HIGH)>
-                 , <&sr_sipo 6 (GPIO_ACTIVE_HIGH)>
-                 , <&sr_sipo 5 (GPIO_ACTIVE_HIGH)>
-                 , <&sr_sipo 4 (GPIO_ACTIVE_HIGH)>
                  , <&sr_sipo 0 (GPIO_ACTIVE_HIGH)>
                  ;
      row-gpios = <&sr_piso 0 (GPIO_ACTIVE_HIGH)>
@@ -47,8 +47,8 @@
    mlego_encoder: mlego_encoder {
      compatible = "alps,ec11";
      label = "mlego encoder";
-     a-gpios = <&xiao_d 5(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-     b-gpios = <&xiao_d 6(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+     a-gpios = <&xiao_d 1(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+     b-gpios = <&xiao_d 0(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
      resolution = <4>;
    };
    sensors {
@@ -75,12 +75,13 @@
     label = "74HC595";
     ngpios = <16>;
   };
+
   sr_piso: 165@0 {
     compatible = "zmk,gpio-165";
     status = "okay";
     gpio-controller;
     spi-max-frequency = <200000>;
-    #gpio-cells = <1>;
+    #gpio-cells = <2>;
     reg = <0>;
     label = "74HC165";
     ngpios = <8>;
