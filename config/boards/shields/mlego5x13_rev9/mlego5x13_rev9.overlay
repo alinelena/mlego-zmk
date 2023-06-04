@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 alin m elena
+ * Copyright (c) 2022-2023 alin m elena
  * SPDX-License-Identifier: MIT
  */
 
@@ -23,24 +23,24 @@
      label = "kscan";
      diode-direction = "col2row";
      col-gpios = <&shift_reg 15 (GPIO_ACTIVE_HIGH)>
-                 , <&shift_reg 14 (GPIO_ACTIVE_HIGH)>
-                 , <&shift_reg 13 (GPIO_ACTIVE_HIGH)>
-                 , <&shift_reg 12 (GPIO_ACTIVE_HIGH)>
-                 , <&shift_reg 11 (GPIO_ACTIVE_HIGH)>
-                 , <&shift_reg 10 (GPIO_ACTIVE_HIGH)>
-                 , <&shift_reg 9 (GPIO_ACTIVE_HIGH)>
-                 , <&shift_reg 8 (GPIO_ACTIVE_HIGH)>
-                 , <&shift_reg 7 (GPIO_ACTIVE_HIGH)>
-                 , <&shift_reg 6 (GPIO_ACTIVE_HIGH)>
-                 , <&shift_reg 5 (GPIO_ACTIVE_HIGH)>
-                 , <&shift_reg 4 (GPIO_ACTIVE_HIGH)>
-                 , <&shift_reg 0 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 14 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 13 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 12 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 11 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 10 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 9 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 8 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 7 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 6 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 5 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 4 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 0 (GPIO_ACTIVE_HIGH)>
                  ;
-     row-gpios = <&xiao_d 0(GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-                 ,<&xiao_d 1(GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-                 ,<&xiao_d 2(GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-                 ,<&xiao_d 3(GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-                 ,<&xiao_d 4(GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+     row-gpios = <&sr_piso 0 (GPIO_ACTIVE_HIGH)>
+                 ,<&sr_piso 1(GPIO_ACTIVE_HIGH)>
+                 ,<&sr_piso 2(GPIO_ACTIVE_HIGH)>
+                 ,<&sr_piso 3(GPIO_ACTIVE_HIGH)>
+                 ,<&sr_piso 4(GPIO_ACTIVE_HIGH)>
                  ;
    };
 
@@ -65,14 +65,24 @@
   status = "okay";
 
   cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>, <&xiao_d 6 GPIO_ACTIVE_HIGH>;
-  shift_reg: 595@0 {
+  sr_sipo: 595@0 {
     compatible = "zmk,gpio-595";
     status = "okay";
     gpio-controller;
     spi-max-frequency = <200000>;
     #gpio-cells = <2>;
     reg = <0>;
-    label = "4HC595";
+    label = "74HC595";
     ngpios = <16>;
   };
+  sr_piso: 165@0 {
+    compatible = "zmk,gpio-165";
+    status = "okay";
+    gpio-controller;
+    spi-max-frequency = <200000>;
+    #gpio-cells = <1>;
+    reg = <0>;
+    label = "74HC165";
+    ngpios = <8>;
+  }; 
 };
