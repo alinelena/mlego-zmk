@@ -35,6 +35,7 @@
                  , <&sr_sipo 13 (GPIO_ACTIVE_HIGH)>
                  , <&sr_sipo 12 (GPIO_ACTIVE_HIGH)>
                  , <&sr_sipo 0 (GPIO_ACTIVE_HIGH)>
+                 , <&sr_sipo 11 (GPIO_ACTIVE_HIGH)>
                  ;
      row-gpios = <&sr_piso 0 (GPIO_ACTIVE_HIGH)>
                  ,<&sr_piso 1(GPIO_ACTIVE_HIGH)>
@@ -82,6 +83,7 @@
     gpio-controller;
     spi-max-frequency = <200000>;
     #gpio-cells = <2>;
+    load-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
     reg = <0>;
     label = "74HC165";
     ngpios = <8>;
