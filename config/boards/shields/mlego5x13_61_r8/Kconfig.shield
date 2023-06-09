@@ -2,4 +2,4 @@
 # SPDX-License-Identifier: MIT
 
 config  SHIELD_MLEGO5x13_61_REV8
-   def_bool $(shields_list_contains,mlego5x13_61_rev8)
+   def_bool $(shields_list_contains,mlego5x13_61_r8)
