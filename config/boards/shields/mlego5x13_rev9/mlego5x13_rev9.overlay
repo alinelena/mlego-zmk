@@ -83,7 +83,7 @@
     gpio-controller;
     spi-max-frequency = <200000>;
     #gpio-cells = <2>;
-    load-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>;
+    load-gpios = <&xiao_d 7 GPIO_ACTIVE_HIGH>;
     reg = <0>;
     label = "74HC165";
     ngpios = <8>;
