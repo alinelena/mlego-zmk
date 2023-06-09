@@ -2,10 +2,12 @@ manifest:
   remotes:
     - name: alinelena
       url-base: https://github.com/alinelena/
+    - name: crides
+      url-base: https://github.com/crides/
   projects:
     - name: zmk
-      remote: alinelena
-      revision: 74hc165
+      remote: crides
+      revision: led-widgets
       import: app/west.yml
   self:
     path: config
