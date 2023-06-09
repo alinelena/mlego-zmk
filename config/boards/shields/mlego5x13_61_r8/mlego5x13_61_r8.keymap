@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 The ZMK Contributors
+ * Copyright (c) 2022-2023 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
@@ -48,12 +48,14 @@
 
         qw_layer {
             bindings = <
-                &kp ESC   &kp GRAVE &kp N1  &kp N2 &kp N3   &kp N4 &kp N5    &kp N6    &kp N7    &kp N8   &kp N9    &kp N0   &kp MINUS &kp BSPC
-                &kp TAB  &kp LALT        &kp Q           &kp W  &kp E    &kp R  &kp T     &kp Y     &kp U     &kp I    &kp O     &kp P &kp DEL 
-                &kp LCTL &kp LGUI  &kp A           &kp S  &kp D    &kp F  &kp G     &kp H     &kp J     &kp K    &kp L     &kp SEMI &kp APOS  &kp RET
-                &kp LSHFT &kp UP &kp Z  &kp X    &kp C  &kp V     &kp B     &kp N     &kp M    &kp COMMA &kp DOT   &kp FSLH &kp RSHFT
-                &kp LEFT        &kp DOWN    &kp RIGHT    &tlwr  &none &kp SPACE &none &none &kp SPACE &none &trse  &kp SPACE &kp RET 
-            >;
+
+                &kp ESC   &kp GRAVE &kp N1    &kp N2 &kp N3 &kp N4    &kp N5 &kp N6 &kp N7    &kp N8    &kp N9  &kp N0    &kp BSPC
+                &kp TAB   &kp LALT  &kp Q     &kp W  &kp E  &kp R     &kp T  &kp Y  &kp U     &kp I     &kp O   &kp P     &kp DEL
+                &kp LCTL  &kp LGUI  &kp A     &kp S  &kp D  &kp F     &kp G  &kp H  &kp J     &kp K     &kp L   &kp SEMI  &kp APOS  
+                &kp LSHFT &kp UP    &kp Z     &kp X  &kp C  &kp V     &kp B  &kp N  &kp M     &kp COMMA &kp DOT &kp FSLH  &kp RSHFT
+                &kp LEFT  &kp DOWN  &kp RIGHT &tlwr  &none  &kp SPACE &none  &none  &kp SPACE &none     &trse   &kp SPACE &kp RET
+ 
+           >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
         lower_layer {
@@ -62,58 +64,28 @@
                 &trans    &trans     &trans       &trans       &trans     &trans   &trans     &trans      &trans      &trans       &trans    &trans  &trans
                 &kp CAPS  &trans     &trans       &trans       &trans     &trans   &trans     &trans      &trans      &trans       &trans    &trans  &trans
                 &trans    &trans     &trans       &trans       &trans     &trans   &trans     &trans      &trans      &trans       &trans    &trans  &trans
-                &trans    &trans     &trans       &trans       &none     &trans   &none     &none      &trans      &none       &trans    &trans  &trans
+                &trans    &trans     &trans       &trans       &none      &trans   &none      &none       &trans      &none        &trans    &trans  &trans
             >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
-/*
- * raise layer
- * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┐
- * │ ⎋ │ F1│ F2│ F3│ F4│ F5│ F6│ F7│ F8│ F9│F10│F11│F12│
- * ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
- * │   │ â │   │   │   │ ț │   │   │ î │   │   │   │   │
- * ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
- * │ ⇪ │ ă │ ș │   │   │   │   │   │   │   │   │   │   │
- * ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
- * │   │   │   │   │ ç │   │   │   │   │   │   │MWU│   │
- * ├───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┼───┤
- * │   │   │   │   │   │   │   │   │   │   │MWL│MWD│MWR│
- * └───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┴───┘
- * MW mouse keys
-*/
         raise_layer {
             bindings = <
                 &kp ESC  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10 &kp F11 &kp F12
                 &trans   &kp F13 &kp F14 &kp F15 &kp F16 &kp F17 &kp F18 &kp F19 &kp F20 &kp F21 &kp F22 &kp F23 &kp F24
                 &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                 &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans    &trans     &trans       &trans       &none     &trans   &none     &none      &trans      &none       &trans    &trans  &trans
+                &trans   &trans  &trans  &trans  &none   &trans  &none   &none   &trans  &none   &trans  &trans  &trans
             >; 
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-/*
-adj layer
- * ┌───┬────┬───┬───┬───┬───┬────┬───┬───┬───┬───┬────┬────┐
- * │TOG│bt0 │bt1│bt2│bt3│bt4│    │   │   │   │   │ SPI│ SPD│
- * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
- * │HUI│HUD │   │   │rst│   │    │   │   │   │   │ EFF│ EFR│
- * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
- * │SAI│SAD │   │   │   │   │    │   │   │   │   │    │    │
- * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
- * │BRI│BRD │   │   │   │   │boot│   │   │   │   │bt  │    │
- * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
- * │ ON│OFF │   │   │   │   │    │   │   │USB│btN│btC │ btP│
- * └───┴────┴───┴───┴───┴───┴────┴───┴───┴───┴───┴────┴────┘
-*/
-
         adjust_layer {
             bindings = <
-                &rgb_ug RGB_TOG &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans      &trans &trans &trans       &trans     &rgb_ug RGB_SPI &rgb_ug RGB_SPD 
-                &rgb_ug RGB_HUI &rgb_ug RGB_HUD &trans       &trans       &sys_reset       &trans       &trans      &trans &trans &trans       &trans     &rgb_ug RGB_EFF &rgb_ug RGB_EFR
-                &rgb_ug RGB_SAI &rgb_ug RGB_SAD &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &trans     &bt BT_CLR          &trans
-                &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans       &trans       &trans       &trans       &bootloader &trans &trans &trans &out OUT_USB     &out OUT_BLE    &out OUT_TOG 
-                &rgb_ug RGB_ON  &rgb_ug RGB_OFF &trans       &trans       &none       &trans       &none     &none &trans &none &trans &bt BT_NXT &trans     &bt BT_PRV   
+                &rgb_ug RGB_TOG &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans      &trans &trans &trans &trans       &rgb_ug RGB_SPI &rgb_ug RGB_SPD 
+                &rgb_ug RGB_HUI &rgb_ug RGB_HUD &trans       &trans       &sys_reset   &trans       &trans      &trans &trans &trans &trans       &rgb_ug RGB_EFF &rgb_ug RGB_EFR
+                &rgb_ug RGB_SAI &rgb_ug RGB_SAD &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &trans       &bt BT_CLR      &trans
+                &rgb_ug RGB_BRI &rgb_ug RGB_BRD &trans       &trans       &trans       &trans       &bootloader &trans &trans &trans &out OUT_USB &out OUT_BLE    &out OUT_TOG 
+                &rgb_ug RGB_ON  &rgb_ug RGB_OFF &trans       &trans       &none        &trans       &none       &none  &trans &none  &trans       &bt BT_NXT      &bt BT_PRV   
             >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };

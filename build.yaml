@@ -26,7 +26,7 @@ include:
   - board: seeeduino_xiao_ble
     shield: mlego5x13_rev8
   - board: seeeduino_xiao_ble
-    shield: mlego5x13_61_rev8
+    shield: mlego5x13_61_r8
   - board: seeeduino_xiao_rp2040
     shield: mlego5x13_rev9
 
