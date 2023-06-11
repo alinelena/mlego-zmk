@@ -12,7 +12,9 @@
 
    chosen {
      zmk,kscan = &kscan;
+     /*
      zmk,led-widgets-dev = &leds_i;
+     */
    };
 
    kscan: kscan {
@@ -52,6 +54,7 @@
      compatible = "zmk,keymap-sensors";
      sensors = <&mlego_encoder>;
    };
+   /*
    leds_i: leds_i {
      compatible = "pwm-leds";
      label = "leds layers";
@@ -97,9 +100,9 @@
             };
         };
    };
-
+*/
 };
-
+/*
 &pwm0 {
     status = "okay";
     ch0-pin = <26>;
@@ -109,7 +112,7 @@
     ch1-inverted;
     ch2-inverted;
 };
-
+*/
 &mlego_encoder { 
   status = "okay"; 
 };
