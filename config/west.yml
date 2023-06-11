@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: alinelena
-      revision: lwidget
+      revision: main
       import: app/west.yml
   self:
     path: config
