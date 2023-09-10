@@ -29,6 +29,7 @@ zmk firmware for mlego
     - [x] encoders
     - [x] led indicators
     - [ ] unicode
+    - [ ] rgblight
 
 - mlego m65 5x13 rev8
 ![M65 xiao ble](https://i.imgur.com/suDn7M2.jpg)
