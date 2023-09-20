@@ -47,7 +47,7 @@
 
         qw_layer {
             bindings = <
-                 &kp N2 &kp N4 
+                 &kp N2 &kp OUT_BLE 
                  &tlwr  &trse
             >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
