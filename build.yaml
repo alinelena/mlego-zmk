@@ -27,5 +27,5 @@ include:
     shield: mlego5x13_rev8
   - board: seeeduino_xiao_ble
     shield: mlego5x13_61_r8
-
-
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
