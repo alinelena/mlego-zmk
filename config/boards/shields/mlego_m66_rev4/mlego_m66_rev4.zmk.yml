@@ -1,0 +1,12 @@
+file_format: "1"
+id: mlego_m66_rev4
+name: mlego m6 rev4
+type: shield
+url: https://mlego.elena.space
+requires: [nice_view_header]
+exposes:
+  - i2c_encoder
+features:
+  - keys
+  - encoder
+  - display

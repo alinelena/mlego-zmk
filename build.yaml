@@ -30,4 +30,4 @@ include:
   - board: seeeduino_xiao_ble
     shield: settings_reset
   - board: nice_nano_v2
-    shield: boardsource5x12
+    shield: mlego_m66_rev4 nice_view 

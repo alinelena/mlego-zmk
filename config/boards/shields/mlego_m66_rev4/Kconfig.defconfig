@@ -1,0 +1,11 @@
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_MLEGO_M66_REV4
+
+config ZMK_KEYBOARD_NAME
+    default "mlego m66 rev4"
+
+config SPI
+	default y
+endif
