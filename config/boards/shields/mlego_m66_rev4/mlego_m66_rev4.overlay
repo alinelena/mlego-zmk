@@ -135,10 +135,12 @@ nice_view_spi: &spi0 {
   nice_view: ls0xx@0 {
     compatible = "sharp,ls0xx";
     label = "DISPLAY";
+/*
     disp-en-gpios = <&pro_micro 9 GPIO_ACTIVE_LOW>;
+*/
     spi-max-frequency = <1000000>;
     reg = <0>;
-    width = <144>;
-    height = <168>;
+    width = <128>;
+    height = <128>;
   };
 };
