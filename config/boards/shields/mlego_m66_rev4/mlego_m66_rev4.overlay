@@ -138,7 +138,7 @@ nice_view_spi: &spi0 {
     disp-en-gpios = <&pro_micro 9 GPIO_ACTIVE_LOW>;
     spi-max-frequency = <1000000>;
     reg = <0>;
-    width = <128>;
-    height = <128>;
+    width = <168>;
+    height = <144>;
   };
 };
