@@ -123,7 +123,7 @@ nice_view_spi: &spi0 {
              ;
   shift_reg: 595@0 {
     compatible = "zmk,gpio-595";
-    status = "disabled";
+    status = "okay";
     gpio-controller;
     spi-max-frequency = <200000>;
     #gpio-cells = <2>;
