@@ -1,7 +1,9 @@
 file_format: "1"
-id: onekey
-name: onekey
+id: onekey_sharp
+name: onekey_sharp
 type: shield
 url: https://mlego.elena.re
+requires: [nice_view_header]
 features:
   - keys
+  - display
