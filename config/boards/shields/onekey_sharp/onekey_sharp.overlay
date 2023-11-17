@@ -24,6 +24,7 @@
      row-gpios =   <&pro_micro 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
                  ;
    };
+};
 
 &pinctrl {
     spi0_default: spi0_default {
