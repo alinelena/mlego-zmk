@@ -13,7 +13,9 @@
    chosen {
      zmk,kscan = &kscan;
      zmk,matrix_transform = &m66;
+/*
      zephyr,display = &nice_view;
+*/
    };
 
       m66: m66_0 {
@@ -118,9 +120,11 @@ nice_view_spi: &spi0 {
   pinctrl-1 = <&spi0_sleep>;
   pinctrl-names = "default", "sleep";
 
-  cs-gpios =   <&pro_micro 10 GPIO_ACTIVE_LOW>
-             , <&pro_micro 6 GPIO_ACTIVE_HIGH> 
+  cs-gpios =   <&pro_micro 10 GPIO_ACTIVE_LOW>;
+/* 
+            , <&pro_micro 6 GPIO_ACTIVE_HIGH> 
              ;
+*/
   shift_reg: 595@0 {
     compatible = "zmk,gpio-595";
     status = "okay";
@@ -131,7 +135,7 @@ nice_view_spi: &spi0 {
     label = "4HC595";
     ngpios = <16>;
   };
-
+/*
   nice_view: ls0xx@0 {
     compatible = "sharp,ls0xx";
     status = "okay";
@@ -142,4 +146,5 @@ nice_view_spi: &spi0 {
     width = <160>;
     height = <68>;
   };
+*/
 };
