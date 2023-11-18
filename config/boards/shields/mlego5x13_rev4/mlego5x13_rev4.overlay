@@ -65,6 +65,13 @@
       compatible = "zmk,keymap-sensors";
       sensors = <&mlego_encoder>;
     };
+/*
+    ext-power {
+        compatible = "zmk,ext-power-generic";
+        init-delay-ms = <20>;
+        control-gpios = <&gpiob 15 GPIO_ACTIVE_HIGH>;
+    };
+*/
  /*  
       led_indicators {
         compatible = "gpio-leds";
@@ -100,6 +107,7 @@
 
       oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
+        inversion-on;
         reg = < 0x3c >;
         label="DISPLAY";
         width = < 0x80 >;

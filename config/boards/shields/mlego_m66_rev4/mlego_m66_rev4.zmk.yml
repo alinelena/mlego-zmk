@@ -9,4 +9,5 @@ exposes:
 features:
   - keys
   - encoder
+  - ble
   - display

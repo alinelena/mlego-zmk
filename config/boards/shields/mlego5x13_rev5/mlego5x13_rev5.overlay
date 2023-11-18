@@ -81,12 +81,15 @@ leds {
   };
 };
 
-&i2c1_default{
+&pinctrl{
+
+i2c1_default: i2c1_default{
   group1 {
     pinmux = <I2C1_SDA_P2>, <I2C1_SCL_P3>;
     input-enable;
     input-schmitt-enable;
   };
+};
 };
 
 
@@ -97,6 +100,7 @@ leds {
       oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
         reg = < 0x3c >;
+        inversion-on;
         label="DISPLAY";
         width = < 0x80 >;
         height = < 0x20 >;

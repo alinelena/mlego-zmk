@@ -24,7 +24,7 @@ include:
   - board: seeeduino_xiao_rp2040
     shield: mlego5x13_rev7
   - board: seeeduino_xiao_ble
-    shield: mlego5x13_rev8
+    shield: mlego5x13_rev8 rgbled_adapter
   - board: seeeduino_xiao_ble
     shield: mlego5x13_61_r8
   - board: seeeduino_xiao_ble
@@ -35,5 +35,7 @@ include:
     shield: settings_reset
   - board: nice_nano_v2
     shield: onekey
+  - board: seeeduino_xiao_ble
+    shield: onekey_seed
   - board: nice_nano_v2
     shield: onekey_sharp nice_view 

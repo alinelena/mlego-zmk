@@ -1,11 +1,16 @@
 manifest:
   remotes:
-    - name: alinelena
-      url-base: https://github.com/alinelena/
+    - name: zmk
+      url-base: https://github.com/zmkfirmware
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
   projects:
     - name: zmk
-      remote: alinelena
+      remote: zmk
       revision: main
       import: app/west.yml
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: main
   self:
     path: config

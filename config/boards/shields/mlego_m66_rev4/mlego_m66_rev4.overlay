@@ -13,9 +13,8 @@
    chosen {
      zmk,kscan = &kscan;
      zmk,matrix_transform = &m66;
-/*
      zephyr,display = &nice_view;
-*/
+     zephyr,console = &cdc_acm_uart;
    };
 
       m66: m66_0 {
@@ -46,7 +45,6 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3)  RC(4,4) RC(4,5) RC(4,6) RC(4,7)  RC(4,8) RC(4,9
     };
    kscan: kscan {
      compatible = "zmk,kscan-gpio-matrix";
-     label = "kscan";
      diode-direction = "col2row";
      col-gpios =   <&shift_reg 2  (GPIO_ACTIVE_HIGH)>
                  , <&shift_reg 9  (GPIO_ACTIVE_HIGH)>
@@ -73,10 +71,8 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3)  RC(4,4) RC(4,5) RC(4,6) RC(4,7)  RC(4,8) RC(4,9
 
    mlego_encoder: mlego_encoder {
      compatible = "alps,ec11";
-     label = "mlego encoder";
      a-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH )>;
      b-gpios = <&pro_micro 4 (GPIO_ACTIVE_HIGH )>;
-     resolution = <4>;
    };
 
    sensors {
@@ -120,32 +116,32 @@ nice_view_spi: &spi0 {
   pinctrl-1 = <&spi0_sleep>;
   pinctrl-names = "default", "sleep";
 
-  cs-gpios =   <&pro_micro 10 GPIO_ACTIVE_LOW>
-             ;
-/* 
-            , <&pro_micro 6 GPIO_ACTIVE_HIGH> 
-             ;
-*/
-  shift_reg: 595@0 {
-    compatible = "zmk,gpio-595";
-    status = "okay";
-    gpio-controller;
-    spi-max-frequency = <200000>;
-    #gpio-cells = <2>;
-    reg = <0>;
-    label = "4HC595";
-    ngpios = <16>;
-  };
-/*
+  cs-gpios =  <&pro_micro 6 GPIO_ACTIVE_HIGH>
+            , <&pro_micro 10 GPIO_ACTIVE_LOW> ;
+
   nice_view: ls0xx@0 {
     compatible = "sharp,ls0xx";
     status = "okay";
-    label = "DISPLAY";
-    disp-en-gpios = <&pro_micro 9 GPIO_ACTIVE_LOW>;
-    spi-max-frequency = <1000000>;
+    spi-max-frequency = <2000000>;
     reg = <0>;
     width = <160>;
     height = <68>;
   };
-*/
+
+  shift_reg: 595@0 {
+    compatible = "zmk,gpio-595";
+    status = "okay";
+    gpio-controller;
+    spi-max-frequency = <2000000>;
+    #gpio-cells = <2>;
+    reg = <1>;
+    ngpios = <16>;
+  };
+};
+
+&usbd {
+    status = "okay";
+    cdc_acm_uart: cdc_acm_uart {
+        compatible = "zephyr,cdc-acm-uart";
+    };
 };
