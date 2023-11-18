@@ -63,9 +63,7 @@ nice_view_spi: &spi0 {
     compatible = "sharp,ls0xx";
     status = "okay";
     label = "DISPLAY";
-/*
     disp-en-gpios = <&pro_micro 9 GPIO_ACTIVE_LOW>;
-*/
     spi-max-frequency = <1000000>;
     reg = <0>;
     width = <160>;
