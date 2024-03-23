@@ -124,8 +124,8 @@ nice_view_spi: &spi0 {
     status = "okay";
     spi-max-frequency = <2000000>;
     reg = <0>;
-    width = <160>;
-    height = <68>;
+    width = <128>;
+    height = <128>;
   };
 
   shift_reg: 595@0 {
