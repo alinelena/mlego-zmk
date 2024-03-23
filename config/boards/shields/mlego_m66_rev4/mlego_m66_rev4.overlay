@@ -73,11 +73,13 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3)  RC(4,4) RC(4,5) RC(4,6) RC(4,7)  RC(4,8) RC(4,9
      compatible = "alps,ec11";
      a-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH )>;
      b-gpios = <&pro_micro 4 (GPIO_ACTIVE_HIGH )>;
+     steps = <80>;
    };
 
    sensors {
      compatible = "zmk,keymap-sensors";
      sensors = <&mlego_encoder>;
+     triggers-per-rotation = <20>;
    };
 };
 
