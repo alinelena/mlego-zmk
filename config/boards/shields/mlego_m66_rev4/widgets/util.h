@@ -14,7 +14,7 @@
 #define CANVAS_WIDTH 160
 */
 
-#define CANVAS_SIZE 128
+#define CANVAS_SIZE 64
 #define CANVAS_HEIGHT 128
 #define CANVAS_WIDTH 128
 
