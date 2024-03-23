@@ -19,8 +19,8 @@ ls011b7dh03 160x68
 */
 
 #define CANVAS_SIZE 64
-#define CANVAS_HEIGHT 127
-#define CANVAS_WIDTH 128
+#define CANVAS_HEIGHT 168
+#define CANVAS_WIDTH 144
 
 #define LVGL_BACKGROUND                                                                            \
     IS_ENABLED(CONFIG_NICE_VIEW_WIDGET_INVERTED) ? lv_color_black() : lv_color_white()
