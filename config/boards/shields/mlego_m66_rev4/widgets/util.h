@@ -8,7 +8,15 @@
 #include <lvgl.h>
 #include <zmk/endpoints.h>
 
+/*
 #define CANVAS_SIZE 68
+#define CANVAS_HEIGHT 68
+#define CANVAS_WIDTH 160
+*/
+
+#define CANVAS_SIZE 128
+#define CANVAS_HEIGHT 128
+#define CANVAS_WIDTH 128
 
 #define LVGL_BACKGROUND                                                                            \
     IS_ENABLED(CONFIG_NICE_VIEW_WIDGET_INVERTED) ? lv_color_black() : lv_color_white()
