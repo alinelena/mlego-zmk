@@ -129,7 +129,7 @@ static void draw_top(lv_obj_t *widget, lv_color_t cbuf[], const struct status_st
 #endif
 
     // Rotate canvas
-    // rotate_canvas(canvas, cbuf);
+    rotate_canvas(canvas, cbuf);
     // rotate_canvas(canvas, cbuf);
 }
 
@@ -175,7 +175,7 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
     }
 
     // Rotate canvas
-   // rotate_canvas(canvas, cbuf);
+    rotate_canvas(canvas, cbuf);
   //  rotate_canvas(canvas, cbuf);
 }
 
@@ -206,7 +206,7 @@ static void draw_bottom(lv_obj_t *widget, lv_color_t cbuf[], const struct status
     }
 
     // Rotate canvas
-    //rotate_canvas(canvas, cbuf);
+    rotate_canvas(canvas, cbuf);
     //rotate_canvas(canvas, cbuf);
 }
 
