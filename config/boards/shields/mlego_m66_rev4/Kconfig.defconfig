@@ -15,6 +15,7 @@ config ZMK_DISPLAY
 
 if ZMK_DISPLAY
 
+
 config SYSTEM_WORKQUEUE_STACK_SIZE
     default 2048
 
@@ -59,6 +60,13 @@ config LV_Z_VDB_SIZE
 config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
    imply MLEGO_WIDGET_STATUS
 
+config MLEGO_BONGO_CAT
+   bool "enable bongo cat on th widgt"
+   imply MLEGO_WIDGET_STATUS
+   select ZMK_WPM
+   select LVGL_USE_ANIMATION
+  
+
 config MLEGO_WIDGET_STATUS
     bool "Custom mlego status widget"
     select LV_FONT_MONTSERRAT_16
@@ -66,8 +74,6 @@ config MLEGO_WIDGET_STATUS
     select LV_FONT_MONTSERRAT_18
     select LV_USE_IMG
     select LV_USE_CANVAS
-    select ZMK_WPM
-    select LVGL_USE_ANIMATION
 
 config MLEGO_BONGO_CAT_IDLE_LIMIT
     int "Upper limit for WPM for showing idle animation"
