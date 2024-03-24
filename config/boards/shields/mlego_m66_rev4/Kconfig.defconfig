@@ -8,4 +8,75 @@ config ZMK_KEYBOARD_NAME
 
 config SPI
 	default y
-endif
+
+config ZMK_DISPLAY
+	select LV_USE_CONT
+	select LV_FONT_MONTSERRAT_26
+
+if ZMK_DISPLAY
+
+config SYSTEM_WORKQUEUE_STACK_SIZE
+    default 2048
+
+config LV_Z_MEM_POOL_SIZE
+     default 4096
+
+choice LV_FONT_DEFAULT
+    default LV_FONT_DEFAULT_MONTSERRAT_26
+
+endchoice
+
+choice ZMK_DISPLAY_WORK_QUEUE
+    default ZMK_DISPLAY_WORK_QUEUE_DEDICATED
+
+endchoice
+
+config ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE
+    default 2048
+
+choice ZMK_LV_FONT_DEFAULT_SMALL
+    default ZMK_LV_FONT_DEFAULT_SMALL_MONTSERRAT_26
+
+endchoice
+
+config LS0XX
+	default y
+
+config LV_Z_BITS_PER_PIXEL
+	default 1
+
+choice LV_COLOR_DEPTH
+	default LV_COLOR_DEPTH_1
+
+endchoice
+
+config LV_DPI_DEF
+	default 161
+
+config LV_Z_VDB_SIZE
+	default 100
+
+config ZMK_DISPLAY_STATUS_SCREEN_CUSTOM
+   imply MLEGO_WIDGET_STATUS
+
+config MLEGO_WIDGET_STATUS
+    bool "Custom mlego status widget"
+    select LV_FONT_MONTSERRAT_16
+    select LV_FONT_MONTSERRAT_14
+    select LV_FONT_MONTSERRAT_18
+    select LV_USE_IMG
+    select LV_USE_CANVAS
+    select ZMK_WPM
+    select LVGL_USE_ANIMATION
+
+config MLEGO_BONGO_CAT_IDLE_LIMIT
+    int "Upper limit for WPM for showing idle animation"
+    default 30
+
+config MLEGO_BONGO_CAT_SLOW_LIMIT
+    int "Upper limit for WPM for showing slow typing image"
+    default 60
+
+endif # ZMK_DISPLAY
+
+endif # MLEGO_M66_REV4
