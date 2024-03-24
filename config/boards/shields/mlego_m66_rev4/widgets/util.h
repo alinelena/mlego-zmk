@@ -9,26 +9,24 @@
 #include <zmk/endpoints.h>
 
 /*
-#define CANVAS_SIZE 64
-#define CANVAS_HEIGHT 68
-#define CANVAS_WIDTH 160
 ls013b7dh05 144x168
 ls013b7dh03 128x128
 ls011b7dh03 160x68
 
 */
 
-#define CANVAS_SIZE 64
-#define CANVAS_HEIGHT 68
-#define CANVAS_WIDTH 160
+#define CANVAS_SIZE 72
+#define CANVAS_HEIGHT 168
+#define CANVAS_WIDTH 144
+#define ROTATE 90
 /*
-// LS011B7DH03
+// LS011B7DH03 160x68
 #define CANVAS_HEIGHT 68
 #define CANVAS_WIDTH 160
-// ls013b7dh03
+// ls013b7dh03 128x128
 #define CANVAS_HEIGHT 128
 #define CANVAS_WIDTH 128
-// ls013b7dh05
+// ls013b7dh05 144x168
 #define CANVAS_HEIGHT 168
 #define CANVAS_WIDTH 144
 */
