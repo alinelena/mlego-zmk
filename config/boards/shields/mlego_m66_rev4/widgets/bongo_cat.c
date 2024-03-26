@@ -8,7 +8,6 @@
 #include <zmk/events/wpm_state_changed.h>
 
 #include "bongo_cat.h"
-
 #include <zephyr/logging/log.h>
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
@@ -51,7 +50,7 @@ const void* fast_images[] = {
 void set_img_src(void *var, int32_t val) {
     lv_obj_t *img = (lv_obj_t *)var;
     lv_img_set_src(img, images[val]);
-    lv_image_set_rotation(img,900);
+    lv_obj_align(img, LV_ALIGN_CENTER, -42, 0);
 }
 
 
@@ -97,13 +96,6 @@ void state_widget_wpm(struct mlego_bongo_cat_widget *widget, int wpm) {
 
 int mlego_bongo_cat_widget_init(struct mlego_bongo_cat_widget *widget, lv_obj_t *parent) {
     widget->obj = lv_img_create(parent);
-   /*
-    static lv_style_t style;
-    lv_style_init(&style);
-    lv_style_set_transform_angle(&style, 900);
-    lv_obj_add_style(widget->obj, &style, 0);
-    */
-    //lv_img_set_auto_size(widget->obj, true);
     state_widget_wpm(widget, 0);
 
     sys_slist_append(&widgets, &widget->node);
