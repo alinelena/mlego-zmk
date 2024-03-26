@@ -51,6 +51,7 @@ const void* fast_images[] = {
 void set_img_src(void *var, int32_t val) {
     lv_obj_t *img = (lv_obj_t *)var;
     lv_img_set_src(img, images[val]);
+    lv_image_set_rotation(img,900);
 }
 
 

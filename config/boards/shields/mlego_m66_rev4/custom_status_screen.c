@@ -30,10 +30,9 @@ lv_obj_t *zmk_display_status_screen() {
 
 #if IS_ENABLED(CONFIG_MLEGO_BONGO_CAT)
     lv_obj_t *bongo = lv_obj_create(screen);
-    lv_obj_align(bongo, LV_ALIGN_BOTTOM_LEFT, 0, 0);
-    lv_obj_center(bongo);
-
     mlego_bongo_cat_widget_init(&bongo_widget, bongo);
+    lv_obj_align(bongo, LV_ALIGN_BOTTOM_LEFT, (CANVAS_WIDTH-128)/2, 0);
+    lv_obj_center(bongo);
 #endif
     return screen;
 }
