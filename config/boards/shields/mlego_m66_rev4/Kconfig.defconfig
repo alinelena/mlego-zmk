@@ -15,7 +15,6 @@ config ZMK_DISPLAY
 
 if ZMK_DISPLAY
 
-
 config SYSTEM_WORKQUEUE_STACK_SIZE
     default 2048
 
@@ -33,7 +32,10 @@ choice ZMK_DISPLAY_WORK_QUEUE
 endchoice
 
 config ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE
-    default 2048
+    default 4096
+
+config ZMK_DISPLAY_DEDICATED_THREAD_PRIORITY
+    default 10
 
 choice ZMK_LV_FONT_DEFAULT_SMALL
     default ZMK_LV_FONT_DEFAULT_SMALL_MONTSERRAT_26
@@ -66,7 +68,6 @@ config MLEGO_BONGO_CAT
    select ZMK_WPM
    select LVGL_USE_ANIMATION
   
-
 config MLEGO_WIDGET_STATUS
     bool "Custom mlego status widget"
     select LV_FONT_MONTSERRAT_16
