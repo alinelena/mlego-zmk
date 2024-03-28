@@ -29,6 +29,8 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/wpm.h>
 #endif
 
+LV_IMG_DECLARE(cat_img);
+
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
 
 struct output_status_state {
@@ -344,6 +346,14 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     lv_obj_align(bottom, LV_ALIGN_TOP_LEFT,CANVAS_SIZE, 128);
     lv_canvas_set_buffer(bottom, widget->cbuf3, CANVAS_SIZE, CANVAS_SIZE, LV_IMG_CF_TRUE_COLOR);
 
+#if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT)
+    lv_obj_t *picture = lv_canvas_create(widget->obj);
+    lv_obj_align(picture, LV_ALIGN_BOTTOM_LEFT,0, 0);
+    lv_canvas_set_buffer(picture, widget->cbuf4, cat_img.header.w, cat_img.header.h, LV_IMG_CF_TRUE_COLOR);
+    lv_draw_img_dsc_t img_dsc;
+    lv_draw_img_dsc_init(&img_dsc);
+    lv_canvas_draw_img(picture, 0, 0, &cat_img, &img_dsc);
+#endif
     sys_slist_append(&widgets, &widget->node);
     widget_battery_status_init();
     widget_output_status_init();

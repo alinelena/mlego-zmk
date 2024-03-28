@@ -61,7 +61,7 @@ void state_widget_wpm(struct mlego_bongo_cat_widget *widget, int wpm) {
     LOG_DBG("Set source to idle images!");
             lv_anim_init(&widget->anim);
             lv_anim_set_var(&widget->anim, widget->obj);
-	    lv_anim_set_time(&widget->anim, 1000);
+	    lv_anim_set_time(&widget->anim, 200);
 	    lv_anim_set_values(&widget->anim, 0, 4);
 	    lv_anim_set_exec_cb(&widget->anim, set_img_src);
 	    lv_anim_set_repeat_count(&widget->anim, 10);
@@ -81,8 +81,8 @@ void state_widget_wpm(struct mlego_bongo_cat_widget *widget, int wpm) {
 	if (current_anim_state != anim_state_fast) {
      LOG_DBG("Set source to fast images!");
             lv_anim_init(&widget->anim);
-	    lv_anim_set_time(&widget->anim, 500);
-	    lv_anim_set_repeat_delay(&widget->anim, 500);
+	    lv_anim_set_time(&widget->anim, 200);
+	    lv_anim_set_repeat_delay(&widget->anim, 200);
             lv_anim_set_var(&widget->anim, widget->obj);
 	    lv_anim_set_values(&widget->anim, 0, 1);
 	    lv_anim_set_exec_cb(&widget->anim, set_img_src);

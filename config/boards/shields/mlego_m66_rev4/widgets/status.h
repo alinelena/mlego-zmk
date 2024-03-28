@@ -17,6 +17,9 @@ struct zmk_widget_status {
     lv_color_t cbuf[CANVAS_SIZE * CANVAS_SIZE];
     lv_color_t cbuf2[CANVAS_SIZE * CANVAS_SIZE];
     lv_color_t cbuf3[CANVAS_SIZE * CANVAS_SIZE];
+#if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT)
+    lv_color_t cbuf4[128 * 40];
+#endif
     struct status_state state;
 };
 
