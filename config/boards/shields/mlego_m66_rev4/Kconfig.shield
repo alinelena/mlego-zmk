@@ -1,5 +1,12 @@
-# Copyright (c) 2022 The ZMK Contributors
+# Copyright (c) 2022-2024 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-config  SHIELD_MLEGO_M66_REV4
-   def_bool $(shields_list_contains,mlego_m66_rev4)
+config  SHIELD_MLEGO_M66_REV4_LS013B7DH03
+   def_bool $(shields_list_contains,mlego_m66_rev4_ls013b7dh03)
+
+config  SHIELD_MLEGO_M66_REV4_LS013B7DH05
+   def_bool $(shields_list_contains,mlego_m66_rev4_ls013b7dh05)
+
+config  SHIELD_MLEGO_M66_REV4_LS011B7DH03
+   def_bool $(shields_list_contains,mlego_m66_rev4_ls011b7dh03)
+

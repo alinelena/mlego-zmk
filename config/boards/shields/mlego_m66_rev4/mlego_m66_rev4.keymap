@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/ext_power.h>
 
 #define  QW 0
 #define LWR 1
@@ -104,11 +105,11 @@ adj layer
 
         adjust_layer {
             bindings = <
-                &trans &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans      &trans &trans &trans &trans       &trans       &trans &trans
-                &trans &trans          &trans       &trans       &sys_reset   &trans       &trans      &trans &trans &trans &trans       &trans       &trans
-                &trans &trans          &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &trans       &trans       &trans
-                &trans &trans          &trans       &trans       &trans       &trans       &bootloader &trans &trans &trans &out OUT_USB &out OUT_BLE &out OUT_TOG 
-                &trans &trans          &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &bt BT_NXT   &bt BT_CLR   &bt BT_PRV   
+                &ext_power EP_TOG &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans      &trans &trans &trans &trans       &trans       &trans &trans
+                &ext_power EP_ON  &trans          &trans       &trans       &sys_reset   &trans       &trans      &trans &trans &trans &trans       &trans       &trans
+                &ext_power EP_OFF &trans          &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &trans       &trans       &trans
+                &trans            &trans          &trans       &trans       &trans       &trans       &bootloader &trans &trans &trans &out OUT_USB &out OUT_BLE &out OUT_TOG 
+                &trans            &trans          &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &bt BT_NXT   &bt BT_CLR   &bt BT_PRV   
             >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };

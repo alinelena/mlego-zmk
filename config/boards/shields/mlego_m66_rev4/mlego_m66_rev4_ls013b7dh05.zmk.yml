@@ -1,6 +1,6 @@
 file_format: "1"
-id: mlego_m66_rev4_
-name: mlego m6 rev4
+id: mlego_m66_rev4_ls013b7dh04
+name: mlego m6 rev4 sharp 144x168
 type: shield
 url: https://mlego.elena.re
 exposes:
@@ -9,3 +9,4 @@ features:
   - keys
   - encoder
   - ble
+  - display

@@ -348,7 +348,7 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
 
 #if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT)
     lv_obj_t *picture = lv_canvas_create(widget->obj);
-    lv_obj_align(picture, LV_ALIGN_BOTTOM_LEFT,0, 0);
+    lv_obj_align(picture, LV_ALIGN_BOTTOM_LEFT,24, -12);
     lv_canvas_set_buffer(picture, widget->cbuf4, cat_img.header.w, cat_img.header.h, LV_IMG_CF_TRUE_COLOR);
     lv_draw_img_dsc_t img_dsc;
     lv_draw_img_dsc_init(&img_dsc);
