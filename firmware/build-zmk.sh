@@ -23,8 +23,9 @@ shield="mlego_m66_rev4"
 shield="mlego_m66_rev4_ls011b7dh03"
 shield="mlego_m66_rev4_ls013b7dh03"
 shield="mlego_m66_rev4_ls013b7dh05"
+shield="mlego_m66_rev4_eink154"
 board="nice_nano_v2"
-build_folder="mlego_m66_rev4$SHIELD"
+build_folder="mlego_m66_rev4$shield"
 
 
 rm -rf $build_folder

@@ -1,0 +1,12 @@
+file_format: "1"
+id: mlego_m66_rev4_eink_154
+name: mlego m66 rev4_eink154
+type: shield
+url: https://mlego.elena.re
+exposes:
+  - i2c_encoder
+features:
+  - keys
+  - encoder
+  - ble
+  - display
