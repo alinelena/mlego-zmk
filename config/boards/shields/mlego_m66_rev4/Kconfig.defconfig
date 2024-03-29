@@ -4,10 +4,10 @@
 if SHIELD_MLEGO_M66_REV4 || SHIELD_MLEGO_M66_REV4_LS011B7DH03 || SHIELD_MLEGO_M66_REV4_LS013B7DH03 || SHIELD_MLEGO_M66_REV4_LS013B7DH05
 
 config ZMK_KEYBOARD_NAME
-    default "mlego m66 rev4 sharp 60x168" if SHIELD_MLEGO_M66_REV4_LS011B7DH03
-    default "mlego m66 rev4 sharp 128x128" if SHIELD_MLEGO_M66_REV4_LS013B7DH03
-    default "mlego m66 rev4 sharp 144x168" if SHIELD_MLEGO_M66_REV4_LS013B7DH05
-    default "mlego m66 rev4" 
+    default "mlego r4 60x168" if SHIELD_MLEGO_M66_REV4_LS011B7DH03
+    default "mlego r4 128x128" if SHIELD_MLEGO_M66_REV4_LS013B7DH03
+    default "mlego r4 144x168" if SHIELD_MLEGO_M66_REV4_LS013B7DH05
+    default "mlego m66 r4" 
 
 config SPI
 	default y

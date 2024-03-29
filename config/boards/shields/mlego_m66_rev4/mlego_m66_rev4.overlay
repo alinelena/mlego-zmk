@@ -13,7 +13,6 @@
    chosen {
      zmk,kscan = &kscan;
      zmk,matrix_transform = &m66;
-     zephyr,display = &mip_display;
      zephyr,console = &cdc_acm_uart;
    };
 
