@@ -127,8 +127,8 @@ board_spi: &spi0 {
     spi-max-frequency = <2000000>;
     disp-en-gpios =  <&pro_micro 9 GPIO_ACTIVE_HIGH>;
     reg = <0>;
-    width = <68>;
-    height = <160>;
+    width = <160>;
+    height = <68>;
   };
 
   shift_reg: 595@0 {

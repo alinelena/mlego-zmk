@@ -14,11 +14,11 @@
 struct zmk_widget_status {
     sys_snode_t node;
     lv_obj_t *obj;
-    lv_color_t cbuf[CANVAS_SIZE * CANVAS_SIZE];
-    lv_color_t cbuf2[CANVAS_SIZE * CANVAS_SIZE];
-    lv_color_t cbuf3[CANVAS_SIZE * CANVAS_SIZE];
-#if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT)
-    lv_color_t cbuf4[128 * 40];
+    lv_color_t cbuf1[CONFIG_MIP_CANVAS * CONFIG_MIP_CANVAS];
+    lv_color_t cbuf2[CONFIG_MIP_CANVAS * CONFIG_MIP_CANVAS];
+    lv_color_t cbuf3[CONFIG_MIP_CANVAS * CONFIG_MIP_CANVAS];
+#if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT) && CONFIG_MIP_HEIGHT>103
+    lv_color_t cbuf4[40 * 128];
 #endif
     struct status_state state;
 };

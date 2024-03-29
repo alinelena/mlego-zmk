@@ -13,13 +13,12 @@ ls013b7dh05 144x168
 ls013b7dh03 128x128
 ls011b7dh03 160x68
 
-*/
 
 #define CANVAS_SIZE 72
 #define CANVAS_HEIGHT 168
 #define CANVAS_WIDTH 144
-#define ROTATE 90
-/*
+#define ROTATE 900
+
 // LS011B7DH03 160x68
 #define CANVAS_HEIGHT 68
 #define CANVAS_WIDTH 160
@@ -56,7 +55,7 @@ struct battery_status_state {
 #endif
 };
 
-void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[]);
+void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[], int angle);
 void draw_battery(lv_obj_t *canvas, const struct status_state *state);
 void init_label_dsc(lv_draw_label_dsc_t *label_dsc, lv_color_t color, const lv_font_t *font,
                     lv_text_align_t align);

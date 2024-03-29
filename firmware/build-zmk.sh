@@ -19,11 +19,18 @@ shield="mlego5x13_rev8"
 #board="seeeduino_xiao_ble"
 #shield="mlego5x13_61_r8"
 
-shield="mlego_m66_rev4"
-shield="mlego_m66_rev4_ls011b7dh03"
-shield="mlego_m66_rev4_ls013b7dh03"
-shield="mlego_m66_rev4_ls013b7dh05"
-shield="mlego_m66_rev4_eink154"
+##shield="mlego_m66_rev4"
+#shield="mlego_m66_rev4_ls011b7dh03"
+#shield="mlego_m66_rev4_ls013b7dh03"
+#shield="mlego_m66_rev4_ls013b7dh05"
+#shield="mlego_m66_rev4_eink154"
+#for s in "" "_ls011b7dh03" "_ls013b7dh03" "_ls013b7dh05" "_eink154"; do
+# for s in "_eink154"; do
+#for s in "_eink213"; do
+for s in "_ls013b7dh05" ; do
+#for s in "_ls013b7dh03" ; do
+#for s in "_ls011b7dh03" ; do
+shield="mlego_m66_rev4$s"
 board="nice_nano_v2"
 build_folder="mlego_m66_rev4$shield"
 
@@ -31,6 +38,12 @@ build_folder="mlego_m66_rev4$shield"
 rm -rf $build_folder
 
 west build -d $build_folder -p always -b $board -- -DSHIELD=$shield -DZMK_CONFIG=$zmk_config
-set -x 
 [[ -f $build_folder/zephyr/zmk.uf2 ]] && cp $build_folder/zephyr/zmk.uf2 $l/$build_folder.uf2
-[[ -d /run/media/drFaustroll/NICENANO/ ]] && cp $l/$build_folder.uf2 /run/media/drFaustroll/NICENANO/
+done
+while [ ! -d /run/media/drFaustroll/NICENANO/ ]; do
+    sleep 1
+    echo -n "."
+done
+echo "done"
+set -x
+cp $l/$build_folder.uf2 /run/media/drFaustroll/NICENANO/

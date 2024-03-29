@@ -13,7 +13,7 @@
    chosen {
      zmk,kscan = &kscan;
      zmk,matrix_transform = &m66;
-     zephyr,display = &weact_154;
+     zephyr,display = &weact_213;
 
      zephyr,console = &cdc_acm_uart;
    };
@@ -122,12 +122,12 @@ board_spi: &spi0 {
   cs-gpios =  <&pro_micro 6 GPIO_ACTIVE_LOW>
             , <&pro_micro 10 GPIO_ACTIVE_LOW> ;
 
-	weact_154: ssd16xxfb@0 {
-		compatible = "gooddisplay,gdeh0154a07", "solomon,ssd1681";
+	weact_213: ssd16xxfb@0 {
+		compatible = "solomon,ssd1680";
 		spi-max-frequency = <4000000>;
 		reg = <0>;
-		width = <200>;
-		height = <200>;
+		width = <250>;
+		height = <122>;
 		dc-gpios = <&pro_micro 7 GPIO_ACTIVE_LOW>;
 		reset-gpios = <&pro_micro 8 GPIO_ACTIVE_LOW>;
 		busy-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;

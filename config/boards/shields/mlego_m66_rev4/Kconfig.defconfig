@@ -1,13 +1,14 @@
 # Copyright (c) 2022-2024 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_MLEGO_M66_REV4 || SHIELD_MLEGO_M66_REV4_LS011B7DH03 || SHIELD_MLEGO_M66_REV4_LS013B7DH03 || SHIELD_MLEGO_M66_REV4_LS013B7DH05 || SHIELD_MLEGO_M66_REV4_EINK154
+if SHIELD_MLEGO_M66_REV4 || SHIELD_MLEGO_M66_REV4_LS011B7DH03 || SHIELD_MLEGO_M66_REV4_LS013B7DH03 || SHIELD_MLEGO_M66_REV4_LS013B7DH05 || SHIELD_MLEGO_M66_REV4_EINK154 || SHIELD_MLEGO_M66_REV4_EINK213
 
 config ZMK_KEYBOARD_NAME
     default "mlego r4 60x168" if SHIELD_MLEGO_M66_REV4_LS011B7DH03
     default "mlego r4 128x128" if SHIELD_MLEGO_M66_REV4_LS013B7DH03
     default "mlego r4 144x168" if SHIELD_MLEGO_M66_REV4_LS013B7DH05
     default "mlego r4 eink154" if SHIELD_MLEGO_M66_REV4_EINK154
+    default "mlego r4 eink213" if SHIELD_MLEGO_M66_REV4_EINK213
     default "mlego m66 r4" 
 
 config SPI
@@ -61,7 +62,11 @@ choice LV_COLOR_DEPTH
 endchoice
 
 config LV_DPI_DEF
-	default 161
+	default 161 if SHIELD_MLEGO_M66_REV4_EINK154
+	default 161 if SHIELD_MLEGO_M66_REV4_EINK213
+	default 161 if SHIELD_MLEGO_M66_REV4_LS011B7DH03
+  default 142 if SHIELD_MLEGO_M66_REV4_LS013B7DH03
+  default 161 
 
 config LV_Z_VDB_SIZE
 	default 100
@@ -90,6 +95,23 @@ config MLEGO_BONGO_CAT_IDLE_LIMIT
 config MLEGO_BONGO_CAT_SLOW_LIMIT
     int "Upper limit for WPM for showing slow typing image"
     default 60
+
+config MIP_WIDTH
+   int "width of the mip, sharp, memory display"
+   default 160
+
+config MIP_HEIGHT
+   int "height of the mip, sharp, memory display"
+   default 68
+
+config MIP_CANVAS
+   int "canvas size of the mip, sharp, memory display"
+   default 68
+
+config MIP_ROTATE
+   int "angle to rotate elements in screen mip, sharp, memory display in units of 0.1"
+   default 0
+
 
 endif # ZMK_DISPLAY
 

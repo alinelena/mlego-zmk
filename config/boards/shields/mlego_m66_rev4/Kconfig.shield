@@ -13,6 +13,8 @@ config  SHIELD_MLEGO_M66_REV4_LS013B7DH05
 config  SHIELD_MLEGO_M66_REV4_LS011B7DH03
    def_bool $(shields_list_contains,mlego_m66_rev4_ls011b7dh03)
 
-
 config  SHIELD_MLEGO_M66_REV4_EINK154
    def_bool $(shields_list_contains,mlego_m66_rev4_eink154)
+
+config  SHIELD_MLEGO_M66_REV4_EINK213
+   def_bool $(shields_list_contains,mlego_m66_rev4_eink213)
