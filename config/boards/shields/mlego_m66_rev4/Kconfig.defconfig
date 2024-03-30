@@ -99,19 +99,19 @@ config MLEGO_BONGO_CAT_SLOW_LIMIT
     int "Upper limit for WPM for showing slow typing image"
     default 60
 
-config MIP_WIDTH
+config DISP_WIDTH
    int "width of the mip, sharp, memory display"
    default 160
 
-config MIP_HEIGHT
+config DISP_HEIGHT
    int "height of the mip, sharp, memory display"
    default 68
 
-config MIP_CANVAS
+config DISP_CANVAS
    int "canvas size of the mip, sharp, memory display"
    default 68
 
-config MIP_ROTATE
+config DISP_ROTATE
    int "angle to rotate elements in screen mip, sharp, memory display in units of 0.1"
    default 0
 

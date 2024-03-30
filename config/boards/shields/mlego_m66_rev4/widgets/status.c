@@ -29,7 +29,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/wpm.h>
 #endif
 
-#if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT) && CONFIG_MIP_HEIGHT>103
+#if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT) && CONFIG_DISP_HEIGHT>103
 LV_IMG_DECLARE(elep);
 #endif
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
@@ -52,22 +52,22 @@ struct wpm_status_state {
 };
 #endif
 
-#if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT) && CONFIG_MIP_HEIGHT>103
+#if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT) && CONFIG_DISP_HEIGHT>103
 static void draw_image(lv_obj_t *widget, lv_color_t cbuf[]){
     lv_obj_t *canvas = lv_obj_get_child(widget, 3);
 
     //lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
-#if CONFIG_MIP_ROTATE == 900
-    lv_canvas_transform(canvas, &elep , CONFIG_MIP_ROTATE, LV_IMG_ZOOM_NONE, -45 , 44, elep.header.w/2,
+#if CONFIG_DISP_ROTATE == 900
+    lv_canvas_transform(canvas, &elep , CONFIG_DISP_ROTATE, LV_IMG_ZOOM_NONE, -45 , 44, elep.header.w/2,
                         elep.header.h/2, true);
 #endif
-#if CONFIG_MIP_ROTATE == 1800
-    lv_canvas_transform(canvas, &elep , CONFIG_MIP_ROTATE, LV_IMG_ZOOM_NONE, -1 , -1, elep.header.w/2,
+#if CONFIG_DISP_ROTATE == 1800
+    lv_canvas_transform(canvas, &elep , CONFIG_DISP_ROTATE, LV_IMG_ZOOM_NONE, -1 , -1, elep.header.w/2,
                         elep.header.h/2, true);
 #endif
 
-#if CONFIG_MIP_ROTATE == 2700
-    lv_canvas_transform(canvas, &elep , CONFIG_MIP_ROTATE, LV_IMG_ZOOM_NONE, -44 , 43, elep.header.w/2,
+#if CONFIG_DISP_ROTATE == 2700
+    lv_canvas_transform(canvas, &elep , CONFIG_DISP_ROTATE, LV_IMG_ZOOM_NONE, -44 , 43, elep.header.w/2,
                         elep.header.h/2, true);
 #endif
 }
@@ -88,14 +88,14 @@ static void draw_top(lv_obj_t *widget, lv_color_t cbuf[], const struct status_st
     init_line_dsc(&line_dsc, LVGL_FOREGROUND, 1);
 
     // Fill background
-    lv_canvas_draw_rect(canvas, 0, 0, CONFIG_MIP_CANVAS, CONFIG_MIP_CANVAS, &rect_black_dsc);
+    lv_canvas_draw_rect(canvas, 0, 0, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, &rect_black_dsc);
 
 
     // Draw battery
     draw_battery(canvas, state);
     char percentage[5] = {};
     snprintf(percentage, sizeof(percentage), "%3u%%", state->battery);
-    lv_canvas_draw_text(canvas, 0, 20, CONFIG_MIP_CANVAS-18, &label_dsc, percentage);
+    lv_canvas_draw_text(canvas, 0, 20, CONFIG_DISP_CANVAS-18, &label_dsc, percentage);
 
     // Draw output status
     char output_text[10] = {};
@@ -153,7 +153,7 @@ static void draw_top(lv_obj_t *widget, lv_color_t cbuf[], const struct status_st
 #endif
 
     // Rotate canvas
-    rotate_canvas(canvas, cbuf, CONFIG_MIP_ROTATE);
+    rotate_canvas(canvas, cbuf, CONFIG_DISP_ROTATE);
 }
 
 static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status_state *state) {
@@ -173,7 +173,7 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
     init_label_dsc(&label_dsc_black, LVGL_BACKGROUND, &lv_font_montserrat_18, LV_TEXT_ALIGN_CENTER);
 
     // Fill background
-    lv_canvas_draw_rect(canvas, 0, 0, CONFIG_MIP_CANVAS, CONFIG_MIP_CANVAS, &rect_black_dsc);
+    lv_canvas_draw_rect(canvas, 0, 0, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, &rect_black_dsc);
 
     // Draw circles
     int circle_offsets[5][2] = {
@@ -198,7 +198,7 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
     }
 
     // Rotate canvas
-    rotate_canvas(canvas, cbuf,CONFIG_MIP_ROTATE);
+    rotate_canvas(canvas, cbuf,CONFIG_DISP_ROTATE);
 }
 
 
@@ -211,7 +211,7 @@ static void draw_bottom(lv_obj_t *widget, lv_color_t cbuf[], const struct status
     init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_18, LV_TEXT_ALIGN_CENTER);
 
     // Fill background
-    lv_canvas_draw_rect(canvas, 0, 0, CONFIG_MIP_CANVAS, CONFIG_MIP_CANVAS, &rect_black_dsc);
+    lv_canvas_draw_rect(canvas, 0, 0, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, &rect_black_dsc);
 
     char keyb[10] = {};
     strcat(keyb, LV_SYMBOL_KEYBOARD);
@@ -229,7 +229,7 @@ static void draw_bottom(lv_obj_t *widget, lv_color_t cbuf[], const struct status
     }
 
     // Rotate canvas
-    rotate_canvas(canvas, cbuf,CONFIG_MIP_ROTATE);
+    rotate_canvas(canvas, cbuf,CONFIG_DISP_ROTATE);
 }
 
 static void set_battery_status(struct zmk_widget_status *widget,
@@ -352,56 +352,56 @@ ZMK_SUBSCRIPTION(widget_wpm_status, zmk_wpm_state_changed);
 
 int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     widget->obj = lv_obj_create(parent);
-    lv_obj_set_size(widget->obj, CONFIG_MIP_WIDTH, CONFIG_MIP_HEIGHT);
+    lv_obj_set_size(widget->obj, CONFIG_DISP_WIDTH, CONFIG_DISP_HEIGHT);
 
     lv_obj_t *top = lv_canvas_create(widget->obj);
-#if CONFIG_MIP_ROTATE == 900
+#if CONFIG_DISP_ROTATE == 900
     lv_obj_align(top, LV_ALIGN_TOP_RIGHT, 0, 0);
 #endif
-#if CONFIG_MIP_ROTATE == 2700
+#if CONFIG_DISP_ROTATE == 2700
     lv_obj_align(top, LV_ALIGN_BOTTOM_LEFT, 0, 0);
 #endif
-#if CONFIG_MIP_ROTATE == 1800
+#if CONFIG_DISP_ROTATE == 1800
     lv_obj_align(top, LV_ALIGN_BOTTOM_RIGHT, 0, 0);
 #endif
-    lv_canvas_set_buffer(top, widget->cbuf1, CONFIG_MIP_CANVAS, CONFIG_MIP_CANVAS, LV_IMG_CF_TRUE_COLOR);
+    lv_canvas_set_buffer(top, widget->cbuf1, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, LV_IMG_CF_TRUE_COLOR);
 
     lv_obj_t *middle = lv_canvas_create(widget->obj);
-#if CONFIG_MIP_ROTATE == 900
-    lv_obj_align(middle, LV_ALIGN_TOP_LEFT, CONFIG_MIP_CANVAS,CONFIG_MIP_CANVAS);
+#if CONFIG_DISP_ROTATE == 900
+    lv_obj_align(middle, LV_ALIGN_TOP_LEFT, CONFIG_DISP_CANVAS,CONFIG_DISP_CANVAS);
 #endif
-#if CONFIG_MIP_ROTATE == 2700
+#if CONFIG_DISP_ROTATE == 2700
     lv_obj_align(middle, LV_ALIGN_BOTTOM_LEFT, 0,-48);
 #endif
-#if CONFIG_MIP_ROTATE == 1800
-    lv_obj_align(middle, LV_ALIGN_BOTTOM_RIGHT, -CONFIG_MIP_CANVAS , 0);
+#if CONFIG_DISP_ROTATE == 1800
+    lv_obj_align(middle, LV_ALIGN_BOTTOM_RIGHT, -CONFIG_DISP_CANVAS , 0);
 #endif
-    lv_canvas_set_buffer(middle, widget->cbuf2, CONFIG_MIP_CANVAS, CONFIG_MIP_CANVAS, LV_IMG_CF_TRUE_COLOR);
+    lv_canvas_set_buffer(middle, widget->cbuf2, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, LV_IMG_CF_TRUE_COLOR);
 
     lv_obj_t *bottom = lv_canvas_create(widget->obj);
-#if CONFIG_MIP_ROTATE == 900
-    lv_obj_align(bottom, LV_ALIGN_TOP_LEFT,CONFIG_MIP_CANVAS, CONFIG_MIP_CANVAS*2);
+#if CONFIG_DISP_ROTATE == 900
+    lv_obj_align(bottom, LV_ALIGN_TOP_LEFT,CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS*2);
 #endif
-#if CONFIG_MIP_ROTATE == 1800
-    lv_obj_align(bottom, LV_ALIGN_BOTTOM_RIGHT,-2*CONFIG_MIP_CANVAS,0);
+#if CONFIG_DISP_ROTATE == 1800
+    lv_obj_align(bottom, LV_ALIGN_BOTTOM_RIGHT,-2*CONFIG_DISP_CANVAS,0);
 #endif
-#if CONFIG_MIP_ROTATE == 2700
+#if CONFIG_DISP_ROTATE == 2700
     lv_obj_align(bottom, LV_ALIGN_BOTTOM_LEFT,0, -100);
 #endif
-    lv_canvas_set_buffer(bottom, widget->cbuf3, CONFIG_MIP_CANVAS, CONFIG_MIP_CANVAS, LV_IMG_CF_TRUE_COLOR);
+    lv_canvas_set_buffer(bottom, widget->cbuf3, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, LV_IMG_CF_TRUE_COLOR);
 
-#if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT) && CONFIG_MIP_HEIGHT>103
+#if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT) && CONFIG_DISP_HEIGHT>103
     lv_obj_t *picture = lv_canvas_create(widget->obj);
 
-#if CONFIG_MIP_ROTATE == 900 || CONFIG_MIP_ROTATE == 2700
+#if CONFIG_DISP_ROTATE == 900 || CONFIG_DISP_ROTATE == 2700
     lv_canvas_set_buffer(picture, widget->cbuf4, elep.header.h, elep.header.w, LV_IMG_CF_TRUE_COLOR);
-#if CONFIG_MIP_ROTATE == 900
+#if CONFIG_DISP_ROTATE == 900
     lv_obj_align(picture,LV_ALIGN_CENTER,-30,0);
 #else
     lv_obj_align(picture,LV_ALIGN_CENTER,30,0);
 #endif
 #endif
-#if CONFIG_MIP_ROTATE == 1800
+#if CONFIG_DISP_ROTATE == 1800
     lv_canvas_set_buffer(picture, widget->cbuf4, elep.header.w, elep.header.h, LV_IMG_CF_TRUE_COLOR);
     lv_obj_align(picture,LV_ALIGN_CENTER,0,-20);
 #endif

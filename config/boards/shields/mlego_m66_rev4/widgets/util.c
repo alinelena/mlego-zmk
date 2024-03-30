@@ -12,17 +12,17 @@ LV_IMG_DECLARE(bolt);
 
 void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[], int angle) {
 
-    static lv_color_t cbuf_tmp[CONFIG_MIP_CANVAS * CONFIG_MIP_CANVAS];
+    static lv_color_t cbuf_tmp[CONFIG_DISP_CANVAS * CONFIG_DISP_CANVAS];
     memcpy(cbuf_tmp, cbuf, sizeof(cbuf_tmp));
     lv_img_dsc_t img;
     img.data = (void *)cbuf_tmp;
     img.header.cf = LV_IMG_CF_TRUE_COLOR;
-    img.header.w = CONFIG_MIP_CANVAS;
-    img.header.h = CONFIG_MIP_CANVAS;
+    img.header.w = CONFIG_DISP_CANVAS;
+    img.header.h = CONFIG_DISP_CANVAS;
 
     lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
-    lv_canvas_transform(canvas, &img, angle, LV_IMG_ZOOM_NONE, -1, 0, CONFIG_MIP_CANVAS / 2,
-                        CONFIG_MIP_CANVAS / 2, true);
+    lv_canvas_transform(canvas, &img, angle, LV_IMG_ZOOM_NONE, -1, 0, CONFIG_DISP_CANVAS / 2,
+                        CONFIG_DISP_CANVAS / 2, true);
 }
 
 void draw_battery(lv_obj_t *canvas, const struct status_state *state) {
