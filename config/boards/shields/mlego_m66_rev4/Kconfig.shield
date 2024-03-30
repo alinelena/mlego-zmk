@@ -4,8 +4,12 @@
 config  SHIELD_MLEGO_M66_REV4
    def_bool $(shields_list_contains,mlego_m66_rev4)
 
-config  SHIELD_MLEGO_M66_REV4_LS013B7DH03
-   def_bool $(shields_list_contains,mlego_m66_rev4_ls013b7dh03)
+config  SHIELD_MLEGO_M66_REV4_RP2040
+   def_bool $(shields_list_contains,mlego_m66_rev4_rp2040)
+
+
+config  SHIELD_LS013B7DH03
+   def_bool $(shields_list_contains,ls013b7dh03)
 
 config  SHIELD_LS013B7DH05
    def_bool $(shields_list_contains,ls013b7dh05)
@@ -13,8 +17,8 @@ config  SHIELD_LS013B7DH05
 config  SHIELD_LS011B7DH03
    def_bool $(shields_list_contains,ls011b7dh03)
 
-config  SHIELD_MLEGO_M66_REV4_EINK154
-   def_bool $(shields_list_contains,mlego_m66_rev4_eink154)
+config  SHIELD_WEACT_EINK_154
+   def_bool $(shields_list_contains,weact_eink_154)
 
-config  SHIELD_MLEGO_M66_REV4_EINK213
-   def_bool $(shields_list_contains,mlego_m66_rev4_eink213)
+config  SHIELD_WEACT_EINK_213
+   def_bool $(shields_list_contains,weact_eink_213)

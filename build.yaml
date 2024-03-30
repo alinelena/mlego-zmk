@@ -41,6 +41,8 @@ include:
     shield: mlego_m66_rev4 weact_eink_213 
   - board: nice_nano_v2
     shield: mlego_m66_rev4 weact_eink_154 
+  - board: rpi_pico
+    shield: mlego_m66_rev4_rp2040 
   - board: nice_nano_v2
     shield: settings_reset
   - board: nice_nano_v2
