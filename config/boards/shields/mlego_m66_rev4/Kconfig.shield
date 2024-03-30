@@ -9,7 +9,7 @@ config  SHIELD_MLEGO_M66_REV4_RP2040
 
 
 config  SHIELD_LS013B7DH03
-   def_bool $(shields_list_contains,ls013b7dh03)
+   def_bool $(shields_list_contains,ls013b7dh03s)
 
 config  SHIELD_LS013B7DH05
    def_bool $(shields_list_contains,ls013b7dh05)

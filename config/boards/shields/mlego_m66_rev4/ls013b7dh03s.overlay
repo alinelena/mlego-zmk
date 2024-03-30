@@ -6,8 +6,6 @@
 / {
    model = "mlego m66, rev4,ls013b7dh03";
 
-   compatible = "mlego", "nice-nano-v2";
-
    chosen {
      zephyr,display = &mip_display;
    };
