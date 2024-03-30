@@ -4,14 +4,13 @@
  */
 
 / {
-   model = "mlego m66, rev4,ls013b7dh05";
+   model = "mlego m66, rev4,ls013b7dh03";
 
    compatible = "mlego", "nice-nano-v2";
 
    chosen {
      zephyr,display = &mip_display;
    };
-
 };
 
 board_spi: &spi0 {
@@ -30,8 +29,8 @@ board_spi: &spi0 {
     spi-max-frequency = <2000000>;
     disp-en-gpios =  <&pro_micro 9 GPIO_ACTIVE_HIGH>;
     reg = <0>;
-    width = <144>;
-    height = <168>;
+    width = <128>;
+    height = <128>;
   };
 
   shift_reg: 595@0 {

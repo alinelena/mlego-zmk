@@ -1,12 +1,7 @@
 file_format: "1"
-id: mlego_m66_rev4_ls013b7dh03
+id: ls013b7dh03
 name: mlego m6 rev4 sharp 128x128
 type: shield
 url: https://mlego.elena.re
-exposes:
-  - i2c_encoder
 features:
-  - keys
-  - encoder
-  - ble
   - display
