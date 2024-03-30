@@ -8,7 +8,7 @@
 / {
    model = "mlego m66, rev4";
 
-   compatible = "mlego", "nice-nano-v2";
+   //compatible = "nice-nano-v2";
 
    chosen {
      zmk,kscan = &kscan;
