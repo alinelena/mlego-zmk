@@ -14,6 +14,9 @@ config ZMK_KEYBOARD_NAME
 config SPI
 	default y
 
+config ZMK_SLEEP
+  default y 
+
 config ZMK_DISPLAY
 	select LV_USE_CONT
 	select LV_FONT_MONTSERRAT_26

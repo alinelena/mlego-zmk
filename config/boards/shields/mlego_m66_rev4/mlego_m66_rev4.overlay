@@ -45,6 +45,7 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3)  RC(4,4) RC(4,5) RC(4,6) RC(4,7)  RC(4,8) RC(4,9
    kscan: kscan {
      compatible = "zmk,kscan-gpio-matrix";
      diode-direction = "col2row";
+     wakeup-source;
      col-gpios =   <&shift_reg 2  (GPIO_ACTIVE_HIGH)>
                  , <&shift_reg 9  (GPIO_ACTIVE_HIGH)>
                  , <&shift_reg 10 (GPIO_ACTIVE_HIGH)>
