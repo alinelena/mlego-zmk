@@ -2,7 +2,7 @@
  * Copyright (c) 2022-2024 alin m elena
  * SPDX-License-Identifier: MIT
  */
-
+#include <dt-bindings/pinctrl/rpi-pico-rp2040-pinctrl.h>
 #include <dt-bindings/zmk/matrix_transform.h>
 
 / {
@@ -10,7 +10,7 @@
    chosen {
      zmk,kscan = &kscan;
      zmk,matrix_transform = &m66;
-     zephyr,console = &cdc_acm_uart;
+//     zephyr,console = &cdc_acm_uart;
    };
 
       m66: m66_0 {
@@ -115,10 +115,11 @@ board_spi: &spi0 {
     ngpios = <16>;
   };
 };
-
+/*
 &usbd {
     status = "okay";
     cdc_acm_uart: cdc_acm_uart {
         compatible = "zephyr,cdc-acm-uart";
     };
 };
+*/
