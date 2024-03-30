@@ -14,8 +14,6 @@ config ZMK_KEYBOARD_NAME
 config SPI
 	default y
 
-config ZMK_SLEEP
-  default y 
 
 config ZMK_DISPLAY
 	select LV_USE_CONT
