@@ -24,10 +24,10 @@ shield="mlego5x13_rev8"
 #shield="mlego_m66_rev4_ls013b7dh03"
 #shield="mlego_m66_rev4_ls013b7dh05"
 #shield="mlego_m66_rev4_eink154"
-#for s in "" "_ls011b7dh03" "_ls013b7dh03" "_ls013b7dh05" "_eink154"; do
+for s in "" "_ls011b7dh03" "_ls013b7dh03" "_ls013b7dh05" "_eink154" "_eink213"; do
 # for s in "_eink154"; do
 #for s in "_eink213"; do
-for s in "_ls013b7dh05" ; do
+#for s in "_ls013b7dh05" ; do
 #for s in "_ls013b7dh03" ; do
 #for s in "_ls011b7dh03" ; do
 shield="mlego_m66_rev4$s"
