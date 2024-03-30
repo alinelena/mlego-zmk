@@ -32,13 +32,13 @@ for s in "ls013b7dh05" ; do
 #for s in "_ls011b7dh03" ; do
 shield="mlego_m66_rev4 $s"
 board="nice_nano_v2"
-build_folder="mlego_m66_rev4$shield"
+build_folder="mlego_m66_rev4${shield/ /_}"
 
 
-rm -rf $build_folder
+rm -rf "$build_folder"
 
-west build -d $build_folder -p always -b $board -- -DSHIELD="$shield" -DZMK_CONFIG=$zmk_config
-[[ -f $build_folder/zephyr/zmk.uf2 ]] && cp $build_folder/zephyr/zmk.uf2 $l/$build_folder.uf2
+west build -d "$build_folder" -p always -b $board -- -DSHIELD="$shield" -DZMK_CONFIG=$zmk_config
+[[ -f "$build_folder/zephyr/zmk.uf2" ]] && cp "$build_folder/zephyr/zmk.uf2" "$l/$build_folder.uf2"
 done
 while [ ! -d /run/media/drFaustroll/NICENANO/ ]; do
     sleep 1
@@ -46,4 +46,4 @@ while [ ! -d /run/media/drFaustroll/NICENANO/ ]; do
 done
 echo "done"
 set -x
-cp $l/$build_folder.uf2 /run/media/drFaustroll/NICENANO/
+cp "$l/$build_folder.uf2" /run/media/drFaustroll/NICENANO/
