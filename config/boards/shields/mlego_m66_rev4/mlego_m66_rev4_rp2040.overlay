@@ -87,19 +87,19 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3)  RC(4,4) RC(4,5) RC(4,6) RC(4,7)  RC(4,8) RC(4,9
 &i2c0 {
     status = "disabled";
 };
-/*
+
 &pinctrl {
-   spi0_default: spi0_default {
+  spi0_default: spi0_default {
                         group1 {
-                                  pinmux = <0x111 >, <0x121 >, <0x131>;
+                                  pinmux = <SPI0_CSN_P21>, <SPI0_SCK_P22>, <SPI0_TX_P23>;
                         };
                         group2 {
-                                pinmux = < 0x101 >;
+                                pinmux = <SPI0_RX_P20>;
                                 input-enable;
                         };
                 };
 };
-*/
+
 board_spi: &spi0 {
   status = "okay";
   pinctrl-0 = < &spi0_default >;

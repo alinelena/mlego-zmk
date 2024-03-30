@@ -45,6 +45,8 @@ include:
     shield: mlego_m66_rev4_rp2040 
   - board: nice_nano_v2
     shield: settings_reset
+  - board: rpi_pico
+    shield: settings_reset
   - board: nice_nano_v2
     shield: onekey
   - board: seeeduino_xiao_ble
