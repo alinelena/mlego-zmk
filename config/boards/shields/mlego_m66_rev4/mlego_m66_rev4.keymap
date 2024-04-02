@@ -8,8 +8,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/bt.h>
+/*
 #include <dt-bindings/zmk/ext_power.h>
-
+*/
 #define  QW 0
 #define LWR 1
 #define RSE 2
@@ -67,7 +68,7 @@
             >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
-        raise_layer {
+        lower_layer {
             bindings = <
                 &kp GRAVE &kp K_MUTE &kp K_VOL_UP &kp K_VOL_DN &kp K_PREV &kp K_PP &kp K_NEXT &kp LG(P)   &kp K_SLEEP &kp K_COFFEE &kp PSCRN &kp DEL &kp EQUAL &trans
                 &trans    &trans     &trans       &trans       &trans     &trans   &trans     &trans      &trans      &trans       &trans    &trans  &trans
@@ -77,7 +78,7 @@
             >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
-        lower_layer {
+        raise_layer {
             bindings = <
                 &kp ESC  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10 &kp F11 &kp F12 &trans
                 &trans   &kp F13 &kp F14 &kp F15 &kp F16 &kp F17 &kp F18 &kp F19 &kp F20 &kp F21 &kp F22 &kp F23 &kp F24
@@ -105,11 +106,11 @@ adj layer
 
         adjust_layer {
             bindings = <
-                &ext_power EP_TOG &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans      &trans &trans &trans &trans       &trans       &trans &trans
-                &ext_power EP_ON  &trans          &trans       &trans       &sys_reset   &trans       &trans      &trans &trans &trans &trans       &trans       &trans
-                &ext_power EP_OFF &trans          &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &trans       &trans       &trans
-                &trans            &trans          &trans       &trans       &trans       &trans       &bootloader &trans &trans &trans &out OUT_USB &out OUT_BLE &out OUT_TOG 
-                &trans            &trans          &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &bt BT_NXT   &bt BT_CLR   &bt BT_PRV   
+                &trans  &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans      &trans &trans &trans &trans       &trans       &trans &trans
+                &trans  &trans          &trans       &trans       &sys_reset   &trans       &trans      &trans &trans &trans &trans       &trans       &trans
+                &trans  &trans          &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &trans       &trans       &trans
+                &trans  &trans          &trans       &trans       &trans       &trans       &bootloader &trans &trans &trans &out OUT_USB &out OUT_BLE &out OUT_TOG 
+                &trans  &trans          &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &bt BT_NXT   &bt BT_CLR   &bt BT_PRV   
             >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };

@@ -118,7 +118,6 @@ board_spi: &spi0 {
   pinctrl-1 = <&spi0_sleep>;
   pinctrl-names = "default", "sleep";
   wakeup-source; 
-
   cs-gpios = <&pro_micro 10 GPIO_ACTIVE_LOW> ;
 
   shift_reg: 595@0 {
