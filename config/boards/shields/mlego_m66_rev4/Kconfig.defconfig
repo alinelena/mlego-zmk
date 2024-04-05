@@ -1,7 +1,7 @@
 # Copyright (c) 2022-2024 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-if SHIELD_MLEGO_M66_REV4 || SHIELD_LS011B7DH03 || SHIELD_LS013B7DH03 || SHIELD_LS013B7DH05 || SHIELD_WEACT_EINK_154 || SHIELD_WEACT_EINK_213 || SHIELD_MLEGO_M66_REV4_RP2040
+if SHIELD_MLEGO_M66_REV4 || SHIELD_ST7735 || SHIELD_LS011B7DH03 || SHIELD_LS013B7DH03 || SHIELD_LS013B7DH05 || SHIELD_WEACT_EINK_154 || SHIELD_WEACT_EINK_213 || SHIELD_MLEGO_M66_REV4_RP2040
 
 config ZMK_KEYBOARD_NAME
     default "mlego r4 60x168" if SHIELD_LS011B7DH03
@@ -10,6 +10,7 @@ config ZMK_KEYBOARD_NAME
     default "mlego r4 eink154" if SHIELD_WEACT_EINK_154
     default "mlego r4 eink213" if SHIELD_WEACT_EINK_213
     default "mlego r4 rp2040" if SHIELD_MLEGO_M66_REV4_RP2040
+    default "mlego r4 st7735" if SHIELD_ST7735
     default "mlego m66 r4" 
 
 config SPI
@@ -52,7 +53,11 @@ config LS0XX
 	default y if SHIELD_LS011B7DH03
 	default y if SHIELD_LS013B7DH03
 	default y if SHIELD_LS013B7DH05
-  default n 
+  default n
+
+config ST7735R
+  default y if SHIELD_ST7735
+  default n  
 
 config LV_Z_BITS_PER_PIXEL
 	default 1

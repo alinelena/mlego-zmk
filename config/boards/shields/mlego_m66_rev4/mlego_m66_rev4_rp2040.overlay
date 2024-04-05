@@ -59,10 +59,10 @@ RC(4,0) RC(4,1) RC(4,2) RC(4,3)  RC(4,4) RC(4,5) RC(4,6) RC(4,7)  RC(4,8) RC(4,9
                  , <&shift_reg 1  (GPIO_ACTIVE_HIGH)>
                  ;
      row-gpios =   <&gpio0 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-                 , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-                 , <&gpio0 17 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-                 , <&gpio0 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
-                 , <&gpio0 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                 , <&gpio0 26 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                 , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                 , <&gpio0 28 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                 , <&gpio0 27 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
                  ;
    };
 

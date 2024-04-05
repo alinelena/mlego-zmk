@@ -123,6 +123,7 @@ board_spi: &spi0 {
   shift_reg: 595@0 {
     compatible = "zmk,gpio-595";
     status = "okay";
+    wakeup-source; 
     gpio-controller;
     spi-max-frequency = <2000000>;
     #gpio-cells = <2>;

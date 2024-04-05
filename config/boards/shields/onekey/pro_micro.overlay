@@ -1,0 +1,19 @@
+/*
+ * Copyright (c) 2022-2023 alin m elena
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+   kscan: kscan {
+     compatible = "zmk,kscan-gpio-matrix";
+     label = "kscan";
+     diode-direction = "col2row";
+     col-gpios =  <&pro_micro 18 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                 ;
+     row-gpios =   <&pro_micro 0  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>
+                 ;
+   };
+
+};

@@ -20,8 +20,8 @@
 
    kscan: kscan {
      compatible = "zmk,kscan-gpio-matrix";
-     label = "kscan";
      diode-direction = "col2row";
+     wakeup-source; 
      col-gpios = <&sr_sipo 1 (GPIO_ACTIVE_HIGH)>
                  , <&sr_sipo 2 (GPIO_ACTIVE_HIGH)>
                  , <&sr_sipo 3 (GPIO_ACTIVE_HIGH)>
@@ -47,14 +47,14 @@
 
    mlego_encoder: mlego_encoder {
      compatible = "alps,ec11";
-     label = "mlego encoder";
      a-gpios = <&xiao_d 1(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
      b-gpios = <&xiao_d 0(GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-     resolution = <4>;
+     steps = <80>;
    };
    sensors {
      compatible = "zmk,keymap-sensors";
      sensors = <&mlego_encoder>;
+     triggers-per-rotation = <20>;
    };
 };
 
@@ -65,7 +65,7 @@
 &xiao_spi {
   status = "okay";
 
-  cs-gpios = <&xiao_d 7 GPIO_ACTIVE_LOW>, <&xiao_d 6 GPIO_ACTIVE_HIGH>;
+  cs-gpios = <&xiao_d 6 GPIO_ACTIVE_HIGH>, <&xiao_d 7 GPIO_ACTIVE_HIGH>;
   sr_sipo: 595@0 {
     compatible = "zmk,gpio-595";
     status = "okay";
@@ -73,7 +73,6 @@
     spi-max-frequency = <200000>;
     #gpio-cells = <2>;
     reg = <0>;
-    label = "74HC595";
     ngpios = <16>;
   };
 
@@ -84,8 +83,7 @@
     spi-max-frequency = <200000>;
     #gpio-cells = <2>;
     load-gpios = <&xiao_d 7 GPIO_ACTIVE_HIGH>;
-    reg = <0>;
-    label = "74HC165";
+    reg = <1>;
     ngpios = <8>;
   }; 
 };

@@ -53,3 +53,5 @@ include:
     shield: onekey_seed
   - board: nice_nano_v2
     shield: onekey_sharp nice_view 
+  - board: rpi_pico
+    shield: onekey

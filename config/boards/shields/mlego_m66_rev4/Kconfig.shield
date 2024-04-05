@@ -22,3 +22,6 @@ config  SHIELD_WEACT_EINK_154
 
 config  SHIELD_WEACT_EINK_213
    def_bool $(shields_list_contains,weact_eink_213)
+
+config  SHIELD_ST7735
+   def_bool $(shields_list_contains,st7735)
