@@ -48,10 +48,8 @@ include:
   - board: rpi_pico
     shield: settings_reset
   - board: nice_nano_v2
-    shield: onekey
+    shield: onekey pro_micro
   - board: seeeduino_xiao_ble
-    shield: onekey_seed
-  - board: nice_nano_v2
-    shield: onekey_sharp nice_view 
+    shield: onekey seed
   - board: rpi_pico
-    shield: onekey
+    shield: onekey rp2040
