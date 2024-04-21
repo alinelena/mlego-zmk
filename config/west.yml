@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: caksoylar
       url-base: https://github.com/caksoylar
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmk
@@ -12,5 +14,8 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
+    - name: zmk-helpers
+      remote: urob
+      revision: v2 # this will eventually become main
   self:
     path: config
