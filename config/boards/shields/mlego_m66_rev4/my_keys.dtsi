@@ -27,7 +27,7 @@ ZMK_UNICODE_PAIR(my_zZ , N0, N3, B, N6  , N2, N2, N2, N1  ) // ζ/∡
 ZMK_UNICODE_PAIR(my_cC1 , N2, N2, N4, N8  , N2, N2, N4, N9  ) // ≈/≉
 ZMK_UNICODE_PAIR(my_pP1 , N0, N0, B, N1  , N2, N2, N1, N3  ) // ±/∓
 ZMK_UNICODE_PAIR(my_qQ1 , N0, N0, D, N7  , N2, N2, C, N5  ) // ×/⋅
-ZMK_UNICODE_PAIR(my_lL1 , N1, D, N5, N3  , N2, N1, N1, N2  ) // 𝔼/ℒ
+ZMK_UNICODE_PAIR(my_lL1 , N0, N0, B, N0  , N2, N1, N1, N2  ) // /ℒ
 ZMK_UNICODE_PAIR(my_kK1 , N2, N2, N1, D  , N2, N1, N2, B  ) // ∝/Å
 ZMK_UNICODE_PAIR(my_bo , N2, N2, D, C  , N2, N2, N6, N0  ) // ⋜/≠
 ZMK_UNICODE_PAIR(my_bc , N2, N2, D, D  , N2, N2, N4, N5  ) // ⋝/≅
