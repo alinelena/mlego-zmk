@@ -4,6 +4,7 @@ zmk firmware for mlego
 
 - mlego m66 5x13 rev4
 ![m66](https://mlego.elena.re/pics/m66/mlego_m66_rev4-lcd.webp)
+![m66](https://mlego.elena.re/pics/m66/mlego_m66_rev4-sharp.webp)
 ![M66 .. ](./mlego_m66_rev4_uk.svg)
   - features rp2040(pro micro footprint) or nice!nano and compatible bt
     - [x] matrix
