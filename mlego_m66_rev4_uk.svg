@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1288.25" height="621.5" viewBox="-5 -5 257.65 124.30000000000001">
+<defs>
+<marker markerWidth="4.0" markerHeight="4.04" viewBox="-0.1 -0.51 1.0 1.01" orient="auto" id="d0">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="orchid" />
+</marker>
+<marker markerWidth="4.0" markerHeight="4.04" viewBox="-0.1 -0.51 1.0 1.01" orient="auto" id="d1">
+<path d="M-0.1,0.5 L-0.1,-0.5 L0.9,0 Z" fill="teal" />
+</marker>
+</defs>
+<rect x="-5" y="-5" width="257.65" height="124.30000000000001" fill="black" rx="2.5" ry="2.5" />
+<rect x="0.0" y="19.05" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="19.05" y="19.05" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="38.1" y="19.05" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="57.150000000000006" y="19.05" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="76.2" y="19.05" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="95.25" y="19.05" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="114.30000000000001" y="19.05" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="133.35" y="19.05" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="152.4" y="19.05" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="171.45000000000002" y="19.05" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="190.5" y="19.05" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="209.55" y="19.05" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="228.60000000000002" y="19.05" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="0.0" y="38.1" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="19.05" y="38.1" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="38.1" y="38.1" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="57.150000000000006" y="38.1" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="76.2" y="38.1" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="95.25" y="38.1" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="114.30000000000001" y="38.1" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="133.35" y="38.1" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="152.4" y="38.1" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="171.45000000000002" y="38.1" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="190.5" y="38.1" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="209.55" y="38.1" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="228.60000000000002" y="38.1" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="0.0" y="57.150000000000006" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="19.05" y="57.150000000000006" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="38.1" y="57.150000000000006" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="57.150000000000006" y="57.150000000000006" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="76.2" y="57.150000000000006" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="95.25" y="57.150000000000006" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="114.30000000000001" y="57.150000000000006" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="133.35" y="57.150000000000006" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="152.4" y="57.150000000000006" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="171.45000000000002" y="57.150000000000006" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="190.5" y="57.150000000000006" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="209.55" y="57.150000000000006" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="228.60000000000002" y="57.150000000000006" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="0.0" y="76.2" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="19.05" y="76.2" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="38.1" y="76.2" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="57.150000000000006" y="76.2" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="76.2" y="76.2" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="95.25" y="76.2" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="114.30000000000001" y="76.2" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="133.35" y="76.2" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="152.4" y="76.2" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="171.45000000000002" y="76.2" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="190.5" y="76.2" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="209.55" y="76.2" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="228.60000000000002" y="76.2" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="0.0" y="95.25" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="19.05" y="95.25" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="38.1" y="95.25" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="57.150000000000006" y="95.25" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="76.2" y="95.25" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="95.25" y="95.25" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="114.30000000000001" y="95.25" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="133.35" y="95.25" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="152.4" y="95.25" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="171.45000000000002" y="95.25" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="190.5" y="95.25" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="209.55" y="95.25" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<rect x="228.60000000000002" y="95.25" width="19.05" height="19.05" rx="2.5" ry="2.5" fill="darkslategray" stroke="deeppink" stroke-width="0.5" />
+<circle cx="9.525" cy="9.525" r="9.525" stroke="fuchsia" stroke-width="0.5" />
+<path d="M16.260192090801866,16.260192090801866 L16.26013331490654,16.26025086618428" stroke="fuchsia" stroke-width="0.5" fill="none" marker-end="url(#d0)" />
+<path d="M2.7898079091981334,2.789807909198135 L2.7898666850934584,2.789749133815725" stroke="fuchsia" stroke-width="0.5" fill="none" marker-end="url(#d0)" />
+<path d="M2.789807909198135,16.260192090801866 L2.789866685093461,16.26025086618428" stroke="fuchsia" stroke-width="0.5" fill="none" marker-end="url(#d1)" />
+<path d="M16.260192090801866,2.7898079091981334 L16.26013331490654,2.7897491338157234" stroke="fuchsia" stroke-width="0.5" fill="none" marker-end="url(#d1)" />
+<text x="9.525" y="28.575000000000003" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⎋</text>
+<text x="28.575000000000003" y="28.575000000000003" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">1</text>
+<text x="47.625" y="28.575000000000003" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">2</text>
+<text x="66.67500000000001" y="28.575000000000003" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">3</text>
+<text x="85.72500000000001" y="28.575000000000003" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">4</text>
+<text x="104.775" y="28.575000000000003" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">5</text>
+<text x="123.82500000000002" y="28.575000000000003" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">6</text>
+<text x="142.875" y="28.575000000000003" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">7</text>
+<text x="161.925" y="28.575000000000003" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">8</text>
+<text x="180.97500000000002" y="28.575000000000003" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">9</text>
+<text x="200.025" y="28.575000000000003" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">0</text>
+<text x="219.07500000000002" y="28.575000000000003" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">-</text>
+<text x="238.12500000000003" y="28.575000000000003" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⌫</text>
+<text x="9.525" y="9.525" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">🕨</text>
+<text x="9.525" y="47.625" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">↹</text>
+<text x="28.575000000000003" y="47.625" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">q</text>
+<text x="47.625" y="47.625" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">w</text>
+<text x="66.67500000000001" y="47.625" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">e</text>
+<text x="85.72500000000001" y="47.625" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">r</text>
+<text x="104.775" y="47.625" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">t</text>
+<text x="123.82500000000002" y="47.625" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">y</text>
+<text x="142.875" y="47.625" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">u</text>
+<text x="161.925" y="47.625" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">i</text>
+<text x="180.97500000000002" y="47.625" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">o</text>
+<text x="200.025" y="47.625" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">p</text>
+<text x="219.07500000000002" y="47.625" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">[</text>
+<text x="238.12500000000003" y="47.625" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">]</text>
+<text x="9.525" y="66.67500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">#</text>
+<text x="28.575000000000003" y="66.67500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">a</text>
+<text x="47.625" y="66.67500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">s</text>
+<text x="66.67500000000001" y="66.67500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">d</text>
+<text x="85.72500000000001" y="66.67500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">f</text>
+<text x="104.775" y="66.67500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">g</text>
+<text x="123.82500000000002" y="66.67500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">h</text>
+<text x="142.875" y="66.67500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">j</text>
+<text x="161.925" y="66.67500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">k</text>
+<text x="180.97500000000002" y="66.67500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">l</text>
+<text x="200.025" y="66.67500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">;</text>
+<text x="219.07500000000002" y="66.67500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">'</text>
+<text x="238.12500000000003" y="66.67500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⏎</text>
+<text x="9.525" y="85.72500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⇧</text>
+<text x="15.525" y="85.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">(</text>
+<text x="28.575000000000003" y="85.72500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">\</text>
+<text x="47.625" y="85.72500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">z</text>
+<text x="66.67500000000001" y="85.72500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">x</text>
+<text x="85.72500000000001" y="85.72500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">c</text>
+<text x="104.775" y="85.72500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">v</text>
+<text x="123.82500000000002" y="85.72500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">b</text>
+<text x="142.875" y="85.72500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">n</text>
+<text x="161.925" y="85.72500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">m</text>
+<text x="180.97500000000002" y="85.72500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">,</text>
+<text x="200.025" y="85.72500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">.</text>
+<text x="219.07500000000002" y="85.72500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">↑</text>
+<text x="238.12500000000003" y="85.72500000000001" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">/</text>
+<text x="9.525" y="104.775" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⎈</text>
+<text x="28.575000000000003" y="104.775" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="47.625" y="104.775" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⇓</text>
+<text x="66.67500000000001" y="104.775" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⎇</text>
+<text x="85.72500000000001" y="104.775" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⇑</text>
+<text x="104.775" y="104.775" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central"> </text>
+<text x="123.82500000000002" y="104.775" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central"> </text>
+<text x="142.875" y="104.775" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central"> </text>
+<text x="161.925" y="104.775" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⎇</text>
+<text x="180.97500000000002" y="104.775" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⇧</text>
+<text x="186.97500000000002" y="104.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">)</text>
+<text x="200.025" y="104.775" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">←</text>
+<text x="219.07500000000002" y="104.775" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">↓</text>
+<text x="238.12500000000003" y="104.775" font-size="6" fill="peachpuff" text-anchor="middle" dominant-baseline="central">→</text>
+<text x="3.5250000000000004" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⎋</text>
+<text x="22.575000000000003" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">f1</text>
+<text x="41.625" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">f2</text>
+<text x="60.67500000000001" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">f3</text>
+<text x="79.72500000000001" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">f4</text>
+<text x="98.775" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">f5</text>
+<text x="117.82500000000002" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">f6</text>
+<text x="136.875" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">f7</text>
+<text x="155.925" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">f8</text>
+<text x="174.97500000000002" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">f9</text>
+<text x="194.025" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">f10</text>
+<text x="213.07500000000002" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">f11</text>
+<text x="232.12500000000003" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">f12</text>
+<text x="3.5250000000000004" y="4.525" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="3.5250000000000004" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="22.575000000000003" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="22.575000000000003" dy="0.0em">â</tspan><tspan x="22.575000000000003" dy="1em">Â</tspan></text>
+<text x="41.625" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="60.67500000000001" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="79.72500000000001" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="98.775" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="98.775" dy="0.0em">ț</tspan><tspan x="98.775" dy="1em">Ț</tspan></text>
+<text x="117.82500000000002" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="136.875" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="155.925" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="155.925" dy="0.0em">î</tspan><tspan x="155.925" dy="1em">Î</tspan></text>
+<text x="174.97500000000002" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="194.025" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="213.07500000000002" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="232.12500000000003" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="3.5250000000000004" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⇪</text>
+<text x="22.575000000000003" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="22.575000000000003" dy="0.0em">ă</tspan><tspan x="22.575000000000003" dy="1em">Ă</tspan></text>
+<text x="41.625" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="41.625" dy="0.0em">ș</tspan><tspan x="41.625" dy="1em">Ș</tspan></text>
+<text x="60.67500000000001" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="79.72500000000001" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="98.775" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="117.82500000000002" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="136.875" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="155.925" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="174.97500000000002" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="194.025" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="213.07500000000002" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="232.12500000000003" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="3.5250000000000004" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="22.575000000000003" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">f20</text>
+<text x="41.625" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="60.67500000000001" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="60.67500000000001" dy="0.0em">ç</tspan><tspan x="60.67500000000001" dy="1em">Ç</tspan></text>
+<text x="79.72500000000001" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="79.72500000000001" dy="0.0em">⊄</tspan><tspan x="79.72500000000001" dy="1em">⊆</tspan></text>
+<text x="98.775" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="98.775" dy="0.0em">⊅</tspan><tspan x="98.775" dy="1em">⊇</tspan></text>
+<text x="117.82500000000002" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="117.82500000000002" dy="0.0em">∧</tspan><tspan x="117.82500000000002" dy="1em">⊼</tspan></text>
+<text x="136.875" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="136.875" dy="0.0em">∨</tspan><tspan x="136.875" dy="1em">⊻</tspan></text>
+<text x="155.925" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="174.97500000000002" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="194.025" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="213.07500000000002" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="213.07500000000002" dy="0.0em">⇡</tspan><tspan x="213.07500000000002" dy="1em">🖰</tspan></text>
+<text x="232.12500000000003" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="3.5250000000000004" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="22.575000000000003" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="41.625" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="60.67500000000001" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="79.72500000000001" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="98.775" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="117.82500000000002" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="136.875" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="155.925" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="174.97500000000002" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="194.025" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="194.025" dy="0.0em">⇠</tspan><tspan x="194.025" dy="1em">🖰</tspan></text>
+<text x="213.07500000000002" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="213.07500000000002" dy="0.0em">🖰</tspan><tspan x="213.07500000000002" dy="1em">⇣</tspan></text>
+<text x="232.12500000000003" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="232.12500000000003" dy="0.0em">🖰</tspan><tspan x="232.12500000000003" dy="1em">⇢</tspan></text>
+<text x="15.525" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">`</text>
+<text x="34.575" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">🕨</text>
+<text x="53.625" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">🕪</text>
+<text x="72.67500000000001" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">🕩</text>
+<text x="91.72500000000001" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⏮</text>
+<text x="110.775" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⏯</text>
+<text x="129.82500000000002" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⏭</text>
+<text x="148.875" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">🖵</text>
+<text x="167.925" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⏾</text>
+<text x="186.97500000000002" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⏽</text>
+<text x="206.025" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">🖶</text>
+<text x="225.07500000000002" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⌦</text>
+<text x="244.12500000000003" y="23.575000000000003" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central">=</text>
+<text x="15.525" y="4.525" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="15.525" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="15.525" dy="0.0em">🖰</tspan><tspan x="15.525" dy="1em">3</tspan></text>
+<text x="34.575" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="34.575" dy="0.0em">σ</tspan><tspan x="34.575" dy="1em">ϕ</tspan></text>
+<text x="53.625" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="53.625" dy="0.0em">ω</tspan><tspan x="53.625" dy="1em">Ω</tspan></text>
+<text x="72.67500000000001" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="72.67500000000001" dy="0.0em">ε</tspan><tspan x="72.67500000000001" dy="1em">ℇ</tspan></text>
+<text x="91.72500000000001" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="91.72500000000001" dy="0.0em">ρ</tspan><tspan x="91.72500000000001" dy="1em">∇</tspan></text>
+<text x="110.775" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="110.775" dy="0.0em">ϑ</tspan><tspan x="110.775" dy="1em">θ</tspan></text>
+<text x="129.82500000000002" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="129.82500000000002" dy="0.0em">ℝ</tspan><tspan x="129.82500000000002" dy="1em">ℤ</tspan></text>
+<text x="148.875" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="148.875" dy="0.0em">τ</tspan><tspan x="148.875" dy="1em">ℂ</tspan></text>
+<text x="167.925" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="167.925" dy="0.0em">∫</tspan><tspan x="167.925" dy="1em">∮</tspan></text>
+<text x="186.97500000000002" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="186.97500000000002" dy="0.0em">∞</tspan><tspan x="186.97500000000002" dy="1em">⊗</tspan></text>
+<text x="206.025" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="206.025" dy="0.0em">π</tspan><tspan x="206.025" dy="1em">∏</tspan></text>
+<text x="225.07500000000002" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="225.07500000000002" dy="0.0em">⋜</tspan><tspan x="225.07500000000002" dy="1em">≠</tspan></text>
+<text x="244.12500000000003" y="42.625" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="244.12500000000003" dy="0.0em">⋝</tspan><tspan x="244.12500000000003" dy="1em">≅</tspan></text>
+<text x="15.525" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="15.525" dy="0.0em">🖰</tspan><tspan x="15.525" dy="1em">2</tspan></text>
+<text x="34.575" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="34.575" dy="0.0em">α</tspan><tspan x="34.575" dy="1em">Α</tspan></text>
+<text x="53.625" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="53.625" dy="0.0em">∑</tspan><tspan x="53.625" dy="1em">⨋</tspan></text>
+<text x="72.67500000000001" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="72.67500000000001" dy="0.0em">δ</tspan><tspan x="72.67500000000001" dy="1em">∂</tspan></text>
+<text x="91.72500000000001" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="91.72500000000001" dy="0.0em">φ</tspan><tspan x="91.72500000000001" dy="1em">ψ</tspan></text>
+<text x="110.775" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="110.775" dy="0.0em">γ</tspan><tspan x="110.775" dy="1em">Γ</tspan></text>
+<text x="129.82500000000002" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="129.82500000000002" dy="0.0em">ℏ</tspan><tspan x="129.82500000000002" dy="1em">ℋ</tspan></text>
+<text x="148.875" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="148.875" dy="0.0em">∈</tspan><tspan x="148.875" dy="1em">∉</tspan></text>
+<text x="167.925" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="167.925" dy="0.0em">ϰ</tspan><tspan x="167.925" dy="1em">∆</tspan></text>
+<text x="186.97500000000002" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="186.97500000000002" dy="0.0em">λ</tspan><tspan x="186.97500000000002" dy="1em">Λ</tspan></text>
+<text x="206.025" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="206.025" dy="0.0em">°</tspan><tspan x="206.025" dy="1em">ℒ</tspan></text>
+<text x="225.07500000000002" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="225.07500000000002" dy="0.0em">∝</tspan><tspan x="225.07500000000002" dy="1em">Å</tspan></text>
+<text x="244.12500000000003" y="61.67500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="15.525" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="34.575" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="34.575" dy="0.0em">≡</tspan><tspan x="34.575" dy="1em">≢</tspan></text>
+<text x="53.625" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="53.625" dy="0.0em">ζ</tspan><tspan x="53.625" dy="1em">∡</tspan></text>
+<text x="72.67500000000001" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="72.67500000000001" dy="0.0em">ξ</tspan><tspan x="72.67500000000001" dy="1em">Ξ</tspan></text>
+<text x="91.72500000000001" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="91.72500000000001" dy="0.0em">χ</tspan><tspan x="91.72500000000001" dy="1em">⊂</tspan></text>
+<text x="110.775" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="110.775" dy="0.0em">ν</tspan><tspan x="110.775" dy="1em">⊃</tspan></text>
+<text x="129.82500000000002" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="129.82500000000002" dy="0.0em">β</tspan><tspan x="129.82500000000002" dy="1em">∩</tspan></text>
+<text x="148.875" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="148.875" dy="0.0em">η</tspan><tspan x="148.875" dy="1em">∪</tspan></text>
+<text x="167.925" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="167.925" dy="0.0em">μ</tspan><tspan x="167.925" dy="1em">∘</tspan></text>
+<text x="186.97500000000002" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="186.97500000000002" dy="0.0em">≈</tspan><tspan x="186.97500000000002" dy="1em">≉</tspan></text>
+<text x="206.025" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="206.025" dy="0.0em">±</tspan><tspan x="206.025" dy="1em">∓</tspan></text>
+<text x="225.07500000000002" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="225.07500000000002" dy="0.0em">↟</tspan><tspan x="225.07500000000002" dy="1em">🖰</tspan></text>
+<text x="244.12500000000003" y="80.72500000000001" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="244.12500000000003" dy="0.0em">×</tspan><tspan x="244.12500000000003" dy="1em">⋅</tspan></text>
+<text x="15.525" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="15.525" dy="0.0em">🖰</tspan><tspan x="15.525" dy="1em">1</tspan></text>
+<text x="34.575" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="34.575" dy="0.0em">🖰</tspan><tspan x="34.575" dy="1em">4</tspan></text>
+<text x="53.625" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="72.67500000000001" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="91.72500000000001" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="110.775" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="129.82500000000002" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="148.875" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="167.925" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="186.97500000000002" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="206.025" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="206.025" dy="0.0em">↞</tspan><tspan x="206.025" dy="1em">🖰</tspan></text>
+<text x="225.07500000000002" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="225.07500000000002" dy="0.0em">🖰</tspan><tspan x="225.07500000000002" dy="1em">↡</tspan></text>
+<text x="244.12500000000003" y="99.775" font-size="5" fill="peachpuff" text-anchor="middle"><tspan x="244.12500000000003" dy="0.0em">🖰</tspan><tspan x="244.12500000000003" dy="1em">↠</tspan></text>
+<text x="9.525" y="34.575" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">l ⎗</text>
+<text x="28.575000000000003" y="34.575" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">l ⎘</text>
+<text x="47.625" y="34.575" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">⌕</text>
+<text x="66.67500000000001" y="34.575" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">l ☀</text>
+<text x="85.72500000000001" y="34.575" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">l ☼</text>
+<text x="104.775" y="34.575" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">u </text>
+<text x="123.82500000000002" y="34.575" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">u </text>
+<text x="142.875" y="34.575" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">u ❖</text>
+<text x="161.925" y="34.575" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">u </text>
+<text x="180.97500000000002" y="34.575" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">EMAC</text>
+<text x="200.025" y="34.575" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="219.07500000000002" y="34.575" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">M_T</text>
+<text x="238.12500000000003" y="34.575" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">M_SW</text>
+<text x="9.525" y="15.525" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">l ☀ ☼</text>
+<text x="9.525" y="53.625" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">HUI</text>
+<text x="28.575000000000003" y="53.625" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">HUD</text>
+<text x="47.625" y="53.625" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">M_P</text>
+<text x="66.67500000000001" y="53.625" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">e ␥</text>
+<text x="85.72500000000001" y="53.625" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">r ♲</text>
+<text x="104.775" y="53.625" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="123.82500000000002" y="53.625" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="142.875" y="53.625" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="161.925" y="53.625" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">l ⌧</text>
+<text x="180.97500000000002" y="53.625" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="200.025" y="53.625" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="219.07500000000002" y="53.625" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="238.12500000000003" y="53.625" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">M_B</text>
+<text x="9.525" y="72.67500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">SAI</text>
+<text x="28.575000000000003" y="72.67500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">SAD</text>
+<text x="47.625" y="72.67500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">M_SN</text>
+<text x="66.67500000000001" y="72.67500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">d ⚛</text>
+<text x="85.72500000000001" y="72.67500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">u ⎘</text>
+<text x="104.775" y="72.67500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="123.82500000000002" y="72.67500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">l ⌇</text>
+<text x="142.875" y="72.67500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="161.925" y="72.67500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="180.97500000000002" y="72.67500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">l ⏹</text>
+<text x="200.025" y="72.67500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="219.07500000000002" y="72.67500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="238.12500000000003" y="72.67500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">M_K</text>
+<text x="9.525" y="91.72500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">VAI</text>
+<text x="28.575000000000003" y="91.72500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">VAD</text>
+<text x="47.625" y="91.72500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">M_R</text>
+<text x="66.67500000000001" y="91.72500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="85.72500000000001" y="91.72500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">u ⎗</text>
+<text x="104.775" y="91.72500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="123.82500000000002" y="91.72500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">b ♽</text>
+<text x="142.875" y="91.72500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="161.925" y="91.72500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="180.97500000000002" y="91.72500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="200.025" y="91.72500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="219.07500000000002" y="91.72500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="238.12500000000003" y="91.72500000000001" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">M_X</text>
+<text x="9.525" y="110.775" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="28.575000000000003" y="110.775" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="47.625" y="110.775" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="66.67500000000001" y="110.775" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="85.72500000000001" y="110.775" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="104.775" y="110.775" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="123.82500000000002" y="110.775" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="142.875" y="110.775" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="161.925" y="110.775" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="180.97500000000002" y="110.775" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="200.025" y="110.775" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central"></text>
+<text x="219.07500000000002" y="110.775" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">M_TW</text>
+<text x="238.12500000000003" y="110.775" font-size="4" fill="peachpuff" text-anchor="middle" dominant-baseline="central">M_G</text>
+</svg>
