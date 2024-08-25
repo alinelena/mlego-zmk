@@ -2,6 +2,20 @@
 
 zmk firmware for mlego
 
+- mlego m66 5x13 rev4
+![m66](https://mlego.elena.re/pics/m66/mlego_m66_rev4-lcd.webp)
+![m66](https://mlego.elena.re/pics/m66/mlego_m66_rev4-sharp.webp)
+![M66 .. ](./mlego_m66_rev4_uk.svg)
+  - features rp2040(pro micro footprint) or nice!nano and compatible bt
+    - [x] matrix
+    - [x] encoder
+    - [x] mipi sharp screen (nice!view like various sizes)
+    - [ ] eink, 2.13inch we act.
+    - [ ] led indicators
+    - [x] unicode
+    - [ ] rgb per key...
+
+
 - mlego m65 5x13 rev4
 ![M65 stm32f401](https://i.imgur.com/P1SRKwC.jpg)
   - features stm32f401

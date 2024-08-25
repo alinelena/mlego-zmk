@@ -87,7 +87,7 @@
                 &trans   &ro_ai  &kp F14 &kp F15 &kp F16 &ro_t   &kp F18 &kp F19 &ro_i   &kp F21 &kp F22 &kp F23 &kp F24
                 &trans   &ro_a   &ro_s   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
                 &trans   &kp F20 &trans  &my_xXr &my_cCr &my_vVr &my_bBr &my_nNr &trans  &trans  &trans  &trans  &trans
-                &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans   &studio_unlock  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >; 
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };

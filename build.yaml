@@ -31,18 +31,25 @@ include:
     shield: settings_reset
   - board: nice_nano_v2
     shield: mlego_m66_rev4 
+    snippet: studio-rpc-usb-uart
   - board: nice_nano_v2
     shield: mlego_m66_rev4 ls013b7dh05 
+    snippet: studio-rpc-usb-uart
   - board: nice_nano_v2
     shield: mlego_m66_rev4 ls013b7dh03s 
+    snippet: studio-rpc-usb-uart
   - board: nice_nano_v2
     shield: mlego_m66_rev4 ls011b7dh03 
+    snippet: studio-rpc-usb-uart
   - board: nice_nano_v2
     shield: mlego_m66_rev4 weact_eink_213 
+    snippet: studio-rpc-usb-uart
   - board: nice_nano_v2
     shield: mlego_m66_rev4 weact_eink_154 
+    snippet: studio-rpc-usb-uart
   - board: rpi_pico
     shield: mlego_m66_rev4_rp2040 
+    snippet: studio-rpc-usb-uart
   - board: nice_nano_v2
     shield: settings_reset
   - board: rpi_pico
