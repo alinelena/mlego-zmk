@@ -17,21 +17,7 @@
         kscan = <&kscan_m66>;
         transform = <&m66>;
         keys  //                     w   h    x    y     rot    rx    ry
-            = <&key_physical_attrs 100 100    0    0       0     0     0>
-            , <&key_physical_attrs 100 100  100    0       0     0     0>
-            , <&key_physical_attrs 100 100  200    0       0     0     0>
-            , <&key_physical_attrs 100 100  300    0       0     0     0>
-            , <&key_physical_attrs 100 100  400    0       0     0     0>
-            , <&key_physical_attrs 100 100  500    0       0     0     0>
-            , <&key_physical_attrs 100 100  600    0       0     0     0>
-            , <&key_physical_attrs 100 100  700    0       0     0     0>
-            , <&key_physical_attrs 100 100  800    0       0     0     0>
-            , <&key_physical_attrs 100 100  900    0       0     0     0>
-            , <&key_physical_attrs 100 100 1000    0       0     0     0>
-            , <&key_physical_attrs 100 100 1100    0       0     0     0>
-            , <&key_physical_attrs 100 100 1200    0       0     0     0>
-            , <&key_physical_attrs 100 100    0    0       0     0     0>
-            , <&key_physical_attrs 100 100    0  100       0     0     0>
+            = <&key_physical_attrs 100 100    0  100       0     0     0>
             , <&key_physical_attrs 100 100  100  100       0     0     0>
             , <&key_physical_attrs 100 100  200  100       0     0     0>
             , <&key_physical_attrs 100 100  300  100       0     0     0>
@@ -44,6 +30,7 @@
             , <&key_physical_attrs 100 100 1000  100       0     0     0>
             , <&key_physical_attrs 100 100 1100  100       0     0     0>
             , <&key_physical_attrs 100 100 1200  100       0     0     0>
+            , <&key_physical_attrs 100 100    0    0       0     0     0>
             , <&key_physical_attrs 100 100    0  200       0     0     0>
             , <&key_physical_attrs 100 100  100  200       0     0     0>
             , <&key_physical_attrs 100 100  200  200       0     0     0>
@@ -83,6 +70,19 @@
             , <&key_physical_attrs 100 100 1000  400       0     0     0>
             , <&key_physical_attrs 100 100 1100  400       0     0     0>
             , <&key_physical_attrs 100 100 1200  400       0     0     0>
+            , <&key_physical_attrs 100 100    0  500       0     0     0>
+            , <&key_physical_attrs 100 100  100  500       0     0     0>
+            , <&key_physical_attrs 100 100  200  500       0     0     0>
+            , <&key_physical_attrs 100 100  300  500       0     0     0>
+            , <&key_physical_attrs 100 100  400  500       0     0     0>
+            , <&key_physical_attrs 100 100  500  500       0     0     0>
+            , <&key_physical_attrs 100 100  600  500       0     0     0>
+            , <&key_physical_attrs 100 100  700  500       0     0     0>
+            , <&key_physical_attrs 100 100  800  500       0     0     0>
+            , <&key_physical_attrs 100 100  900  500       0     0     0>
+            , <&key_physical_attrs 100 100 1000  500       0     0     0>
+            , <&key_physical_attrs 100 100 1100  500       0     0     0>
+            , <&key_physical_attrs 100 100 1200  500       0     0     0>
             ;
    };
 
@@ -103,9 +103,8 @@
 
    chosen {
 /*
-     zmk,kscan = &kscan_m66;
-*/
      zephyr,console = &cdc_acm_uart;
+*/
    };
 
       m66: m66_0 {
@@ -226,9 +225,11 @@ board_spi: &spi0 {
   };
 };
 
+/*
 &usbd {
     status = "okay";
     cdc_acm_uart: cdc_acm_uart {
         compatible = "zephyr,cdc-acm-uart";
     };
 };
+*/
