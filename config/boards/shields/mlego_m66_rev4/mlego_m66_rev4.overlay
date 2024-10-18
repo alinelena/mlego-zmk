@@ -102,6 +102,7 @@
     };
 
    chosen {
+     zmk,physical-layout = &m66_layout;
 /*
      zephyr,console = &cdc_acm_uart;
 */
@@ -210,13 +211,11 @@ board_spi: &spi0 {
   pinctrl-0 = <&spi0_default>;
   pinctrl-1 = <&spi0_sleep>;
   pinctrl-names = "default", "sleep";
-  wakeup-source; 
   cs-gpios = <&pro_micro 10 GPIO_ACTIVE_LOW> ;
 
   shift_reg: 595@0 {
     compatible = "zmk,gpio-595";
     status = "okay";
-    wakeup-source; 
     gpio-controller;
     spi-max-frequency = <2000000>;
     #gpio-cells = <2>;
