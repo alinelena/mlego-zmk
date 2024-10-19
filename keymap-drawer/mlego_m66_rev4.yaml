@@ -1,8 +1,73 @@
 layers:
-  qw: [ESC, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', BSPC, MUTE, TAB, Q, W, E, R, T, Y, U, I, O, P, '[', ']', '#', A, S, D, F, G, H, J, K, L, ;, '''',
-    RET, LSHFT, '|', Z, X, C, V, B, N, M, ',', ., UP, /, LCTRL, LGUI, '&tlwr', LALT, '&trse', SPACE, SPACE, SPACE, RALT, RSHFT, LEFT, DOWN, RIGHT]
+  qw:
+  - $$mdi:keyboard-esc$$
+  - {t: '1', s: '!'}
+  - {t: '2', s: '"'}
+  - {t: '3', s: £}
+  - {t: '4', s: $}
+  - {t: '5', s: '%'}
+  - {t: '6', s: ^}
+  - {t: '7', s: '&'}
+  - {t: '8', s: '*'}
+  - {t: '9', s: (}
+  - {t: '0', s: )}
+  - {t: '-', s: _}
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - MUTE
+  - $$mdi:keyboard-tab$$
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: '[', s: '{'}
+  - {t: ']', s: '}'}
+  - '#'
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - {t: ;, s: ':'}
+  - .
+  - RET
+  - $$mdi:apple-keyboard-shift$$
+  - '|'
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - {t: ',', s: <}
+  - {t: ., s: '>'}
+  - $$mdi:arrow-up-bold$$
+  - {t: /, s: '?'}
+  - $$mdi:apple-keyboard-control$$
+  - LGUI
+  - '&tlwr'
+  - $$mdi:apple-keyboard-option$$
+  - '&trse'
+  - $$mdi:keyboard-space$$
+  - $$mdi:keyboard-space$$
+  - $$mdi:keyboard-space$$
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-right-bold$$
   raise:
-  - '`'
+  - {t: '`', s: '~'}
   - MUTE
   - VOL UP
   - VOL DN
@@ -13,8 +78,8 @@ layers:
   - SLEEP
   - COFFEE
   - PSCRN
-  - DEL
-  - '='
+  - $$mdi:backspace-reverse-outline$$
+  - {t: '=', s: +}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&my_qQ'
@@ -29,7 +94,7 @@ layers:
   - '&my_pP'
   - '&my_bo'
   - '&my_bc'
-  - CAPS
+  - $$mdi:apple-keyboard-caps$$
   - '&my_aA'
   - '&my_sS'
   - '&my_dD'
@@ -69,7 +134,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   lower:
-  - ESC
+  - $$mdi:keyboard-esc$$
   - F1
   - F2
   - F3
@@ -137,11 +202,11 @@ layers:
   - {t: ▽, type: trans}
   adjust:
   - {t: ▽, type: trans}
-  - {t: BT, h: '0'}
-  - {t: BT, h: '1'}
-  - {t: BT, h: '2'}
-  - {t: BT, h: '3'}
-  - {t: BT, h: '4'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '0'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '1'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '2'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '3'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '4'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -200,5 +265,5 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - BT NXT
-  - BT CLR
+  - $$mdi:bluetooth-off$$
   - BT PRV
