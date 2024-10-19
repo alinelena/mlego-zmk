@@ -384,14 +384,15 @@ parse_config:
       shifted: $$mdi:usb$$
       type: toggle
     '&studio_unlock':
+      type: bootloader
       tap: $$mdi:android-studio$$
 
     '&bt BT_NXT':
       shifted: $$mdi:bluetooth$$
-      hold: $$mdi:skip-next$$
+      tap: $$mdi:skip-next$$
     '&bt BT_PRV':
       shifted: $$mdi:bluetooth$$
-      hold: $$mdi:skip-previous$$
+      tap: $$mdi:skip-previous$$
 
   zmk_combos:
     combo_to_2:
