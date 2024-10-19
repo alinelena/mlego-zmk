@@ -217,13 +217,14 @@ parse_config:
     TILDE2: "~"
 
     # Modifiers
-    LCTRL: $$mdi:apple-keyboard-control$$
-    LALT: $$mdi:apple-keyboard-option$$
+    LCTRL: "⎈"
+    LALT: "⎇"
     LSHIFT: $$mdi:apple-keyboard-shift$$
+    LGUI: ""
     LSHFT: $$mdi:apple-keyboard-shift$$
     LCMD: $$mdi:apple-keyboard-command$$
-    RCTRL: $$mdi:apple-keyboard-control$$
-    RALT: $$mdi:apple-keyboard-option$$
+    RCTRL: "⎈"
+    RALT: "⎇"
     RSHIFT: $$mdi:apple-keyboard-shift$$
     RSHFT: $$mdi:apple-keyboard-shift$$
     RCMD: $$mdi:apple-keyboard-command$$
