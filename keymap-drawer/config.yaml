@@ -1,4 +1,4 @@
- parse_config:
+parse_config:
   preprocess: true
   skip_binding_parsing: false
   raw_binding_map: {}
@@ -394,6 +394,7 @@
 
   zmk_preamble: '#define KEYMAP_DRAWER'
   zmk_additional_includes: ["zmk-helpers/include"]
+
 draw_config:
   key_w: 60.0
   key_h: 56.0
