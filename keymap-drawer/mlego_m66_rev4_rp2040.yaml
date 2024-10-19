@@ -54,7 +54,7 @@ layers:
   - $$mdi:arrow-up-bold$$
   - {t: /, s: '?'}
   - ⎈
-  - 
+  - $$mdi:linux$$
   - ⇓
   - ⎇
   - ⇑
@@ -75,8 +75,8 @@ layers:
   - $$mdi:play-pause$$
   - $$mdi:skip-next$$
   - {t: Gui+ p, s: Gui+ P}
-  - SLEEP
-  - COFFEE
+  - $$mdi:sleep$$
+  - $$mdi:power-standby$$
   - PSCRN
   - $$mdi:backspace-reverse-outline$$
   - {t: '=', s: +}

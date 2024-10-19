@@ -54,7 +54,7 @@ layers:
   - $$mdi:arrow-up-bold$$
   - {t: /, s: '?'}
   - ⎈
-  - 
+  - $$mdi:linux$$
   - ⇓
   - ⎇
   - ⇑
@@ -75,8 +75,8 @@ layers:
   - $$mdi:play-pause$$
   - $$mdi:skip-next$$
   - {t: Gui+ p, s: Gui+ P}
-  - SLEEP
-  - COFFEE
+  - $$mdi:sleep$$
+  - $$mdi:power-standby$$
   - PSCRN
   - $$mdi:backspace-reverse-outline$$
   - {t: '=', s: +}
@@ -150,20 +150,24 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&ro_ai'
+  - F13
   - F14
   - F15
-  - F16
   - '&ro_t'
+  - F16
+  - F17
+  - '&ro_i'
   - F18
   - F19
-  - '&ro_i'
+  - F20
   - F21
+  - {t: ▽, type: trans}
+  - '&ro_a'
+  - '&ro_s'
   - F22
   - F23
   - F24
   - {t: ▽, type: trans}
-  - '&ro_a'
-  - '&ro_s'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -172,10 +176,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - F20
   - {t: ▽, type: trans}
   - '&my_xXr'
   - '&my_cCr'
