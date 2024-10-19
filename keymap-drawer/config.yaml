@@ -87,6 +87,82 @@ parse_config:
     A:
       tap: a
       shifted: "A"
+    B:
+      tap: b
+      shifted: "B"
+    C:
+      tap: c
+      shifted: "C"
+    D:
+      tap: d
+      shifted: "D"
+    E:
+      tap: e
+      shifted: "E"
+    F:
+      tap: f
+      shifted: "F"
+    G:
+      tap: g
+      shifted: "G"
+    H:
+      tap: h
+      shifted: "H"
+    I:
+      tap: i
+      shifted: "I"
+    J:
+      tap: j
+      shifted: "J"
+    K:
+      tap: k
+      shifted: "K"
+    L:
+      tap: l
+      shifted: "L"
+    M:
+      tap: m
+      shifted: "M"
+    N:
+      tap: n
+      shifted: "N"
+    P:
+      tap: p
+      shifted: "P"
+    Q:
+      tap: q
+      shifted: "Q"
+    O:
+      tap: o
+      shifted: "O"
+    R:
+      tap: r
+      shifted: "R"
+    S:
+      tap: s
+      shifted: "S"
+    T:
+      tap: t
+      shifted: "T"
+    U:
+      tap: u
+      shifted: "U"
+    X:
+      tap: x
+      shifted: "X"
+    Y:
+      tap: y 
+      shifted: "Y"
+    V:
+      tap: v
+      shifted: "V"
+    W:
+      tap: w
+      shifted: "W"
+    Z:
+      tap: z
+      shifted: "Z"
+    
    # Numbers
     N1:
       tap: 1
@@ -281,6 +357,10 @@ parse_config:
     # Bluetooth
     BT_CLR: $$mdi:bluetooth-off$$
     BT_SEL: $$mdi:bluetooth-connect$$
+    "&out OUT_USB":
+      tap: $$mdi:keyboard$$
+      shifted: $$mdi:usb$$
+      type: sym_by_sym
 
     # Settings
     C_BRI_UP: $$mdi:brightness-5$$
@@ -335,6 +415,5 @@ parse_config:
         shifted: ":"
         hold: ";"
 
-  zmk_combos: {}
   zmk_preamble: '#define KEYMAP_DRAWER'
   zmk_additional_includes: []
