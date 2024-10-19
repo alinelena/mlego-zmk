@@ -15,40 +15,40 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:volume-off$$
   - ↹
-  - Q
-  - W
-  - E
-  - R
-  - T
-  - Y
-  - U
-  - I
-  - O
-  - P
+  - {t: q, s: Q}
+  - {t: w, s: W}
+  - {t: e, s: E}
+  - {t: r, s: R}
+  - {t: t, s: T}
+  - {t: y, s: Y}
+  - {t: u, s: U}
+  - {t: i, s: I}
+  - {t: o, s: O}
+  - {t: p, s: P}
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
   - '#'
   - {t: a, s: A}
-  - S
-  - D
-  - F
-  - G
-  - H
-  - J
-  - K
-  - L
+  - {t: s, s: S}
+  - {t: d, s: D}
+  - {t: f, s: F}
+  - {t: g, s: G}
+  - {t: h, s: H}
+  - {t: j, s: J}
+  - {t: k, s: K}
+  - {t: l, s: L}
   - {t: ;, s: ':'}
   - .
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - ⇧
   - '|'
-  - Z
-  - X
-  - C
-  - V
-  - B
-  - N
-  - M
+  - {t: z, s: Z}
+  - {t: x, s: X}
+  - {t: c, s: C}
+  - {t: v, s: V}
+  - {t: b, s: B}
+  - {t: n, s: N}
+  - {t: m, s: M}
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - $$mdi:arrow-up-bold$$
@@ -74,7 +74,7 @@ layers:
   - $$mdi:skip-previous$$
   - $$mdi:play-pause$$
   - $$mdi:skip-next$$
-  - Gui+ P
+  - {t: Gui+ p, s: Gui+ P}
   - SLEEP
   - COFFEE
   - PSCRN
