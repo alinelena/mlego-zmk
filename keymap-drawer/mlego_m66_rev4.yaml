@@ -27,7 +27,7 @@ layers:
   - {t: p, s: P}
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
-  - '#'
+  - {t: '#', s: '~'}
   - {t: a, s: A}
   - {t: s, s: S}
   - {t: d, s: D}
@@ -38,10 +38,10 @@ layers:
   - {t: k, s: K}
   - {t: l, s: L}
   - {t: ;, s: ':'}
-  - .
+  - {t: '''', s: '@'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - ⇧
-  - '|'
+  - {t: \, s: '|'}
   - {t: z, s: Z}
   - {t: x, s: X}
   - {t: c, s: C}
@@ -55,9 +55,9 @@ layers:
   - {t: /, s: '?'}
   - ⎈
   - 
-  - '&tlwr'
+  - ⇓
   - ⎇
-  - '&trse'
+  - ⇑
   - $$mdi:keyboard-space$$
   - $$mdi:keyboard-space$$
   - $$mdi:keyboard-space$$
@@ -67,7 +67,7 @@ layers:
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
   raise:
-  - {t: '`', s: '~'}
+  - {t: '`', s: ¬}
   - $$mdi:volume-off$$
   - $$mdi:volume-high$$
   - $$mdi:volume-low$$
@@ -251,7 +251,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - OUT USB
+  - {t: '$$mdi:keyboard$$', s: '$$mdi:usb$$', type: sym_by_sym}
   - OUT BLE
   - OUT TOG
   - {t: ▽, type: trans}
