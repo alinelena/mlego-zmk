@@ -72,7 +72,7 @@ layers:
   - $$mdi:volume-high$$
   - $$mdi:volume-low$$
   - $$mdi:skip-previous$$
-  - 'PP:'
+  - $$mdi:play-pause$$
   - $$mdi:skip-next$$
   - $$mdi:monitor-screenshot$$
   - $$mdi:sleep$$
@@ -188,7 +188,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '&studio_unlock'
+  - $$mdi:android-studio$$
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}

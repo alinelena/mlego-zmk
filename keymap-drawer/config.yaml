@@ -379,13 +379,6 @@ parse_config:
     K_PSCRN: $$mdi:monitor-screenshot$$
     LG(P): $$mdi:monitor-screenshot$$
 
-    # Zoom
-    RG(RS(A)):
-      tap: $$mdi:microphone$$
-      hold: zoom
-    RG(RS(V)):
-      tap: $$mdi:video$$
-      hold: zoom
   raw_binding_map: 
     "&tlwr":
       tap: "⇓"
