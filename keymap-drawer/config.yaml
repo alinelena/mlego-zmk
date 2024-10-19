@@ -355,7 +355,7 @@ parse_config:
     K_CANCEL: $$mdi:close-box$$
     K_COFFEE: $$mdi:power-standby$$
     K_SLEEP: $$mdi:sleep$$
-    K_PSCRN: $$mdi:monitor-screenshot$$
+    PSCRN: $$mdi:monitor-screenshot$$
     LG(P): $$mdi:monitor-screenshot$$
 
   raw_binding_map:

@@ -77,7 +77,7 @@ layers:
   - $$mdi:monitor-screenshot$$
   - $$mdi:sleep$$
   - $$mdi:power-standby$$
-  - PSCRN
+  - $$mdi:monitor-screenshot$$
   - $$mdi:backspace-reverse-outline$$
   - {t: '=', s: +}
   - {t: ▽, type: trans}
