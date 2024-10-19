@@ -262,11 +262,17 @@ parse_config:
     C_MUTE: $$mdi:volume-off$$
     C_VOL_UP: $$mdi:volume-high$$
     C_VOL_DN: $$mdi:volume-low$$
+    MUTE: $$mdi:volume-off$$
+    VOL_UP: $$mdi:volume-high$$
+    VOL_DN: $$mdi:volume-low$$
 
     # Media
     C_NEXT: $$mdi:skip-next$$
     C_PREV: $$mdi:skip-previous$$
     C_PP: $$mdi:play-pause$$
+    NEXT: $$mdi:skip-next$$
+    PREV: $$mdi:skip-previous$$
+    PP: $$mdi:play-pause$$
 
     # Bluetooth
     BT_CLR: $$mdi:bluetooth-off$$
