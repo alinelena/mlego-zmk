@@ -73,7 +73,8 @@
         };
         raise_layer {
             bindings = <
-                &kp GRAVE &kp K_MUTE &kp K_VOL_UP &kp K_VOL_DN &kp K_PREV &kp K_PP &kp K_NEXT &kp LG(P)   &kp K_SLEEP &kp K_COFFEE &kp PSCRN &kp DEL &kp EQUAL &trans
+                &kp GRAVE &kp K_MUTE &kp K_VOL_UP &kp K_VOL_DN &kp K_PREV &kp K_PP &kp K_NEXT &kp LG(P)   &kp K_SLEEP &kp K_COFFEE
+                &kp PSCRN &kp DEL &kp EQUAL &trans
                 &trans    &my_qQ     &my_wW       &my_eE       &my_rR     &my_tT   &my_yY     &my_uU      &my_iI      &my_oO       &my_pP    &my_bo  &my_bc
                 &kp CAPS  &my_aA     &my_sS       &my_dD       &my_fF     &my_gG   &my_hH     &my_jJ      &my_kK      &my_lL       &my_lL1   &my_kK1 &trans
                 &trans    &my_ss2    &my_zZ       &my_xX       &my_cC     &my_vV   &my_bB     &my_nN      &my_mM      &my_cC1      &my_pP1   &trans  &my_qQ1
@@ -83,10 +84,10 @@
         };
         lower_layer {
             bindings = <
-                &kp ESC  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10 &kp F11 &kp F12 &trans
-                &trans   &ro_ai  &kp F14 &kp F15 &kp F16 &ro_t   &kp F18 &kp F19 &ro_i   &kp F21 &kp F22 &kp F23 &kp F24
-                &trans   &ro_a   &ro_s   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans   &kp F20 &trans  &my_xXr &my_cCr &my_vVr &my_bBr &my_nNr &trans  &trans  &trans  &trans  &trans
+                &kp ESC  &kp F1          &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10 &kp F11 &kp F12 &trans
+                &trans   &ro_ai          &kp F13 &kp F14 &kp F15 &ro_t   &kp F16 &kp F17 &ro_i   &kp F18 &kp F19 &kp F20 &kp F21
+                &trans   &ro_a           &ro_s   &kp F22 &kp F23 &kp F24 &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &trans   &trans          &trans  &my_xXr &my_cCr &my_vVr &my_bBr &my_nNr &trans  &trans  &trans  &trans  &trans
                 &trans   &studio_unlock  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >; 
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
