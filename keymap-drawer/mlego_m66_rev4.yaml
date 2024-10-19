@@ -264,6 +264,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - BT NXT
+  - {h: '$$mdi:skip-next$$', s: '$$mdi:bluetooth$$'}
   - $$mdi:bluetooth-off$$
-  - BT PRV
+  - {h: '$$mdi:skip-previous$$', s: '$$mdi:bluetooth$$'}

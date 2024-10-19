@@ -391,7 +391,7 @@ parse_config:
       hold: $$mdi:skip-next$$
     '&bt BT_PRV':
       shifted: $$mdi:bluetooth$$
-      hold: $$mdi:skip-prev$$
+      hold: $$mdi:skip-previous$$
 
   zmk_combos:
     combo_to_2:
