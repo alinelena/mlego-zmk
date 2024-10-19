@@ -1220,8 +1220,8 @@ path.combo { stroke: #7f7f7f; }
 </g>
 <g transform="translate(262, 338)" class="key keypos-43">
 <rect rx="4" ry="4" x="-36" y="-36" width="71" height="71" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 62%">&amp;my_xXr…</tspan></text>
-<text x="0" y="-34" class="key shifted"><tspan style="font-size: 62%">&amp;my_xXr…</tspan></text>
+<text x="0" y="0" class="key tap">xx</text>
+<text x="0" y="-34" class="key shifted">ZZ</text>
 </g>
 <g transform="translate(338, 338)" class="key keypos-44">
 <rect rx="4" ry="4" x="-36" y="-36" width="71" height="71" class="key"/>

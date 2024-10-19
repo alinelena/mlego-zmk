@@ -177,7 +177,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&my_xXr_lower', s: '&my_xXr_upper'}
+  - {t: xx, s: ZZ}
   - {t: '&my_cCr_lower', s: '&my_cCr_upper'}
   - {t: '&my_vVr_lower', s: '&my_vVr_upper'}
   - {t: '&my_bBr_lower', s: '&my_bBr_upper'}
