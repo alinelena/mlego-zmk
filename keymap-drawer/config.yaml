@@ -386,6 +386,13 @@ parse_config:
     '&studio_unlock':
       tap: $$mdi:android-studio$$
 
+    '&bt BT_NXT':
+      shifted: $$mdi:bluetooth$$
+      hold: $$mdi:skip-next$$
+    '&bt BT_PRV':
+      shifted: $$mdi:bluetooth$$
+      hold: $$mdi:skip-prev$$
+
   zmk_combos:
     combo_to_2:
       align: top
