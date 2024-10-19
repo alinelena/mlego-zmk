@@ -73,8 +73,7 @@
         };
         raise_layer {
             bindings = <
-                &kp GRAVE &kp K_MUTE &kp K_VOL_UP &kp K_VOL_DN &kp K_PREV &kp K_PP &kp K_NEXT &kp LG(P)   &kp K_SLEEP &kp K_COFFEE
-                &kp PSCRN &kp DEL &kp EQUAL &trans
+                &kp GRAVE &kp K_MUTE &kp K_VOL_UP &kp K_VOL_DN &kp K_PREV &kp K_PP: &kp K_NEXT &kp LG(P)   &kp K_SLEEP &kp K_COFFEE &kp PSCRN &kp DEL &kp EQUAL &trans
                 &trans    &my_qQ     &my_wW       &my_eE       &my_rR     &my_tT   &my_yY     &my_uU      &my_iI      &my_oO       &my_pP    &my_bo  &my_bc
                 &kp CAPS  &my_aA     &my_sS       &my_dD       &my_fF     &my_gG   &my_hH     &my_jJ      &my_kK      &my_lL       &my_lL1   &my_kK1 &trans
                 &trans    &my_ss2    &my_zZ       &my_xX       &my_cC     &my_vV   &my_bB     &my_nN      &my_mM      &my_cC1      &my_pP1   &trans  &my_qQ1

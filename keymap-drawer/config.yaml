@@ -376,6 +376,8 @@ parse_config:
     K_CANCEL: $$mdi:close-box$$
     K_COFFEE: $$mdi:power-standby$$
     K_SLEEP: $$mdi:sleep$$
+    K_PSCRN: $$mdi:monitor-screenshot$$
+    LG(P): $$mdi:monitor-screenshot$$
 
     # Zoom
     RG(RS(A)):
@@ -404,6 +406,10 @@ parse_config:
       type: toggle
     '&sys_reset':
       tap: $$mdi:lock-reset$$
+    '&studio_unlocker':
+      tap: $$mdi:android-studio$$
+    '&bootloader':
+      tap: "♽" 
 
   zmk_combos:
     combo_to_2:
