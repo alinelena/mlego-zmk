@@ -426,11 +426,11 @@ draw_config:
     ry: 4
   svg_extra_style: ''
   footer_text: Created with <a href="https://github.com/caksoylar/keymap-drawer">keymap-drawer</a>
-  shrink_wide_legends: 7
+  shrink_wide_legends: 5
   style_layer_activators: true
-  glyph_tap_size: 14
-  glyph_hold_size: 12
-  glyph_shifted_size: 10
+  glyph_tap_size: 26
+  glyph_hold_size: 16
+  glyph_shifted_size: 16
   glyphs: {}
   # Custom CSS
   svg_style: |
