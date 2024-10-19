@@ -1,0 +1,204 @@
+layers:
+  qw: [ESC, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', BSPC, MUTE, TAB, Q, W, E, R, T, Y, U, I, O, P, '[', ']', '#', A, S, D, F, G, H, J, K, L, ;, '''',
+    RET, LSHFT, '|', Z, X, C, V, B, N, M, ',', ., UP, /, LCTRL, LGUI, '&tlwr', LALT, '&trse', SPACE, SPACE, SPACE, RALT, RSHFT, LEFT, DOWN, RIGHT]
+  raise:
+  - '`'
+  - MUTE
+  - VOL UP
+  - VOL DN
+  - PREV
+  - PP
+  - NEXT
+  - Gui+ P
+  - SLEEP
+  - COFFEE
+  - PSCRN
+  - DEL
+  - '='
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&my_qQ'
+  - '&my_wW'
+  - '&my_eE'
+  - '&my_rR'
+  - '&my_tT'
+  - '&my_yY'
+  - '&my_uU'
+  - '&my_iI'
+  - '&my_oO'
+  - '&my_pP'
+  - '&my_bo'
+  - '&my_bc'
+  - CAPS
+  - '&my_aA'
+  - '&my_sS'
+  - '&my_dD'
+  - '&my_fF'
+  - '&my_gG'
+  - '&my_hH'
+  - '&my_jJ'
+  - '&my_kK'
+  - '&my_lL'
+  - '&my_lL1'
+  - '&my_kK1'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&my_ss2'
+  - '&my_zZ'
+  - '&my_xX'
+  - '&my_cC'
+  - '&my_vV'
+  - '&my_bB'
+  - '&my_nN'
+  - '&my_mM'
+  - '&my_cC1'
+  - '&my_pP1'
+  - {t: ▽, type: trans}
+  - '&my_qQ1'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  lower:
+  - ESC
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - F12
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&ro_ai'
+  - F14
+  - F15
+  - F16
+  - '&ro_t'
+  - F18
+  - F19
+  - '&ro_i'
+  - F21
+  - F22
+  - F23
+  - F24
+  - {t: ▽, type: trans}
+  - '&ro_a'
+  - '&ro_s'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F20
+  - {t: ▽, type: trans}
+  - '&my_xXr'
+  - '&my_cCr'
+  - '&my_vVr'
+  - '&my_bBr'
+  - '&my_nNr'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&studio_unlock'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  adjust:
+  - {t: ▽, type: trans}
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&sys_reset'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - OUT USB
+  - OUT BLE
+  - OUT TOG
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - BT NXT
+  - BT CLR
+  - BT PRV
