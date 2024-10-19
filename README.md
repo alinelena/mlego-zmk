@@ -15,6 +15,7 @@ zmk firmware for mlego
     - [x] unicode
     - [ ] rgb per key...
 
+![m66 keymaps](./keymap-drawer/mlego_m66_rev4.svg)
 
 - mlego m65 5x13 rev4
 ![M65 stm32f401](https://i.imgur.com/P1SRKwC.jpg)
