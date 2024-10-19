@@ -383,15 +383,23 @@ parse_config:
       tap: $$mdi:video$$
       hold: zoom
   raw_binding_map: 
-    "&out OUT_USB":
-      tap: $$mdi:keyboard$$
-      shifted: $$mdi:usb$$
-      type: sym_by_sym
-
     "&tlwr":
       tap: "⇓"
     "&trse":
       tap: "⇑"
+    '&out OUT_BLE':
+      tap: $$mdi:keyboard$$
+      shifted: $$mdi:bluetooth$$
+      type: sym_by_sym
+    '&out OUT_USB':
+      tap: $$mdi:keyboard$$
+      shifted: $$mdi:usb$$
+      type: sym_by_sym
+    '&out OUT_TOG':
+      tap: $$mdi:toggle-switch$$
+      hold: $$mdi:bluetooth$$
+      shifted: $$mdi:usb$$
+      type: toggle
 
   zmk_combos:
     combo_to_2:
