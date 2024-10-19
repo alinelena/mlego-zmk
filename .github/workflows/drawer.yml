@@ -8,6 +8,8 @@ on:
       - "config/boards/shields/mlego_m66_rev4/*.dtsi"
       - "config/boards/shields/mlego_m66_rev4/*.json"
       - "keymap-drawer/config.yaml"
+      - ".github/workflows/draw.yml"
+
       # - 'boards/*/*/*.keymap'
 
 jobs:
@@ -22,3 +24,5 @@ jobs:
       output_folder: "keymap-drawer"            # path to save produced SVG and keymap YAML files
       parse_args: ""  # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
       draw_args: "mlego_m66_rev4:'-j config/boards/shields/mlego_m66_rev4/mlego_m66_rev4.json' mlego_m66_rev4_rp2040:'-j config/boards/shields/mlego_m66_rev4/mlego_m66_rev4.json'"   # map of extra args to pass to `keymap draw`, e.g. "corne:'-k corne_rotated' cradio:'-k paroxysm'"
+      amend_commit: true # whether to amend the commit or create a new one
+      fail_on_error: true

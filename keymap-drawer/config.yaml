@@ -402,6 +402,8 @@ parse_config:
       hold: $$mdi:bluetooth$$
       shifted: $$mdi:usb$$
       type: toggle
+    '&sys_reset':
+      tap: $$mdi:lock-reset$$
 
   zmk_combos:
     combo_to_2:
