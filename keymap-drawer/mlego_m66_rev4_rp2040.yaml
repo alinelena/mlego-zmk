@@ -253,7 +253,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: '$$mdi:keyboard$$', s: '$$mdi:usb$$', type: sym_by_sym}
   - {t: ▽, type: trans}
-  - OUT TOG
+  - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$', type: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
