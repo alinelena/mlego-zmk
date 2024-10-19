@@ -430,7 +430,7 @@ parse_config:
         hold: ";"
 
   zmk_preamble: '#define KEYMAP_DRAWER'
-  zmk_additional_includes: []
+  zmk_additional_includes: ["zmk-helpers/include"]
   # Custom CSS
   svg_style: |
     /* latin-ext */
