@@ -84,6 +84,9 @@ parse_config:
       left_ctrl+left_alt+left_shift: Meh
   zmk_remove_keycode_prefix: []
   zmk_keycode_map:
+    A:
+      tap: a
+      shifted: "A"
    # Numbers
     N1:
       tap: 1
@@ -219,14 +222,14 @@ parse_config:
     # Modifiers
     LCTRL: "⎈"
     LALT: "⎇"
-    LSHIFT: $$mdi:apple-keyboard-shift$$
+    LSHIFT: "⇧"
     LGUI: ""
-    LSHFT: $$mdi:apple-keyboard-shift$$
+    LSHFT: "⇧"
     LCMD: $$mdi:apple-keyboard-command$$
     RCTRL: "⎈"
     RALT: "⎇"
-    RSHIFT: $$mdi:apple-keyboard-shift$$
-    RSHFT: $$mdi:apple-keyboard-shift$$
+    RSHIFT: "⇧"
+    RSHFT: "⇧"
     RCMD: $$mdi:apple-keyboard-command$$
     LS(LC(LALT)): $$mdi:triangle$$ # Meh
 
@@ -239,11 +242,11 @@ parse_config:
     PG_DN: $$mdi:transfer-down$$
 
     # Whitespace
-    ENTER:
+    RET:
       type: enter
       tap: $$mdi:keyboard-return$$
-    ESC: $$mdi:keyboard-esc$$
-    TAB: $$mdi:keyboard-tab$$
+    ESC: "⎋"
+    TAB: "↹"
     LS(TAB): $$mdi:keyboard-tab-reverse$$
     SPACE: $$mdi:keyboard-space$$
     BACKSPACE:
@@ -256,24 +259,24 @@ parse_config:
     DEL: $$mdi:backspace-reverse-outline$$
 
     # Locks
-    CAPSLOCK: $$mdi:apple-keyboard-caps$$
-    CAPS: $$mdi:apple-keyboard-caps$$
+    CAPSLOCK: "⇪"
+    CAPS: "⇪"
 
     # Sound
     C_MUTE: $$mdi:volume-off$$
     C_VOL_UP: $$mdi:volume-high$$
     C_VOL_DN: $$mdi:volume-low$$
-    MUTE: $$mdi:volume-off$$
-    VOL_UP: $$mdi:volume-high$$
-    VOL_DN: $$mdi:volume-low$$
+    K_MUTE: $$mdi:volume-off$$
+    K_VOL_UP: $$mdi:volume-high$$
+    K_VOL_DN: $$mdi:volume-low$$
 
     # Media
     C_NEXT: $$mdi:skip-next$$
     C_PREV: $$mdi:skip-previous$$
     C_PP: $$mdi:play-pause$$
-    NEXT: $$mdi:skip-next$$
-    PREV: $$mdi:skip-previous$$
-    PP: $$mdi:play-pause$$
+    K_NEXT: $$mdi:skip-next$$
+    K_PREV: $$mdi:skip-previous$$
+    K_PP: $$mdi:play-pause$$
 
     # Bluetooth
     BT_CLR: $$mdi:bluetooth-off$$
