@@ -242,7 +242,9 @@ parse_config:
     PIPE: "|"
     NON_US_BACKSLASH: \
     PIPE2: "|"
-    NON_US_BSLH: "|"
+    NON_US_BSLH: 
+      tap: \
+      shifted: "|"
     SEMICOLON:
       tap: ";"
       shifted: ":"
@@ -257,7 +259,9 @@ parse_config:
       tap: "'"
       shifted: '"'
     APOSTROPHE: <
-    APOS: .
+    APOS: 
+      tap: "'"
+      shifted: "@"
     DOUBLE_QUOTES: '"'
     DQT: '"'
 
@@ -289,10 +293,14 @@ parse_config:
     RBRC: "}"
     GRAVE:
       tap: "`"
-      shifted: "~"
+      shifted: "¬"
     TILDE: "~"
-    NON_US_HASH: "#"
-    NUHS: "#"
+    NON_US_HASH:
+      tap:  "#"
+      shifted: "~"
+    NUHS:
+      tap:  "#"
+      shifted: "~"
     TILDE2: "~"
 
     # Modifiers
@@ -357,10 +365,6 @@ parse_config:
     # Bluetooth
     BT_CLR: $$mdi:bluetooth-off$$
     BT_SEL: $$mdi:bluetooth-connect$$
-    "&out OUT_USB":
-      tap: $$mdi:keyboard$$
-      shifted: $$mdi:usb$$
-      type: sym_by_sym
 
     # Settings
     C_BRI_UP: $$mdi:brightness-5$$
@@ -378,6 +382,16 @@ parse_config:
     RG(RS(V)):
       tap: $$mdi:video$$
       hold: zoom
+  raw_binding_map: 
+    "&out OUT_USB":
+      tap: $$mdi:keyboard$$
+      shifted: $$mdi:usb$$
+      type: sym_by_sym
+
+    "&tlwr":
+      tap: "⇓"
+    "&trse":
+      tap: "⇑"
 
   zmk_combos:
     combo_to_2:
