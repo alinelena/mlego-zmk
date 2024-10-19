@@ -356,8 +356,10 @@ parse_config:
       shifted: $$mdi:bluetooth$$
       tap: $$mdi:skip-previous$$
 
-    '&my_xXr_lower': xx
-    '&my_xXr_upper': ZZ
+    '&my_xXr_lower': 
+       tap: xx
+    '&my_xXr_upper': 
+       tap: ZZ
 
   zmk_combos:
     combo_to_2:
