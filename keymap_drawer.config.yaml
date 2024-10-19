@@ -6,7 +6,7 @@ draw_config:
   combo_h: 26.0
   key_rx: 6.0
   key_ry: 6.0
-  dark_mode: auto
+  dark_mode: true
   n_columns: 1
   separate_combo_diagrams: false
   combo_diagrams_scale: 2
@@ -61,13 +61,13 @@ parse_config:
   preprocess: true
   skip_binding_parsing: false
   raw_binding_map: {}
-  sticky_label: sticky
+  sticky_label: $$mdi:gesture-tap-hold$$
   toggle_label: toggle
   tap_toggle_label: tap-toggle
   trans_legend:
     t: ▽
     type: trans
-  mark_alternate_layer_activators: false
+  mark_alternate_layer_activators: true
   modifier_fn_map:
     left_ctrl: Ctl
     right_ctrl: Ctl
@@ -84,7 +84,7 @@ parse_config:
       left_ctrl+left_alt+left_shift: Meh
   zmk_remove_keycode_prefix: []
   zmk_keycode_map:
-        # Numbers
+   # Numbers
     N1:
       tap: 1
       shifted: "!"
