@@ -1,0 +1,56 @@
+/*
+ * Copyright (c) 2022-2024 alin m elena
+ * SPDX-License-Identifier: MIT
+ */
+ / {
+  model = "mlego m66, rev4,st7735s";
+	chosen {
+		zephyr,display = &st7735s160x80;
+	};
+
+};
+
+board_spi: &spi0 {
+  status = "okay";
+  pinctrl-0 = < &spi0_default >;
+  pinctrl-names = "default";
+  cs-gpios = <&gpio0 21 GPIO_ACTIVE_LOW> ,
+             <&gpio0 6 GPIO_ACTIVE_HIGH>;
+
+  shift_reg: 595@0 {
+    compatible = "zmk,gpio-595";
+    status = "okay";
+    gpio-controller;
+    spi-max-frequency = <2000000>;
+    #gpio-cells = <2>;
+    reg = <0>;
+    ngpios = <16>;
+  };
+	st7735s160x80: st7735r@0 {
+		compatible = "sitronix,st7735r";
+		spi-max-frequency = <1000000>;
+		reg = <1>;
+		cmd-data-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;	
+		reset-gpios = <&gpio0 8  GPIO_ACTIVE_LOW>;
+		width = <160>;
+		height = <80>;
+		x-offset = <0>;
+		y-offset = <0>;
+		madctl = <0xC0>;
+		colmod = <0x05>;
+		caset = [00 00 00 4F];
+		raset = [00 00 00 9F];
+		vmctr1 = <0x0e>;
+		invctr = <0x07>;
+		pwctr1 = [a2 02 84];
+		pwctr2 = [c5];
+		pwctr3 = [0a 00];
+		pwctr4 = [8a 2a];
+		pwctr5 = [8a ee];
+		frmctr1 = [01 2c 2d];
+		frmctr2 = [01 2c 2d];
+		frmctr3 = [01 2c 2d 01 2c 2d];
+		gamctrp1 = [02 1c 07 12 37 32 29 2d 29 25 2b 39 00 01 03 10];
+		gamctrn1 = [03 1d 07 06 2e 2c 29 2d 2e 2e 37 3f 00 00 02 10];
+	};
+};
