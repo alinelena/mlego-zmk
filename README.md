@@ -1,6 +1,4 @@
-#mlego
-
-zmk firmware for mlego
+# zmk firmware for mlego
 
 - mlego m66 5x13 rev4
 ![m66](https://mlego.elena.re/pics/m66/mlego_m66_rev4-lcd.webp)
@@ -13,9 +11,9 @@ zmk firmware for mlego
     - [x] mipi sharp screen (nice!view like various sizes)
     - [ ] eink, 2.13inch we act.
     - [ ] led indicators
-    - [x] unicode
+    - [x] unicode via zmk-helpers
     - [ ] rgb per key...
-  - keymap expansded per layer
+  - keymap expanded per layer
 
 ![m66 keymaps](./keymap-drawer/mlego_m66_rev4.svg)
 
