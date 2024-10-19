@@ -1,6 +1,6 @@
 layers:
   qw:
-  - $$mdi:keyboard-esc$$
+  - ⎋
   - {t: '1', s: '!'}
   - {t: '2', s: '"'}
   - {t: '3', s: £}
@@ -13,8 +13,8 @@ layers:
   - {t: '0', s: )}
   - {t: '-', s: _}
   - {t: '$$mdi:backspace$$', type: backspace}
-  - MUTE
-  - $$mdi:keyboard-tab$$
+  - $$mdi:volume-off$$
+  - ↹
   - Q
   - W
   - E
@@ -28,7 +28,7 @@ layers:
   - {t: '[', s: '{'}
   - {t: ']', s: '}'}
   - '#'
-  - A
+  - {t: a, s: A}
   - S
   - D
   - F
@@ -39,8 +39,8 @@ layers:
   - L
   - {t: ;, s: ':'}
   - .
-  - RET
-  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - ⇧
   - '|'
   - Z
   - X
@@ -62,18 +62,18 @@ layers:
   - $$mdi:keyboard-space$$
   - $$mdi:keyboard-space$$
   - ⎇
-  - $$mdi:apple-keyboard-shift$$
+  - ⇧
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
   raise:
   - {t: '`', s: '~'}
-  - MUTE
-  - VOL UP
-  - VOL DN
-  - PREV
-  - PP
-  - NEXT
+  - $$mdi:volume-off$$
+  - $$mdi:volume-high$$
+  - $$mdi:volume-low$$
+  - $$mdi:skip-previous$$
+  - $$mdi:play-pause$$
+  - $$mdi:skip-next$$
   - Gui+ P
   - SLEEP
   - COFFEE
@@ -94,7 +94,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - $$mdi:apple-keyboard-caps$$
+  - ⇪
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -134,7 +134,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   lower:
-  - $$mdi:keyboard-esc$$
+  - ⎋
   - F1
   - F2
   - F3
