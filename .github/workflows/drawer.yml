@@ -6,6 +6,7 @@ on:
     paths:
       - "config/boards/shields/mlego_m66_rev4/*.keymap"
       - "config/boards/shields/mlego_m66_rev4/*.dtsi"
+      - "config/boards/shields/mlego_m66_rev4/*.json"
       - "keymap_drawer.config.yaml"
       # - 'boards/*/*/*.keymap'
 
