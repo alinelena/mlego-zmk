@@ -83,7 +83,10 @@
 </svg>
 </defs>/* end glyphs */
 <style>
+
+
 /* inherit to force styles through use tags */
+/* a lot lifted from https://github.com/minusfive/zmk-config */
 svg path {
     fill: inherit;
 }
@@ -252,11 +255,13 @@ svg.keymap {
     font-kerning: normal;
     text-rendering: optimizeLegibility;
     fill: var(--color--text);
+    /*
     background-color: var(--color--bg);
     background-image: var(--logo-path);
     background-repeat: no-repeat;
     background-position: var(--logo-position);
     background-size: var(--logo-size) auto;
+    */
 }
 
 rect,
