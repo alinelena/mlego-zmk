@@ -836,7 +836,7 @@ draw_config:
     .hold {
         font-size: 16px;
         text-anchor: middle;
-        translate: 0 -4px;
+        translate: 0 -8px;
     }
 
     .shifted {
