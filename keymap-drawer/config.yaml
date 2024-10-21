@@ -847,6 +847,7 @@ draw_config:
         fill: var(--color--key--text--hold);
     }
     .hold.glyph {
+        translate: 0 -4px;
     }
 
 
@@ -880,7 +881,7 @@ draw_config:
     }
     .rect.hold {
         font-size: 16px;
-        translate: 0 4px;
+        translate: 0 -4px;
         fill: var(--color-material--red--100);
     }
 
