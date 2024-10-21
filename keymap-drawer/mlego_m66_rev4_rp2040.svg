@@ -263,7 +263,7 @@ path {
 text {
     text-anchor: middle;
     dominant-baseline: middle;
-    line-height: 1;
+    line-height: 2;
 }
 
 /* Layer labels */
@@ -306,10 +306,10 @@ rect.combo {
     text-anchor: middle;
     dominant-baseline: ideographic;
     fill: var(--color--key--text--hold);
-    translate: 0 -16px;
+    translate: 0 -12px;
 }
 .hold.glyph {
-    translate: 0 -16px;
+    translate: 0 -12px;
 }
 
 
