@@ -149,21 +149,21 @@ layers:
   - F12
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&ro_ai_lower', s: '&ro_ai_upper'}
+  - {t: â, s: Â}
   - F13
   - F14
   - F15
-  - {t: '&ro_t_lower', s: '&ro_t_upper'}
+  - {t: ț, s: Ț}
   - F16
   - F17
-  - {t: '&ro_i_lower', s: '&ro_i_upper'}
+  - {t: î, s: Î}
   - F18
   - F19
   - F20
   - F21
   - {t: ▽, type: trans}
-  - {t: '&ro_a_lower', s: '&ro_a_upper'}
-  - {t: '&ro_s_lower', s: '&ro_s_upper'}
+  - {t: ă, s: Ă}
+  - {t: ș, s: Ș}
   - F22
   - F23
   - F24
@@ -177,7 +177,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: xx, s: ZZ}
+  - {t: '&my_xXr_lower', s: '&my_xXr_upper'}
   - {t: '&my_cCr_lower', s: '&my_cCr_upper'}
   - {t: '&my_vVr_lower', s: '&my_vVr_upper'}
   - {t: '&my_bBr_lower', s: '&my_bBr_upper'}

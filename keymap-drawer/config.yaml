@@ -355,6 +355,7 @@ parse_config:
     '&bt BT_PRV':
       shifted: $$mdi:bluetooth$$
       tap: $$mdi:skip-previous$$
+    # .ro
     '&ro_a_upper':
       tap: Ă
     '&ro_a_lower':
