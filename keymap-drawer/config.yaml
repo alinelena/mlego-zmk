@@ -880,7 +880,7 @@ draw_config:
     }
     .rect.hold {
         font-size: 16px;
-        translate: 0 0;
+        translate: 0 4px;
         fill: var(--color-material--red--100);
     }
 
