@@ -829,10 +829,14 @@ draw_config:
     .tap {
         fill: var(--color--key--text--tap);
     }
-    .shifted,
+    .shifted{
+        font-size: 16px;
+        text-anchor: middle;
+    }
     .hold {
         font-size: 16px;
         text-anchor: middle;
+        translate: 0 -4px;
     }
 
     .shifted {
@@ -845,6 +849,7 @@ draw_config:
     .hold {
         dominant-baseline: ideographic;
         fill: var(--color--key--text--hold);
+        translate: 0 -4px;
     }
     .hold.glyph {
         translate: 0 -4px;
@@ -878,11 +883,6 @@ draw_config:
     }
     .combo.shifted.glyph {
         translate: -9px -3px;
-    }
-    .rect.hold {
-        font-size: 16px;
-        translate: 0 -4px;
-        fill: var(--color-material--red--100);
     }
 
     /*
