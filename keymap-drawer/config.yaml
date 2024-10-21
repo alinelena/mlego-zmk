@@ -356,10 +356,27 @@ parse_config:
       shifted: $$mdi:bluetooth$$
       tap: $$mdi:skip-previous$$
 
-    '&my_xXr_lower': 
-       tap: xx
-    '&my_xXr_upper': 
-       tap: ZZ
+    '&ro_a_upper':
+      tap: Ă
+    '&ro_a_lower':
+      tap: ă
+    '&ro_ai_upper':
+      tap: Â
+    '&ro_ai_lower':
+      tap: â
+    '&ro_i_upper':
+      tap: Î
+    '&ro_i_lower':
+      tap: î
+    '&ro_s_upper':
+      tap: Ș
+    '&ro_s_lower':
+      tap: ș
+    '&ro_t_upper':
+      tap: Ț
+    '&ro_t_lower':
+      tap: ț
+
 
   zmk_combos:
     combo_to_2:
@@ -408,21 +425,21 @@ draw_config:
   combo_h: 32.0
   key_rx: 4.0
   key_ry: 4.0
-  dark_mode: auto
+  dark_mode: true
   n_columns: 1
   separate_combo_diagrams: false
   combo_diagrams_scale: 2
   inner_pad_w: 2.0
   inner_pad_h: 2.0
-  outer_pad_w: 0.0
-  outer_pad_h: 0.0
+  outer_pad_w: 1.0
+  outer_pad_h: 1.0
   line_spacing: 1.0
   arc_radius: 6.0
-  append_colon_to_layer_header: true
+  append_colon_to_layer_header: false
   small_pad: 2.0
   legend_rel_x: 0.0
   legend_rel_y: 0.0
-  draw_key_sides: false
+  draw_key_sides: true
   key_side_pars:
     rel_x: 0
     rel_y: 4
@@ -640,9 +657,12 @@ draw_config:
 
 
     /* Keys */
-    rect.key,
-    rect.combo {
+    rect.key{
         fill: var(--color--key--bg);
+        stroke: var(--color--key--border);
+    }
+    rect.combo {
+        fill: var(--color--material--yellow-100);
         stroke: var(--color--key--border);
     }
     .tap {
@@ -697,9 +717,10 @@ draw_config:
     .combo.shifted.glyph {
         translate: -9px -3px;
     }
-    .combo.hold {
+    .rect.hold {
         font-size: 16px;
         translate: 0 0;
+        fill: var(--color-material--red--100);
     }
 
     /*
@@ -708,7 +729,7 @@ draw_config:
     .trans,
     .none,
     .ghost {
-      opacity: 0.4;
+      opacity: 0.7;
     }
     .trans {
         --color--key--bg: var(--color--trans--bg);
@@ -731,37 +752,3 @@ draw_config:
         --color--key--text--shifted: var(--color--ghost--text--shifted);
         --color--key--text--hold: var(--color--ghost--text--hold);
     }
-
-
-    /*
-     * Overrides
-     */
-    /* Outer column + thumb keys */
-    .keypos-0,
-    .keypos-11,
-    .keypos-12,
-    .keypos-23,
-    .keypos-24,
-    .keypos-35,
-    .keypos-36,
-    .keypos-37,
-    .keypos-38,
-    .keypos-39,
-    .keypos-40,
-    .keypos-41 {
-        --color--key--bg: var(--color--material--red--100);
-        --color--key--border: var(--color--material--blue-gray--50);
-    }
-
-    .keypos-12 {
-        --color--key--bg: var(--color--material--red--300);
-        --color--key--border: var(--color--material--red--200);
-        --color--key--text--shifted: var(--color--key--text--tap);
-        --color--key--text--hold: var(--color--key--text--tap);
-    }
-
-    .keypos-23 {
-        --color--key--bg: var(--color--material--teal--200);
-        --color--key--border: var(--color--material--teal--100);
-    }
-
