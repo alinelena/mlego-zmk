@@ -306,10 +306,10 @@ rect.combo {
     text-anchor: middle;
     dominant-baseline: ideographic;
     fill: var(--color--key--text--hold);
-    translate: 0 -12px;
+    translate: 0 -16px;
 }
 .hold.glyph {
-    translate: 0 -12px;
+    translate: 0 -16px;
 }
 
 
