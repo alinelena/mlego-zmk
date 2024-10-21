@@ -376,6 +376,164 @@ parse_config:
       tap: Ț
     '&ro_t_lower':
       tap: ț
+#  special ones
+    '&my_aA_upper':
+      tap: Α
+    '&my_aA_lower':
+      tap: α
+    '&my_bB_upper':
+      tap: ∩
+    '&my_bB_lower':
+      tap: β
+    '&my_bBr_upper':
+      tap: ⊼
+    '&my_bBr_lower':
+      tap: ∧
+    '&my_bc_upper':
+      tap: ≅
+    '&my_bc_lower':
+      tap: ⋝
+    '&my_bo_upper':
+      tap: ≠
+    '&my_bo_lower':
+      tap: ⋜
+    '&my_cC_upper':
+      tap: ⊂
+    '&my_cC_lower':
+      tap: χ
+    '&my_cC1_upper':
+      tap: ≉
+    '&my_cC1_lower':
+      tap: ≈
+    '&my_cCr_upper':
+      tap: ⊆
+    '&my_cCr_lower':
+      tap: ⊄
+    '&my_dD_upper':
+      tap: ∂
+    '&my_dD_lower':
+      tap: δ
+    '&my_eE_upper':
+      tap: ℇ
+    '&my_eE_lower':
+      tap: ε
+    '&my_fF_upper':
+      tap:
+    '&my_fF_lower':
+      tap:
+    '&my_gG_upper':
+      tap:
+    '&my_gG_lower':
+      tap:
+    '&my_hH_upper':
+      tap:
+    '&my_hH_lower':
+      tap:
+    '&my_iI_upper':
+      tap:
+    '&my_iI_lower':
+      tap:
+    '&my_jJ_upper':
+      tap:
+    '&my_jJ_lower':
+      tap:
+    '&my_kK_upper':
+      tap:
+    '&my_kK_lower':
+      tap:
+    '&my_kK1_upper':
+      tap:
+    '&my_kK1_lower':
+      tap:
+    '&my_lL_upper':
+      tap:
+    '&my_lL_lower':
+      tap:
+    '&my_lL1_upper':
+      tap:
+    '&my_lL1_lower':
+      tap:
+    '&my_mM_upper':
+      tap:
+    '&my_mM_lower':
+      tap:
+    '&my_nN_upper':
+      tap:
+    '&my_nN_lower':
+      tap:
+    '&my_nNr_upper':
+      tap:
+    '&my_nNr_lower':
+      tap:
+    '&my_oO_upper':
+      tap:
+    '&my_oO_lower':
+      tap:
+    '&my_pP_upper':
+      tap:
+    '&my_pP_lower':
+      tap:
+    '&my_pP1_upper':
+      tap:
+    '&my_pP1_lower':
+      tap:
+    '&my_qQ_upper':
+      tap:
+    '&my_qQ_lower':
+      tap:
+    '&my_qQ1_upper':
+      tap:
+    '&my_qQ1_lower':
+      tap:
+    '&my_rR_upper':
+      tap:
+    '&my_rR_lower':
+      tap:
+    '&my_sS_upper':
+      tap:
+    '&my_sS_lower':
+      tap:
+    '&my_ss2_upper':
+      tap:
+    '&my_ss2_lower':
+      tap:
+    '&my_tT_upper':
+      tap:
+    '&my_tT_lower':
+      tap:
+    '&my_uU_upper':
+      tap:
+    '&my_uU_lower':
+      tap:
+    '&my_vV_upper':
+      tap:
+    '&my_vV_lower':
+      tap:
+    '&my_vVr_upper':
+      tap:
+    '&my_vVr_lower':
+      tap:
+    '&my_wW_upper':
+      tap:
+    '&my_wW_lower':
+      tap:
+    '&my_xX_upper':
+      tap:
+    '&my_xX_lower':
+      tap:
+    '&my_xXr_upper':
+      tap:
+    '&my_xXr_lower':
+      tap:
+    '&my_yY_upper':
+      tap:
+    '&my_yY_lower':
+      tap:
+    '&my_zZ_upper':
+      tap:
+    '&my_zZ_lower':
+      tap:
+
 
 
   zmk_combos:
