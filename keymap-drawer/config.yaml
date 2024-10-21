@@ -418,123 +418,121 @@ parse_config:
     '&my_eE_lower':
       tap: ε
     '&my_fF_upper':
-      tap:
+      tap: ψ
     '&my_fF_lower':
-      tap:
+      tap: φ
     '&my_gG_upper':
-      tap:
+      tap: Γ
     '&my_gG_lower':
-      tap:
+      tap: γ
     '&my_hH_upper':
-      tap:
+      tap: ℋ
     '&my_hH_lower':
-      tap:
+      tap: ℏ
     '&my_iI_upper':
-      tap:
+      tap: ∮
     '&my_iI_lower':
-      tap:
+      tap: ∫
     '&my_jJ_upper':
-      tap:
+      tap: ∉
     '&my_jJ_lower':
-      tap:
+      tap: ∈
     '&my_kK_upper':
-      tap:
+      tap: ∆
     '&my_kK_lower':
-      tap:
+      tap: ϰ
     '&my_kK1_upper':
-      tap:
+      tap: Å
     '&my_kK1_lower':
-      tap:
+      tap: ∝
     '&my_lL_upper':
-      tap:
+      tap: Λ
     '&my_lL_lower':
-      tap:
+      tap: λ
     '&my_lL1_upper':
-      tap:
+      tap: ℒ
     '&my_lL1_lower':
-      tap:
+      tap: °
     '&my_mM_upper':
-      tap:
+      tap: ∘
     '&my_mM_lower':
-      tap:
+      tap: μ
     '&my_nN_upper':
-      tap:
+      tap: ∪
     '&my_nN_lower':
-      tap:
+      tap: η
     '&my_nNr_upper':
-      tap:
+      tap: ⊻
     '&my_nNr_lower':
-      tap:
+      tap: ∨
     '&my_oO_upper':
-      tap:
+      tap: ⊗
     '&my_oO_lower':
-      tap:
+      tap: ∞
     '&my_pP_upper':
-      tap:
+      tap: ∏
     '&my_pP_lower':
-      tap:
+      tap: π
     '&my_pP1_upper':
-      tap:
+      tap: ∓
     '&my_pP1_lower':
-      tap:
+      tap: ±
     '&my_qQ_upper':
-      tap:
+      tap: ϕ
     '&my_qQ_lower':
-      tap:
+      tap: σ
     '&my_qQ1_upper':
-      tap:
+      tap: ⋅
     '&my_qQ1_lower':
-      tap:
+      tap: ×
     '&my_rR_upper':
-      tap:
+      tap: ∇
     '&my_rR_lower':
-      tap:
+      tap: ρ
     '&my_sS_upper':
-      tap:
+      tap: ⨋
     '&my_sS_lower':
-      tap:
+      tap: ∑
     '&my_ss2_upper':
-      tap:
+      tap: ≢
     '&my_ss2_lower':
-      tap:
+      tap: ≡
     '&my_tT_upper':
-      tap:
+      tap: θ
     '&my_tT_lower':
-      tap:
+      tap: ϑ
     '&my_uU_upper':
-      tap:
+      tap: ℂ
     '&my_uU_lower':
-      tap:
+      tap: τ
     '&my_vV_upper':
-      tap:
+      tap: ⊃
     '&my_vV_lower':
-      tap:
+      tap: χ
     '&my_vVr_upper':
-      tap:
+      tap: ⊇
     '&my_vVr_lower':
-      tap:
+      tap: ⊅
     '&my_wW_upper':
-      tap:
+      tap: Ω
     '&my_wW_lower':
-      tap:
+      tap: ω
     '&my_xX_upper':
-      tap:
+      tap: Ξ
     '&my_xX_lower':
-      tap:
+      tap: ξ
     '&my_xXr_upper':
-      tap:
+      tap: Ç
     '&my_xXr_lower':
-      tap:
+      tap: ç
     '&my_yY_upper':
-      tap:
+      tap: ℤ
     '&my_yY_lower':
-      tap:
+      tap: ℝ
     '&my_zZ_upper':
-      tap:
+      tap: ∡
     '&my_zZ_lower':
-      tap:
-
-
+      tap: ζ
 
   zmk_combos:
     combo_to_2:

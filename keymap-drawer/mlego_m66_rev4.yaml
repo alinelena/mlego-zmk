@@ -82,44 +82,44 @@ layers:
   - {t: '=', s: +}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&my_qQ_lower', s: '&my_qQ_upper'}
-  - {t: '&my_wW_lower', s: '&my_wW_upper'}
-  - {t: '&my_eE_lower', s: '&my_eE_upper'}
-  - {t: '&my_rR_lower', s: '&my_rR_upper'}
-  - {t: '&my_tT_lower', s: '&my_tT_upper'}
-  - {t: '&my_yY_lower', s: '&my_yY_upper'}
-  - {t: '&my_uU_lower', s: '&my_uU_upper'}
-  - {t: '&my_iI_lower', s: '&my_iI_upper'}
-  - {t: '&my_oO_lower', s: '&my_oO_upper'}
-  - {t: '&my_pP_lower', s: '&my_pP_upper'}
-  - {t: '&my_bo_lower', s: '&my_bo_upper'}
-  - {t: '&my_bc_lower', s: '&my_bc_upper'}
+  - {t: σ, s: ϕ}
+  - {t: ω, s: Ω}
+  - {t: ε, s: ℇ}
+  - {t: ρ, s: ∇}
+  - {t: ϑ, s: θ}
+  - {t: ℝ, s: ℤ}
+  - {t: τ, s: ℂ}
+  - {t: ∫, s: ∮}
+  - {t: ∞, s: ⊗}
+  - {t: π, s: ∏}
+  - {t: ⋜, s: ≠}
+  - {t: ⋝, s: ≅}
   - ⇪
-  - {t: '&my_aA_lower', s: '&my_aA_upper'}
-  - {t: '&my_sS_lower', s: '&my_sS_upper'}
-  - {t: '&my_dD_lower', s: '&my_dD_upper'}
-  - {t: '&my_fF_lower', s: '&my_fF_upper'}
-  - {t: '&my_gG_lower', s: '&my_gG_upper'}
-  - {t: '&my_hH_lower', s: '&my_hH_upper'}
-  - {t: '&my_jJ_lower', s: '&my_jJ_upper'}
-  - {t: '&my_kK_lower', s: '&my_kK_upper'}
-  - {t: '&my_lL_lower', s: '&my_lL_upper'}
-  - {t: '&my_lL1_lower', s: '&my_lL1_upper'}
-  - {t: '&my_kK1_lower', s: '&my_kK1_upper'}
+  - {t: α, s: Α}
+  - {t: ∑, s: ⨋}
+  - {t: δ, s: ∂}
+  - {t: φ, s: ψ}
+  - {t: γ, s: Γ}
+  - {t: ℏ, s: ℋ}
+  - {t: ∈, s: ∉}
+  - {t: ϰ, s: ∆}
+  - {t: λ, s: Λ}
+  - {t: °, s: ℒ}
+  - {t: ∝, s: Å}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&my_ss2_lower', s: '&my_ss2_upper'}
-  - {t: '&my_zZ_lower', s: '&my_zZ_upper'}
-  - {t: '&my_xX_lower', s: '&my_xX_upper'}
-  - {t: '&my_cC_lower', s: '&my_cC_upper'}
-  - {t: '&my_vV_lower', s: '&my_vV_upper'}
-  - {t: '&my_bB_lower', s: '&my_bB_upper'}
-  - {t: '&my_nN_lower', s: '&my_nN_upper'}
-  - {t: '&my_mM_lower', s: '&my_mM_upper'}
-  - {t: '&my_cC1_lower', s: '&my_cC1_upper'}
-  - {t: '&my_pP1_lower', s: '&my_pP1_upper'}
+  - {t: ≡, s: ≢}
+  - {t: ζ, s: ∡}
+  - {t: ξ, s: Ξ}
+  - {t: χ, s: ⊂}
+  - {t: χ, s: ⊃}
+  - {t: β, s: ∩}
+  - {t: η, s: ∪}
+  - {t: μ, s: ∘}
+  - {t: ≈, s: ≉}
+  - {t: ±, s: ∓}
   - {t: ▽, type: trans}
-  - {t: '&my_qQ1_lower', s: '&my_qQ1_upper'}
+  - {t: ×, s: ⋅}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -177,11 +177,11 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&my_xXr_lower', s: '&my_xXr_upper'}
-  - {t: '&my_cCr_lower', s: '&my_cCr_upper'}
-  - {t: '&my_vVr_lower', s: '&my_vVr_upper'}
-  - {t: '&my_bBr_lower', s: '&my_bBr_upper'}
-  - {t: '&my_nNr_lower', s: '&my_nNr_upper'}
+  - {t: ç, s: Ç}
+  - {t: ⊄, s: ⊆}
+  - {t: ⊅, s: ⊇}
+  - {t: ∧, s: ⊼}
+  - {t: ∨, s: ⊻}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
