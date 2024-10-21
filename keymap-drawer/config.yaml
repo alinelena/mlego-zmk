@@ -846,10 +846,10 @@ draw_config:
         text-anchor: middle;
         dominant-baseline: ideographic;
         fill: var(--color--key--text--hold);
-        translate: 0 -8px;
+        translate: 0 -12px;
     }
     .hold.glyph {
-        translate: 0 -8px;
+        translate: 0 -12px;
     }
 
 
