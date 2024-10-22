@@ -412,6 +412,7 @@ path.combo {
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <text x="0" y="-4" class="key tap">⎋</text>
+<text x="0" y="34" class="key hold">esc</text>
 </g>
 <g transform="translate(114, 114)" class="key keypos-1">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
@@ -493,6 +494,7 @@ path.combo {
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <text x="0" y="-4" class="key tap">↹</text>
+<text x="0" y="34" class="key hold">tab</text>
 </g>
 <g transform="translate(114, 190)" class="key keypos-15">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
@@ -647,6 +649,7 @@ path.combo {
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <text x="0" y="-4" class="key tap">⇧</text>
+<text x="0" y="34" class="key hold">shift</text>
 </g>
 <g transform="translate(114, 342)" class="key keypos-41">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
@@ -723,26 +726,31 @@ path.combo {
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <text x="0" y="-4" class="key tap">⎈</text>
+<text x="0" y="34" class="key hold">ctrl</text>
 </g>
 <g transform="translate(114, 418)" class="key keypos-54">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <text x="0" y="-4" class="key tap"></text>
+<text x="0" y="34" class="key hold">menu</text>
 </g>
 <g transform="translate(190, 418)" class="key keypos-55">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <text x="0" y="-4" class="key tap">⇓</text>
+<text x="0" y="34" class="key hold">lwr</text>
 </g>
 <g transform="translate(266, 418)" class="key keypos-56">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <text x="0" y="-4" class="key tap">⎇</text>
+<text x="0" y="34" class="key hold">alt</text>
 </g>
 <g transform="translate(342, 418)" class="key keypos-57">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <text x="0" y="-4" class="key tap">⇑</text>
+<text x="0" y="34" class="key hold">rse</text>
 </g>
 <g transform="translate(418, 418)" class="key keypos-58">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
@@ -763,11 +771,13 @@ path.combo {
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <text x="0" y="-4" class="key tap">⎇</text>
+<text x="0" y="34" class="key hold">altgr</text>
 </g>
 <g transform="translate(722, 418)" class="key keypos-62">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <text x="0" y="-4" class="key tap">⇧</text>
+<text x="0" y="34" class="key hold">shift</text>
 </g>
 <g transform="translate(798, 418)" class="key keypos-63">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
@@ -1164,6 +1174,7 @@ path.combo {
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <text x="0" y="-4" class="key tap">⎋</text>
+<text x="0" y="34" class="key hold">esc</text>
 </g>
 <g transform="translate(114, 114)" class="key keypos-1">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
@@ -1604,6 +1615,7 @@ path.combo {
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key bootloader side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key bootloader"/>
 <use href="#mdi:backup-restore" xlink:href="#mdi:backup-restore" x="-15" y="-19" height="30" width="30.0" class="key bootloader tap glyph mdi:backup-restore"/>
+<text x="0" y="34" class="key bootloader hold">reset</text>
 </g>
 <g transform="translate(418, 190)" class="key trans keypos-19">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key trans side"/>
@@ -1744,6 +1756,7 @@ path.combo {
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key bootloader side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key bootloader"/>
 <use href="#mdi:progress-download" xlink:href="#mdi:progress-download" x="-15" y="-19" height="30" width="30.0" class="key bootloader tap glyph mdi:progress-download"/>
+<text x="0" y="34" class="key bootloader hold">boot</text>
 </g>
 <g transform="translate(570, 342)" class="key trans keypos-47">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key trans side"/>

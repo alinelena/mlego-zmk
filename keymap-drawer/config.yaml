@@ -245,17 +245,35 @@ parse_config:
     TILDE2: "~"
 
     # Modifiers
-    LCTRL: "⎈"
-    LALT: "⎇"
-    LSHIFT: "⇧"
-    LGUI: ""
-    LSHFT: "⇧"
-    LCMD: $$mdi:apple-keyboard-command$$
-    RCTRL: "⎈"
-    RALT: "⎇"
-    RSHIFT: "⇧"
-    RSHFT: "⇧"
+    LCTRL: 
+      tap: "⎈"
+      hold: "ctrl"
+    LALT: 
+      tap: "⎇"
+      hold: "alt"
+    LSHIFT: 
+      tap: "⇧"
+      hold: "shift"
+    LGUI: 
+     tap: ""
+     hold: "menu"
+    LSHFT: 
+      tap: "⇧"
+      hold: "shift"
+    RCTRL: 
+      tap: "⎈"
+      hold: "ctrl"
+    RALT: 
+      tap: "⎇"
+      hold: 'altgr'
+    RSHIFT: 
+      tap: "⇧"
+      hold: "shift"
+    RSHFT: 
+      tap: "⇧"
+      hold: "shift"
     RCMD: $$mdi:apple-keyboard-command$$
+    LCMD: $$mdi:apple-keyboard-command$$
     LS(LC(LALT)): $$mdi:triangle$$ # Meh
 
     # Arrows
@@ -270,8 +288,12 @@ parse_config:
     RET:
       type: enter
       tap: $$mdi:keyboard-return$$
-    ESC: "⎋"
-    TAB: "↹"
+    ESC: 
+      tap: "⎋"
+      hold: "esc"
+    TAB: 
+      tap: "↹"
+      hold: "tab" 
     LS(TAB): $$mdi:keyboard-tab-reverse$$
     SPACE: $$mdi:keyboard-space$$
     BACKSPACE:
@@ -325,13 +347,17 @@ parse_config:
     "&sys_reset":
       type: bootloader
       tap: $$mdi:backup-restore$$
+      hold: "reset"
     "&bootloader":
       type: bootloader
       tap: $$mdi:progress-download$$
+      hold: "boot"
     "&tlwr":
       tap: "⇓"
+      hold: "lwr"
     "&trse":
       tap: "⇑"
+      hold: "rse"
     '&out OUT_BLE':
       tap: $$mdi:keyboard$$
       shifted: $$mdi:bluetooth$$

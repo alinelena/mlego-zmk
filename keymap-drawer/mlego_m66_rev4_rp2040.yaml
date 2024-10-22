@@ -1,6 +1,6 @@
 layers:
   qw:
-  - ⎋
+  - {t: ⎋, h: esc}
   - {t: '1', s: '!'}
   - {t: '2', s: '"'}
   - {t: '3', s: £}
@@ -14,7 +14,7 @@ layers:
   - {t: '-', s: _}
   - {t: '$$mdi:backspace-outline$$', type: backspace}
   - $$mdi:volume-off$$
-  - ↹
+  - {t: ↹, h: tab}
   - {t: q, s: Q}
   - {t: w, s: W}
   - {t: e, s: E}
@@ -40,7 +40,7 @@ layers:
   - {t: ;, s: ':'}
   - {t: '''', s: '@'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
-  - ⇧
+  - {t: ⇧, h: shift}
   - {t: \, s: '|'}
   - {t: z, s: Z}
   - {t: x, s: X}
@@ -53,16 +53,16 @@ layers:
   - {t: ., s: '>'}
   - $$mdi:arrow-up-bold$$
   - {t: /, s: '?'}
-  - ⎈
-  - 
-  - ⇓
-  - ⎇
-  - ⇑
+  - {t: ⎈, h: ctrl}
+  - {t: , h: menu}
+  - {t: ⇓, h: lwr}
+  - {t: ⎇, h: alt}
+  - {t: ⇑, h: rse}
   - $$mdi:keyboard-space$$
   - $$mdi:keyboard-space$$
   - $$mdi:keyboard-space$$
-  - ⎇
-  - ⇧
+  - {t: ⎇, h: altgr}
+  - {t: ⇧, h: shift}
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
@@ -134,7 +134,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   lower:
-  - ⎋
+  - {t: ⎋, h: esc}
   - F1
   - F2
   - F3
@@ -219,7 +219,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '$$mdi:backup-restore$$', type: bootloader}
+  - {t: '$$mdi:backup-restore$$', h: reset, type: bootloader}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -247,7 +247,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '$$mdi:progress-download$$', type: bootloader}
+  - {t: '$$mdi:progress-download$$', h: boot, type: bootloader}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
