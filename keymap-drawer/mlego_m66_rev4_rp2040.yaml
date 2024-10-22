@@ -12,7 +12,7 @@ layers:
   - {t: '9', s: (}
   - {t: '0', s: )}
   - {t: '-', s: _}
-  - {t: '$$mdi:backspace$$', type: backspace}
+  - {t: '$$mdi:backspace-outline$$', type: backspace}
   - $$mdi:volume-off$$
   - ↹
   - {t: q, s: Q}

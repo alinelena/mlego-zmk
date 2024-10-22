@@ -10,10 +10,10 @@ parse_config:
     type: trans
   mark_alternate_layer_activators: true
   modifier_fn_map:
-    left_ctrl: Ctl
-    right_ctrl: Ctl
-    left_shift: Sft
-    right_shift: Sft
+    left_ctrl: Ctrl
+    right_ctrl: Ctrl
+    left_shift: Shift
+    right_shift: Shift
     left_alt: Alt
     right_alt: AltGr
     left_gui: Gui
@@ -276,10 +276,10 @@ parse_config:
     SPACE: $$mdi:keyboard-space$$
     BACKSPACE:
       type: backspace
-      tap: $$mdi:backspace$$
+      tap: $$mdi:backspace-outline$$
     BSPC:
       type: backspace
-      tap: $$mdi:backspace$$
+      tap: $$mdi:backspace-outline$$
     DELETE: $$mdi:backspace-reverse-outline$$
     DEL: $$mdi:backspace-reverse-outline$$
 
