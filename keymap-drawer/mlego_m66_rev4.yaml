@@ -51,7 +51,7 @@ layers:
   - {t: m, s: M}
   - {t: ',', s: <}
   - {t: ., s: '>'}
-  - $$mdi:arrow-up-bold$$
+  - {t: '$$mdi:arrow-up-bold$$', h: up}
   - {t: /, s: '?'}
   - {t: ⎈, h: ctrl}
   - {t: , h: menu}
@@ -63,9 +63,9 @@ layers:
   - $$mdi:keyboard-space$$
   - {t: ⎇, h: altgr}
   - {t: ⇧, h: shift}
-  - $$mdi:arrow-left-bold$$
-  - $$mdi:arrow-down-bold$$
-  - $$mdi:arrow-right-bold$$
+  - {t: '$$mdi:arrow-left-bold$$', h: left}
+  - {t: '$$mdi:arrow-down-bold$$', h: down}
+  - {t: '$$mdi:arrow-right-bold$$', h: right}
   raise:
   - {t: '`', s: ¬}
   - $$mdi:volume-off$$
@@ -188,7 +188,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '$$mdi:android-studio$$', type: bootloader}
+  - {t: '$$mdi:android-studio$$', h: studio, type: bootloader}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -251,8 +251,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '$$mdi:keyboard$$', s: '$$mdi:usb$$', type: sym_by_sym}
-  - {t: '$$mdi:keyboard$$', s: '$$mdi:bluetooth$$', type: sym_by_sym}
+  - {t: '$$mdi:keyboard$$', h: usb, s: '$$mdi:usb$$', type: sym_by_sym}
+  - {t: '$$mdi:keyboard$$', h: bt, s: '$$mdi:bluetooth$$', type: sym_by_sym}
   - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$', type: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -264,6 +264,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '$$mdi:skip-next$$', s: '$$mdi:bluetooth$$'}
-  - $$mdi:bluetooth-off$$
-  - {t: '$$mdi:skip-previous$$', s: '$$mdi:bluetooth$$'}
+  - {t: '$$mdi:skip-next$$', h: next, s: '$$mdi:bluetooth$$'}
+  - {t: '$$mdi:bluetooth-off$$', h: clear}
+  - {t: '$$mdi:skip-previous$$', h: prev, s: '$$mdi:bluetooth$$'}

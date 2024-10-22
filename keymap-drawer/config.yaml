@@ -277,10 +277,18 @@ parse_config:
     LS(LC(LALT)): $$mdi:triangle$$ # Meh
 
     # Arrows
-    UP: $$mdi:arrow-up-bold$$
-    DOWN: $$mdi:arrow-down-bold$$
-    LEFT: $$mdi:arrow-left-bold$$
-    RIGHT: $$mdi:arrow-right-bold$$
+    UP: 
+      tap: $$mdi:arrow-up-bold$$
+      hold: "up"
+    DOWN: 
+      tap: $$mdi:arrow-down-bold$$
+      hold: "down"
+    LEFT: 
+      tap: $$mdi:arrow-left-bold$$
+      hold: "left"
+    RIGHT: 
+      tap: $$mdi:arrow-right-bold$$
+      hold: "right"
     PG_UP: $$mdi:transfer-up$$
     PG_DN: $$mdi:transfer-down$$
 
@@ -326,7 +334,9 @@ parse_config:
     K_PP: $$mdi:play-pause$$
 
     # Bluetooth
-    BT_CLR: $$mdi:bluetooth-off$$
+    BT_CLR: 
+     tap: $$mdi:bluetooth-off$$
+     hold: "clear"
     BT_SEL: $$mdi:bluetooth-connect$$
 
     # Settings
@@ -362,10 +372,12 @@ parse_config:
       tap: $$mdi:keyboard$$
       shifted: $$mdi:bluetooth$$
       type: sym_by_sym
+      hold: "bt"
     '&out OUT_USB':
       tap: $$mdi:keyboard$$
       shifted: $$mdi:usb$$
       type: sym_by_sym
+      hold: "usb"
     '&out OUT_TOG':
       tap: $$mdi:toggle-switch$$
       hold: $$mdi:bluetooth$$
@@ -374,13 +386,15 @@ parse_config:
     '&studio_unlock':
       type: bootloader
       tap: $$mdi:android-studio$$
-
+      hold: "studio"
     '&bt BT_NXT':
       shifted: $$mdi:bluetooth$$
       tap: $$mdi:skip-next$$
+      hold: "next"
     '&bt BT_PRV':
       shifted: $$mdi:bluetooth$$
       tap: $$mdi:skip-previous$$
+      hold: "prev"
     # .ro
     '&ro_a_upper':
       tap: Ă

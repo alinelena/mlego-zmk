@@ -717,6 +717,7 @@ path.combo {
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <use href="#mdi:arrow-up-bold" xlink:href="#mdi:arrow-up-bold" x="-15" y="-19" height="30" width="30.0" class="key tap glyph mdi:arrow-up-bold"/>
+<text x="0" y="34" class="key hold">up</text>
 </g>
 <g transform="translate(950, 342)" class="key keypos-52">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
@@ -785,16 +786,19 @@ path.combo {
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <use href="#mdi:arrow-left-bold" xlink:href="#mdi:arrow-left-bold" x="-15" y="-19" height="30" width="30.0" class="key tap glyph mdi:arrow-left-bold"/>
+<text x="0" y="34" class="key hold">left</text>
 </g>
 <g transform="translate(874, 418)" class="key keypos-64">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <use href="#mdi:arrow-down-bold" xlink:href="#mdi:arrow-down-bold" x="-15" y="-19" height="30" width="30.0" class="key tap glyph mdi:arrow-down-bold"/>
+<text x="0" y="34" class="key hold">down</text>
 </g>
 <g transform="translate(950, 418)" class="key keypos-65">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <use href="#mdi:arrow-right-bold" xlink:href="#mdi:arrow-right-bold" x="-15" y="-19" height="30" width="30.0" class="key tap glyph mdi:arrow-right-bold"/>
+<text x="0" y="34" class="key hold">right</text>
 </g>
 </g>
 </g>
@@ -1457,6 +1461,7 @@ path.combo {
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key bootloader side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key bootloader"/>
 <use href="#mdi:android-studio" xlink:href="#mdi:android-studio" x="-15" y="-19" height="30" width="30.0" class="key bootloader tap glyph mdi:android-studio"/>
+<text x="0" y="34" class="key bootloader hold">studio</text>
 </g>
 <g transform="translate(190, 418)" class="key trans keypos-55">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key trans side"/>
@@ -1779,12 +1784,14 @@ path.combo {
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key sym_by_sym side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key sym_by_sym"/>
 <use href="#mdi:keyboard" xlink:href="#mdi:keyboard" x="-15" y="-19" height="30" width="30.0" class="key sym_by_sym tap glyph mdi:keyboard"/>
+<text x="0" y="34" class="key sym_by_sym hold">usb</text>
 <use href="#mdi:usb" xlink:href="#mdi:usb" x="-8" y="-34" height="16" width="16.0" class="key sym_by_sym shifted glyph mdi:usb"/>
 </g>
 <g transform="translate(874, 342)" class="key sym_by_sym keypos-51">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key sym_by_sym side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key sym_by_sym"/>
 <use href="#mdi:keyboard" xlink:href="#mdi:keyboard" x="-15" y="-19" height="30" width="30.0" class="key sym_by_sym tap glyph mdi:keyboard"/>
+<text x="0" y="34" class="key sym_by_sym hold">bt</text>
 <use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-8" y="-34" height="16" width="16.0" class="key sym_by_sym shifted glyph mdi:bluetooth"/>
 </g>
 <g transform="translate(950, 342)" class="key toggle keypos-52">
@@ -1848,17 +1855,20 @@ path.combo {
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <use href="#mdi:skip-next" xlink:href="#mdi:skip-next" x="-15" y="-19" height="30" width="30.0" class="key tap glyph mdi:skip-next"/>
+<text x="0" y="34" class="key hold">next</text>
 <use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth"/>
 </g>
 <g transform="translate(874, 418)" class="key keypos-64">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <use href="#mdi:bluetooth-off" xlink:href="#mdi:bluetooth-off" x="-15" y="-19" height="30" width="30.0" class="key tap glyph mdi:bluetooth-off"/>
+<text x="0" y="34" class="key hold">clear</text>
 </g>
 <g transform="translate(950, 418)" class="key keypos-65">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
 <use href="#mdi:skip-previous" xlink:href="#mdi:skip-previous" x="-15" y="-19" height="30" width="30.0" class="key tap glyph mdi:skip-previous"/>
+<text x="0" y="34" class="key hold">prev</text>
 <use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-8" y="-34" height="16" width="16.0" class="key shifted glyph mdi:bluetooth"/>
 </g>
 </g>
