@@ -631,6 +631,8 @@ draw_config:
         --color--mt3--devtty--red:  #ba1312;
         --color--mt3--devtty--mod: #cecfc9;
         --color--mt3--devtty--black:  #000000;
+        --color--mt3--devtty--yellow: #f4c45a;
+        --color--mt3--devtty--blue: #4687d0;
 
         /*
          * ====================
@@ -744,17 +746,36 @@ draw_config:
     .ghost {
       opacity: 0.8;
     }
-
-    .keypos-0, .keypos-13, .keypos-39 {
+    .keypos-0 {
+       rect {
+        fill: var(--color--mt3--devtty--yellow);
+        stroke: var(--color--mt3--devtty--black);
+       }
+    }
+    .keypos-13 {
        rect {
         fill: var(--color--mt3--devtty--red);
-        stroke: var(--color--mt3--devtty--red);
+        stroke: var(--color--mt3--devtty--black);
        }
     }
 
-    .keypos-11, .keypos-12, .keypos-14, .keypos-25, .keypos-26, .keypos-27, .keypos-37, .keypos-38, .keypos-40, .keypos-41, .keypos-49, .keypos-50, .keypos-51, .keypos-52, .keypos-53, .keypos-54, .keypos-55, .keypos-56, .keypos-57, .keypos-58, .keypos-59, .keypos-60, .keypos-61, .keypos-62, .keypos-63, .keypos-64, .keypos-65, .keypos-66 {
+
+    .keypos-39, .keypos-53 {
+       rect {
+        fill: var(--color--mt3--devtty--red);
+        stroke: var(--color--mt3--devtty--black);
+       }
+    }
+
+    .keypos-11, .keypos-12, .keypos-14, .keypos-25, .keypos-26, .keypos-27, .keypos-37, .keypos-38, .keypos-40, .keypos-41, .keypos-49, .keypos-50, .keypos-51, .keypos-52, .keypos-54, .keypos-55, .keypos-57, .keypos-58, .keypos-59, .keypos-60, .keypos-62, .keypos-63, .keypos-64, .keypos-65 {
        rect {
         fill: var(--color--mt3--devtty--teal);
-        stroke: var(--color--mt3--devtty--teal);
+        stroke: var(--color--mt3--devtty--black);
+       }
+    }
+    .keypos-56, .keypos-61 {
+       rect {
+        fill: var(--color--mt3--devtty--blue);
+        stroke: var(--color--mt3--devtty--black);
        }
     }
