@@ -798,7 +798,9 @@ draw_config:
        rect {
         fill: var(--color--mt3--devtty--red);
         stroke: var(--color--mt3--devtty--black);
-       }
+        rx: 50%; 
+        ry: 50%; 
+      }
     }
 
     /* enter */
