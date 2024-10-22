@@ -759,23 +759,51 @@ draw_config:
        }
     }
 
-
-    .keypos-39, .keypos-53 {
+    # enter
+    .keypos-39 {
        rect {
         fill: var(--color--mt3--devtty--red);
         stroke: var(--color--mt3--devtty--black);
        }
     }
-
-    .keypos-11, .keypos-12, .keypos-14, .keypos-25, .keypos-26, .keypos-27, .keypos-37, .keypos-38, .keypos-40, .keypos-41, .keypos-49, .keypos-50, .keypos-51, .keypos-52, .keypos-54, .keypos-55, .keypos-57, .keypos-58, .keypos-59, .keypos-60, .keypos-62, .keypos-63, .keypos-64, .keypos-65 {
+    
+    # ctrl
+    .keypos-53 {
        rect {
         fill: var(--color--mt3--devtty--teal);
         stroke: var(--color--mt3--devtty--black);
        }
     }
+
+    .keypos-11, .keypos-12, .keypos-14, .keypos-25, .keypos-26, .keypos-27, .keypos-37, .keypos-38, .keypos-40, .keypos-41, .keypos-49, .keypos-50, .keypos-51, .keypos-52,  .keypos-58, .keypos-59, .keypos-60, .keypos-62, .keypos-63, .keypos-64, .keypos-65 {
+       rect {
+        fill: var(--color--mt3--devtty--teal);
+        stroke: var(--color--mt3--devtty--black);
+       }
+    }
+
+    # 
+    #
+    .keypos-54 {
+       rect {
+        fill: var(--color--mt3--devtty--teal);
+        stroke: var(--color--mt3--devtty--black);
+       }
+    }
+
+    # lwr, rse
+    #
+    .keypos-55, .keypos-57 {
+       rect {
+        fill: var(--color--mt3--devtty--teal);
+        stroke: var(--color--mt3--devtty--black);
+       }
+    }
+
+    # alt
     .keypos-56, .keypos-61 {
        rect {
-        fill: var(--color--mt3--devtty--blue);
+        fill: var(--color--mt3--devtty--teal);
         stroke: var(--color--mt3--devtty--black);
        }
     }
