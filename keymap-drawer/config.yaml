@@ -657,6 +657,18 @@ draw_config:
         dominant-baseline: middle;
         line-height: 1;
     }
+    text.hold {
+      text-anchor: middle;
+      dominant-baseline: auto;
+      font-size: 14px;
+    }
+
+    text.shifted {
+      text-anchor: middle;
+      dominant-baseline: hanging;
+      font-size: 14px;
+    }
+
 
     /* Layer labels */
     text.label {
@@ -746,12 +758,16 @@ draw_config:
     .ghost {
       opacity: 0.8;
     }
+
+    /* esc */
     .keypos-0 {
        rect {
         fill: var(--color--mt3--devtty--yellow);
         stroke: var(--color--mt3--devtty--black);
        }
     }
+
+    /* encoder */
     .keypos-13 {
        rect {
         fill: var(--color--mt3--devtty--red);
@@ -759,7 +775,7 @@ draw_config:
        }
     }
 
-    # enter
+    /* enter */
     .keypos-39 {
        rect {
         fill: var(--color--mt3--devtty--red);
@@ -767,7 +783,7 @@ draw_config:
        }
     }
     
-    # ctrl
+    /* ctrl */
     .keypos-53 {
        rect {
         fill: var(--color--mt3--devtty--teal);
@@ -782,8 +798,7 @@ draw_config:
        }
     }
 
-    # 
-    #
+    /*   */
     .keypos-54 {
        rect {
         fill: var(--color--mt3--devtty--teal);
@@ -791,8 +806,7 @@ draw_config:
        }
     }
 
-    # lwr, rse
-    #
+    /* lwr, rse */
     .keypos-55, .keypos-57 {
        rect {
         fill: var(--color--mt3--devtty--teal);
@@ -800,7 +814,7 @@ draw_config:
        }
     }
 
-    # alt
+    /* alt */
     .keypos-56, .keypos-61 {
        rect {
         fill: var(--color--mt3--devtty--teal);
