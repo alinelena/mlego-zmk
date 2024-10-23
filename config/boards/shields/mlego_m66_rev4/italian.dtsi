@@ -1,12 +1,12 @@
 /* Italian diacritics */
 
-ZMK_UNICODE_PAIR(it_a , N0, N0, E, N0  , N0, N0, C, N0) // à/À
-ZMK_UNICODE_PAIR(it_eg , N0, N0, E, N8  , N0, N0, C, N8) // è/È
-ZMK_UNICODE_PAIR(it_ea , N0, N0, E, N9  , N0, N0, C, N9) // é/É
-ZMK_UNICODE_PAIR(it_ig , N0, N0, E, C  , N0, N0, C, C) // ì/Ì
-ZMK_UNICODE_PAIR(it_ia , N0, N0, E, C  , N0, N0, C, C) // í/Í
-ZMK_UNICODE_PAIR(it_ic , N0, N0, E, E  , N0, N0, C, E  ) // î/Î
-ZMK_UNICODE_PAIR(it_og , N0, N0, F, N2  , N0, N0, D, N2) // ò/Ò
-ZMK_UNICODE_PAIR(it_oa , N0, N0, F, N3  , N0, N0, D, N3) // ò/Ò
-ZMK_UNICODE_PAIR(it_ug , N0, N0, F, N9  , N0, N0, D, N9) // ù/Ù
-ZMK_UNICODE_PAIR(it_ua , N0, N0, F, N9  , N0, N0, D, N9) // ú/Ú
+ZMK_UNICODE_PAIR(it_a  , N0, N0, E, N0 , N0, N0, C, N0) // à/À
+ZMK_UNICODE_PAIR(it_eg , N0, N0, E, N8 , N0, N0, C, N8) // è/È
+ZMK_UNICODE_PAIR(it_ea , N0, N0, E, N9 , N0, N0, C, N9) // é/É
+ZMK_UNICODE_PAIR(it_ig , N0, N0, E, C  , N0, N0, C, C ) // ì/Ì
+ZMK_UNICODE_PAIR(it_ia , N0, N0, E, C  , N0, N0, C, C ) // í/Í
+ZMK_UNICODE_PAIR(it_ic , N0, N0, E, E  , N0, N0, C, E ) // î/Î
+ZMK_UNICODE_PAIR(it_og , N0, N0, F, N2 , N0, N0, D, N2) // ò/Ò
+ZMK_UNICODE_PAIR(it_oa , N0, N0, F, N3 , N0, N0, D, N3) // ò/Ò
+ZMK_UNICODE_PAIR(it_ug , N0, N0, F, N9 , N0, N0, D, N9) // ù/Ù
+ZMK_UNICODE_PAIR(it_ua , N0, N0, F, N9 , N0, N0, D, N9) // ú/Ú
