@@ -50,6 +50,9 @@ include:
   - board: rpi_pico
     shield: mlego_m66_rev4_rp2040 
     snippet: studio-rpc-usb-uart
+  - board: rpi_pico
+    shield: mlego_m66_rev4_rp2040 st7735
+    snippet: studio-rpc-usb-uart
   - board: nice_nano_v2
     shield: settings_reset
   - board: rpi_pico
