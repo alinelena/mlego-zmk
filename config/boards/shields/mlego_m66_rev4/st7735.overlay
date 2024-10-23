@@ -15,7 +15,7 @@ board_spi: &spi0 {
   pinctrl-0 = < &spi0_default >;
   pinctrl-names = "default";
   cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW> ,
-             <&gpio0 21 GPIO_ACTIVE_HIGH>;
+             <&gpio0 21 GPIO_ACTIVE_LOW>;
 
 	st7735s160x80: st7735r@0 {
 		compatible = "sitronix,st7735r";
@@ -23,9 +23,9 @@ board_spi: &spi0 {
 		reg = <0>;
 		cmd-data-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;	
 		reset-gpios = <&gpio0 8  GPIO_ACTIVE_LOW>;
-		width = <160>;
-		height = <80>;
-		x-offset = <0>;
+		width = <80>;
+		height = <160>;
+		x-offset = <24>;
 		y-offset = <0>;
 		madctl = <0xC0>;
 		colmod = <0x05>;
