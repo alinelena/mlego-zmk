@@ -4,7 +4,7 @@
 ![m66](https://mlego.elena.re/pics/m66/mlego_m66_rev4-lcd.webp)
 ![m66](https://mlego.elena.re/pics/m66/mlego_m66_rev4-sharp.webp)
   - keymap summary
-![M66 .. ](./mlego_m66_rev4_uk.svg)
+![m66 keymaps](./keymap-drawer/mlego_m66_rev4.svg)
   - features rp2040(pro micro footprint) or nice!nano and compatible bt
     - [x] matrix
     - [x] encoder
@@ -15,7 +15,6 @@
     - [ ] rgb per key...
   - keymap expanded per layer
 
-![m66 keymaps](./keymap-drawer/mlego_m66_rev4.svg)
 
 - mlego m65 5x13 rev4
 ![M65 stm32f401](https://i.imgur.com/P1SRKwC.jpg)
