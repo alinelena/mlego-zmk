@@ -4,7 +4,7 @@
  */
 
 #include <dt-bindings/zmk/matrix_transform.h>
-#include <mlego_m66_rev4_layout.dtsi>
+#include "mlego_m66_rev4_layout.dtsi"
 
 / {
    model = "mlego m66, rev4";
