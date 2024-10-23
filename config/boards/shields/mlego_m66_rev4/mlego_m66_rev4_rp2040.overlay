@@ -2,6 +2,7 @@
  * Copyright (c) 2022-2024 alin m elena
  * SPDX-License-Identifier: MIT
  */
+
 #include <dt-bindings/pinctrl/rpi-pico-rp2040-pinctrl.h>
 #include "mlego_m66_rev4_layout.dtsi"
 

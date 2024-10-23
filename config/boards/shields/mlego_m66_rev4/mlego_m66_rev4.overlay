@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <dt-bindings/zmk/matrix_transform.h>
 #include "mlego_m66_rev4_layout.dtsi"
 
 / {
