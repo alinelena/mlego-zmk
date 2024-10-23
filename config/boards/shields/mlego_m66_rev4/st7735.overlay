@@ -23,13 +23,13 @@ board_spi: &spi0 {
     gpio-controller;
     spi-max-frequency = <2000000>;
     #gpio-cells = <2>;
-    reg = <0>;
+    reg = <1>;
     ngpios = <16>;
   };
 	st7735s160x80: st7735r@0 {
 		compatible = "sitronix,st7735r";
 		spi-max-frequency = <1000000>;
-		reg = <1>;
+		reg = <0>;
 		cmd-data-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;	
 		reset-gpios = <&gpio0 8  GPIO_ACTIVE_LOW>;
 		width = <160>;
