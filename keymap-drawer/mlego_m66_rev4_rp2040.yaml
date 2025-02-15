@@ -82,44 +82,44 @@ layers:
   - {t: '=', s: +}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&lq_Q_lower', s: '&lq_Q_upper'}
-  - {t: '&lw_W_lower', s: '&lw_W_upper'}
-  - {t: '&le_E_lower', s: '&le_E_upper'}
-  - {t: '&lr_R_lower', s: '&lr_R_upper'}
-  - {t: '&lt_T_lower', s: '&lt_T_upper'}
-  - {t: '&ly_Y_lower', s: '&ly_Y_upper'}
-  - {t: '&lu_U_lower', s: '&lu_U_upper'}
-  - {t: '&li_I_lower', s: '&li_I_upper'}
-  - {t: '&lo_O_lower', s: '&lo_O_upper'}
-  - {t: '&lp_P_lower', s: '&lp_P_upper'}
-  - {t: '&lbo1_bo2_lower', s: '&lbo1_bo2_upper'}
-  - {t: '&lbc1_bc2_lower', s: '&lbc1_bc2_upper'}
+  - {t: σ, s: ϕ}
+  - {t: ω, s: Ω}
+  - {t: ε, s: ℇ}
+  - {t: ρ, s: ∇}
+  - {t: ϑ, s: θ}
+  - {t: ℝ, s: ℤ}
+  - {t: τ, s: ℂ}
+  - {t: ∫, s: ∮}
+  - {t: ∞, s: ⊗}
+  - {t: π, s: ∏}
+  - {t: ⋜, s: ≠}
+  - {t: ⋝, s: ≊}
   - ⇪
-  - {t: '&la_A_lower', s: '&la_A_upper'}
-  - {t: '&ls_S_lower', s: '&ls_S_upper'}
-  - {t: '&ld_D_lower', s: '&ld_D_upper'}
-  - {t: '&lf_F_lower', s: '&lf_F_upper'}
-  - {t: '&lg_G_lower', s: '&lg_G_upper'}
-  - {t: '&lh_H_lower', s: '&lh_H_upper'}
-  - {t: '&lj_J_lower', s: '&lj_J_upper'}
-  - {t: '&lk_K_lower', s: '&lk_K_upper'}
-  - {t: '&ll_L_lower', s: '&ll_L_upper'}
-  - {t: '&ll1_L1_lower', s: '&ll1_L1_upper'}
-  - {t: '&lk1_K1_lower', s: '&lk1_K1_upper'}
+  - {t: α, s: Α}
+  - {t: ∑, s: ⨋}
+  - {t: δ, s: ∂}
+  - {t: φ, s: ψ}
+  - {t: γ, s: Γ}
+  - {t: ℏ, s: ℋ}
+  - {t: ∈, s: ∉}
+  - {t: ϰ, s: ∆}
+  - {t: λ, s: Λ}
+  - {t: °, s: ℒ}
+  - {t: ∝, s: Å}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&ls1_s2_lower', s: '&ls1_s2_upper'}
-  - {t: '&lz_Z_lower', s: '&lz_Z_upper'}
-  - {t: '&lx_X_lower', s: '&lx_X_upper'}
-  - {t: '&lc_C_lower', s: '&lc_C_upper'}
-  - {t: '&lv_V_lower', s: '&lv_V_upper'}
-  - {t: '&lb_B_lower', s: '&lb_B_upper'}
-  - {t: '&ln_N_lower', s: '&ln_N_upper'}
-  - {t: '&lm_M_lower', s: '&lm_M_upper'}
-  - {t: '&lc1_C1_lower', s: '&lc1_C1_upper'}
-  - {t: '&lp1_P1_lower', s: '&lp1_P1_upper'}
+  - {t: ≡, s: ≢}
+  - {t: ζ, s: ∡}
+  - {t: ξ, s: Ξ}
+  - {t: χ, s: ⊂}
+  - {t: χ, s: ⊃}
+  - {t: β, s: ∩}
+  - {t: η, s: ∪}
+  - {t: μ, s: ∘}
+  - {t: ≈, s: ≉}
+  - {t: ±, s: ∓}
   - {t: ▽, type: trans}
-  - {t: '&lq1_Q1_lower', s: '&lq1_Q1_upper'}
+  - {t: ×, s: ⋅}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -150,43 +150,43 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: â, s: Â}
-  - {t: '&rq_Q_lower', s: '&rq_Q_upper'}
-  - {t: '&re_E_lower', s: '&re_E_upper'}
-  - {t: '&rr_R_lower', s: '&rr_R_upper'}
+  - {t: ⇒, s: ⇐}
+  - {t: ⇄, s: ⇆}
+  - {t: ↦, s: ↤}
   - {t: ț, s: Ț}
-  - {t: '&ry_Y_lower', s: '&ry_Y_upper'}
-  - {t: '&ru_U_lower', s: '&ru_U_upper'}
+  - {t: →, s: ←}
+  - {t: ∬, s: ∯}
   - {t: î, s: Î}
-  - {t: '&ro_O_lower', s: '&ro_O_upper'}
-  - {t: '&rp_P_lower', s: '&rp_P_upper'}
-  - {t: '&rbo_BO_lower', s: '&rbo_BO_upper'}
-  - {t: '&rbc_BC_lower', s: '&rbc_BC_upper'}
+  - {t: ⊕, s: ⊖}
+  - {t: ⇝, s: ⇜}
+  - {t: ≪, s: ≤}
+  - {t: ≫, s: ≥}
   - ⇪
   - {t: ă, s: Ă}
   - {t: ș, s: Ș}
-  - {t: '&rd_D_lower', s: '&rd_D_upper'}
-  - {t: '&rf_F_lower', s: '&rf_F_upper'}
-  - {t: '&rg_G_lower', s: '&rg_G_upper'}
-  - {t: '&rh_H_lower', s: '&rh_H_upper'}
-  - {t: '&rj_J_lower', s: '&rj_J_upper'}
-  - {t: '&rk_K_lower', s: '&rk_K_upper'}
-  - {t: '&rl_L_lower', s: '&rl_L_upper'}
-  - {t: '&rdo_DO_lower', s: '&rdo_DO_upper'}
-  - {t: '&rco_CO_lower', s: '&rco_CO_upper'}
+  - {t: ∅, s: ∎}
+  - {t: ⟼, s: ⟻}
+  - {t: ℎ, s: ≁}
+  - {t: ⟶, s: ⟵}
+  - {t: ∋, s: ∌}
+  - {t: ÷, s: ○}
+  - {t: ⊠, s: ○}
+  - {t: ⟿, s: ⬳}
+  - {t: ≅, s: ≇}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - F20
-  - {t: '&rz_Z_lower', s: '&rz_Z_upper'}
-  - {t: '&rx_X_lower', s: '&rx_X_upper'}
-  - {t: '&rc_C_lower', s: '&rc_C_upper'}
-  - {t: '&rv_V_lower', s: '&rv_V_upper'}
-  - {t: '&rb_B_lower', s: '&rb_B_upper'}
-  - {t: '&rn_N_lower', s: '&rn_N_upper'}
-  - {t: '&rm_M_lower', s: '&rm_M_upper'}
-  - {t: '&rlt_LT_lower', s: '&rlt_LT_upper'}
-  - {t: '&rgt_GT_lower', s: '&rgt_GT_upper'}
+  - {t: ∠, s: ∢}
+  - {t: ç, s: Ç}
+  - {t: ⊄, s: ⊆}
+  - {t: ⊅, s: ⊇}
+  - {t: ∧, s: ⊼}
+  - {t: ∨, s: ⊻}
+  - {t: ⊈, s: ⊊}
+  - {t: ⊉, s: ⊋}
+  - {t: ∥, s: ∦}
   - {t: ▽, type: trans}
-  - {t: '&rqm_QM_lower', s: '&rqm_QM_upper'}
+  - {t: ∴, s: ∵}
   - {t: ▽, type: trans}
   - {t: '$$mdi:android-studio$$', h: studio, type: bootloader}
   - {t: ▽, type: trans}

@@ -419,273 +419,273 @@ parse_config:
 
 #  special ones
     '&la_A_lower':
-    tap: α
+      tap: α
     '&la_A_upper':
-    tap: Α
+      tap: Α
     '&lb_B_lower':
-    tap: β
+      tap: β
     '&lb_B_upper':
-    tap: ∩
+      tap: ∩
     '&lc_C_lower':
-    tap: χ
+      tap: χ
     '&lc_C_upper':
-    tap: ⊂
+      tap: ⊂
     '&ld_D_lower':
-    tap: δ
+      tap: δ
     '&ld_D_upper':
-    tap: ∂
+      tap: ∂
     '&le_E_lower':
-    tap: ε
+      tap: ε
     '&le_E_upper':
-    tap: ℇ
+      tap: ℇ
     '&lf_F_lower':
-    tap: φ
+      tap: φ
     '&lf_F_upper':
-    tap: ψ
+      tap: ψ
     '&lg_G_lower':
-    tap: γ
+      tap: γ
     '&lg_G_upper':
-    tap: Γ
+      tap: Γ
     '&lh_H_lower':
-    tap: ℏ
+      tap: ℏ
     '&lh_H_upper':
-    tap: ℋ
+      tap: ℋ
     '&li_I_lower':
-    tap: ∫
+      tap: ∫
     '&li_I_upper':
-    tap: ∮
+      tap: ∮
     '&lj_J_lower':
-    tap: ∈
+      tap: ∈
     '&lj_J_upper':
-    tap: ∉
+      tap: ∉
     '&lk_K_lower':
-    tap: ϰ
+      tap: ϰ
     '&lk_K_upper':
-    tap: ∆
+      tap: ∆
     '&ll_L_lower':
-    tap: λ
+      tap: λ
     '&ll_L_upper':
-    tap: Λ
+      tap: Λ
     '&lm_M_lower':
-    tap: μ
+      tap: μ
     '&lm_M_upper':
-    tap: ∘
+      tap: ∘
     '&ln_N_lower':
-    tap: η
+      tap: η
     '&ln_N_upper':
-    tap: ∪
+      tap: ∪
     '&lo_O_lower':
-    tap: ∞
+      tap: ∞
     '&lo_O_upper':
-    tap: ⊗
+      tap: ⊗
     '&lp_P_lower':
-    tap: π
+      tap: π
     '&lp_P_upper':
-    tap: ∏
+      tap: ∏
     '&lq_Q_lower':
-    tap: σ
+      tap: σ
     '&lq_Q_upper':
-    tap: ϕ
+      tap: ϕ
     '&lr_R_lower':
-    tap: ρ
+      tap: ρ
     '&lr_R_upper':
-    tap: ∇
+      tap: ∇
     '&ls_S_lower':
-    tap: ∑
+      tap: ∑
     '&ls_S_upper':
-    tap: ⨋
+      tap: ⨋
     '&lt_T_lower':
-    tap: ϑ
+      tap: ϑ
     '&lt_T_upper':
-    tap: θ
+      tap: θ
     '&lu_U_lower':
-    tap: τ
+      tap: τ
     '&lu_U_upper':
-    tap: ℂ
+      tap: ℂ
     '&lv_V_lower':
-    tap: χ
+      tap: χ
     '&lv_V_upper':
-    tap: ⊃
+      tap: ⊃
     '&lw_W_lower':
-    tap: ω
+      tap: ω
     '&lw_W_upper':
-    tap: Ω
+      tap: Ω
     '&lx_X_lower':
-    tap: ξ
+      tap: ξ
     '&lx_X_upper':
-    tap: Ξ
+      tap: Ξ
     '&ly_Y_lower':
-    tap: ℝ
+      tap: ℝ
     '&ly_Y_upper':
-    tap: ℤ
+      tap: ℤ
     '&lz_Z_lower':
-    tap: ζ
+      tap: ζ
     '&lz_Z_upper':
-    tap: ∡
+      tap: ∡
     '&lc1_C1_lower':
-    tap: ≈
+      tap: ≈
     '&lc1_C1_upper':
-    tap: ≉
+      tap: ≉
     '&lp1_P1_lower':
-    tap: ±
+      tap: ±
     '&lp1_P1_upper':
-    tap: ∓
+      tap: ∓
     '&lq1_Q1_lower':
-    tap: ×
+      tap: ×
     '&lq1_Q1_upper':
-    tap: ⋅
+      tap: ⋅
     '&ll1_L1_lower':
-    tap: °
+      tap: °
     '&ll1_L1_upper':
-    tap: ℒ
+      tap: ℒ
     '&lk1_K1_lower':
-    tap: ∝
+      tap: ∝
     '&lk1_K1_upper':
-    tap: Å
+      tap: Å
     '&lbo1_bo2_lower':
-    tap: ⋜
+      tap: ⋜
     '&lbo1_bo2_upper':
-    tap: ≠
+      tap: ≠
     '&lbc1_bc2_lower':
-    tap: ⋝
+      tap: ⋝
     '&lbc1_bc2_upper':
-    tap: ≊
+      tap: ≊
     '&ls1_s2_lower':
-    tap: ≡
+      tap: ≡
     '&ls1_s2_upper':
-    tap: ≢
+      tap: ≢
     '&ra_A_lower':
-    tap: ă
+      tap: ă
     '&ra_A_upper':
-    tap: Ă
+      tap: Ă
     '&ra1_A1_lower':
-    tap: â
+      tap: â
     '&ra1_A1_upper':
-    tap: Â
+      tap: Â
     '&rx_X_lower':
-    tap: ç
+      tap: ç
     '&rx_X_upper':
-    tap: Ç
+      tap: Ç
     '&ri_I_lower':
-    tap: î
+      tap: î
     '&ri_I_upper':
-    tap: Î
+      tap: Î
     '&rs_S_lower':
-    tap: ș
+      tap: ș
     '&rs_S_upper':
-    tap: Ș
+      tap: Ș
     '&rt_T_lower':
-    tap: ț
+      tap: ț
     '&rt_T_upper':
-    tap: Ț
+      tap: Ț
     '&rc_C_lower':
-    tap: ⊄
+      tap: ⊄
     '&rc_C_upper':
-    tap: ⊆
+      tap: ⊆
     '&rv_V_lower':
-    tap: ⊅
+      tap: ⊅
     '&rv_V_upper':
-    tap: ⊇
+      tap: ⊇
     '&rb_B_lower':
-    tap: ∧
+      tap: ∧
     '&rb_B_upper':
-    tap: ⊼
+      tap: ⊼
     '&rn_N_lower':
-    tap: ∨
+      tap: ∨
     '&rn_N_upper':
-    tap: ⊻
+      tap: ⊻
     '&ro_O_lower':
-    tap: ⊕
+      tap: ⊕
     '&ro_O_upper':
-    tap: ⊖
+      tap: ⊖
     '&ru_U_lower':
-    tap: ∬
+      tap: ∬
     '&ru_U_upper':
-    tap: ∯
+      tap: ∯
     '&ry_Y_lower':
-    tap: →
+      tap: →
     '&ry_Y_upper':
-    tap: ←
+      tap: ←
     '&rr_R_lower':
-    tap: ↦
+      tap: ↦
     '&rr_R_upper':
-    tap: ↤
+      tap: ↤
     '&re_E_lower':
-    tap: ⇄
+      tap: ⇄
     '&re_E_upper':
-    tap: ⇆
+      tap: ⇆
     '&rq_Q_lower':
-    tap: ⇒
+      tap: ⇒
     '&rq_Q_upper':
-    tap: ⇐
+      tap: ⇐
     '&rz_Z_lower':
-    tap: ∠
+      tap: ∠
     '&rz_Z_upper':
-    tap: ∢
+      tap: ∢
     '&rd_D_lower':
-    tap: ∅
+      tap: ∅
     '&rd_D_upper':
-    tap: ∎
+      tap: ∎
     '&rf_F_lower':
-    tap: ⟼
+      tap: ⟼
     '&rf_F_upper':
-    tap: ⟻
+      tap: ⟻
     '&rg_G_lower':
-    tap: ℎ
+      tap: ℎ
     '&rg_G_upper':
-    tap: ≁
+      tap: ≁
     '&rh_H_lower':
-    tap: ⟶
+      tap: ⟶
     '&rh_H_upper':
-    tap: ⟵
+      tap: ⟵
     '&rj_J_lower':
-    tap: ∋
+      tap: ∋
     '&rj_J_upper':
-    tap: ∌
+      tap: ∌
     '&rk_K_lower':
-    tap: ÷
+      tap: ÷
     '&rk_K_upper':
-    tap: ○
+      tap: ○
     '&rl_L_lower':
-    tap: ⊠
+      tap: ⊠
     '&rl_L_upper':
-    tap: ○
+      tap: ○
     '&rp_P_lower':
-    tap: ⇝
+      tap: ⇝
     '&rp_P_upper':
-    tap: ⇜
+      tap: ⇜
     '&rm_M_lower':
-    tap: ⊈
+      tap: ⊈
     '&rm_M_upper':
-    tap: ⊊
+      tap: ⊊
     '&rbo_BO_lower':
-    tap: ≪
+      tap: ≪
     '&rbo_BO_upper':
-    tap: ≤
+      tap: ≤
     '&rbc_BC_lower':
-    tap: ≫
+      tap: ≫
     '&rbc_BC_upper':
-    tap: ≥
+      tap: ≥
     '&rdo_DO_lower':
-    tap: ⟿
+      tap: ⟿
     '&rdo_DO_upper':
-    tap: ⬳
+      tap: ⬳
     '&rco_CO_lower':
-    tap: ≅
+      tap: ≅
     '&rco_CO_upper':
-    tap: ≇
+      tap: ≇
     '&rlt_LT_lower':
-    tap: ⊉
+      tap: ⊉
     '&rlt_LT_upper':
-    tap: ⊋
+      tap: ⊋
     '&rgt_GT_lower':
-    tap: ∥
+      tap: ∥
     '&rgt_GT_upper':
-    tap: ∦
+      tap: ∦
     '&rqm_QM_lower':
-    tap: ∴
+      tap: ∴
     '&rqm_QM_upper':
-    tap: ∵
+      tap: ∵
 
   zmk_combos:
     combo_to_2:
