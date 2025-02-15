@@ -82,44 +82,44 @@ layers:
   - {t: '=', s: +}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '&lq_Q_lower', s: '&lq_Q_upper'}
+  - {t: '&lw_W_lower', s: '&lw_W_upper'}
+  - {t: '&le_E_lower', s: '&le_E_upper'}
+  - {t: '&lr_R_lower', s: '&lr_R_upper'}
+  - {t: '&lt_T_lower', s: '&lt_T_upper'}
+  - {t: '&ly_Y_lower', s: '&ly_Y_upper'}
+  - {t: '&lu_U_lower', s: '&lu_U_upper'}
+  - {t: '&li_I_lower', s: '&li_I_upper'}
+  - {t: '&lo_O_lower', s: '&lo_O_upper'}
+  - {t: '&lp_P_lower', s: '&lp_P_upper'}
+  - {t: '&lbo1_bo2_lower', s: '&lbo1_bo2_upper'}
+  - {t: '&lbc1_bc2_lower', s: '&lbc1_bc2_upper'}
   - ⇪
+  - {t: '&la_A_lower', s: '&la_A_upper'}
+  - {t: '&ls_S_lower', s: '&ls_S_upper'}
+  - {t: '&ld_D_lower', s: '&ld_D_upper'}
+  - {t: '&lf_F_lower', s: '&lf_F_upper'}
+  - {t: '&lg_G_lower', s: '&lg_G_upper'}
+  - {t: '&lh_H_lower', s: '&lh_H_upper'}
+  - {t: '&lj_J_lower', s: '&lj_J_upper'}
+  - {t: '&lk_K_lower', s: '&lk_K_upper'}
+  - {t: '&ll_L_lower', s: '&ll_L_upper'}
+  - '&l1_L1'
+  - {t: '&lk1_K1_lower', s: '&lk1_K1_upper'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: '&ls1_s2_lower', s: '&ls1_s2_upper'}
+  - {t: '&lz_Z_lower', s: '&lz_Z_upper'}
+  - {t: '&lx_X_lower', s: '&lx_X_upper'}
+  - {t: '&lc_C_lower', s: '&lc_C_upper'}
+  - {t: '&lv_V_lower', s: '&lv_V_upper'}
+  - {t: '&lb_B_lower', s: '&lb_B_upper'}
+  - {t: '&ln_N_lower', s: '&ln_N_upper'}
+  - {t: '&lm_M_lower', s: '&lm_M_upper'}
+  - {t: '&lc1_C1_lower', s: '&lc1_C1_upper'}
+  - {t: '&lp1_P1_lower', s: '&lp1_P1_upper'}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '&lq1_Q1_lower', s: '&lq1_Q1_upper'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -149,15 +149,21 @@ layers:
   - F12
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: â, s: Â}
   - F13
   - F14
   - F15
+  - {t: ț, s: Ț}
   - F16
   - F17
+  - {t: î, s: Î}
   - F18
   - F19
   - F20
   - F21
+  - {t: ▽, type: trans}
+  - {t: ă, s: Ă}
+  - {t: ș, s: Ș}
   - F22
   - F23
   - F24
@@ -171,24 +177,18 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&my_xXr'
+  - '&my_cCr'
+  - '&my_vVr'
+  - '&my_bBr'
+  - '&my_nNr'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '$$mdi:android-studio$$', h: studio, type: bootloader}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -201,7 +201,12 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   adjust:
-  - EP TOG
+  - {t: ▽, type: trans}
+  - {t: '$$mdi:bluetooth-connect$$', h: '0'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '1'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '2'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '3'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '4'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -211,11 +216,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - EP ON
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -228,7 +228,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - EP OFF
+  - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -252,7 +252,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: '$$mdi:keyboard$$', h: usb, s: '$$mdi:usb$$', type: sym_by_sym}
-  - {t: ▽, type: trans}
+  - {t: '$$mdi:keyboard$$', h: bt, s: '$$mdi:bluetooth$$', type: sym_by_sym}
   - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$', type: toggle}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -264,6 +264,6 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '$$mdi:skip-next$$', h: next, s: '$$mdi:bluetooth$$'}
+  - {t: '$$mdi:bluetooth-off$$', h: clear}
+  - {t: '$$mdi:skip-previous$$', h: prev, s: '$$mdi:bluetooth$$'}
