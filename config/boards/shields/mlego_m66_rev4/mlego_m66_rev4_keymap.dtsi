@@ -75,7 +75,7 @@
             bindings = <
                 &kp GRAVE &kp K_MUTE &kp K_VOL_UP &kp K_VOL_DN &kp K_PREV &kp K_PP &kp K_NEXT &kp LG(P)   &kp K_SLEEP &kp K_COFFEE &kp PSCRN &kp DEL    &kp EQUAL &trans
                 &trans    &lq_Q      &lw_W        &le_E        &lr_R      &lt_T    &ly_Y      &lu_U       &li_I       &lo_O        &lp_P     &lbo1_bo2  &lbc1_bc2
-                &kp CAPS  &la_A      &ls_S        &ld_D        &lf_F      &lg_G    &lh_H      &lj_J       &lk_K       &ll_L        &l1_L1    &lk1_K1    &trans
+                &kp CAPS  &la_A      &ls_S        &ld_D        &lf_F      &lg_G    &lh_H      &lj_J       &lk_K       &ll_L        &ll1_L1   &lk1_K1    &trans
                 &trans    &ls1_s2    &lz_Z        &lx_X        &lc_C      &lv_V    &lb_B      &ln_N       &lm_M       &lc1_C1      &lp1_P1   &trans     &lq1_Q1
                 &trans    &trans     &trans       &trans       &trans     &trans   &trans     &trans      &trans      &trans       &trans    &trans     &trans
             >;

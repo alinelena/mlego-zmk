@@ -1024,7 +1024,8 @@ path.combo {
 <g transform="translate(798, 266)" class="key keypos-37">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
-<text x="0" y="-4" class="key tap">&amp;l1_L1</text>
+<text x="0" y="-4" class="key tap"><tspan style="font-size: 64%">&amp;ll1_L1_lo…</tspan></text>
+<text x="0" y="-34" class="key shifted"><tspan style="font-size: 64%">&amp;ll1_L1_up…</tspan></text>
 </g>
 <g transform="translate(874, 266)" class="key keypos-38">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>

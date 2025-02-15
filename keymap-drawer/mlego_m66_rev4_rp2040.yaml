@@ -104,7 +104,7 @@ layers:
   - {t: '&lj_J_lower', s: '&lj_J_upper'}
   - {t: '&lk_K_lower', s: '&lk_K_upper'}
   - {t: '&ll_L_lower', s: '&ll_L_upper'}
-  - '&l1_L1'
+  - {t: '&ll1_L1_lower', s: '&ll1_L1_upper'}
   - {t: '&lk1_K1_lower', s: '&lk1_K1_upper'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
