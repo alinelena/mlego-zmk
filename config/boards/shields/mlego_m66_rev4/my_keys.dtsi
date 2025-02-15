@@ -32,12 +32,7 @@ ZMK_UNICODE_PAIR(lk1_K1, N2, N2, N1, D, N2, N1, N2, B)  // ∝/Å
 ZMK_UNICODE_PAIR(lbo1_bo2, N2, N2, D, C, N2, N2, N6, N0)  // ⋜/≠
 ZMK_UNICODE_PAIR(lbc1_bc2, N2, N2, D, D, N2, N2, N4, A)  // ⋝/≊
 ZMK_UNICODE_PAIR(ls1_s2, N2, N2, N6, N1, N2, N2, N6, N2)  // ≡/≢
-ZMK_UNICODE_PAIR(ra_A, N0, N1, N0, N3, N0, N1, N0, N2)  // ă/Ă
-ZMK_UNICODE_PAIR(ra1_A1, N0, N0, E, N2, N0, N0, C, N2)  // â/Â
 ZMK_UNICODE_PAIR(rx_X, N0, N0, E, N7, N0, N0, C, N7)  // ç/Ç
-ZMK_UNICODE_PAIR(ri_I, N0, N0, E, E, N0, N0, C, E)  // î/Î
-ZMK_UNICODE_PAIR(rs_S, N0, N2, N1, N9, N0, N2, N1, N8)  // ș/Ș
-ZMK_UNICODE_PAIR(rt_T, N0, N2, N1, B, N0, N2, N1, A)  // ț/Ț
 ZMK_UNICODE_PAIR(rc_C, N2, N2, N8, N4, N2, N2, N8, N6)  // ⊄/⊆
 ZMK_UNICODE_PAIR(rv_V, N2, N2, N8, N5, N2, N2, N8, N7)  // ⊅/⊇
 ZMK_UNICODE_PAIR(rb_B, N2, N2, N2, N7, N2, N2, B, C)  // ∧/⊼

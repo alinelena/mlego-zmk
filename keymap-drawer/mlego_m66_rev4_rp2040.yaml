@@ -150,43 +150,43 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: â, s: Â}
-  - F13
-  - F14
-  - F15
+  - {t: '&rq_Q_lower', s: '&rq_Q_upper'}
+  - {t: '&re_E_lower', s: '&re_E_upper'}
+  - {t: '&rr_R_lower', s: '&rr_R_upper'}
   - {t: ț, s: Ț}
-  - F16
-  - F17
+  - {t: '&ry_Y_lower', s: '&ry_Y_upper'}
+  - {t: '&ru_U_lower', s: '&ru_U_upper'}
   - {t: î, s: Î}
-  - F18
-  - F19
-  - F20
-  - F21
-  - {t: ▽, type: trans}
+  - {t: '&ro_O_lower', s: '&ro_O_upper'}
+  - {t: '&rp_P_lower', s: '&rp_P_upper'}
+  - {t: '&rbo_BO_lower', s: '&rbo_BO_upper'}
+  - {t: '&rbc_BC_lower', s: '&rbc_BC_upper'}
+  - ⇪
   - {t: ă, s: Ă}
   - {t: ș, s: Ș}
-  - F22
-  - F23
-  - F24
+  - {t: '&rd_D_lower', s: '&rd_D_upper'}
+  - {t: '&rf_F_lower', s: '&rf_F_upper'}
+  - {t: '&rg_G_lower', s: '&rg_G_upper'}
+  - {t: '&rh_H_lower', s: '&rh_H_upper'}
+  - {t: '&rj_J_lower', s: '&rj_J_upper'}
+  - {t: '&rk_K_lower', s: '&rk_K_upper'}
+  - {t: '&rl_L_lower', s: '&rl_L_upper'}
+  - {t: '&rdo_DO_lower', s: '&rdo_DO_upper'}
+  - {t: '&rco_CO_lower', s: '&rco_CO_upper'}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - F20
+  - {t: '&rz_Z_lower', s: '&rz_Z_upper'}
+  - {t: '&rx_X_lower', s: '&rx_X_upper'}
+  - {t: '&rc_C_lower', s: '&rc_C_upper'}
+  - {t: '&rv_V_lower', s: '&rv_V_upper'}
+  - {t: '&rb_B_lower', s: '&rb_B_upper'}
+  - {t: '&rn_N_lower', s: '&rn_N_upper'}
+  - {t: '&rm_M_lower', s: '&rm_M_upper'}
+  - {t: '&rlt_LT_lower', s: '&rlt_LT_upper'}
+  - {t: '&rgt_GT_lower', s: '&rgt_GT_upper'}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - '&my_xXr'
-  - '&my_cCr'
-  - '&my_vVr'
-  - '&my_bBr'
-  - '&my_nNr'
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: '&rqm_QM_lower', s: '&rqm_QM_upper'}
   - {t: ▽, type: trans}
   - {t: '$$mdi:android-studio$$', h: studio, type: bootloader}
   - {t: ▽, type: trans}

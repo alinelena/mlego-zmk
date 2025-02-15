@@ -83,11 +83,11 @@
         };
         lower_layer {
             bindings = <
-                &kp ESC  &kp F1          &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10 &kp F11 &kp F12 &trans
-                &trans   &ro_ai          &kp F13 &kp F14 &kp F15 &ro_t   &kp F16 &kp F17 &ro_i   &kp F18 &kp F19 &kp F20 &kp F21
-                &trans   &ro_a           &ro_s   &kp F22 &kp F23 &kp F24 &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                &trans   &trans          &trans  &my_xXr &my_cCr &my_vVr &my_bBr &my_nNr &trans  &trans  &trans  &trans  &trans
-                &trans   &studio_unlock  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                &kp ESC  &kp F1          &kp F2   &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10 &kp F11 &kp F12 &trans
+                &trans   &ro_ai          &rq_Q    &re_E   &rr_R   &ro_t   &ry_Y   &ru_U   &ro_i   &ro_O   &rp_P    &rbo_BO &rbc_BC
+                &kp CAPS &ro_a           &ro_s    &rd_D   &rf_F   &rg_G   &rh_H   &rj_J   &rk_K   &rl_L   &rdo_DO  &rco_CO  &trans
+                &trans   &kp F20         &rz_Z    &rx_X   &rc_C   &rv_V   &rb_B   &rn_N   &rm_M   &rlt_LT &rgt_GT  &trans  &rqm_QM
+                &trans   &studio_unlock  &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >; 
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
