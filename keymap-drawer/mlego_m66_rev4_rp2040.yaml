@@ -1,3 +1,4 @@
+layout: {zmk_keyboard: mlego_m66_rev4_rp2040}
 layers:
   qw:
   - {t: ⎋, h: esc}
