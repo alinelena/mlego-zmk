@@ -4,14 +4,14 @@
 if SHIELD_MLEGO_M66_REV4 || SHIELD_ST7735 || SHIELD_LS011B7DH03 || SHIELD_LS013B7DH03 || SHIELD_LS013B7DH05 || SHIELD_WEACT_EINK_154 || SHIELD_WEACT_EINK_213 || SHIELD_MLEGO_M66_REV4_RP2040
 
 config ZMK_KEYBOARD_NAME
-    default "mlego r4 60x168" if SHIELD_LS011B7DH03
-    default "mlego r4 128x128" if SHIELD_LS013B7DH03
-    default "mlego r4 144x168" if SHIELD_LS013B7DH05
-    default "mlego r4 eink154" if SHIELD_WEACT_EINK_154
-    default "mlego r4 eink213" if SHIELD_WEACT_EINK_213
-    default "mlego r4 rp2040" if SHIELD_MLEGO_M66_REV4_RP2040
-    default "mlego r4 st7735" if SHIELD_ST7735
-    default "mlego m66 r4" 
+    default "mlegor4-60x168" if SHIELD_LS011B7DH03
+    default "mlegor4-128x128" if SHIELD_LS013B7DH03
+    default "mlegor4-144x168" if SHIELD_LS013B7DH05
+    default "mlegor4-eink154" if SHIELD_WEACT_EINK_154
+    default "mlegor4-eink213" if SHIELD_WEACT_EINK_213
+    default "mlegor4-rp2040" if SHIELD_MLEGO_M66_REV4_RP2040
+    default "mlegor4-st7735" if SHIELD_ST7735
+    default "mlego-m66-r4" 
 
 config SPI
 	default y
