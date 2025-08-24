@@ -60,11 +60,11 @@
         };
         lower_layer {
             bindings = <
-                &kp GRAVE &kp K_MUTE &kp K_VOL_UP &kp K_VOL_DN &kp K_PREV &kp K_PP &kp K_NEXT &kp LG(P) &kp K_SLEEP &kp K_COFFEE &kp PSCRN &kp DEL &kp EQUAL
-                &trans    &trans     &trans       &trans       &trans     &trans   &trans     &trans      &trans      &trans       &trans    &trans  &trans
-                &kp CAPS  &trans     &trans       &trans       &trans     &trans   &trans     &trans      &trans      &trans       &trans    &trans  &trans
-                &trans    &trans     &trans       &trans       &trans     &trans   &trans     &trans      &trans      &trans       &trans    &trans  &trans
-                &trans    &trans     &trans       &trans       &none      &trans   &none      &none       &trans      &none        &trans    &trans  &trans
+                &kp GRAVE &kp K_MUTE     &kp K_VOL_UP &kp K_VOL_DN &kp K_PREV &kp K_PP &kp K_NEXT &kp LG(P) &kp K_SLEEP &kp K_COFFEE &kp PSCRN &kp DEL &kp EQUAL
+                &trans    &trans         &trans       &trans       &trans     &trans   &trans     &trans      &trans      &trans       &trans    &trans  &trans
+                &kp CAPS  &trans         &trans       &trans       &trans     &trans   &trans     &trans      &trans      &trans       &trans    &trans  &trans
+                &trans    &trans         &trans       &trans       &trans     &trans   &trans     &trans      &trans      &trans       &trans    &trans  &trans
+                &trans    &studio_unlock &trans       &trans       &none      &trans   &none      &none       &trans      &none        &trans    &trans  &trans
             >;
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
