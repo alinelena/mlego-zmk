@@ -27,6 +27,7 @@ include:
     shield: mlego5x13_rev8 rgbled_adapter
   - board: seeeduino_xiao_ble
     shield: mlego5x13_61_r8
+    snippet: studio-rpc-usb-uart
   - board: seeeduino_xiao_ble
     shield: settings_reset
   - board: nice_nano_v2
