@@ -358,16 +358,6 @@ path.combo {
    }
 }
 
-/* encoder */
-.keypos-13 {
-   rect {
-    fill: var(--color--mt3--devtty--red);
-    stroke: var(--color--mt3--devtty--black);
-    rx: 50%; 
-    ry: 50%; 
-  }
-}
-
 /* enter */
 .keypos-39 {
    rect {
