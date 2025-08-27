@@ -1,0 +1,978 @@
+parse_config:
+  preprocess: true
+  skip_binding_parsing: false
+  raw_binding_map: {}
+  sticky_label: $$mdi:gesture-tap-hold$$
+  toggle_label: toggle
+  tap_toggle_label: tap-toggle
+  trans_legend:
+    t: ▽
+    type: trans
+  mark_alternate_layer_activators: true
+  modifier_fn_map:
+    left_ctrl: Ctrl
+    right_ctrl: Ctrl
+    left_shift: Shift
+    right_shift: Shift
+    left_alt: Alt
+    right_alt: AltGr
+    left_gui: Gui
+    right_gui: Gui
+    keycode_combiner: '{mods}+ {key}'
+    mod_combiner: '{mod_1}+{mod_2}'
+    special_combinations:
+      left_ctrl+left_alt+left_gui+left_shift: Hyper
+      left_ctrl+left_alt+left_shift: Meh
+  zmk_remove_keycode_prefix: []
+  zmk_keycode_map:
+    A:
+      tap: a
+      shifted: "A"
+    B:
+      tap: b
+      shifted: "B"
+    C:
+      tap: c
+      shifted: "C"
+    D:
+      tap: d
+      shifted: "D"
+    E:
+      tap: e
+      shifted: "E"
+    F:
+      tap: f
+      shifted: "F"
+    G:
+      tap: g
+      shifted: "G"
+    H:
+      tap: h
+      shifted: "H"
+    I:
+      tap: i
+      shifted: "I"
+    J:
+      tap: j
+      shifted: "J"
+    K:
+      tap: k
+      shifted: "K"
+    L:
+      tap: l
+      shifted: "L"
+    M:
+      tap: m
+      shifted: "M"
+    N:
+      tap: n
+      shifted: "N"
+    P:
+      tap: p
+      shifted: "P"
+    Q:
+      tap: q
+      shifted: "Q"
+    O:
+      tap: o
+      shifted: "O"
+    R:
+      tap: r
+      shifted: "R"
+    S:
+      tap: s
+      shifted: "S"
+    T:
+      tap: t
+      shifted: "T"
+    U:
+      tap: u
+      shifted: "U"
+    X:
+      tap: x
+      shifted: "X"
+    Y:
+      tap: y 
+      shifted: "Y"
+    V:
+      tap: v
+      shifted: "V"
+    W:
+      tap: w
+      shifted: "W"
+    Z:
+      tap: z
+      shifted: "Z"
+    
+   # Numbers
+    N1:
+      tap: 1
+      shifted: "!"
+    N2:
+      tap: 2
+      shifted: '"'
+    N3:
+      tap: 3
+      shifted: "£"
+    N4:
+      tap: 4
+      shifted: "$"
+    N5:
+      tap: 5
+      shifted: "%"
+    N6:
+      tap: 6
+      shifted: "^"
+    N7:
+      tap: 7
+      shifted: "&"
+    N8:
+      tap: 8
+      shifted: "*"
+    N9:
+      tap: 9
+      shifted: "("
+    N0:
+      tap: 0
+      shifted: ")"
+
+    # Symbols
+    EXCLAMATION: "!"
+    EXCL: "!"
+    AT_SIGN: "@"
+    AT: "@"
+    HASH: "#"
+    POUND: "#"
+    DOLLAR: $
+    DLLR: $
+    PERCENT: "%"
+    PRCNT: "%"
+    CARET: ^
+    AMPERSAND: "&"
+    AMPS: "&"
+    ASTERISK: "*"
+    ASTRK: "*"
+    STAR: "*"
+    LEFT_PARENTHESIS: (
+    LPAR: (
+    RIGHT_PARENTHESIS: )
+    RPAR: )
+    EQUAL:
+      tap: "="
+      shifted: "+"
+    PLUS: +
+    MINUS:
+      tap: "-"
+      shifted: "_"
+    UNDERSCORE: _
+    UNDER: _
+    SLASH:
+      tap: "/"
+      shifted: "?"
+    FSLH:
+      tap: "/"
+      shifted: "?"
+    QUESTION: "?"
+    QMARK: "?"
+    BACKSLASH:
+      tap: '\'
+      shifted: "|"
+    BSLH:
+      tap: '\'
+      shifted: "|"
+    PIPE: "|"
+    NON_US_BACKSLASH: \
+    PIPE2: "|"
+    NON_US_BSLH: 
+      tap: \
+      shifted: "|"
+    SEMICOLON:
+      tap: ";"
+      shifted: ":"
+    SEMI:
+      tap: ";"
+      shifted: ":"
+    COLON: ":"
+    SINGLE_QUOTE:
+      tap: "'"
+      shifted: '"'
+    SQT:
+      tap: "'"
+      shifted: '"'
+    APOSTROPHE: <
+    APOS: 
+      tap: "'"
+      shifted: "@"
+    DOUBLE_QUOTES: '"'
+    DQT: '"'
+
+    LESS_THAN: <
+    LT: <
+    DOT:
+      tap: "."
+      shifted: ">"
+    COMMA:
+      tap: ","
+      shifted: "<"
+    GREATER_THAN: ">"
+    GT: ">"
+    LEFT_BRACKET:
+      tap: "["
+      shifted: "{"
+    LBKT:
+      tap: "["
+      shifted: "{"
+    LEFT_BRACE: "{"
+    LBRC: "{"
+    RIGHT_BRACKET:
+      tap: "]"
+      shifted: "}"
+    RBKT:
+      tap: "]"
+      shifted: "}"
+    RIGHT_BRACE: "}"
+    RBRC: "}"
+    GRAVE:
+      tap: "`"
+      shifted: "¬"
+    TILDE: "~"
+    NON_US_HASH:
+      tap:  "#"
+      shifted: "~"
+    NUHS:
+      tap:  "#"
+      shifted: "~"
+    TILDE2: "~"
+
+    # Modifiers
+    LCTRL: 
+      tap: "⎈"
+      hold: "ctrl"
+    LALT: 
+      tap: "⎇"
+      hold: "alt"
+    LSHIFT: 
+      tap: "⇧"
+      hold: "shift"
+    LGUI: 
+     tap: ""
+     hold: "menu"
+    LSHFT: 
+      tap: "⇧"
+      hold: "shift"
+    RCTRL: 
+      tap: "⎈"
+      hold: "ctrl"
+    RALT: 
+      tap: "⎇"
+      hold: 'altgr'
+    RSHIFT: 
+      tap: "⇧"
+      hold: "shift"
+    RSHFT: 
+      tap: "⇧"
+      hold: "shift"
+    RCMD: $$mdi:apple-keyboard-command$$
+    LCMD: $$mdi:apple-keyboard-command$$
+    LS(LC(LALT)): $$mdi:triangle$$ # Meh
+
+    # Arrows
+    UP: 
+      tap: $$mdi:arrow-up-bold$$
+      hold: "up"
+    DOWN: 
+      tap: $$mdi:arrow-down-bold$$
+      hold: "down"
+    LEFT: 
+      tap: $$mdi:arrow-left-bold$$
+      hold: "left"
+    RIGHT: 
+      tap: $$mdi:arrow-right-bold$$
+      hold: "right"
+    PG_UP: $$mdi:transfer-up$$
+    PG_DN: $$mdi:transfer-down$$
+
+    # Whitespace
+    RET:
+      type: enter
+      tap: $$mdi:keyboard-return$$
+    ESC: 
+      tap: "⎋"
+      hold: "esc"
+    TAB: 
+      tap: "↹"
+      hold: "tab" 
+    LS(TAB): $$mdi:keyboard-tab-reverse$$
+    SPACE: $$mdi:keyboard-space$$
+    BACKSPACE:
+      type: backspace
+      tap: $$mdi:backspace-outline$$
+    BSPC:
+      type: backspace
+      tap: $$mdi:backspace-outline$$
+    DELETE: $$mdi:backspace-reverse-outline$$
+    DEL: $$mdi:backspace-reverse-outline$$
+
+    # Locks
+    CAPSLOCK: "⇪"
+    CAPS: "⇪"
+
+    # Sound
+    C_MUTE: $$mdi:volume-off$$
+    C_VOL_UP: $$mdi:volume-high$$
+    C_VOL_DN: $$mdi:volume-low$$
+    K_MUTE: $$mdi:volume-off$$
+    K_VOL_UP: $$mdi:volume-high$$
+    K_VOL_DN: $$mdi:volume-low$$
+
+    # Media
+    C_NEXT: $$mdi:skip-next$$
+    C_PREV: $$mdi:skip-previous$$
+    C_PP: $$mdi:play-pause$$
+    K_NEXT: $$mdi:skip-next$$
+    K_PREV: $$mdi:skip-previous$$
+    K_PP: $$mdi:play-pause$$
+
+    # Bluetooth
+    BT_CLR: 
+     tap: $$mdi:bluetooth-off$$
+     hold: "clear"
+    BT_SEL: $$mdi:bluetooth-connect$$
+
+    # Settings
+    C_BRI_UP: $$mdi:brightness-5$$
+    C_BRI_DN: $$mdi:brightness-7$$
+
+    # System
+    C_POWER: $$mdi:power-standby$$
+    C_AL_LOCK: $$mdi:lock$$
+    K_CANCEL: $$mdi:close-box$$
+    K_COFFEE: $$mdi:power-standby$$
+    K_SLEEP: $$mdi:sleep$$
+    PSCRN: $$mdi:monitor-screenshot$$
+    LG(P): $$mdi:monitor-screenshot$$
+
+  raw_binding_map:
+    # Reset
+    "&sys_reset":
+      type: bootloader
+      tap: $$mdi:backup-restore$$
+      hold: "reset"
+    "&bootloader":
+      type: bootloader
+      tap: $$mdi:progress-download$$
+      hold: "boot"
+    "&tlwr":
+      tap: "⇓"
+      hold: "lwr"
+    "&trse":
+      tap: "⇑"
+      hold: "rse"
+    '&out OUT_BLE':
+      tap: $$mdi:keyboard$$
+      shifted: $$mdi:bluetooth$$
+      type: sym_by_sym
+      hold: "bt"
+    '&out OUT_USB':
+      tap: $$mdi:keyboard$$
+      shifted: $$mdi:usb$$
+      type: sym_by_sym
+      hold: "usb"
+    '&out OUT_TOG':
+      tap: $$mdi:toggle-switch$$
+      hold: $$mdi:bluetooth$$
+      shifted: $$mdi:usb$$
+      type: toggle
+    '&studio_unlock':
+      type: bootloader
+      tap: $$mdi:android-studio$$
+      hold: "studio"
+    '&bt BT_NXT':
+      shifted: $$mdi:bluetooth$$
+      tap: $$mdi:skip-next$$
+      hold: "next"
+    '&bt BT_PRV':
+      shifted: $$mdi:bluetooth$$
+      tap: $$mdi:skip-previous$$
+      hold: "prev"
+    # .ro
+    '&ro_a_upper':
+      tap: Ă
+    '&ro_a_lower':
+      tap: ă
+    '&ro_ai_upper':
+      tap: Â
+    '&ro_ai_lower':
+      tap: â
+    '&ro_i_upper':
+      tap: Î
+    '&ro_i_lower':
+      tap: î
+    '&ro_s_upper':
+      tap: Ș
+    '&ro_s_lower':
+      tap: ș
+    '&ro_t_upper':
+      tap: Ț
+    '&ro_t_lower':
+      tap: ț
+
+#  special ones
+    '&la_A_lower':
+      tap: α
+    '&la_A_upper':
+      tap: Α
+    '&lb_B_lower':
+      tap: β
+    '&lb_B_upper':
+      tap: ∩
+    '&lc_C_lower':
+      tap: χ
+    '&lc_C_upper':
+      tap: ⊂
+    '&ld_D_lower':
+      tap: δ
+    '&ld_D_upper':
+      tap: ∂
+    '&le_E_lower':
+      tap: ε
+    '&le_E_upper':
+      tap: ℇ
+    '&lf_F_lower':
+      tap: φ
+    '&lf_F_upper':
+      tap: ψ
+    '&lg_G_lower':
+      tap: γ
+    '&lg_G_upper':
+      tap: Γ
+    '&lh_H_lower':
+      tap: ℏ
+    '&lh_H_upper':
+      tap: ℋ
+    '&li_I_lower':
+      tap: ∫
+    '&li_I_upper':
+      tap: ∮
+    '&lj_J_lower':
+      tap: ∈
+    '&lj_J_upper':
+      tap: ∉
+    '&lk_K_lower':
+      tap: ϰ
+    '&lk_K_upper':
+      tap: ∆
+    '&ll_L_lower':
+      tap: λ
+    '&ll_L_upper':
+      tap: Λ
+    '&lm_M_lower':
+      tap: μ
+    '&lm_M_upper':
+      tap: ∘
+    '&ln_N_lower':
+      tap: η
+    '&ln_N_upper':
+      tap: ∪
+    '&lo_O_lower':
+      tap: ∞
+    '&lo_O_upper':
+      tap: ⊗
+    '&lp_P_lower':
+      tap: π
+    '&lp_P_upper':
+      tap: ∏
+    '&lq_Q_lower':
+      tap: σ
+    '&lq_Q_upper':
+      tap: ϕ
+    '&lr_R_lower':
+      tap: ρ
+    '&lr_R_upper':
+      tap: ∇
+    '&ls_S_lower':
+      tap: ∑
+    '&ls_S_upper':
+      tap: ⨋
+    '&lt_T_lower':
+      tap: ϑ
+    '&lt_T_upper':
+      tap: θ
+    '&lu_U_lower':
+      tap: τ
+    '&lu_U_upper':
+      tap: ℂ
+    '&lv_V_lower':
+      tap: χ
+    '&lv_V_upper':
+      tap: ⊃
+    '&lw_W_lower':
+      tap: ω
+    '&lw_W_upper':
+      tap: Ω
+    '&lx_X_lower':
+      tap: ξ
+    '&lx_X_upper':
+      tap: Ξ
+    '&ly_Y_lower':
+      tap: ℝ
+    '&ly_Y_upper':
+      tap: ℤ
+    '&lz_Z_lower':
+      tap: ζ
+    '&lz_Z_upper':
+      tap: ∡
+    '&lc1_C1_lower':
+      tap: ≈
+    '&lc1_C1_upper':
+      tap: ≉
+    '&lp1_P1_lower':
+      tap: ±
+    '&lp1_P1_upper':
+      tap: ∓
+    '&lq1_Q1_lower':
+      tap: ×
+    '&lq1_Q1_upper':
+      tap: ⋅
+    '&ll1_L1_lower':
+      tap: °
+    '&ll1_L1_upper':
+      tap: ℒ
+    '&lk1_K1_lower':
+      tap: ∝
+    '&lk1_K1_upper':
+      tap: Å
+    '&lbo1_bo2_lower':
+      tap: ⋜
+    '&lbo1_bo2_upper':
+      tap: ≠
+    '&lbc1_bc2_lower':
+      tap: ⋝
+    '&lbc1_bc2_upper':
+      tap: ≊
+    '&ls1_s2_lower':
+      tap: ≡
+    '&ls1_s2_upper':
+      tap: ≢
+    '&ra_A_lower':
+      tap: ă
+    '&ra_A_upper':
+      tap: Ă
+    '&ra1_A1_lower':
+      tap: â
+    '&ra1_A1_upper':
+      tap: Â
+    '&rx_X_lower':
+      tap: ç
+    '&rx_X_upper':
+      tap: Ç
+    '&ri_I_lower':
+      tap: î
+    '&ri_I_upper':
+      tap: Î
+    '&rs_S_lower':
+      tap: ș
+    '&rs_S_upper':
+      tap: Ș
+    '&rt_T_lower':
+      tap: ț
+    '&rt_T_upper':
+      tap: Ț
+    '&rc_C_lower':
+      tap: ⊄
+    '&rc_C_upper':
+      tap: ⊆
+    '&rv_V_lower':
+      tap: ⊅
+    '&rv_V_upper':
+      tap: ⊇
+    '&rb_B_lower':
+      tap: ∧
+    '&rb_B_upper':
+      tap: ⊼
+    '&rn_N_lower':
+      tap: ∨
+    '&rn_N_upper':
+      tap: ⊻
+    '&ro_O_lower':
+      tap: ⊕
+    '&ro_O_upper':
+      tap: ⊖
+    '&ru_U_lower':
+      tap: ∬
+    '&ru_U_upper':
+      tap: ∯
+    '&ry_Y_lower':
+      tap: →
+    '&ry_Y_upper':
+      tap: ←
+    '&rr_R_lower':
+      tap: ↦
+    '&rr_R_upper':
+      tap: ↤
+    '&re_E_lower':
+      tap: ⇄
+    '&re_E_upper':
+      tap: ⇆
+    '&rq_Q_lower':
+      tap: ⇒
+    '&rq_Q_upper':
+      tap: ⇐
+    '&rz_Z_lower':
+      tap: ∠
+    '&rz_Z_upper':
+      tap: ∢
+    '&rd_D_lower':
+      tap: ∅
+    '&rd_D_upper':
+      tap: ∎
+    '&rf_F_lower':
+      tap: ⟼
+    '&rf_F_upper':
+      tap: ⟻
+    '&rg_G_lower':
+      tap: ℎ
+    '&rg_G_upper':
+      tap: ≁
+    '&rh_H_lower':
+      tap: ⟶
+    '&rh_H_upper':
+      tap: ⟵
+    '&rj_J_lower':
+      tap: ∋
+    '&rj_J_upper':
+      tap: ∌
+    '&rk_K_lower':
+      tap: ÷
+    '&rk_K_upper':
+      tap: ○
+    '&rl_L_lower':
+      tap: ⊠
+    '&rl_L_upper':
+      tap: ○
+    '&rp_P_lower':
+      tap: ⇝
+    '&rp_P_upper':
+      tap: ⇜
+    '&rm_M_lower':
+      tap: ⊈
+    '&rm_M_upper':
+      tap: ⊊
+    '&rbo_BO_lower':
+      tap: ≪
+    '&rbo_BO_upper':
+      tap: ≤
+    '&rbc_BC_lower':
+      tap: ≫
+    '&rbc_BC_upper':
+      tap: ≥
+    '&rdo_DO_lower':
+      tap: ⟿
+    '&rdo_DO_upper':
+      tap: ⬳
+    '&rco_CO_lower':
+      tap: ≅
+    '&rco_CO_upper':
+      tap: ≇
+    '&rlt_LT_lower':
+      tap: ⊉
+    '&rlt_LT_upper':
+      tap: ⊋
+    '&rgt_GT_lower':
+      tap: ∥
+    '&rgt_GT_upper':
+      tap: ∦
+    '&rqm_QM_lower':
+      tap: ∴
+    '&rqm_QM_upper':
+      tap: ∵
+
+  zmk_combos:
+    combo_to_2:
+      align: top
+    combo_to_3:
+      align: top
+    combo_bt_clear:
+      align: top
+      offset: 0.03
+    combo_mute:
+      align: top
+      offset: 0.15
+    combo_minus:
+      key:
+        shifted: "_"
+        hold: "-"
+    combo_equal:
+      key:
+        shifted: "+"
+        hold: "="
+    combo_backslash:
+      key:
+        shifted: "|"
+        hold: \
+    combo_lbkt:
+      key:
+        shifted: "{"
+        hold: "["
+    combo_rbkt:
+      key:
+        shifted: "}"
+        hold: "]"
+    combo_semicolon:
+      key:
+        shifted: ":"
+        hold: ";"
+
+  zmk_preamble: '#define KEYMAP_DRAWER'
+  zmk_additional_includes: ["zmk-helpers/include"]
+
+draw_config:
+  key_w: 80
+  key_h: 76
+  split_gap: 30.0
+  key_rx: 4.0
+  key_ry: 4.0
+  dark_mode: false
+  n_columns: 1
+  separate_combo_diagrams: false
+  combo_diagrams_scale: 2
+  inner_pad_w: 2.0
+  inner_pad_h: 2.0
+  outer_pad_w: 60.0
+  outer_pad_h: 60.0
+  line_spacing: 1.0
+  arc_radius: 6.0
+  append_colon_to_layer_header: false
+  small_pad: 2.0
+  legend_rel_x: 0.0
+  legend_rel_y: 0.0
+  draw_key_sides: true
+  key_side_pars:
+    rel_x: 0
+    rel_y: 4
+    rel_w: 12
+    rel_h: 12
+    rx: 4
+    ry: 4
+  footer_text: Created with <a href="https://github.com/caksoylar/keymap-drawer">keymap-drawer</a>
+  shrink_wide_legends: 7
+  style_layer_activators: true
+  glyph_tap_size: 30
+  glyph_hold_size: 16
+  glyph_shifted_size: 16
+  glyphs: {}
+  #
+  # Custom CSS
+  # svg_style: ''
+  #
+  svg_extra_style: |
+
+    /* inherit to force styles through use tags */
+    /* a lot lifted from https://github.com/minusfive/zmk-config */
+    /* font and background color specifications */
+
+    svg.keymap {
+        /*
+         * ====================
+         * Theme Variables
+         * ====================
+         */
+
+        /* === Colors === */
+        --color--mt3--devtty--alpha: #e2e2da;
+        --color--mt3--devtty--teal: #27b6b6;
+        --color--mt3--devtty--red:  #ba1312;
+        --color--mt3--devtty--mod: #cecfc9;
+        --color--mt3--devtty--black:  #000000;
+        --color--mt3--devtty--yellow: #f4c45a;
+        --color--mt3--devtty--blue: #4687d0;
+
+        /*
+         * ====================
+         * /End Theme Variables
+         * ====================
+         */
+
+        font-family: SFMono-Regular,Consolas,Liberation Mono,FontAwesome, monospace;
+        font-size: 24px;
+        font-kerning: normal;
+        text-rendering: optimizeLegibility;
+        fill: var(--color--mt3--devtty--alpha);
+    }
+
+    rect,
+    path {
+      shape-rendering: geometricPrecision;
+    }
+
+    text {
+        text-anchor: middle;
+        dominant-baseline: middle;
+        line-height: 1;
+    }
+    text.hold {
+      text-anchor: middle;
+      dominant-baseline: auto;
+      font-size: 14px;
+    }
+
+    text.shifted {
+      text-anchor: middle;
+      dominant-baseline: hanging;
+      font-size: 14px;
+    }
+
+
+    /* Layer labels */
+    text.label {
+        font-weight: bold;
+        font-size: 36px;
+        text-anchor: start;
+        paint-order: stroke;
+        fill: var(--color--mt3--devtty--black);
+        # stroke: var(--color--mt3--devtty--black);
+        translate: 0px 0px;
+    }
+
+    text.footer {
+      text-anchor: end;
+      dominant-baseline: auto;
+      # stroke: var(--color--mt3--devtty--black);
+      fill: var(--color--mt3--devtty--black);
+      stroke-width: 2;
+      paint-order: stroke;
+      translate: 0px 6px;
+  
+    }
+
+
+    /* Keys */
+    rect.key {
+        fill: var(--color--mt3--devtty--alpha);
+    }
+    rect.combo {
+        fill: var(--color--mt3--devtty--alpha);
+        stroke: var(--color--mt3--devtty--alpha);
+    }
+    .tap {
+        fill: var(--color--mt3--devtty--black);
+    }
+    .shifted{
+        font-size: 16px;
+        text-anchor: middle;
+        dominant-baseline: hanging;
+        fill: var(--color--mt3--devtty--black);
+        translate: 0px 2px;
+    }
+
+    .shifted.glyph {
+        fill: var(--color--mt3--devtty--black);
+    }
+
+    .hold {
+        font-size: 16px;
+        text-anchor: middle;
+        dominant-baseline: ideographic;
+        fill: var(--color--mt3--devtty--black);
+        translate: 0 -10px;
+    }
+    .hold.glyph {
+        translate: 0 -10px;
+    }
+
+
+    /*
+     * Combos
+     */
+    rect.combo {
+        stroke-width: 0;
+    }
+    path.combo {
+        stroke-width: 1;
+        stroke: var(--color--mt3--devtty-black);
+        fill: none;
+    }
+    .combo.tap {
+        font-size: 16px;
+    }
+    .combo.shifted {
+        font-size: 13px;
+        translate: -9px -2px;
+    }
+    .combo.shifted.glyph {
+        translate: -9px -3px;
+    }
+
+    /*
+     * Transparent, None, and Ghost Keys
+     */
+    .trans,
+    .none,
+    .ghost {
+      opacity: 0.8;
+    }
+
+    /* esc */
+    .keypos-0 {
+       rect {
+        fill: var(--color--mt3--devtty--yellow);
+        stroke: var(--color--mt3--devtty--black);
+       }
+    }
+
+    /* encoder */
+    .keypos-13 {
+       rect {
+        fill: var(--color--mt3--devtty--red);
+        stroke: var(--color--mt3--devtty--black);
+        rx: 50%; 
+        ry: 50%; 
+      }
+    }
+
+    /* enter */
+    .keypos-39 {
+       rect {
+        fill: var(--color--mt3--devtty--red);
+        stroke: var(--color--mt3--devtty--black);
+       }
+    }
+    
+    /* ctrl */
+    .keypos-53 {
+       rect {
+        fill: var(--color--mt3--devtty--teal);
+        stroke: var(--color--mt3--devtty--black);
+       }
+    }
+
+    .keypos-11, .keypos-12, .keypos-14, .keypos-25, .keypos-26, .keypos-27, .keypos-37, .keypos-38, .keypos-40, .keypos-41, .keypos-49, .keypos-50, .keypos-51, .keypos-52,  .keypos-58, .keypos-59, .keypos-60, .keypos-62, .keypos-63, .keypos-64, .keypos-65 {
+       rect {
+        fill: var(--color--mt3--devtty--teal);
+        stroke: var(--color--mt3--devtty--black);
+       }
+    }
+
+    /*   */
+    .keypos-54 {
+       rect {
+        fill: var(--color--mt3--devtty--teal);
+        stroke: var(--color--mt3--devtty--black);
+       }
+    }
+
+    /* lwr, rse */
+    .keypos-55, .keypos-57 {
+       rect {
+        fill: var(--color--mt3--devtty--teal);
+        stroke: var(--color--mt3--devtty--black);
+       }
+    }
+
+    /* alt */
+    .keypos-56, .keypos-61 {
+       rect {
+        fill: var(--color--mt3--devtty--teal);
+        stroke: var(--color--mt3--devtty--black);
+       }
+    }
