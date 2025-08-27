@@ -9,15 +9,20 @@
 / {
    model = "mlego m65, rev8";
    compatible = "mlego", "seeduino,xiao_ble";
+   m65_layout: m65_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "m65 default layout";
+        kscan = <&kscan_m65>;
+   };
 
    chosen {
-     zmk,kscan = &kscan;
+     zmk,physical-layout = &m65_layout;
      /*
      zmk,led-widgets-dev = &leds_i;
      */
    };
 
-   kscan: kscan {
+   kscan_m65: kscan_m65 {
      compatible = "zmk,kscan-gpio-matrix";
      label = "kscan";
      diode-direction = "col2row";
