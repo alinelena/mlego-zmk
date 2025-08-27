@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <dt-bindings/zmk/matrix_transform.h>
+#include "mlego5x13_rev8_layout.dtsi"
 #include <dt-bindings/led/led.h>
 
 / {
