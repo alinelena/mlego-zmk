@@ -1,0 +1,266 @@
+layout: {zmk_keyboard: mlego5x13_rev8}
+layers:
+  qw:
+  - {t: ⎋, h: esc}
+  - {t: '1', s: '!'}
+  - {t: '2', s: '"'}
+  - {t: '3', s: £}
+  - {t: '4', s: $}
+  - {t: '5', s: '%'}
+  - {t: '6', s: ^}
+  - {t: '7', s: '&'}
+  - {t: '8', s: '*'}
+  - {t: '9', s: (}
+  - {t: '0', s: )}
+  - {t: '-', s: _}
+  - {t: '$$mdi:backspace-outline$$', type: backspace}
+  - {t: ↹, h: tab}
+  - {t: q, s: Q}
+  - {t: w, s: W}
+  - {t: e, s: E}
+  - {t: r, s: R}
+  - {t: t, s: T}
+  - {t: y, s: Y}
+  - {t: u, s: U}
+  - {t: i, s: I}
+  - {t: o, s: O}
+  - {t: p, s: P}
+  - {t: '[', s: '{'}
+  - {t: ']', s: '}'}
+  - {t: '#', s: '~'}
+  - {t: a, s: A}
+  - {t: s, s: S}
+  - {t: d, s: D}
+  - {t: f, s: F}
+  - {t: g, s: G}
+  - {t: h, s: H}
+  - {t: j, s: J}
+  - {t: k, s: K}
+  - {t: l, s: L}
+  - {t: ;, s: ':'}
+  - {t: '''', s: '@'}
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: ⇧, h: shift}
+  - {t: \, s: '|'}
+  - {t: z, s: Z}
+  - {t: x, s: X}
+  - {t: c, s: C}
+  - {t: v, s: V}
+  - {t: b, s: B}
+  - {t: n, s: N}
+  - {t: m, s: M}
+  - {t: ',', s: <}
+  - {t: ., s: '>'}
+  - {t: '$$mdi:arrow-up-bold$$', h: up}
+  - {t: /, s: '?'}
+  - {t: ⎈, h: ctrl}
+  - {t: , h: menu}
+  - {t: ⇓, h: lwr}
+  - {t: ⎇, h: alt}
+  - {t: ⇑, h: rse}
+  - $$mdi:keyboard-space$$
+  - $$mdi:keyboard-space$$
+  - $$mdi:keyboard-space$$
+  - {t: ⎇, h: altgr}
+  - {t: ⇧, h: shift}
+  - {t: '$$mdi:arrow-left-bold$$', h: left}
+  - {t: '$$mdi:arrow-down-bold$$', h: down}
+  - {t: '$$mdi:arrow-right-bold$$', h: right}
+  raise:
+  - {t: '`', s: ¬}
+  - $$mdi:volume-off$$
+  - $$mdi:volume-high$$
+  - $$mdi:volume-low$$
+  - $$mdi:skip-previous$$
+  - $$mdi:play-pause$$
+  - $$mdi:skip-next$$
+  - $$mdi:monitor-screenshot$$
+  - $$mdi:sleep$$
+  - $$mdi:power-standby$$
+  - $$mdi:monitor-screenshot$$
+  - $$mdi:backspace-reverse-outline$$
+  - {t: '=', s: +}
+  - {t: ▽, type: trans}
+  - {t: σ, s: ϕ}
+  - {t: ω, s: Ω}
+  - {t: ε, s: ℇ}
+  - {t: ρ, s: ∇}
+  - {t: ϑ, s: θ}
+  - {t: ℝ, s: ℤ}
+  - {t: τ, s: ℂ}
+  - {t: ∫, s: ∮}
+  - {t: ∞, s: ⊗}
+  - {t: π, s: ∏}
+  - {t: ⋜, s: ≠}
+  - {t: ⋝, s: ≊}
+  - ⇪
+  - {t: α, s: Α}
+  - {t: ∑, s: ⨋}
+  - {t: δ, s: ∂}
+  - {t: φ, s: ψ}
+  - {t: γ, s: Γ}
+  - {t: ℏ, s: ℋ}
+  - {t: ∈, s: ∉}
+  - {t: ϰ, s: ∆}
+  - {t: λ, s: Λ}
+  - {t: °, s: ℒ}
+  - {t: ∝, s: Å}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ≡, s: ≢}
+  - {t: ζ, s: ∡}
+  - {t: ξ, s: Ξ}
+  - {t: χ, s: ⊂}
+  - {t: χ, s: ⊃}
+  - {t: β, s: ∩}
+  - {t: η, s: ∪}
+  - {t: μ, s: ∘}
+  - {t: ≈, s: ≉}
+  - {t: ±, s: ∓}
+  - {t: ▽, type: trans}
+  - {t: ×, s: ⋅}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  lower:
+  - {t: ⎋, h: esc}
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - F11
+  - F12
+  - {t: ▽, type: trans}
+  - {t: â, s: Â}
+  - {t: ⇒, s: ⇐}
+  - {t: ⇄, s: ⇆}
+  - {t: ↦, s: ↤}
+  - {t: ț, s: Ț}
+  - {t: →, s: ←}
+  - {t: ∬, s: ∯}
+  - {t: î, s: Î}
+  - {t: ⊕, s: ⊖}
+  - {t: ⇝, s: ⇜}
+  - {t: ≪, s: ≤}
+  - {t: ≫, s: ≥}
+  - ⇪
+  - {t: ă, s: Ă}
+  - {t: ș, s: Ș}
+  - {t: ∅, s: ∎}
+  - {t: ⟼, s: ⟻}
+  - {t: ℎ, s: ≁}
+  - {t: ⟶, s: ⟵}
+  - {t: ∋, s: ∌}
+  - {t: ÷, s: ○}
+  - {t: ⊠, s: ○}
+  - {t: ⟿, s: ⬳}
+  - {t: ≅, s: ≇}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - F20
+  - {t: ∠, s: ∢}
+  - {t: ç, s: Ç}
+  - {t: ⊄, s: ⊆}
+  - {t: ⊅, s: ⊇}
+  - {t: ∧, s: ⊼}
+  - {t: ∨, s: ⊻}
+  - {t: ⊈, s: ⊊}
+  - {t: ⊉, s: ⊋}
+  - {t: ∥, s: ∦}
+  - {t: ▽, type: trans}
+  - {t: ∴, s: ∵}
+  - {t: ▽, type: trans}
+  - {t: '$$mdi:android-studio$$', h: studio, type: bootloader}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  adjust:
+  - {t: ▽, type: trans}
+  - {t: '$$mdi:bluetooth-connect$$', h: '0'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '1'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '2'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '3'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '4'}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: '$$mdi:backup-restore$$', h: reset, type: bootloader}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: '$$mdi:progress-download$$', h: boot, type: bootloader}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: '$$mdi:keyboard$$', h: usb, s: '$$mdi:usb$$', type: sym_by_sym}
+  - {t: '$$mdi:keyboard$$', h: bt, s: '$$mdi:bluetooth$$', type: sym_by_sym}
+  - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$', type: toggle}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: '$$mdi:skip-next$$', h: next, s: '$$mdi:bluetooth$$'}
+  - {t: '$$mdi:bluetooth-off$$', h: clear}
+  - {t: '$$mdi:skip-previous$$', h: prev, s: '$$mdi:bluetooth$$'}
