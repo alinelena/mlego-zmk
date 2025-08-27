@@ -245,6 +245,9 @@ parse_config:
     TILDE2: "~"
 
     # Modifiers
+    LCTL: 
+      tap: "⎈"
+      hold: "ctrl"
     LCTRL: 
       tap: "⎈"
       hold: "ctrl"

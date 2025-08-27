@@ -27,7 +27,7 @@ layers:
   - {t: o, s: O}
   - {t: p, s: P}
   - $$mdi:backspace-reverse-outline$$
-  - LCTL
+  - {t: ⎈, h: ctrl}
   - {t: , h: menu}
   - {t: a, s: A}
   - {t: s, s: S}
