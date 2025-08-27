@@ -47,6 +47,8 @@
 
 - mlego m65 5x13 rev8
 ![M65 xiao ble](https://i.imgur.com/suDn7M2.jpg)
+  - keymap summary
+     ![m65 keymaps](./keymap-drawer/mlego5x13_rev8.svg)
   - features xiao seeduino nrf52840
     - [x] matrix
     - [x] encoders
