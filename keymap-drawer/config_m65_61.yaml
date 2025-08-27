@@ -936,7 +936,7 @@ draw_config:
        }
     }
 
-    .keypos-1, .keypos-12, .keypos-13, .keypos-14, .keypos-25, .keypos-26, .keypos-27, .keypos-37, .keypos-38, .keypos-39, .keypos-40, .keypos-48, .keypos-49, .keypos-50, .keypos-51, .keypos-52,  .keypos-58, .keypos-59 {
+    .keypos-1, .keypos-12, .keypos-13, .keypos-14, .keypos-25, .keypos-26, .keypos-37, .keypos-38, .keypos-39, .keypos-40, .keypos-48, .keypos-49, .keypos-50, .keypos-51, .keypos-52,  .keypos-54, .keypos-58, .keypos-59 {
        rect {
         fill: var(--color--mt3--devtty--teal);
         stroke: var(--color--mt3--devtty--black);
@@ -944,7 +944,7 @@ draw_config:
     }
 
     /*   */
-    .keypos-54 {
+    .keypos-27 {
        rect {
         fill: var(--color--mt3--devtty--teal);
         stroke: var(--color--mt3--devtty--black);
@@ -952,7 +952,7 @@ draw_config:
     }
 
     /* lwr, rse */
-    .keypos-55 .keypos-58 {
+    .keypos-55, .keypos-58 {
        rect {
         fill: var(--color--mt3--devtty--teal);
         stroke: var(--color--mt3--devtty--black);
