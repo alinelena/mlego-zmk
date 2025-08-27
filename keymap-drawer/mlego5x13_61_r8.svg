@@ -400,6 +400,7 @@ path.combo {
 /* space */
 .keypos-56, .keypos-57 {
    rect {
+    w: 180;
     fill: var(--color--mt3--devtty--alpha);
     stroke: var(--color--mt3--devtty--black);
    }
