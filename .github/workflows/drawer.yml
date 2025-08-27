@@ -7,9 +7,11 @@ on:
       - "config/boards/shields/mlego_m66_rev4/*.keymap"
       - "config/boards/shields/mlego_m66_rev4/*.dtsi"
       - "config/boards/shields/mlego_m66_rev4/*.json"
+      - "config/boards/shields/mlego5x13_61_r8/*.keymap"
+      - "config/boards/shields/mlego5x13_61_r8/*.dtsi"
+      - "config/boards/shields/mlego5x13_61_r8/*.json"
       - "keymap-drawer/config.yaml"
       - ".github/workflows/draw.yml"
-
       # - 'boards/*/*/*.keymap'
 
 jobs:
@@ -24,5 +26,18 @@ jobs:
       output_folder: "keymap-drawer"            # path to save produced SVG and keymap YAML files
       parse_args: ""  # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
       draw_args: "mlego_m66_rev4:'-j config/boards/shields/mlego_m66_rev4/mlego_m66_rev4.json' mlego_m66_rev4_rp2040:'-j config/boards/shields/mlego_m66_rev4/mlego_m66_rev4.json'"   # map of extra args to pass to `keymap draw`, e.g. "corne:'-k corne_rotated' cradio:'-k paroxysm'"
+      amend_commit: true # whether to amend the commit or create a new one
+      fail_on_error: true
+  draw_m65_r8_61:
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
+    permissions:
+      contents: write  # allow workflow to commit to the repo
+    with:
+      keymap_patterns: "config/boards/shields/mlego5x13_61_r8/*.keymap"        # path to the keymaps to parse
+      config_path: "keymap-drawer/config.yaml"  # config file, ignored if not exists
+      west_config_path: "config"
+      output_folder: "keymap-drawer"            # path to save produced SVG and keymap YAML files
+      parse_args: ""  # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
+      draw_args: "mlego5x13_61_r8:'-j config/boards/shields/mlego5x13_61_r8/mlego5x13_61_r8.json '"   # map of extra args to pass to `keymap draw`, e.g. "corne:'-k corne_rotated' cradio:'-k paroxysm'"
       amend_commit: true # whether to amend the commit or create a new one
       fail_on_error: true
