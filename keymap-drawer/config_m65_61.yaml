@@ -959,9 +959,10 @@ draw_config:
        }
     }
 
-    /* alt */
+    /* space */
     .keypos-56, .keypos-57 {
        rect {
+        width: 3;
         fill: var(--color--mt3--devtty--alpha);
         stroke: var(--color--mt3--devtty--black);
        }
