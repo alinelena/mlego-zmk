@@ -359,7 +359,7 @@ path.combo {
 }
 
 /* enter */
-.keypos-61 {
+.keypos-60 {
    rect {
     fill: var(--color--mt3--devtty--red);
     stroke: var(--color--mt3--devtty--black);
@@ -374,7 +374,7 @@ path.combo {
    }
 }
 
-.keypos-1, .keypos-12, .keypos-13, .keypos-14, .keypos-25, .keypos-26, .keypos-27, .keypos-37, .keypos-38, .keypos-39, .keypos-40, .keypos-48, .keypos-49, .keypos-50, .keypos-51, .keypos-52,  .keypos-58, .keypos-59, .keypos-60 {
+.keypos-1, .keypos-12, .keypos-13, .keypos-14, .keypos-25, .keypos-26, .keypos-27, .keypos-37, .keypos-38, .keypos-39, .keypos-40, .keypos-48, .keypos-49, .keypos-50, .keypos-51, .keypos-52,  .keypos-58, .keypos-59 {
    rect {
     fill: var(--color--mt3--devtty--teal);
     stroke: var(--color--mt3--devtty--black);
@@ -390,7 +390,7 @@ path.combo {
 }
 
 /* lwr, rse */
-.keypos-55, .keypos-57 {
+.keypos-55 .keypos-58 {
    rect {
     fill: var(--color--mt3--devtty--teal);
     stroke: var(--color--mt3--devtty--black);
@@ -398,9 +398,9 @@ path.combo {
 }
 
 /* alt */
-.keypos-56 {
+.keypos-56, .keypos-57 {
    rect {
-    fill: var(--color--mt3--devtty--teal);
+    fill: var(--color--mt3--devtty--alpha);
     stroke: var(--color--mt3--devtty--black);
    }
 }
