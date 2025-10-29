@@ -26,7 +26,7 @@ layers:
   - {t: i, s: I}
   - {t: o, s: O}
   - {t: p, s: P}
-  - $$mdi:backspace-reverse-outline$$
+  - {t: '-', s: _}
   - {t: ⎈, h: ctrl}
   - {t: , h: menu}
   - {t: a, s: A}
@@ -73,7 +73,7 @@ layers:
   - $$mdi:monitor-screenshot$$
   - $$mdi:sleep$$
   - $$mdi:power-standby$$
-  - $$mdi:monitor-screenshot$$
+  - $$mdi:backspace-reverse-outline$$
   - $$mdi:backspace-reverse-outline$$
   - {t: '=', s: +}
   - {t: ▽, type: trans}

@@ -560,7 +560,8 @@ path.combo {
 <g transform="translate(950, 114)" class="key keypos-25">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
-<use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="-15" y="-19" height="30" width="30.0" class="key tap glyph mdi:backspace-reverse-outline"/>
+<text x="0" y="-4" class="key tap">-</text>
+<text x="0" y="-34" class="key shifted">_</text>
 </g>
 <g transform="translate(38, 190)" class="key keypos-26">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
@@ -827,7 +828,7 @@ path.combo {
 <g transform="translate(798, 38)" class="key keypos-10">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
-<use href="#mdi:monitor-screenshot" xlink:href="#mdi:monitor-screenshot" x="-15" y="-19" height="30" width="30.0" class="key tap glyph mdi:monitor-screenshot"/>
+<use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="-15" y="-19" height="30" width="30.0" class="key tap glyph mdi:backspace-reverse-outline"/>
 </g>
 <g transform="translate(874, 38)" class="key keypos-11">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>

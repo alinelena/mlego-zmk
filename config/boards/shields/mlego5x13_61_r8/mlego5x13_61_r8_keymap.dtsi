@@ -50,7 +50,7 @@
             bindings = <
 
                 &kp ESC   &kp GRAVE &kp N1    &kp N2 &kp N3 &kp N4    &kp N5 &kp N6 &kp N7    &kp N8    &kp N9  &kp N0    &kp BSPC
-                &kp TAB   &kp LALT  &kp Q     &kp W  &kp E  &kp R     &kp T  &kp Y  &kp U     &kp I     &kp O   &kp P     &kp DEL
+                &kp TAB   &kp LALT  &kp Q     &kp W  &kp E  &kp R     &kp T  &kp Y  &kp U     &kp I     &kp O   &kp P     &kp MINUS
                 &kp LCTL  &kp LGUI  &kp A     &kp S  &kp D  &kp F     &kp G  &kp H  &kp J     &kp K     &kp L   &kp SEMI  &kp APOS  
                 &kp LSHFT &kp UP    &kp Z     &kp X  &kp C  &kp V     &kp B  &kp N  &kp M     &kp COMMA &kp DOT &kp FSLH  &kp RSHFT
                 &kp LEFT  &kp DOWN  &kp RIGHT &tlwr         &kp SPACE               &kp SPACE           &trse   &kp SPACE &kp RET
@@ -60,7 +60,7 @@
         };
         lower_layer {
             bindings = <
-                &kp GRAVE &kp K_MUTE     &kp K_VOL_UP &kp K_VOL_DN &kp K_PREV &kp K_PP &kp K_NEXT &kp LG(P)   &kp K_SLEEP &kp K_COFFEE &kp PSCRN &kp DEL &kp EQUAL
+                &kp GRAVE &kp K_MUTE     &kp K_VOL_UP &kp K_VOL_DN &kp K_PREV &kp K_PP &kp K_NEXT &kp LG(P)   &kp K_SLEEP &kp K_COFFEE &kp DEL &kp DEL &kp EQUAL
                 &trans    &trans         &trans       &trans       &trans     &trans   &trans     &trans      &trans      &trans       &trans    &trans  &trans
                 &kp CAPS  &trans         &trans       &trans       &trans     &trans   &trans     &trans      &trans      &trans       &trans    &trans  &trans
                 &trans    &trans         &trans       &trans       &trans     &trans   &trans     &trans      &trans      &trans       &trans    &trans  &trans
