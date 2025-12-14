@@ -2,13 +2,6 @@
 # SPDX-License-Identifier: MIT
 if SHIELD_MLEGO5X13_REV5
 
-if ZMK_RGB_UNDERGLOW
-
-config WS2812_STRIP_GPIO
-  default y
-
-endif
-
 if ZMK_DISPLAY
 
 config I2C
