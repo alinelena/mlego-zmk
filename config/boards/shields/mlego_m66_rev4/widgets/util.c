@@ -16,7 +16,7 @@ void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[], int angle) {
     memcpy(cbuf_tmp, cbuf, sizeof(cbuf_tmp));
     lv_img_dsc_t img;
     img.data = (void *)cbuf_tmp;
-    img.header.cf = LV_IMG_CF_TRUE_COLOR;
+    img.header.cf = LV_COLOR_FORMAT_TRUE_COLOR;
     img.header.w = CONFIG_DISP_CANVAS;
     img.header.h = CONFIG_DISP_CANVAS;
 
