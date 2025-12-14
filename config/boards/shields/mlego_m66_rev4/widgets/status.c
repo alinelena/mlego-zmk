@@ -58,16 +58,16 @@ static void draw_image(lv_obj_t *widget, lv_color_t cbuf[]){
 
     //lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
 #if CONFIG_DISP_ROTATE == 900
-    lv_canvas_transform(canvas, &elep , CONFIG_DISP_ROTATE, LV_IMG_ZOOM_NONE, -45 , 44, elep.header.w/2,
+    lv_canvas_transform(canvas, &elep , CONFIG_DISP_ROTATE, LV_ZOOM_NONE, -45 , 44, elep.header.w/2,
                         elep.header.h/2, true);
 #endif
 #if CONFIG_DISP_ROTATE == 1800
-    lv_canvas_transform(canvas, &elep , CONFIG_DISP_ROTATE, LV_IMG_ZOOM_NONE, -1 , -1, elep.header.w/2,
+    lv_canvas_transform(canvas, &elep , CONFIG_DISP_ROTATE, LV_ZOOM_NONE, -1 , -1, elep.header.w/2,
                         elep.header.h/2, true);
 #endif
 
 #if CONFIG_DISP_ROTATE == 2700
-    lv_canvas_transform(canvas, &elep , CONFIG_DISP_ROTATE, LV_IMG_ZOOM_NONE, -44 , 43, elep.header.w/2,
+    lv_canvas_transform(canvas, &elep , CONFIG_DISP_ROTATE, LV_ZOOM_NONE, -44 , 43, elep.header.w/2,
                         elep.header.h/2, true);
 #endif
 }
