@@ -371,7 +371,7 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
 #if CONFIG_DISP_ROTATE == 1800
     lv_obj_align(top, LV_ALIGN_BOTTOM_RIGHT, 0, 0);
 #endif
-    lv_canvas_set_buffer(top, widget->cbuf1, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, LV_IMG_CF_TRUE_COLOR);
+    lv_canvas_set_buffer(top, widget->cbuf1, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, LV_COLOR_FORMAT_ARGB8888);
 
     lv_obj_t *middle = lv_canvas_create(widget->obj);
 #if CONFIG_DISP_ROTATE == 900
@@ -383,7 +383,7 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
 #if CONFIG_DISP_ROTATE == 1800
     lv_obj_align(middle, LV_ALIGN_BOTTOM_RIGHT, -CONFIG_DISP_CANVAS , 0);
 #endif
-    lv_canvas_set_buffer(middle, widget->cbuf2, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, LV_IMG_CF_TRUE_COLOR);
+    lv_canvas_set_buffer(middle, widget->cbuf2, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, LV_COLOR_FORMAT_ARGB8888);
 
     lv_obj_t *bottom = lv_canvas_create(widget->obj);
 #if CONFIG_DISP_ROTATE == 900
@@ -395,13 +395,13 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
 #if CONFIG_DISP_ROTATE == 2700
     lv_obj_align(bottom, LV_ALIGN_BOTTOM_LEFT,0, -100);
 #endif
-    lv_canvas_set_buffer(bottom, widget->cbuf3, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, LV_IMG_CF_TRUE_COLOR);
+    lv_canvas_set_buffer(bottom, widget->cbuf3, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, LV_COLOR_FORMAT_ARGB8888);
 
 #if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT) && CONFIG_DISP_HEIGHT>103
     lv_obj_t *picture = lv_canvas_create(widget->obj);
 
 #if CONFIG_DISP_ROTATE == 900 || CONFIG_DISP_ROTATE == 2700
-    lv_canvas_set_buffer(picture, widget->cbuf4, elep.header.h, elep.header.w, LV_IMG_CF_TRUE_COLOR);
+    lv_canvas_set_buffer(picture, widget->cbuf4, elep.header.h, elep.header.w, LV_COLOR_FORMAT_ARGB8888);
 #if CONFIG_DISP_ROTATE == 900
     lv_obj_align(picture,LV_ALIGN_CENTER,-30,0);
 #else
@@ -409,7 +409,7 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
 #endif
 #endif
 #if CONFIG_DISP_ROTATE == 1800
-    lv_canvas_set_buffer(picture, widget->cbuf4, elep.header.w, elep.header.h, LV_IMG_CF_TRUE_COLOR);
+    lv_canvas_set_buffer(picture, widget->cbuf4, elep.header.w, elep.header.h, LV_COLOR_FORMAT_ARGB8888);
     lv_obj_align(picture,LV_ALIGN_CENTER,0,-20);
 #endif
     draw_image(widget->obj, widget->cbuf4);
