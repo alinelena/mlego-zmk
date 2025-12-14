@@ -36,9 +36,6 @@ pushd $zmk_folder
   shield="mlego2x2_rev1"
   board="xiao_ble"
   build_folder="mlego2x2_rev1${shield/ /_}"
-  shield="mlego2x2_rev2"
-  board="xiao_rp2040"
-  build_folder="mlego2x2_rev2${shield/ /_}"
 
 
   rm -rf "$build_folder"
