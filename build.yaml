@@ -7,7 +7,7 @@
 #
 ---
 include:
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: mlego2x2_rev1
   - board: blackpill_f401ce 
     shield:  mlego5x13_rev4
@@ -17,7 +17,7 @@ include:
     shield: mlego5x13_rev5
   - board: seeeduino_xiao_rp2040
     shield: mlego5x13_rev7
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble
     shield: mlego5x13_rev8 rgbled_adapter
   - board: seeeduino_xiao_ble
     shield: mlego5x13_61_r8
