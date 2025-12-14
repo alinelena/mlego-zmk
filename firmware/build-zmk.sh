@@ -33,14 +33,15 @@ pushd $zmk_folder
   shield="mlego_m66_rev4 $s"
   board="nice_nano@2.0.0"
   build_folder="mlego_m66_rev4${shield/ /_}"
-  shield="mlego2x2_rev1"
-  board="xiao_ble"
-  build_folder="mlego2x2_rev1${shield/ /_}"
+  shield="mlego_m66_rev4_rp2040 st7735"
+  board="rpi_pico"
+  build_folder="mlego_m66_rev4${shield/ /_}"
 
 
   rm -rf "$build_folder"
 
   west build -d "$build_folder" -p always -b $board -S studio-rpc-usb-uart -- -DSHIELD="$shield" -DZMK_CONFIG=$zmk_config -DZMK_EXTRA_MODULES=$zmk_extra -DCONFIG_ZMK_STUDIO=y
+  #west build -d "$build_folder" -p always -b $board  -- -DSHIELD="$shield" -DZMK_CONFIG=$zmk_config -DZMK_EXTRA_MODULES=$zmk_extra -DCONFIG_ZMK_STUDIO=y
   [[ -f "$build_folder/zephyr/zmk.uf2" ]] && cp "$build_folder/zephyr/zmk.uf2" "$l/$build_folder.uf2"
 #done
 

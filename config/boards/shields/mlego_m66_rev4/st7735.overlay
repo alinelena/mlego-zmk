@@ -2,7 +2,7 @@
  * Copyright (c) 2022-2024 alin m elena
  * SPDX-License-Identifier: MIT
  */
- / {
+/ {
   model = "mlego m66, rev4,st7735s";
 	chosen {
 		zephyr,display = &st7735s160x80;
@@ -16,18 +16,28 @@ board_spi: &spi0 {
   pinctrl-names = "default";
   cs-gpios = <&gpio0 6 GPIO_ACTIVE_LOW> ,
              <&gpio0 21 GPIO_ACTIVE_LOW>;
+};
+
+mipi_dbi_st7789r {
+		compatible = "zephyr,mipi-dbi-spi";
+		spi-dev = <&board_spi>;
+		dc-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;	
+		reset-gpios = <&gpio0 8  GPIO_ACTIVE_LOW>;
+		write-only;
+		#address-cells = <1>;
+		#size-cells = <0>;
 
 	st7735s160x80: st7735r@0 {
 		compatible = "sitronix,st7735r";
+    mipi-max-frequency = <20000000>;
+		mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
 		spi-max-frequency = <1000000>;
 		reg = <0>;
-		cmd-data-gpios = <&gpio0 7 GPIO_ACTIVE_LOW>;	
-		reset-gpios = <&gpio0 8  GPIO_ACTIVE_LOW>;
 		width = <80>;
 		height = <160>;
 		x-offset = <0>;
 		y-offset = <0>;
-		madctl = <0xC0>;
+		madctl = <0xBF>;
 		colmod = <0x05>;
 		caset = [00 00 00 4F];
 		raset = [00 00 00 9F];
@@ -44,14 +54,15 @@ board_spi: &spi0 {
 		gamctrp1 = [02 1c 07 12 37 32 29 2d 29 25 2b 39 00 01 03 10];
 		gamctrn1 = [03 1d 07 06 2e 2c 29 2d 2e 2e 37 3f 00 00 02 10];
 	};
+};
 
-  shift_reg: 595@0 {
+shift_reg: 595@0 {
     compatible = "zmk,gpio-595";
+		spi-dev = <&board_spi>;
     status = "okay";
     gpio-controller;
     spi-max-frequency = <2000000>;
     #gpio-cells = <2>;
     reg = <1>;
     ngpios = <16>;
-  };
 };
