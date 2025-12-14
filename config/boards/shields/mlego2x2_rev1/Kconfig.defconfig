@@ -6,6 +6,9 @@ if SHIELD_MLEGO2x2_REV1
 config ZMK_KEYBOARD_NAME
     default "mlego m2x2 rev1"
 
+config SPI
+  default y 
+
 if ZMK_DISPLAY
 
 config I2C
