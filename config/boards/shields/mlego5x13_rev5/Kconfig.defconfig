@@ -5,7 +5,6 @@ if SHIELD_MLEGO5X13_REV5
 if ZMK_RGB_UNDERGLOW
 
 config WS2812_STRIP
-
   default y
 
 endif
