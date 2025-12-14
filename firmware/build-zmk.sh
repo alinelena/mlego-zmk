@@ -7,6 +7,7 @@ zmk_config="$HOME/playground/keyboard/mlego-zmk/config/"
 
 zmk_extra="$HOME/lavello/zmk-helpers"
 pushd $zmk_folder
+#export ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk-0.17.0 
 
 
 #build_folder="xiao_rp2040_rev7"
@@ -26,19 +27,22 @@ pushd $zmk_folder
 #for s in "" "_ls011b7dh03" "_ls013b7dh03" "_ls013b7dh05" "_eink154" "_eink213"; do
 # for s in "_eink154"; do
 #for s in "_eink213"; do
-for s in "ls013b7dh05" ; do
+#for s in "ls013b7dh05" ; do
 #for s in "ls013b7dh03s" ; do
 #for s in "ls011b7dh03" ; do
   shield="mlego_m66_rev4 $s"
-  board="nice_nano_v2"
+  board="nice_nano@2.0.0"
   build_folder="mlego_m66_rev4${shield/ /_}"
+  shield="mlego2x2_rev1"
+  board="xiao_ble"
+  build_folder="mlego2x2_rev1${shield/ /_}"
 
 
   rm -rf "$build_folder"
 
   west build -d "$build_folder" -p always -b $board -S studio-rpc-usb-uart -- -DSHIELD="$shield" -DZMK_CONFIG=$zmk_config -DZMK_EXTRA_MODULES=$zmk_extra -DCONFIG_ZMK_STUDIO=y
   [[ -f "$build_folder/zephyr/zmk.uf2" ]] && cp "$build_folder/zephyr/zmk.uf2" "$l/$build_folder.uf2"
-done
+#done
 
 while [ ! -d /run/media/drFaustroll/NICENANO/ ]; do
   sleep 1
