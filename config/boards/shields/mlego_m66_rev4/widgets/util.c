@@ -21,7 +21,7 @@ void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[], int angle) {
     img.header.h = CONFIG_DISP_CANVAS;
 
     lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
-    lv_canvas_transform(canvas, &img, angle, LV_IMG_ZOOM_NONE, -1, 0, CONFIG_DISP_CANVAS / 2,
+    lv_canvas_transform(canvas, &img, angle, LV_ZOOM_NONE, -1, 0, CONFIG_DISP_CANVAS / 2,
                         CONFIG_DISP_CANVAS / 2, true);
 }
 
