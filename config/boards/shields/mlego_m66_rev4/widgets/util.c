@@ -38,7 +38,7 @@ void draw_battery(lv_obj_t *canvas, const struct status_state *state) {
     lv_canvas_draw_rect(canvas, 31, 6, 1, 4, &rect_black_dsc);
 
     if (state->charging) {
-        lv_draw_img_dsc_t img_dsc;
+        lv_draw_image_dsc_t img_dsc;
         lv_draw_img_dsc_init(&img_dsc);
         lv_canvas_draw_img(canvas, 9, -1, &bolt, &img_dsc);
     }
