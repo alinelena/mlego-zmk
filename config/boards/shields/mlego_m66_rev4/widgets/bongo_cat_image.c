@@ -204,7 +204,7 @@ const lv_img_dsc_t cat_img = {
   .header.reserved_2 = 0,
   .header.w = 128,
   .header.h = 40,
-  .data_size = 5120 * LV_COLOR_SIZE / 8,
+  .data_size = 5120 * LV_COLOR_DEPTH / 8 / 8,
   .data = cat_img_map,
 };
 

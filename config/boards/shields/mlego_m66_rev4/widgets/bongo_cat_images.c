@@ -555,7 +555,7 @@ const lv_img_dsc_t slow_img = {
   .header.reserved_2 = 0,
   .header.w = 40,
   .header.h = 128,
-  .data_size = 5120 * LV_COLOR_SIZE / 8,
+  .data_size = 5120 * LV_COLOR_DEPTH / 8 / 8,
   .data = slow_img_map,
 };
 #ifdef __has_include
@@ -1113,7 +1113,7 @@ const lv_img_dsc_t idle_img1 = {
   .header.reserved_2 = 0,
   .header.w = 40,
   .header.h = 128,
-  .data_size = 5120 * LV_COLOR_SIZE / 8,
+  .data_size = 5120 * LV_COLOR_DEPTH / 8 / 8,
   .data = idle_img1_map,
 };
 #ifdef __has_include
@@ -1671,7 +1671,7 @@ const lv_img_dsc_t idle_img2 = {
   .header.reserved_2 = 0,
   .header.w = 40,
   .header.h = 128,
-  .data_size = 5120 * LV_COLOR_SIZE / 8,
+  .data_size = 5120 * LV_COLOR_DEPTH / 8 / 8,
   .data = idle_img2_map,
 };
 #ifdef __has_include
@@ -2229,7 +2229,7 @@ const lv_img_dsc_t idle_img3 = {
   .header.reserved_2 = 0,
   .header.w = 40,
   .header.h = 128,
-  .data_size = 5120 * LV_COLOR_SIZE / 8,
+  .data_size = 5120 * LV_COLOR_DEPTH / 8 / 8,
   .data = idle_img3_map,
 };
 #ifdef __has_include
@@ -2787,7 +2787,7 @@ const lv_img_dsc_t idle_img4 = {
   .header.reserved_2 = 0,
   .header.w = 40,
   .header.h = 128,
-  .data_size = 5120 * LV_COLOR_SIZE / 8,
+  .data_size = 5120 * LV_COLOR_DEPTH / 8 / 8,
   .data = idle_img4_map,
 };
 #ifdef __has_include
@@ -3345,7 +3345,7 @@ const lv_img_dsc_t idle_img5 = {
   .header.reserved_2 = 0,
   .header.w = 40,
   .header.h = 128,
-  .data_size = 5120 * LV_COLOR_SIZE / 8,
+  .data_size = 5120 * LV_COLOR_DEPTH / 8 / 8,
   .data = idle_img5_map,
 };
 #ifdef __has_include
@@ -3903,7 +3903,7 @@ const lv_img_dsc_t fast_img1 = {
   .header.reserved_2 = 0,
   .header.w = 40,
   .header.h = 128,
-  .data_size = 5120 * LV_COLOR_SIZE / 8,
+  .data_size = 5120 * LV_COLOR_DEPTH / 8 / 8,
   .data = fast_img1_map,
 };
 #ifdef __has_include
@@ -4461,6 +4461,6 @@ const lv_img_dsc_t fast_img2 = {
   .header.reserved_2 = 0,
   .header.w = 40,
   .header.h = 128,
-  .data_size = 5120 * LV_COLOR_SIZE / 8,
+  .data_size = 5120 * LV_COLOR_DEPTH / 8 / 8,
   .data = fast_img2_map,
 };
