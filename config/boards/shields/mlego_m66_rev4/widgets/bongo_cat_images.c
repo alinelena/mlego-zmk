@@ -552,7 +552,6 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_SLOW_IMG 
 
 const lv_img_dsc_t slow_img = {
   .header.cf = LV_COLOR_FORMAT_ARGB8888,
-  .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 40,
   .header.h = 128,
@@ -1111,7 +1110,6 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_IDLE_IMG1
 
 const lv_img_dsc_t idle_img1 = {
   .header.cf = LV_COLOR_FORMAT_ARGB8888,
-  .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 40,
   .header.h = 128,
@@ -1670,7 +1668,6 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_IDLE_IMG2
 
 const lv_img_dsc_t idle_img2 = {
   .header.cf = LV_COLOR_FORMAT_ARGB8888,
-  .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 40,
   .header.h = 128,
@@ -2229,7 +2226,6 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_IDLE_IMG3
 
 const lv_img_dsc_t idle_img3 = {
   .header.cf = LV_COLOR_FORMAT_ARGB8888,
-  .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 40,
   .header.h = 128,
@@ -2788,7 +2784,6 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_IDLE_IMG4
 
 const lv_img_dsc_t idle_img4 = {
   .header.cf = LV_COLOR_FORMAT_ARGB8888,
-  .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 40,
   .header.h = 128,
@@ -3347,7 +3342,6 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_IDLE_IMG5
 
 const lv_img_dsc_t idle_img5 = {
   .header.cf = LV_COLOR_FORMAT_ARGB8888,
-  .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 40,
   .header.h = 128,
@@ -3906,7 +3900,6 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_FAST_IMG1
 
 const lv_img_dsc_t fast_img1 = {
   .header.cf = LV_COLOR_FORMAT_ARGB8888,
-  .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 40,
   .header.h = 128,
@@ -4465,7 +4458,6 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_FAST_IMG2
 
 const lv_img_dsc_t fast_img2 = {
   .header.cf = LV_COLOR_FORMAT_ARGB8888,
-  .header.always_zero = 0,
   .header.reserved = 0,
   .header.w = 40,
   .header.h = 128,
