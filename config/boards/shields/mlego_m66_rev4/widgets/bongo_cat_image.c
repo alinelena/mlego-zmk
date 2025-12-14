@@ -201,7 +201,7 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_CAT_IMG uint8
 
 const lv_img_dsc_t cat_img = {
   .header.cf = LV_COLOR_FORMAT_ARGB8888,
-  .header.reserved = 0,
+  .header.reserved_2 = 0,
   .header.w = 128,
   .header.h = 40,
   .data_size = 5120 * LV_COLOR_SIZE / 8,
