@@ -149,7 +149,11 @@ void canvas_draw_text(lv_obj_t *canvas, int32_t x, int32_t y, int32_t max_w,
     lv_canvas_init_layer(canvas, &layer);
 
     draw_dsc->text = txt;
-    int32_t h = lv_obj_get_height(canvas);
+    lv_draw_buf_t *draw_buf = lv_canvas_get_draw_buf(canvas);
+    int32_t h = draw_buf ? (draw_buf->header.h - y) : CONFIG_DISP_CANVAS;
+    if (h <= 0) {
+        h = 1;
+    }
     lv_area_t coords = {x, y, x + max_w - 1, y + h - 1};
     lv_draw_label(&layer, draw_dsc, &coords);
 
