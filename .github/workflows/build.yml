@@ -1,6 +1,41 @@
 name: Build mlego
-on: [push, pull_request, workflow_dispatch]
+"on":
+  push:
+    paths-ignore:
+      - "firmware/**"
+      - ".github/workflows/drawer.yml"
+      - "keymap-drawer/**"
+  pull_request:
+    paths-ignore:
+      - "firmware/**"
+      - ".github/workflows/drawer.yml"
+      - "keymap-drawer/**"
+  workflow_dispatch:
 
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+
+  update-firmware:
+    needs: build
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+
+      - name: Download firmware artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: firmware
+          path: firmware
+
+      - name: Commit and push firmware
+        uses: stefanzweifel/git-auto-commit-action@v7
+        with:
+          commit_message: "Update firmware [skip ci]"
+          file_pattern: "firmware/"
