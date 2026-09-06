@@ -23,6 +23,15 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #define SPLASH_TIMEOUT_MS 10000
 
+#define SPLASH_W 120
+#define SPLASH_H 64
+#define SPLASH_BUF_SIZE                                                                                LV_CANVAS_BUF_SIZE(SPLASH_W, SPLASH_H, LV_COLOR_FORMAT_GET_BPP(CANVAS_COLOR_FORMAT),                                 LV_DRAW_BUF_STRIDE_ALIGN)
+
+static uint8_t splash_buf_src[SPLASH_BUF_SIZE];
+#if defined(CONFIG_DISP_ROTATE) && (CONFIG_DISP_ROTATE != 0)
+static uint8_t splash_buf_dest[SPLASH_BUF_SIZE];
+#endif
+
 static struct zmk_widget_status status_widget;
 
 #if IS_ENABLED(CONFIG_MLEGO_BONGO_CAT)
@@ -74,15 +83,38 @@ lv_obj_t *zmk_display_status_screen() {
 #endif
 
     splash_screen = lv_obj_create(NULL);
-    lv_obj_t *label = lv_label_create(splash_screen);
-    lv_label_set_text(label, SPLASH_TITLE "\nZephyr: " KERNEL_VERSION_STRING "\nZMK: " APP_VERSION_STRING);
-    lv_obj_set_style_text_align(label, LV_TEXT_ALIGN_CENTER, 0);
+    lv_obj_set_style_bg_color(splash_screen, LVGL_BACKGROUND, 0);
+    lv_obj_set_style_bg_opa(splash_screen, LV_OPA_COVER, 0);
 
-#if defined(CONFIG_DISP_ROTATE) && (CONFIG_DISP_ROTATE != 0)
-    lv_obj_set_style_transform_rotation(label, CONFIG_DISP_ROTATE, 0);
+    lv_obj_t *splash_canvas = lv_canvas_create(splash_screen);
+    lv_canvas_set_buffer(splash_canvas, splash_buf_src, SPLASH_W, SPLASH_H, CANVAS_COLOR_FORMAT);
+    lv_canvas_fill_bg(splash_canvas, LVGL_BACKGROUND, LV_OPA_COVER);
+
+    lv_draw_label_dsc_t label_dsc;
+    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_12, LV_TEXT_ALIGN_CENTER);
+    canvas_draw_text(splash_canvas, 0, 8, SPLASH_W, &label_dsc,
+                     SPLASH_TITLE "\nZephyr: " KERNEL_VERSION_STRING "\nZMK: " APP_VERSION_STRING);
+
+#if CONFIG_DISP_ROTATE == 900
+    const uint32_t src_stride = lv_draw_buf_width_to_stride(SPLASH_W, CANVAS_COLOR_FORMAT);
+    const uint32_t dest_stride = lv_draw_buf_width_to_stride(SPLASH_H, CANVAS_COLOR_FORMAT);
+    lv_draw_sw_rotate(splash_buf_src, splash_buf_dest, SPLASH_W, SPLASH_H, src_stride, dest_stride,
+                      LV_DISPLAY_ROTATION_270, CANVAS_COLOR_FORMAT);
+    lv_canvas_set_buffer(splash_canvas, splash_buf_dest, SPLASH_H, SPLASH_W, CANVAS_COLOR_FORMAT);
+#elif CONFIG_DISP_ROTATE == 2700
+    const uint32_t src_stride = lv_draw_buf_width_to_stride(SPLASH_W, CANVAS_COLOR_FORMAT);
+    const uint32_t dest_stride = lv_draw_buf_width_to_stride(SPLASH_H, CANVAS_COLOR_FORMAT);
+    lv_draw_sw_rotate(splash_buf_src, splash_buf_dest, SPLASH_W, SPLASH_H, src_stride, dest_stride,
+                      LV_DISPLAY_ROTATION_90, CANVAS_COLOR_FORMAT);
+    lv_canvas_set_buffer(splash_canvas, splash_buf_dest, SPLASH_H, SPLASH_W, CANVAS_COLOR_FORMAT);
+#elif CONFIG_DISP_ROTATE == 1800
+    const uint32_t stride = lv_draw_buf_width_to_stride(SPLASH_W, CANVAS_COLOR_FORMAT);
+    lv_draw_sw_rotate(splash_buf_src, splash_buf_dest, SPLASH_W, SPLASH_H, stride, stride,
+                      LV_DISPLAY_ROTATION_180, CANVAS_COLOR_FORMAT);
+    lv_canvas_set_buffer(splash_canvas, splash_buf_dest, SPLASH_W, SPLASH_H, CANVAS_COLOR_FORMAT);
 #endif
 
-    lv_obj_center(label);
+    lv_obj_center(splash_canvas);
 
     splash_active = true;
     k_work_init_delayable(&splash_timeout_work, dismiss_splash_work_handler);
@@ -90,4 +122,3 @@ lv_obj_t *zmk_display_status_screen() {
 
     return splash_screen;
 }
-

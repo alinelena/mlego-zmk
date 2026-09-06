@@ -19,17 +19,41 @@ void rotate_canvas(lv_obj_t *canvas) {
     const uint32_t stride = lv_draw_buf_width_to_stride(CONFIG_DISP_CANVAS, CANVAS_COLOR_FORMAT);
 
 #if CONFIG_DISP_ROTATE == 900
-    lv_display_rotation_t rotation = LV_DISPLAY_ROTATION_90;
+    lv_display_rotation_t rotation = LV_DISPLAY_ROTATION_270;
 #elif CONFIG_DISP_ROTATE == 1800
     lv_display_rotation_t rotation = LV_DISPLAY_ROTATION_180;
 #elif CONFIG_DISP_ROTATE == 2700
-    lv_display_rotation_t rotation = LV_DISPLAY_ROTATION_270;
+    lv_display_rotation_t rotation = LV_DISPLAY_ROTATION_90;
 #else
     lv_display_rotation_t rotation = LV_DISPLAY_ROTATION_0;
 #endif
 
     lv_draw_sw_rotate(buf_copy, buf, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, stride, stride,
                       rotation, CANVAS_COLOR_FORMAT);
+#endif
+}
+
+void rotate_img_to_canvas(lv_obj_t *canvas, const lv_image_dsc_t *img) {
+    uint8_t *dest = lv_canvas_get_draw_buf(canvas)->data;
+#if CONFIG_DISP_ROTATE == 900
+    const uint32_t src_stride = lv_draw_buf_width_to_stride(img->header.w, CANVAS_COLOR_FORMAT);
+    const uint32_t dest_stride = lv_draw_buf_width_to_stride(img->header.h, CANVAS_COLOR_FORMAT);
+    lv_draw_sw_rotate(img->data, dest, img->header.w, img->header.h, src_stride, dest_stride,
+                      LV_DISPLAY_ROTATION_270, CANVAS_COLOR_FORMAT);
+#elif CONFIG_DISP_ROTATE == 2700
+    const uint32_t src_stride = lv_draw_buf_width_to_stride(img->header.w, CANVAS_COLOR_FORMAT);
+    const uint32_t dest_stride = lv_draw_buf_width_to_stride(img->header.h, CANVAS_COLOR_FORMAT);
+    lv_draw_sw_rotate(img->data, dest, img->header.w, img->header.h, src_stride, dest_stride,
+                      LV_DISPLAY_ROTATION_90, CANVAS_COLOR_FORMAT);
+#elif CONFIG_DISP_ROTATE == 1800
+    const uint32_t stride = lv_draw_buf_width_to_stride(img->header.w, CANVAS_COLOR_FORMAT);
+    lv_draw_sw_rotate(img->data, dest, img->header.w, img->header.h, stride, stride,
+                      LV_DISPLAY_ROTATION_180, CANVAS_COLOR_FORMAT);
+#else
+    lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
+    lv_draw_image_dsc_t img_dsc;
+    lv_draw_image_dsc_init(&img_dsc);
+    canvas_draw_img(canvas, 0, 0, img, &img_dsc);
 #endif
 }
 
@@ -125,7 +149,8 @@ void canvas_draw_text(lv_obj_t *canvas, int32_t x, int32_t y, int32_t max_w,
     lv_canvas_init_layer(canvas, &layer);
 
     draw_dsc->text = txt;
-    lv_area_t coords = {x, y, x + max_w, y + CONFIG_DISP_CANVAS};
+    int32_t h = lv_obj_get_height(canvas);
+    lv_area_t coords = {x, y, x + max_w - 1, y + h - 1};
     lv_draw_label(&layer, draw_dsc, &coords);
 
     lv_canvas_finish_layer(canvas, &layer);
