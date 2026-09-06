@@ -12,6 +12,33 @@
      zephyr,display = &weact_213;
    };
 
+   mipi_dbi {
+     compatible = "zephyr,mipi-dbi-spi";
+     spi-dev = <&board_spi>;
+     dc-gpios = <&pro_micro 7 GPIO_ACTIVE_HIGH>;
+     reset-gpios = <&pro_micro 8 GPIO_ACTIVE_LOW>;
+     #address-cells = <1>;
+     #size-cells = <0>;
+
+     weact_213: ssd16xxfb@0 {
+       compatible = "solomon,ssd1680";
+       mipi-max-frequency = <4000000>;
+       reg = <0>;
+       width = <250>;
+       height = <122>;
+       busy-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;
+
+       tssv = <0x80>;
+
+       full {
+         border-waveform = <0x05>;
+       };
+
+       partial {
+         border-waveform = <0x3c>;
+       };
+     };
+   };
 };
 
 board_spi: &spi0 {
@@ -23,27 +50,6 @@ board_spi: &spi0 {
 
   cs-gpios =  <&pro_micro 6 GPIO_ACTIVE_LOW>
             , <&pro_micro 10 GPIO_ACTIVE_LOW> ;
-
-  weact_213: ssd16xxfb@0 {
-    compatible = "solomon,ssd1680";
-    spi-max-frequency = <4000000>;
-    reg = <0>;
-    width = <250>;
-    height = <122>;
-    dc-gpios = <&pro_micro 7 GPIO_ACTIVE_LOW>;
-    reset-gpios = <&pro_micro 8 GPIO_ACTIVE_LOW>;
-    busy-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;
-
-    tssv = <0x80>;
-
-    full {
-      border-waveform = <0x05>;
-    };
-
-    partial {
-      border-waveform = <0x3c>;
-    };
-  };
 
   shift_reg: 595@0 {
     compatible = "zmk,gpio-595";
