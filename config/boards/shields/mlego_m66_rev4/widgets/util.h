@@ -1,34 +1,12 @@
-/*
- *
- * Copyright (c) 2023 The ZMK Contributors
- * SPDX-License-Identifier: MIT
- *
- */
+#pragma once
 
 #include <lvgl.h>
 #include <zmk/endpoints.h>
 
-/*
-ls013b7dh05 144x168
-ls013b7dh03 128x128
-ls011b7dh03 160x68
-
-
-#define CANVAS_SIZE 72
-#define CANVAS_HEIGHT 168
-#define CANVAS_WIDTH 144
-#define ROTATE 900
-
-// LS011B7DH03 160x68
-#define CANVAS_HEIGHT 68
-#define CANVAS_WIDTH 160
-// ls013b7dh03 128x128
-#define CANVAS_HEIGHT 128
-#define CANVAS_WIDTH 128
-// ls013b7dh05 144x168
-#define CANVAS_HEIGHT 168
-#define CANVAS_WIDTH 144
-*/
+#define CANVAS_COLOR_FORMAT LV_COLOR_FORMAT_L8
+#define CANVAS_BUF_SIZE                                                                            \
+    LV_CANVAS_BUF_SIZE(CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS,                                    \
+                       LV_COLOR_FORMAT_GET_BPP(CANVAS_COLOR_FORMAT), LV_DRAW_BUF_STRIDE_ALIGN)
 
 #define LVGL_BACKGROUND                                                                            \
     IS_ENABLED(CONFIG_NICE_VIEW_WIDGET_INVERTED) ? lv_color_black() : lv_color_white()
@@ -55,10 +33,21 @@ struct battery_status_state {
 #endif
 };
 
-void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[], int angle);
+void rotate_canvas(lv_obj_t *canvas);
 void draw_battery(lv_obj_t *canvas, const struct status_state *state);
 void init_label_dsc(lv_draw_label_dsc_t *label_dsc, lv_color_t color, const lv_font_t *font,
                     lv_text_align_t align);
 void init_rect_dsc(lv_draw_rect_dsc_t *rect_dsc, lv_color_t bg_color);
 void init_line_dsc(lv_draw_line_dsc_t *line_dsc, lv_color_t color, uint8_t width);
 void init_arc_dsc(lv_draw_arc_dsc_t *arc_dsc, lv_color_t color, uint8_t width);
+
+void canvas_draw_line(lv_obj_t *canvas, const lv_point_t points[], uint32_t point_cnt,
+                      lv_draw_line_dsc_t *draw_dsc);
+void canvas_draw_rect(lv_obj_t *canvas, int32_t x, int32_t y, int32_t w, int32_t h,
+                      lv_draw_rect_dsc_t *draw_dsc);
+void canvas_draw_arc(lv_obj_t *canvas, int32_t x, int32_t y, int32_t r,
+                     int32_t start_angle, int32_t end_angle, lv_draw_arc_dsc_t *draw_dsc);
+void canvas_draw_text(lv_obj_t *canvas, int32_t x, int32_t y, int32_t max_w,
+                      lv_draw_label_dsc_t *draw_dsc, const char *txt);
+void canvas_draw_img(lv_obj_t *canvas, int32_t x, int32_t y, const lv_image_dsc_t *src,
+                     lv_draw_image_dsc_t *draw_dsc);

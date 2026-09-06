@@ -23,16 +23,16 @@ enum anim_state {
 const void* *images;
 uint8_t images_len;
 
-LV_IMG_DECLARE(idle_img1);
-LV_IMG_DECLARE(idle_img2);
-LV_IMG_DECLARE(idle_img3);
-LV_IMG_DECLARE(idle_img4);
-LV_IMG_DECLARE(idle_img5);
+LV_IMAGE_DECLARE(idle_img1);
+LV_IMAGE_DECLARE(idle_img2);
+LV_IMAGE_DECLARE(idle_img3);
+LV_IMAGE_DECLARE(idle_img4);
+LV_IMAGE_DECLARE(idle_img5);
 
-LV_IMG_DECLARE(slow_img);
+LV_IMAGE_DECLARE(slow_img);
 
-LV_IMG_DECLARE(fast_img1);
-LV_IMG_DECLARE(fast_img2);
+LV_IMAGE_DECLARE(fast_img1);
+LV_IMAGE_DECLARE(fast_img2);
 
 const void* idle_images[] = {
 	&idle_img1,
@@ -49,7 +49,7 @@ const void* fast_images[] = {
 
 void set_img_src(void *var, int32_t val) {
     lv_obj_t *img = (lv_obj_t *)var;
-    lv_img_set_src(img, images[val]);
+    lv_image_set_src(img, images[val]);
     lv_obj_align(img, LV_ALIGN_CENTER, -42, 0);
 }
 
@@ -61,7 +61,7 @@ void state_widget_wpm(struct mlego_bongo_cat_widget *widget, int wpm) {
     LOG_DBG("Set source to idle images!");
             lv_anim_init(&widget->anim);
             lv_anim_set_var(&widget->anim, widget->obj);
-	    lv_anim_set_time(&widget->anim, 200);
+	    lv_anim_set_duration(&widget->anim, 200);
 	    lv_anim_set_values(&widget->anim, 0, 4);
 	    lv_anim_set_exec_cb(&widget->anim, set_img_src);
 	    lv_anim_set_repeat_count(&widget->anim, 10);
@@ -73,15 +73,15 @@ void state_widget_wpm(struct mlego_bongo_cat_widget *widget, int wpm) {
     } else if (wpm < CONFIG_MLEGO_BONGO_CAT_SLOW_LIMIT) {
 	if (current_anim_state != anim_state_slow) {
        LOG_DBG("Set source to slow image!");
-	    lv_anim_del(widget->obj, set_img_src);
-	    lv_img_set_src(widget->obj, &slow_img);
+	    lv_anim_delete(widget->obj, set_img_src);
+	    lv_image_set_src(widget->obj, &slow_img);
 	    current_anim_state = anim_state_slow;
 	}
     } else {
 	if (current_anim_state != anim_state_fast) {
      LOG_DBG("Set source to fast images!");
             lv_anim_init(&widget->anim);
-	    lv_anim_set_time(&widget->anim, 200);
+	    lv_anim_set_duration(&widget->anim, 200);
 	    lv_anim_set_repeat_delay(&widget->anim, 200);
             lv_anim_set_var(&widget->anim, widget->obj);
 	    lv_anim_set_values(&widget->anim, 0, 1);
@@ -95,7 +95,7 @@ void state_widget_wpm(struct mlego_bongo_cat_widget *widget, int wpm) {
 }
 
 int mlego_bongo_cat_widget_init(struct mlego_bongo_cat_widget *widget, lv_obj_t *parent) {
-    widget->obj = lv_img_create(parent);
+    widget->obj = lv_image_create(parent);
     state_widget_wpm(widget, 0);
 
     sys_slist_append(&widgets, &widget->node);

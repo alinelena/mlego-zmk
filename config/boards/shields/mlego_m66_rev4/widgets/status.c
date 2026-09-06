@@ -30,7 +30,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #endif
 
 #if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT) && CONFIG_DISP_HEIGHT>103
-LV_IMG_DECLARE(elep);
+LV_IMAGE_DECLARE(elep);
 #endif
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
 
@@ -42,7 +42,7 @@ struct output_status_state {
 };
 
 struct layer_status_state {
-    uint8_t index;
+    zmk_keymap_layer_index_t index;
     const char *label;
 };
 
@@ -53,27 +53,17 @@ struct wpm_status_state {
 #endif
 
 #if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT) && CONFIG_DISP_HEIGHT>103
-static void draw_image(lv_obj_t *widget, lv_color_t cbuf[]){
+static void draw_image(lv_obj_t *widget) {
     lv_obj_t *canvas = lv_obj_get_child(widget, 3);
 
-    //lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
-#if CONFIG_DISP_ROTATE == 900
-    lv_canvas_transform(canvas, &elep , CONFIG_DISP_ROTATE, LV_ZOOM_NONE, -45 , 44, elep.header.w/2,
-                        elep.header.h/2, true);
-#endif
-#if CONFIG_DISP_ROTATE == 1800
-    lv_canvas_transform(canvas, &elep , CONFIG_DISP_ROTATE, LV_ZOOM_NONE, -1 , -1, elep.header.w/2,
-                        elep.header.h/2, true);
-#endif
-
-#if CONFIG_DISP_ROTATE == 2700
-    lv_canvas_transform(canvas, &elep , CONFIG_DISP_ROTATE, LV_ZOOM_NONE, -44 , 43, elep.header.w/2,
-                        elep.header.h/2, true);
-#endif
+    lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
+    lv_draw_image_dsc_t img_dsc;
+    lv_draw_image_dsc_init(&img_dsc);
+    canvas_draw_img(canvas, 0, 0, &elep, &img_dsc);
 }
 #endif
 
-static void draw_top(lv_obj_t *widget, lv_color_t cbuf[], const struct status_state *state) {
+static void draw_top(lv_obj_t *widget, const struct status_state *state) {
 #if IS_ENABLED(CONFIG_ZMK_BLE)
     lv_obj_t *canvas = lv_obj_get_child(widget, 0);
 
@@ -89,14 +79,13 @@ static void draw_top(lv_obj_t *widget, lv_color_t cbuf[], const struct status_st
     init_line_dsc(&line_dsc, LVGL_FOREGROUND, 1);
 
     // Fill background
-    lv_canvas_draw_rect(canvas, 0, 0, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, &rect_black_dsc);
-
+    lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
 
     // Draw battery
     draw_battery(canvas, state);
     char percentage[5] = {};
     snprintf(percentage, sizeof(percentage), "%3u%%", state->battery);
-    lv_canvas_draw_text(canvas, 0, 20, CONFIG_DISP_CANVAS-18, &label_dsc, percentage);
+    canvas_draw_text(canvas, 0, 20, CONFIG_DISP_CANVAS-18, &label_dsc, percentage);
 
     // Draw output status
     char output_text[10] = {};
@@ -117,16 +106,16 @@ static void draw_top(lv_obj_t *widget, lv_color_t cbuf[], const struct status_st
         break;
     }
 
-    lv_canvas_draw_text(canvas, 0, 40, 20, &label_dsc, output_text);
+    canvas_draw_text(canvas, 0, 40, 20, &label_dsc, output_text);
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_WPM_STATUS)
 
     // Draw WPM
-    lv_canvas_draw_rect(canvas, 0, 21, 68, 42, &rect_white_dsc);
-    lv_canvas_draw_rect(canvas, 1, 22, 66, 40, &rect_black_dsc);
+    canvas_draw_rect(canvas, 0, 21, 68, 42, &rect_white_dsc);
+    canvas_draw_rect(canvas, 1, 22, 66, 40, &rect_black_dsc);
 
     char wpm_text[6] = {};
     snprintf(wpm_text, sizeof(wpm_text), "%d", state->wpm[9]);
-    lv_canvas_draw_text(canvas, 42, 52, 24, &label_dsc_wpm, wpm_text);
+    canvas_draw_text(canvas, 42, 52, 24, &label_dsc_wpm, wpm_text);
 
     int max = 0;
     int min = 256;
@@ -150,15 +139,15 @@ static void draw_top(lv_obj_t *widget, lv_color_t cbuf[], const struct status_st
         points[i].x = 2 + i * 7;
         points[i].y = 60 - (state->wpm[i] - min) * 36 / range;
     }
-    lv_canvas_draw_line(canvas, points, 10, &line_dsc);
+    canvas_draw_line(canvas, points, 10, &line_dsc);
 #endif
 
     // Rotate canvas
-    rotate_canvas(canvas, cbuf, CONFIG_DISP_ROTATE);
+    rotate_canvas(canvas);
 #endif
 }
 
-static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status_state *state) {
+static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
 #if IS_ENABLED(CONFIG_ZMK_BLE)
     lv_obj_t *canvas = lv_obj_get_child(widget, 1);
 
@@ -176,7 +165,7 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
     init_label_dsc(&label_dsc_black, LVGL_BACKGROUND, &lv_font_montserrat_18, LV_TEXT_ALIGN_CENTER);
 
     // Fill background
-    lv_canvas_draw_rect(canvas, 0, 0, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, &rect_black_dsc);
+    lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
 
     // Draw circles
     int circle_offsets[5][2] = {
@@ -187,26 +176,25 @@ static void draw_middle(lv_obj_t *widget, lv_color_t cbuf[], const struct status
         bool selected = i == state->active_profile_index;
 
         if (selected) {
-          lv_canvas_draw_arc(canvas, circle_offsets[0][0], circle_offsets[0][1], 13, 0, 360,
-                           &arc_dsc);
+            canvas_draw_arc(canvas, circle_offsets[0][0], circle_offsets[0][1], 13, 0, 360,
+                            &arc_dsc);
 
-            lv_canvas_draw_arc(canvas, circle_offsets[0][0], circle_offsets[0][1], 9, 0, 359,
-                               &arc_dsc_filled);
+            canvas_draw_arc(canvas, circle_offsets[0][0], circle_offsets[0][1], 9, 0, 359,
+                            &arc_dsc_filled);
 
             char label[2];
             snprintf(label, sizeof(label), "%d", i + 1);
-            lv_canvas_draw_text(canvas, circle_offsets[0][0] - 8, circle_offsets[0][1] - 10, 16,
-                            (selected ? &label_dsc_black : &label_dsc), label);
+            canvas_draw_text(canvas, circle_offsets[0][0] - 8, circle_offsets[0][1] - 10, 16,
+                             (selected ? &label_dsc_black : &label_dsc), label);
         }
     }
 
     // Rotate canvas
-    rotate_canvas(canvas, cbuf,CONFIG_DISP_ROTATE);
+    rotate_canvas(canvas);
 #endif
 }
 
-
-static void draw_bottom(lv_obj_t *widget, lv_color_t cbuf[], const struct status_state *state) {
+static void draw_bottom(lv_obj_t *widget, const struct status_state *state) {
     lv_obj_t *canvas = lv_obj_get_child(widget, 2);
 
     lv_draw_rect_dsc_t rect_black_dsc;
@@ -215,25 +203,23 @@ static void draw_bottom(lv_obj_t *widget, lv_color_t cbuf[], const struct status
     init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_18, LV_TEXT_ALIGN_CENTER);
 
     // Fill background
-    lv_canvas_draw_rect(canvas, 0, 0, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, &rect_black_dsc);
+    lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
 
     char keyb[10] = {};
     strcat(keyb, LV_SYMBOL_KEYBOARD);
-    lv_canvas_draw_text(canvas, 0, 0, 20, &label_dsc, keyb);
+    canvas_draw_text(canvas, 0, 0, 20, &label_dsc, keyb);
 
     // Draw layer
     if (state->layer_label == NULL) {
         char text[10] = {};
-
         sprintf(text, "%i", state->layer_index);
-
-        lv_canvas_draw_text(canvas, 0, 20, 20, &label_dsc, text);
+        canvas_draw_text(canvas, 0, 20, 20, &label_dsc, text);
     } else {
-        lv_canvas_draw_text(canvas, 0, 20, 20, &label_dsc, state->layer_label);
+        canvas_draw_text(canvas, 0, 20, 20, &label_dsc, state->layer_label);
     }
 
     // Rotate canvas
-    rotate_canvas(canvas, cbuf,CONFIG_DISP_ROTATE);
+    rotate_canvas(canvas);
 }
 
 static void set_battery_status(struct zmk_widget_status *widget,
@@ -244,7 +230,7 @@ static void set_battery_status(struct zmk_widget_status *widget,
 #if IS_ENABLED(CONFIG_ZMK_BLE)
     widget->state.battery = state.level;
 
-    draw_top(widget->obj, widget->cbuf1, &widget->state);
+    draw_top(widget->obj, &widget->state);
 #endif
 }
 
@@ -280,8 +266,8 @@ static void set_output_status(struct zmk_widget_status *widget,
     widget->state.active_profile_connected = state->active_profile_connected;
     widget->state.active_profile_bonded = state->active_profile_bonded;
 
-    draw_top(widget->obj, widget->cbuf1, &widget->state);
-    draw_middle(widget->obj, widget->cbuf2, &widget->state);
+    draw_top(widget->obj, &widget->state);
+    draw_middle(widget->obj, &widget->state);
 }
 
 static void output_status_update_cb(struct output_status_state state) {
@@ -315,7 +301,7 @@ static void set_layer_status(struct zmk_widget_status *widget, struct layer_stat
     widget->state.layer_index = state.index;
     widget->state.layer_label = state.label;
 
-    draw_bottom(widget->obj, widget->cbuf3, &widget->state);
+    draw_bottom(widget->obj, &widget->state);
 }
 
 static void layer_status_update_cb(struct layer_status_state state) {
@@ -324,8 +310,9 @@ static void layer_status_update_cb(struct layer_status_state state) {
 }
 
 static struct layer_status_state layer_status_get_state(const zmk_event_t *eh) {
-    uint8_t index = zmk_keymap_highest_layer_active();
-    return (struct layer_status_state){.index = index, .label = zmk_keymap_layer_name(index)};
+    zmk_keymap_layer_index_t index = zmk_keymap_highest_layer_active();
+    return (struct layer_status_state){
+        .index = index, .label = zmk_keymap_layer_name(zmk_keymap_layer_index_to_id(index))};
 }
 
 ZMK_DISPLAY_WIDGET_LISTENER(widget_layer_status, struct layer_status_state, layer_status_update_cb,
@@ -340,7 +327,7 @@ static void set_wpm_status(struct zmk_widget_status *widget, struct wpm_status_s
     }
     widget->state.wpm[9] = state.wpm;
 
-    draw_top(widget->obj, widget->cbuf, &widget->state);
+    draw_top(widget->obj, &widget->state);
 }
 
 static void wpm_status_update_cb(struct wpm_status_state state) {
@@ -364,55 +351,49 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     lv_obj_t *top = lv_canvas_create(widget->obj);
 #if CONFIG_DISP_ROTATE == 900
     lv_obj_align(top, LV_ALIGN_TOP_RIGHT, 0, 0);
-#endif
-#if CONFIG_DISP_ROTATE == 2700
+#elif CONFIG_DISP_ROTATE == 2700
     lv_obj_align(top, LV_ALIGN_BOTTOM_LEFT, 0, 0);
-#endif
-#if CONFIG_DISP_ROTATE == 1800
+#elif CONFIG_DISP_ROTATE == 1800
     lv_obj_align(top, LV_ALIGN_BOTTOM_RIGHT, 0, 0);
 #endif
-    lv_canvas_set_buffer(top, widget->cbuf1, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, LV_COLOR_FORMAT_ARGB8888);
+    lv_canvas_set_buffer(top, widget->cbuf1, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, CANVAS_COLOR_FORMAT);
 
     lv_obj_t *middle = lv_canvas_create(widget->obj);
 #if CONFIG_DISP_ROTATE == 900
-    lv_obj_align(middle, LV_ALIGN_TOP_LEFT, CONFIG_DISP_CANVAS,CONFIG_DISP_CANVAS);
+    lv_obj_align(middle, LV_ALIGN_TOP_LEFT, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS);
+#elif CONFIG_DISP_ROTATE == 2700
+    lv_obj_align(middle, LV_ALIGN_BOTTOM_LEFT, 0, -48);
+#elif CONFIG_DISP_ROTATE == 1800
+    lv_obj_align(middle, LV_ALIGN_BOTTOM_RIGHT, -CONFIG_DISP_CANVAS, 0);
 #endif
-#if CONFIG_DISP_ROTATE == 2700
-    lv_obj_align(middle, LV_ALIGN_BOTTOM_LEFT, 0,-48);
-#endif
-#if CONFIG_DISP_ROTATE == 1800
-    lv_obj_align(middle, LV_ALIGN_BOTTOM_RIGHT, -CONFIG_DISP_CANVAS , 0);
-#endif
-    lv_canvas_set_buffer(middle, widget->cbuf2, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, LV_COLOR_FORMAT_ARGB8888);
+    lv_canvas_set_buffer(middle, widget->cbuf2, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, CANVAS_COLOR_FORMAT);
 
     lv_obj_t *bottom = lv_canvas_create(widget->obj);
 #if CONFIG_DISP_ROTATE == 900
-    lv_obj_align(bottom, LV_ALIGN_TOP_LEFT,CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS*2);
+    lv_obj_align(bottom, LV_ALIGN_TOP_LEFT, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS * 2);
+#elif CONFIG_DISP_ROTATE == 1800
+    lv_obj_align(bottom, LV_ALIGN_BOTTOM_RIGHT, -2 * CONFIG_DISP_CANVAS, 0);
+#elif CONFIG_DISP_ROTATE == 2700
+    lv_obj_align(bottom, LV_ALIGN_BOTTOM_LEFT, 0, -100);
 #endif
-#if CONFIG_DISP_ROTATE == 1800
-    lv_obj_align(bottom, LV_ALIGN_BOTTOM_RIGHT,-2*CONFIG_DISP_CANVAS,0);
-#endif
-#if CONFIG_DISP_ROTATE == 2700
-    lv_obj_align(bottom, LV_ALIGN_BOTTOM_LEFT,0, -100);
-#endif
-    lv_canvas_set_buffer(bottom, widget->cbuf3, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, LV_COLOR_FORMAT_ARGB8888);
+    lv_canvas_set_buffer(bottom, widget->cbuf3, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, CANVAS_COLOR_FORMAT);
 
 #if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT) && CONFIG_DISP_HEIGHT>103
     lv_obj_t *picture = lv_canvas_create(widget->obj);
 
 #if CONFIG_DISP_ROTATE == 900 || CONFIG_DISP_ROTATE == 2700
-    lv_canvas_set_buffer(picture, widget->cbuf4, elep.header.h, elep.header.w, LV_COLOR_FORMAT_ARGB8888);
+    lv_canvas_set_buffer(picture, widget->cbuf4, elep.header.w, elep.header.h, CANVAS_COLOR_FORMAT);
 #if CONFIG_DISP_ROTATE == 900
-    lv_obj_align(picture,LV_ALIGN_CENTER,-30,0);
+    lv_obj_align(picture, LV_ALIGN_CENTER, -30, 0);
 #else
-    lv_obj_align(picture,LV_ALIGN_CENTER,30,0);
+    lv_obj_align(picture, LV_ALIGN_CENTER, 30, 0);
 #endif
 #endif
 #if CONFIG_DISP_ROTATE == 1800
-    lv_canvas_set_buffer(picture, widget->cbuf4, elep.header.w, elep.header.h, LV_COLOR_FORMAT_ARGB8888);
-    lv_obj_align(picture,LV_ALIGN_CENTER,0,-20);
+    lv_canvas_set_buffer(picture, widget->cbuf4, elep.header.w, elep.header.h, CANVAS_COLOR_FORMAT);
+    lv_obj_align(picture, LV_ALIGN_CENTER, 0, -20);
 #endif
-    draw_image(widget->obj, widget->cbuf4);
+    draw_image(widget->obj);
 #endif
     sys_slist_append(&widgets, &widget->node);
 #if IS_ENABLED(CONFIG_ZMK_BLE)

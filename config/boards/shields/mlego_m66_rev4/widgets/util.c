@@ -10,19 +10,27 @@
 
 LV_IMG_DECLARE(bolt);
 
-void rotate_canvas(lv_obj_t *canvas, lv_color_t cbuf[], int angle) {
+void rotate_canvas(lv_obj_t *canvas) {
+#if CONFIG_DISP_ROTATE != 0
+    uint8_t *buf = lv_canvas_get_draw_buf(canvas)->data;
+    static uint8_t buf_copy[CANVAS_BUF_SIZE];
+    memcpy(buf_copy, buf, sizeof(buf_copy));
 
-    static lv_color_t cbuf_tmp[CONFIG_DISP_CANVAS * CONFIG_DISP_CANVAS];
-    memcpy(cbuf_tmp, cbuf, sizeof(cbuf_tmp));
-    lv_img_dsc_t img;
-    img.data = (void *)cbuf_tmp;
-    img.header.cf = LV_COLOR_FORMAT_ARGB8888;
-    img.header.w = CONFIG_DISP_CANVAS;
-    img.header.h = CONFIG_DISP_CANVAS;
+    const uint32_t stride = lv_draw_buf_width_to_stride(CONFIG_DISP_CANVAS, CANVAS_COLOR_FORMAT);
 
-    lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
-    lv_canvas_transform(canvas, &img, angle, LV_ZOOM_NONE, -1, 0, CONFIG_DISP_CANVAS / 2,
-                        CONFIG_DISP_CANVAS / 2, true);
+#if CONFIG_DISP_ROTATE == 900
+    lv_display_rotation_t rotation = LV_DISPLAY_ROTATION_90;
+#elif CONFIG_DISP_ROTATE == 1800
+    lv_display_rotation_t rotation = LV_DISPLAY_ROTATION_180;
+#elif CONFIG_DISP_ROTATE == 2700
+    lv_display_rotation_t rotation = LV_DISPLAY_ROTATION_270;
+#else
+    lv_display_rotation_t rotation = LV_DISPLAY_ROTATION_0;
+#endif
+
+    lv_draw_sw_rotate(buf_copy, buf, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, stride, stride,
+                      rotation, CANVAS_COLOR_FORMAT);
+#endif
 }
 
 void draw_battery(lv_obj_t *canvas, const struct status_state *state) {
@@ -31,16 +39,16 @@ void draw_battery(lv_obj_t *canvas, const struct status_state *state) {
     lv_draw_rect_dsc_t rect_white_dsc;
     init_rect_dsc(&rect_white_dsc, LVGL_FOREGROUND);
 
-    lv_canvas_draw_rect(canvas, 0, 2, 29, 12, &rect_white_dsc);
-    lv_canvas_draw_rect(canvas, 1, 3, 27, 10, &rect_black_dsc);
-    lv_canvas_draw_rect(canvas, 2, 4, (state->battery + 2) / 4, 8, &rect_white_dsc);
-    lv_canvas_draw_rect(canvas, 30, 5, 3, 6, &rect_white_dsc);
-    lv_canvas_draw_rect(canvas, 31, 6, 1, 4, &rect_black_dsc);
+    canvas_draw_rect(canvas, 0, 2, 29, 12, &rect_white_dsc);
+    canvas_draw_rect(canvas, 1, 3, 27, 10, &rect_black_dsc);
+    canvas_draw_rect(canvas, 2, 4, (state->battery + 2) / 4, 8, &rect_white_dsc);
+    canvas_draw_rect(canvas, 30, 5, 3, 6, &rect_white_dsc);
+    canvas_draw_rect(canvas, 31, 6, 1, 4, &rect_black_dsc);
 
     if (state->charging) {
         lv_draw_image_dsc_t img_dsc;
         lv_draw_image_dsc_init(&img_dsc);
-        lv_canvas_draw_img(canvas, 9, -1, &bolt, &img_dsc);
+        canvas_draw_img(canvas, 9, -1, &bolt, &img_dsc);
     }
 }
 
@@ -67,4 +75,70 @@ void init_arc_dsc(lv_draw_arc_dsc_t *arc_dsc, lv_color_t color, uint8_t width) {
     lv_draw_arc_dsc_init(arc_dsc);
     arc_dsc->color = color;
     arc_dsc->width = width;
+}
+
+void canvas_draw_line(lv_obj_t *canvas, const lv_point_t points[], uint32_t point_cnt,
+                      lv_draw_line_dsc_t *draw_dsc) {
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
+
+    for (uint32_t i = 1; i < point_cnt; ++i) {
+        draw_dsc->p1.x = points[i - 1].x;
+        draw_dsc->p1.y = points[i - 1].y;
+        draw_dsc->p2.x = points[i].x;
+        draw_dsc->p2.y = points[i].y;
+        lv_draw_line(&layer, draw_dsc);
+    }
+
+    lv_canvas_finish_layer(canvas, &layer);
+}
+
+void canvas_draw_rect(lv_obj_t *canvas, int32_t x, int32_t y, int32_t w, int32_t h,
+                      lv_draw_rect_dsc_t *draw_dsc) {
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
+
+    lv_area_t coords = {x, y, x + w - 1, y + h - 1};
+    lv_draw_rect(&layer, draw_dsc, &coords);
+
+    lv_canvas_finish_layer(canvas, &layer);
+}
+
+void canvas_draw_arc(lv_obj_t *canvas, int32_t x, int32_t y, int32_t r,
+                     int32_t start_angle, int32_t end_angle, lv_draw_arc_dsc_t *draw_dsc) {
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
+
+    draw_dsc->center.x = x;
+    draw_dsc->center.y = y;
+    draw_dsc->radius = r;
+    draw_dsc->start_angle = start_angle;
+    draw_dsc->end_angle = end_angle;
+    lv_draw_arc(&layer, draw_dsc);
+
+    lv_canvas_finish_layer(canvas, &layer);
+}
+
+void canvas_draw_text(lv_obj_t *canvas, int32_t x, int32_t y, int32_t max_w,
+                      lv_draw_label_dsc_t *draw_dsc, const char *txt) {
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
+
+    draw_dsc->text = txt;
+    lv_area_t coords = {x, y, x + max_w, y + CONFIG_DISP_CANVAS};
+    lv_draw_label(&layer, draw_dsc, &coords);
+
+    lv_canvas_finish_layer(canvas, &layer);
+}
+
+void canvas_draw_img(lv_obj_t *canvas, int32_t x, int32_t y, const lv_image_dsc_t *src,
+                     lv_draw_image_dsc_t *draw_dsc) {
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
+
+    draw_dsc->src = src;
+    lv_area_t coords = {x, y, x + src->header.w - 1, y + src->header.h - 1};
+    lv_draw_image(&layer, draw_dsc, &coords);
+
+    lv_canvas_finish_layer(canvas, &layer);
 }

@@ -199,12 +199,11 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_CAT_IMG uint8
 #endif
 };
 
-const lv_img_dsc_t cat_img = {
-  .header.cf = LV_COLOR_FORMAT_ARGB8888,
-  .header.reserved_2 = 0,
+const lv_image_dsc_t cat_img = {
+  .header.cf = LV_COLOR_FORMAT_L8,
   .header.w = 128,
   .header.h = 40,
-  .data_size = 5120 * LV_COLOR_DEPTH / 8 / 8,
+  .data_size = 5120,
   .data = cat_img_map,
 };
 
