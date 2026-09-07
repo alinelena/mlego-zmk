@@ -11,6 +11,7 @@
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #include "status.h"
+#include <ctype.h>
 #include <zmk/battery.h>
 #include <zmk/ble.h>
 #include <zmk/display.h>
@@ -24,7 +25,6 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/events/wpm_state_changed.h>
 #include <zmk/keymap.h>
 #include <zmk/usb.h>
-#include <ctype.h>
 
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_WPM_STATUS)
 #include <zmk/wpm.h>
@@ -95,7 +95,8 @@ static void draw_top(lv_obj_t *widget, const struct status_state *state) {
   snprintf(percentage, sizeof(percentage), "%u%%", state->battery);
   canvas_draw_text(canvas, 1, 19, 54, &label_dsc, percentage);
 
-  // Draw output status / endpoint symbol (left aligned under battery percentage)
+  // Draw output status / endpoint symbol (left aligned under battery
+  // percentage)
   char output_text[10] = {};
   switch (state->selected_endpoint.transport) {
   case ZMK_TRANSPORT_USB:
@@ -214,35 +215,14 @@ static void draw_bottom(lv_obj_t *widget, const struct status_state *state) {
     return;
   }
 
-  bool is_base = (state->layer_index == 0);
-  lv_color_t card_fg = is_base ? LVGL_FOREGROUND : LVGL_BACKGROUND;
-
   // Fill canvas background
   lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
 
-  // Draw outer badge rectangle (48 wide x 46 high, flush against top & right margins)
-  lv_draw_rect_dsc_t outer_dsc;
-  init_rect_dsc(&outer_dsc, LVGL_FOREGROUND);
-  canvas_draw_rect(canvas, 1, 5, 48, 46, &outer_dsc);
-
-  // If base layer, draw inner background to make an outline badge; if active layer, keep solid
-  if (is_base) {
-    lv_draw_rect_dsc_t inner_dsc;
-    init_rect_dsc(&inner_dsc, LVGL_BACKGROUND);
-    canvas_draw_rect(canvas, 2, 6, 46, 44, &inner_dsc);
-  }
-
-  // Divider line separating layer name rectangle from icon area
-  lv_draw_line_dsc_t line_dsc;
-  init_line_dsc(&line_dsc, card_fg, 1);
-  lv_point_t line_pts[2] = {{2, 28}, {48, 28}};
-  canvas_draw_line(canvas, line_pts, 2, &line_dsc);
-
   // Format 3-letter layer name
-  char layer_name[8] = {};
+  char layer_name[4] = {};
   if (state->layer_label != NULL) {
     const char *src = state->layer_label;
-    if (strncmp(src, "qw", 2) == 0) {
+    if (strncmp(src, "qwerty", 6) == 0) {
       strcpy(layer_name, "QWE");
     } else if (strncmp(src, "raise", 5) == 0) {
       strcpy(layer_name, "RSE");
@@ -261,17 +241,18 @@ static void draw_bottom(lv_obj_t *widget, const struct status_state *state) {
     snprintf(layer_name, sizeof(layer_name), "L%d", state->layer_index);
   }
 
-  // Upper rectangle: 3-letter layer name centered in Montserrat 18
-  const lv_font_t *name_font = (strlen(layer_name) > 3) ? &lv_font_montserrat_14 : &lv_font_montserrat_18;
-  int text_y = (strlen(layer_name) > 3) ? 10 : 8;
-  lv_draw_label_dsc_t name_dsc;
-  init_label_dsc(&name_dsc, card_fg, name_font, LV_TEXT_ALIGN_CENTER);
-  canvas_draw_text(canvas, 2, text_y, 46, &name_dsc, layer_name);
-
-  // Lower area: keyboard icon centered in Montserrat 14
+  // Keyboard icon centered in Montserrat 14 (low y = visually low after
+  // rotation)
   lv_draw_label_dsc_t icon_dsc;
-  init_label_dsc(&icon_dsc, card_fg, &lv_font_montserrat_14, LV_TEXT_ALIGN_CENTER);
-  canvas_draw_text(canvas, 2, 32, 46, &icon_dsc, LV_SYMBOL_KEYBOARD);
+  init_label_dsc(&icon_dsc, LVGL_FOREGROUND, &lv_font_montserrat_14,
+                 LV_TEXT_ALIGN_CENTER);
+  canvas_draw_text(canvas, 2, 8, 46, &icon_dsc, LV_SYMBOL_KEYBOARD);
+
+  // Layer name above icon (high y = visually high after rotation)
+  lv_draw_label_dsc_t name_dsc;
+  init_label_dsc(&name_dsc, LVGL_FOREGROUND, &lv_font_montserrat_14,
+                 LV_TEXT_ALIGN_CENTER);
+  canvas_draw_text(canvas, 2, 30, 46, &name_dsc, layer_name);
 
   // Rotate canvas
   rotate_canvas(canvas);

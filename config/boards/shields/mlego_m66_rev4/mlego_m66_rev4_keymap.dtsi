@@ -67,6 +67,7 @@
 └────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┘
 */
         qw_layer {
+            display-name = "qwerty";
             bindings = <
                 &kp ESC          &kp N1          &kp N2 &kp N3   &kp N4 &kp N5    &kp N6    &kp N7    &kp N8   &kp N9    &kp N0   &kp MINUS &kp BSPC &kp K_MUTE
                 &kp TAB          &kp Q           &kp W  &kp E    &kp R  &kp T     &kp Y     &kp U     &kp I    &kp O     &kp P    &kp LBKT  &kp RBKT
@@ -77,6 +78,7 @@
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
         raise_layer {
+            display-name = "raise";
             bindings = <
                 &kp GRAVE &kp K_MUTE &kp K_VOL_UP &kp K_VOL_DN &kp K_PREV &kp K_PP &kp K_NEXT &kp LG(P)   &kp K_SLEEP &kp K_COFFEE &kp PSCRN &kp DEL    &kp EQUAL &trans
                 &trans    &lq_Q      &lw_W        &le_E        &lr_R      &lt_T    &ly_Y      &lu_U       &li_I       &lo_O        &lp_P     &lbo1_bo2  &lbc1_bc2
@@ -87,6 +89,7 @@
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
         lower_layer {
+            display-name = "lower";
             bindings = <
                 &kp ESC  &kp F1          &kp F2   &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10 &kp F11 &kp F12 &trans
                 &trans   &ro_ai          &rq_Q    &re_E   &rr_R   &ro_t   &ry_Y   &ru_U   &ro_i   &ro_O   &rp_P    &rbo_BO &rbc_BC
@@ -113,6 +116,7 @@ adj layer
 */
 
         adjust_layer {
+            display-name = "adjust";
             bindings = <
                 &trans  &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans      &trans &trans &trans &trans       &trans       &trans &trans
                 &trans  &trans          &trans       &trans       &sys_reset   &trans        &trans      &trans &trans &trans &trans       &trans       &trans
