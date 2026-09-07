@@ -33,6 +33,9 @@
 <svg id="mdi:bluetooth-off">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-bluetooth-off" viewBox="0 0 24 24"><path d="M13,5.83L14.88,7.71L13.28,9.31L14.69,10.72L17.71,7.7L12,2H11V7.03L13,9.03M5.41,4L4,5.41L10.59,12L5,17.59L6.41,19L11,14.41V22H12L16.29,17.71L18.59,20L20,18.59M13,18.17V14.41L14.88,16.29" /></svg>
 </svg>
+<svg id="mdi:information-outline">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-information-outline" viewBox="0 0 24 24"><path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" /></svg>
+</svg>
 <svg id="mdi:keyboard">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard" viewBox="0 0 24 24"><path d="M19,10H17V8H19M19,13H17V11H19M16,10H14V8H16M16,13H14V11H16M16,17H8V15H16M7,10H5V8H7M7,13H5V11H7M8,11H10V13H8M8,8H10V10H8M11,11H13V13H11M11,8H13V10H11M20,5H4C2.89,5 2,5.89 2,7V17A2,2 0 0,0 4,19H20A2,2 0 0,0 22,17V7C22,5.89 21.1,5 20,5Z" /></svg>
 </svg>
@@ -148,25 +151,25 @@ text.footer {
 }
 
 /* styling for combo tap, and key non-tap label text */
-text.combo, text.hold, text.shifted, text.left, text.right {
+text.combo, text.hold, text.shifted, text.left, text.right, text.tl, text.tr, text.bl, text.br {
     font-size: 11px;
 }
 
-text.hold {
+text.hold, text.bl, text.br {
     text-anchor: middle;
     dominant-baseline: auto;
 }
 
-text.shifted {
+text.shifted, text.tl, text.tr {
     text-anchor: middle;
     dominant-baseline: hanging;
 }
 
-text.left {
+text.left, text.tl, text.bl {
     text-anchor: start;
 }
 
-text.right {
+text.right, text.tr, text.br {
     text-anchor: end;
 }
 
@@ -1710,10 +1713,11 @@ path.combo {
 <rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key trans"/>
 <text x="0" y="-4" class="key trans tap">▽</text>
 </g>
-<g transform="translate(266, 266)" class="key trans keypos-30">
-<rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key trans side"/>
-<rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key trans"/>
-<text x="0" y="-4" class="key trans tap">▽</text>
+<g transform="translate(266, 266)" class="key keypos-30">
+<rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>
+<rect rx="4" ry="4" x="-30" y="-34" width="60" height="60" class="key"/>
+<use href="#mdi:information-outline" xlink:href="#mdi:information-outline" x="-15" y="-19" height="30" width="30.0" class="key tap glyph mdi:information-outline"/>
+<text x="0" y="34" class="key hold">info</text>
 </g>
 <g transform="translate(342, 266)" class="key trans keypos-31">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key trans side"/>
