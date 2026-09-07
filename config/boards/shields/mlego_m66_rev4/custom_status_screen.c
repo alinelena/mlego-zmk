@@ -15,6 +15,10 @@
 #include <zephyr/logging/log.h>
 LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
+#if IS_ENABLED(CONFIG_ZMK_BLE)
+#include <zephyr/bluetooth/bluetooth.h>
+#endif
+
 #ifdef CONFIG_USB_DEVICE_PRODUCT
 #define SPLASH_TITLE CONFIG_USB_DEVICE_PRODUCT
 #else
@@ -105,8 +109,27 @@ lv_obj_t *zmk_display_status_screen() {
 
     lv_draw_label_dsc_t label_dsc;
     init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_12, LV_TEXT_ALIGN_CENTER);
+#if IS_ENABLED(CONFIG_ZMK_BLE)
+    char splash_text[128];
+    bt_addr_le_t addrs[CONFIG_BT_ID_MAX];
+    size_t count = CONFIG_BT_ID_MAX;
+    bt_id_get(addrs, &count);
+
+    if (count > 0) {
+        char mac_str[BT_ADDR_STR_LEN];
+        bt_addr_to_str(&addrs[0].a, mac_str, sizeof(mac_str));
+        snprintf(splash_text, sizeof(splash_text),
+                 SPLASH_TITLE "\nZephyr: " KERNEL_VERSION_STRING "\nZMK: " APP_VERSION_STRING "\n%s",
+                 mac_str);
+        canvas_draw_text(splash_canvas, 0, 2, SPLASH_W, &label_dsc, splash_text);
+    } else {
+        canvas_draw_text(splash_canvas, 0, 8, SPLASH_W, &label_dsc,
+                         SPLASH_TITLE "\nZephyr: " KERNEL_VERSION_STRING "\nZMK: " APP_VERSION_STRING);
+    }
+#else
     canvas_draw_text(splash_canvas, 0, 8, SPLASH_W, &label_dsc,
                      SPLASH_TITLE "\nZephyr: " KERNEL_VERSION_STRING "\nZMK: " APP_VERSION_STRING);
+#endif
 
 #if CONFIG_DISP_ROTATE == 900
     const uint32_t src_stride = lv_draw_buf_width_to_stride(SPLASH_W, CANVAS_COLOR_FORMAT);
