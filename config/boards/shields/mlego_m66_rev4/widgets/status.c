@@ -174,18 +174,18 @@ static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
     // Draw active BT profile in a good size circle (centered at 32, 32)
     lv_draw_arc_dsc_t arc_dsc;
     init_arc_dsc(&arc_dsc, LVGL_FOREGROUND, connected ? 3 : 2);
-    canvas_draw_arc(canvas, 32, 32, 22, 0, 360, &arc_dsc);
+    canvas_draw_arc(canvas, 32, 32, 20, 0, 360, &arc_dsc);
 
     if (connected) {
         // Outer concentric ring for connected state
         lv_draw_arc_dsc_t outer_dsc;
         init_arc_dsc(&outer_dsc, LVGL_FOREGROUND, 1);
-        canvas_draw_arc(canvas, 32, 32, 26, 0, 360, &outer_dsc);
+        canvas_draw_arc(canvas, 32, 32, 24, 0, 360, &outer_dsc);
     } else if (!bonded) {
         // Inner ring for unbonded/open profile
         lv_draw_arc_dsc_t inner_dsc;
         init_arc_dsc(&inner_dsc, LVGL_FOREGROUND, 1);
-        canvas_draw_arc(canvas, 32, 32, 18, 0, 360, &inner_dsc);
+        canvas_draw_arc(canvas, 32, 32, 16, 0, 360, &inner_dsc);
     }
 
     // Active profile number in the center of the circle
@@ -385,7 +385,7 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     lv_obj_t *middle = lv_canvas_create(widget->obj);
     lv_obj_set_size(middle, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS);
 #if CONFIG_DISP_ROTATE == 900
-    lv_obj_align(middle, LV_ALIGN_TOP_LEFT, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS);
+    lv_obj_align(middle, LV_ALIGN_TOP_RIGHT, 0, 56);
 #elif CONFIG_DISP_ROTATE == 2700
     lv_obj_align(middle, LV_ALIGN_BOTTOM_LEFT, 0, -48);
 #elif CONFIG_DISP_ROTATE == 1800
@@ -396,7 +396,7 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     lv_obj_t *bottom = lv_canvas_create(widget->obj);
     lv_obj_set_size(bottom, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS);
 #if CONFIG_DISP_ROTATE == 900
-    lv_obj_align(bottom, LV_ALIGN_BOTTOM_LEFT, CONFIG_DISP_CANVAS, 0);
+    lv_obj_align(bottom, LV_ALIGN_TOP_RIGHT, 0, 118);
 #elif CONFIG_DISP_ROTATE == 1800
     lv_obj_align(bottom, LV_ALIGN_BOTTOM_RIGHT, -2 * CONFIG_DISP_CANVAS, 0);
 #elif CONFIG_DISP_ROTATE == 2700
