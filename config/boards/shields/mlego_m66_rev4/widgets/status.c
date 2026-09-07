@@ -111,7 +111,7 @@ static void draw_top(lv_obj_t *widget, const struct status_state *state) {
         break;
     }
 
-    canvas_draw_text(canvas, 0, 40, 20, &label_dsc, output_text);
+    canvas_draw_text(canvas, 0, 38, 20, &label_dsc, output_text);
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_WPM_STATUS)
 
     // Draw WPM
@@ -171,21 +171,23 @@ static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
     bool connected = state->active_profile_connected;
     bool bonded = state->active_profile_bonded;
 
-    // Draw active BT profile in a good size circle (centered at 32, 32)
+    int center = CONFIG_DISP_CANVAS / 2;
+
+    // Draw active BT profile in a good size circle
     lv_draw_arc_dsc_t arc_dsc;
     init_arc_dsc(&arc_dsc, LVGL_FOREGROUND, connected ? 3 : 2);
-    canvas_draw_arc(canvas, 32, 32, 20, 0, 360, &arc_dsc);
+    canvas_draw_arc(canvas, center, center, 20, 0, 360, &arc_dsc);
 
     if (connected) {
         // Outer concentric ring for connected state
         lv_draw_arc_dsc_t outer_dsc;
         init_arc_dsc(&outer_dsc, LVGL_FOREGROUND, 1);
-        canvas_draw_arc(canvas, 32, 32, 24, 0, 360, &outer_dsc);
+        canvas_draw_arc(canvas, center, center, 24, 0, 360, &outer_dsc);
     } else if (!bonded) {
         // Inner ring for unbonded/open profile
         lv_draw_arc_dsc_t inner_dsc;
         init_arc_dsc(&inner_dsc, LVGL_FOREGROUND, 1);
-        canvas_draw_arc(canvas, 32, 32, 16, 0, 360, &inner_dsc);
+        canvas_draw_arc(canvas, center, center, 16, 0, 360, &inner_dsc);
     }
 
     // Active profile number in the center of the circle
@@ -194,7 +196,7 @@ static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
 
     char label[4];
     snprintf(label, sizeof(label), "%d", profile_idx + 1);
-    canvas_draw_text(canvas, 12, 23, 40, &label_dsc, label);
+    canvas_draw_text(canvas, center - 20, center - 9, 40, &label_dsc, label);
 
     // Rotate canvas
     rotate_canvas(canvas);
@@ -218,15 +220,15 @@ static void draw_bottom(lv_obj_t *widget, const struct status_state *state) {
 
     char keyb[10] = {};
     strcat(keyb, LV_SYMBOL_KEYBOARD);
-    canvas_draw_text(canvas, 0, 0, 20, &label_dsc, keyb);
+    canvas_draw_text(canvas, 0, 4, 20, &label_dsc, keyb);
 
     // Draw layer
     if (state->layer_label == NULL) {
         char text[10] = {};
         sprintf(text, "%i", state->layer_index);
-        canvas_draw_text(canvas, 0, 20, 20, &label_dsc, text);
+        canvas_draw_text(canvas, 0, 26, 20, &label_dsc, text);
     } else {
-        canvas_draw_text(canvas, 0, 20, 20, &label_dsc, state->layer_label);
+        canvas_draw_text(canvas, 0, 26, 20, &label_dsc, state->layer_label);
     }
 
     // Rotate canvas
@@ -385,7 +387,7 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     lv_obj_t *middle = lv_canvas_create(widget->obj);
     lv_obj_set_size(middle, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS);
 #if CONFIG_DISP_ROTATE == 900
-    lv_obj_align(middle, LV_ALIGN_TOP_RIGHT, 0, 56);
+    lv_obj_align(middle, LV_ALIGN_TOP_RIGHT, 0, CONFIG_DISP_CANVAS);
 #elif CONFIG_DISP_ROTATE == 2700
     lv_obj_align(middle, LV_ALIGN_BOTTOM_LEFT, 0, -48);
 #elif CONFIG_DISP_ROTATE == 1800
@@ -396,7 +398,7 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     lv_obj_t *bottom = lv_canvas_create(widget->obj);
     lv_obj_set_size(bottom, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS);
 #if CONFIG_DISP_ROTATE == 900
-    lv_obj_align(bottom, LV_ALIGN_TOP_RIGHT, 0, 118);
+    lv_obj_align(bottom, LV_ALIGN_TOP_RIGHT, 0, 2 * CONFIG_DISP_CANVAS);
 #elif CONFIG_DISP_ROTATE == 1800
     lv_obj_align(bottom, LV_ALIGN_BOTTOM_RIGHT, -2 * CONFIG_DISP_CANVAS, 0);
 #elif CONFIG_DISP_ROTATE == 2700

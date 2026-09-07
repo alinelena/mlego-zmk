@@ -23,7 +23,9 @@ void rotate_canvas(lv_obj_t *canvas) {
     static uint8_t buf_copy[CANVAS_BUF_SIZE];
     memcpy(buf_copy, buf, sizeof(buf_copy));
 
-    const uint32_t stride = lv_draw_buf_width_to_stride(CONFIG_DISP_CANVAS, CANVAS_COLOR_FORMAT);
+    int32_t w = draw_buf->header.w;
+    int32_t h = draw_buf->header.h;
+    const uint32_t stride = lv_draw_buf_width_to_stride(w, CANVAS_COLOR_FORMAT);
 
 #if CONFIG_DISP_ROTATE == 900
     lv_display_rotation_t rotation = LV_DISPLAY_ROTATION_270;
@@ -35,7 +37,7 @@ void rotate_canvas(lv_obj_t *canvas) {
     lv_display_rotation_t rotation = LV_DISPLAY_ROTATION_0;
 #endif
 
-    lv_draw_sw_rotate(buf_copy, buf, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, stride, stride,
+    lv_draw_sw_rotate(buf_copy, buf, w, h, stride, stride,
                       rotation, CANVAS_COLOR_FORMAT);
     lv_obj_invalidate(canvas);
 #endif
