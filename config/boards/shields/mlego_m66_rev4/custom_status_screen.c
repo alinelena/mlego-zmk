@@ -29,7 +29,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #define SPLASH_TIMEOUT_MS 4000
 
 #define SPLASH_W 168
-#define SPLASH_H 88
+#define SPLASH_H 112
 #define SPLASH_BUF_SIZE \
     LV_CANVAS_BUF_SIZE(SPLASH_W, SPLASH_H, LV_COLOR_FORMAT_GET_BPP(CANVAS_COLOR_FORMAT), \
                        LV_DRAW_BUF_STRIDE_ALIGN)
@@ -73,9 +73,9 @@ static void update_splash_canvas(void) {
         char mac_str[BT_ADDR_STR_LEN];
         bt_addr_to_str(&addrs[0].a, mac_str, sizeof(mac_str));
         snprintf(splash_text, sizeof(splash_text),
-                 SPLASH_TITLE "\n%s\nZ: " KERNEL_VERSION_STRING " | ZMK: " APP_VERSION_STRING,
+                 SPLASH_TITLE "\n%s\nZephyr: " KERNEL_VERSION_STRING "\nZMK: " APP_VERSION_STRING,
                  mac_str);
-        canvas_draw_text(splash_canvas, 0, 1, SPLASH_W, &label_dsc, splash_text);
+        canvas_draw_text(splash_canvas, 0, 2, SPLASH_W, &label_dsc, splash_text);
     } else {
         canvas_draw_text(splash_canvas, 0, 8, SPLASH_W, &label_dsc,
                          SPLASH_TITLE "\nZephyr: " KERNEL_VERSION_STRING "\nZMK: " APP_VERSION_STRING);
@@ -89,7 +89,7 @@ static void update_splash_canvas(void) {
 
     for (int i = 0; i < MLEGO_PROFILE_COUNT; i++) {
         int cx = 16 + i * 34;
-        int cy = 69;
+        int cy = 90;
         bool is_active = (i == active_idx);
         bool is_connected = zmk_ble_profile_is_connected(i);
         bool is_bonded = !zmk_ble_profile_is_open(i);
