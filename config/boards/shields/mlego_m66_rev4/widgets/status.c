@@ -24,6 +24,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/events/wpm_state_changed.h>
 #include <zmk/keymap.h>
 #include <zmk/usb.h>
+#include <ctype.h>
 
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_WPM_STATUS)
 #include <zmk/wpm.h>
@@ -86,14 +87,15 @@ static void draw_top(lv_obj_t *widget, const struct status_state *state) {
   // Fill background
   lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
 
-  // Draw battery
+  // Draw battery (starts in column 1)
   draw_battery(canvas, state);
-  char percentage[5] = {};
-  snprintf(percentage, sizeof(percentage), "%3u%%", state->battery);
-  canvas_draw_text(canvas, 0, 20, CONFIG_DISP_CANVAS - 18, &label_dsc,
-                   percentage);
 
-  // Draw output status
+  // Percentage (starts in column 1)
+  char percentage[8] = {};
+  snprintf(percentage, sizeof(percentage), "%u%%", state->battery);
+  canvas_draw_text(canvas, 16, 20, 39, &label_dsc, percentage);
+
+  // Draw output status / connection indicator (starts in column 1)
   char output_text[10] = {};
   switch (state->selected_endpoint.transport) {
   case ZMK_TRANSPORT_USB:
@@ -114,7 +116,7 @@ static void draw_top(lv_obj_t *widget, const struct status_state *state) {
     break;
   }
 
-  canvas_draw_text(canvas, 0, 38, 20, &label_dsc, output_text);
+  canvas_draw_text(canvas, 34, 38, 21, &label_dsc, output_text);
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_WPM_STATUS)
 
   // Draw WPM
@@ -212,27 +214,63 @@ static void draw_bottom(lv_obj_t *widget, const struct status_state *state) {
     return;
   }
 
-  lv_draw_rect_dsc_t rect_black_dsc;
-  init_rect_dsc(&rect_black_dsc, LVGL_BACKGROUND);
-  lv_draw_label_dsc_t label_dsc;
-  init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_18,
-                 LV_TEXT_ALIGN_LEFT);
+  bool is_base = (state->layer_index == 0);
+  lv_color_t card_fg = is_base ? LVGL_FOREGROUND : LVGL_BACKGROUND;
 
-  // Fill background
+  // Fill canvas background
   lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
 
-  char keyb[10] = {};
-  strcat(keyb, LV_SYMBOL_KEYBOARD);
-  canvas_draw_text(canvas, 1, 16, 50, &label_dsc, keyb);
+  // Draw outer badge rectangle (48 wide x 45 high, flush against top & right margins)
+  lv_draw_rect_dsc_t outer_dsc;
+  init_rect_dsc(&outer_dsc, LVGL_FOREGROUND);
+  canvas_draw_rect(canvas, 1, 8, 48, 45, &outer_dsc);
 
-  // Draw layer
-  if (state->layer_label == NULL) {
-    char text[10] = {};
-    sprintf(text, "%i", state->layer_index);
-    canvas_draw_text(canvas, 1, 38w, 50, &label_dsc, text);
-  } else {
-    canvas_draw_text(canvas, 1, 38, 50, &label_dsc, state->layer_label);
+  // If base layer, draw inner background to make an outline badge; if active layer, keep solid
+  if (is_base) {
+    lv_draw_rect_dsc_t inner_dsc;
+    init_rect_dsc(&inner_dsc, LVGL_BACKGROUND);
+    canvas_draw_rect(canvas, 2, 9, 46, 43, &inner_dsc);
   }
+
+  // Divider line separating header from layer text
+  lv_draw_line_dsc_t line_dsc;
+  init_line_dsc(&line_dsc, card_fg, 1);
+  lv_point_t line_pts[2] = {{2, 32}, {47, 32}};
+  canvas_draw_line(canvas, line_pts, 2, &line_dsc);
+
+  // Keyboard symbol in the header area
+  lv_draw_label_dsc_t icon_dsc;
+  init_label_dsc(&icon_dsc, card_fg, &lv_font_montserrat_14, LV_TEXT_ALIGN_CENTER);
+  canvas_draw_text(canvas, 5, 34, 40, &icon_dsc, LV_SYMBOL_KEYBOARD);
+
+  // Format clean layer label
+  char layer_name[10] = {};
+  if (state->layer_label != NULL) {
+    const char *src = state->layer_label;
+    if (strncmp(src, "qw", 2) == 0) {
+      strcpy(layer_name, "QW");
+    } else if (strncmp(src, "lower", 5) == 0) {
+      strcpy(layer_name, "LWR");
+    } else if (strncmp(src, "raise", 5) == 0) {
+      strcpy(layer_name, "RSE");
+    } else if (strncmp(src, "adjust", 6) == 0) {
+      strcpy(layer_name, "ADJ");
+    } else {
+      int j = 0;
+      for (int i = 0; src[i] != '\0' && src[i] != '_' && j < 5; i++) {
+        layer_name[j++] = toupper((unsigned char)src[i]);
+      }
+      layer_name[j] = '\0';
+    }
+  } else {
+    snprintf(layer_name, sizeof(layer_name), "L%d", state->layer_index);
+  }
+
+  lv_draw_label_dsc_t label_dsc;
+  const lv_font_t *font = (strlen(layer_name) > 3) ? &lv_font_montserrat_14 : &lv_font_montserrat_18;
+  init_label_dsc(&label_dsc, card_fg, font, LV_TEXT_ALIGN_CENTER);
+  int text_y = (strlen(layer_name) > 3) ? 14 : 12;
+  canvas_draw_text(canvas, 5, text_y, 40, &label_dsc, layer_name);
 
   // Rotate canvas
   rotate_canvas(canvas);
