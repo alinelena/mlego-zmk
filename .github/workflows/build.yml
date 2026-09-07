@@ -34,6 +34,13 @@ jobs:
           name: firmware
           path: firmware
 
+      - name: Rename firmware (strip -zmk suffix)
+        run: |
+          for f in firmware/*-zmk.uf2; do
+            [ -e "$f" ] || continue
+            mv "$f" "${f/-zmk.uf2/.uf2}"
+          done
+
       - name: Commit and push firmware
         uses: stefanzweifel/git-auto-commit-action@v7
         with:

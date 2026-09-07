@@ -22,7 +22,7 @@ fi
 shield="mlego_m66_rev4 ls013b7dh05"
 board="nice_nano//zmk"
 build_folder="build_mlego_m66_rev4_ls013b7dh05"
-uf2_name="mlego_m66_rev4 ls013b7dh05-nice_nano__zmk-zmk.uf2"
+uf2_name="mlego_m66_rev4-ls013b7dh05-nice_nano.uf2"
 
 pushd "$zmk_folder" > /dev/null
 
