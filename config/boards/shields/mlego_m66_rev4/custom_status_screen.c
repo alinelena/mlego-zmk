@@ -116,9 +116,7 @@ static void dismiss_splash_work_handler(struct k_work *work) {
     splash_active = false;
     splash_is_manual = false;
     if (status_screen != NULL) {
-        zmk_widget_status_refresh(&status_widget);
         lv_scr_load(status_screen);
-        lv_obj_invalidate(status_screen);
     }
 }
 
@@ -134,9 +132,7 @@ static void splash_toggle_work_handler(struct k_work *work) {
         splash_is_manual = false;
         k_work_cancel_delayable(&splash_timeout_work);
         if (status_screen != NULL) {
-            zmk_widget_status_refresh(&status_widget);
             lv_scr_load(status_screen);
-            lv_obj_invalidate(status_screen);
         }
     } else {
         if (splash_screen == NULL) {
