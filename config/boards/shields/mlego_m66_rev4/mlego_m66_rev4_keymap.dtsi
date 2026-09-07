@@ -43,6 +43,11 @@
             tapping-term-ms = <200>;
             bindings = <&mo RSE>, <&tog RSE>, <&trans>;
         };
+
+        disp_info: disp_info {
+            compatible = "zmk,behavior-display-info";
+            #binding-cells = <0>;
+        };
     };
 
     keymap {
@@ -99,7 +104,7 @@ adj layer
  * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
  * │HUI│HUD │   │   │rst│   │    │   │   │   │   │ EFF│ EFR│
  * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
- * │SAI│SAD │   │   │   │   │    │   │   │   │   │    │    │
+ * │SAI│SAD │   │DSP│   │   │    │   │   │   │   │    │    │
  * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
  * │BRI│BRD │   │   │   │   │boot│   │   │   │   │bt  │    │
  * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
@@ -111,7 +116,7 @@ adj layer
             bindings = <
                 &trans  &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans      &trans &trans &trans &trans       &trans       &trans &trans
                 &trans  &trans          &trans       &trans       &sys_reset   &trans        &trans      &trans &trans &trans &trans       &trans       &trans
-                &trans  &trans          &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &trans       &trans       &trans
+                &trans  &trans          &trans       &disp_info   &trans       &trans       &trans      &trans &trans &trans &trans       &trans       &trans
                 &trans  &trans          &trans       &trans       &trans       &trans       &bootloader &trans &trans &trans &out OUT_USB &out OUT_BLE &out OUT_TOG 
                 &trans  &trans          &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &bt BT_NXT   &bt BT_CLR   &bt BT_PRV   
             >;

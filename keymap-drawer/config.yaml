@@ -368,6 +368,9 @@ parse_config:
     "&trse":
       tap: "⇑"
       hold: "rse"
+    "&disp_info":
+      tap: $$mdi:information-outline$$
+      hold: "info"
     '&out OUT_BLE':
       tap: $$mdi:keyboard$$
       shifted: $$mdi:bluetooth$$

@@ -1,3 +1,5 @@
+zephyr_library_sources(behavior_display_info.c)
+
 if(CONFIG_ZMK_DISPLAY)
   zephyr_library_include_directories(${CMAKE_SOURCE_DIR}/include)
   zephyr_library_sources(custom_status_screen.c)
