@@ -232,29 +232,22 @@ static void draw_bottom(lv_obj_t *widget, const struct status_state *state) {
     canvas_draw_rect(canvas, 2, 6, 46, 44, &inner_dsc);
   }
 
-  // Divider line separating layer number rectangle from icon area
+  // Divider line separating layer name rectangle from icon area
   lv_draw_line_dsc_t line_dsc;
   init_line_dsc(&line_dsc, card_fg, 1);
   lv_point_t line_pts[2] = {{2, 28}, {48, 28}};
   canvas_draw_line(canvas, line_pts, 2, &line_dsc);
 
-  // Upper rectangle: layer number centered in Montserrat 18
-  char layer_num[6] = {};
-  snprintf(layer_num, sizeof(layer_num), "%d", state->layer_index);
-  lv_draw_label_dsc_t num_dsc;
-  init_label_dsc(&num_dsc, card_fg, &lv_font_montserrat_18, LV_TEXT_ALIGN_CENTER);
-  canvas_draw_text(canvas, 2, 8, 46, &num_dsc, layer_num);
-
-  // Format clean short layer name
-  char layer_name[6] = {};
+  // Format 3-letter layer name
+  char layer_name[8] = {};
   if (state->layer_label != NULL) {
     const char *src = state->layer_label;
     if (strncmp(src, "qw", 2) == 0) {
-      strcpy(layer_name, "QW");
-    } else if (strncmp(src, "lower", 5) == 0) {
-      strcpy(layer_name, "LWR");
+      strcpy(layer_name, "QWE");
     } else if (strncmp(src, "raise", 5) == 0) {
       strcpy(layer_name, "RSE");
+    } else if (strncmp(src, "lower", 5) == 0) {
+      strcpy(layer_name, "LWR");
     } else if (strncmp(src, "adjust", 6) == 0) {
       strcpy(layer_name, "ADJ");
     } else {
@@ -264,18 +257,21 @@ static void draw_bottom(lv_obj_t *widget, const struct status_state *state) {
       }
       layer_name[j] = '\0';
     }
+  } else {
+    snprintf(layer_name, sizeof(layer_name), "L%d", state->layer_index);
   }
 
-  // Lower area: keyboard icon with layer name centered in Montserrat 14
-  char sub_text[16] = {};
-  if (layer_name[0] != '\0') {
-    snprintf(sub_text, sizeof(sub_text), "%s %s", LV_SYMBOL_KEYBOARD, layer_name);
-  } else {
-    snprintf(sub_text, sizeof(sub_text), "%s", LV_SYMBOL_KEYBOARD);
-  }
-  lv_draw_label_dsc_t sub_dsc;
-  init_label_dsc(&sub_dsc, card_fg, &lv_font_montserrat_14, LV_TEXT_ALIGN_CENTER);
-  canvas_draw_text(canvas, 2, 32, 46, &sub_dsc, sub_text);
+  // Upper rectangle: 3-letter layer name centered in Montserrat 18
+  const lv_font_t *name_font = (strlen(layer_name) > 3) ? &lv_font_montserrat_14 : &lv_font_montserrat_18;
+  int text_y = (strlen(layer_name) > 3) ? 10 : 8;
+  lv_draw_label_dsc_t name_dsc;
+  init_label_dsc(&name_dsc, card_fg, name_font, LV_TEXT_ALIGN_CENTER);
+  canvas_draw_text(canvas, 2, text_y, 46, &name_dsc, layer_name);
+
+  // Lower area: keyboard icon centered in Montserrat 14
+  lv_draw_label_dsc_t icon_dsc;
+  init_label_dsc(&icon_dsc, card_fg, &lv_font_montserrat_14, LV_TEXT_ALIGN_CENTER);
+  canvas_draw_text(canvas, 2, 32, 46, &icon_dsc, LV_SYMBOL_KEYBOARD);
 
   // Rotate canvas
   rotate_canvas(canvas);
