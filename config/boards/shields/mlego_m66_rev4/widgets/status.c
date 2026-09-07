@@ -213,22 +213,22 @@ static void draw_bottom(lv_obj_t *widget, const struct status_state *state) {
     lv_draw_rect_dsc_t rect_black_dsc;
     init_rect_dsc(&rect_black_dsc, LVGL_BACKGROUND);
     lv_draw_label_dsc_t label_dsc;
-    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_18, LV_TEXT_ALIGN_CENTER);
+    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_18, LV_TEXT_ALIGN_LEFT);
 
     // Fill background
     lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
 
     char keyb[10] = {};
     strcat(keyb, LV_SYMBOL_KEYBOARD);
-    canvas_draw_text(canvas, 0, 4, 20, &label_dsc, keyb);
+    canvas_draw_text(canvas, 1, 16, 50, &label_dsc, keyb);
 
     // Draw layer
     if (state->layer_label == NULL) {
         char text[10] = {};
         sprintf(text, "%i", state->layer_index);
-        canvas_draw_text(canvas, 0, 26, 20, &label_dsc, text);
+        canvas_draw_text(canvas, 1, 38, 50, &label_dsc, text);
     } else {
-        canvas_draw_text(canvas, 0, 26, 20, &label_dsc, state->layer_label);
+        canvas_draw_text(canvas, 1, 38, 50, &label_dsc, state->layer_label);
     }
 
     // Rotate canvas
