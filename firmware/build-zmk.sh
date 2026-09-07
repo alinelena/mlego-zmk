@@ -1,57 +1,56 @@
 #!/usr/bin/env bash
 #
 
+set -e
+
 l=$PWD
+repo_root="$HOME/playground/keyboard/mlego-zmk"
 zmk_folder="$HOME/lavello/zmk/app"
-zmk_config="$HOME/playground/keyboard/mlego-zmk/config/"
-
+zmk_config="$repo_root/config"
 zmk_extra="$HOME/lavello/zmk-helpers"
-pushd $zmk_folder
-#export ZEPHYR_SDK_INSTALL_DIR=/opt/zephyr-sdk-0.17.0 
 
+export ZEPHYR_TOOLCHAIN_VARIANT="${ZEPHYR_TOOLCHAIN_VARIANT:-zephyr}"
+export ZEPHYR_SDK_INSTALL_DIR="${ZEPHYR_SDK_INSTALL_DIR:-/opt/zephyr-sdk-0.17.0}"
+export ZEPHYR_BASE="${ZEPHYR_BASE:-$HOME/lavello/zmk/zephyr}"
 
-#build_folder="xiao_rp2040_rev7"
-#board="seeeduino_xiao_rp2040"
-#shield="mlego5x13_rev7"
+if command -v west &>/dev/null; then
+  WEST_CMD="west"
+else
+  WEST_CMD="micromamba run -n zmk west"
+fi
 
+shield="mlego_m66_rev4 ls013b7dh05"
+board="nice_nano//zmk"
+build_folder="build_mlego_m66_rev4_ls013b7dh05"
+uf2_name="mlego_m66_rev4 ls013b7dh05-nice_nano__zmk-zmk.uf2"
 
-#build_folder="xiao_ble_61_rev8"
-#board="seeeduino_xiao_ble"
-#shield="mlego5x13_61_r8"
+pushd "$zmk_folder" > /dev/null
 
-##shield="mlego_m66_rev4"
-#shield="mlego_m66_rev4_ls011b7dh03"
-#shield="mlego_m66_rev4_ls013b7dh03"
-#shield="mlego_m66_rev4_ls013b7dh05"
-#shield="mlego_m66_rev4_eink154"
-#for s in "" "_ls011b7dh03" "_ls013b7dh03" "_ls013b7dh05" "_eink154" "_eink213"; do
-# for s in "_eink154"; do
-#for s in "_eink213"; do
-#for s in "ls013b7dh05" ; do
-#for s in "ls013b7dh03s" ; do
-#for s in "ls011b7dh03" ; do
-  shield="mlego_m66_rev4 $s"
-  board="nice_nano@2.0.0"
-  build_folder="mlego_m66_rev4${shield/ /_}"
-  shield="mlego_m66_rev4_rp2040 st7735"
-  board="rpi_pico"
-  build_folder="mlego_m66_rev4${shield/ /_}"
+rm -rf "$build_folder"
 
+$WEST_CMD -z "$ZEPHYR_BASE" build -d "$build_folder" -p always -b "$board" -S studio-rpc-usb-uart -- \
+  -DSHIELD="$shield" \
+  -DZMK_CONFIG="$zmk_config" \
+  -DZMK_EXTRA_MODULES="$zmk_extra" \
+  -DCONFIG_ZMK_STUDIO=y
 
-  rm -rf "$build_folder"
+if [[ -f "$build_folder/zephyr/zmk.uf2" ]]; then
+  cp "$build_folder/zephyr/zmk.uf2" "$l/$uf2_name"
+  [[ -d "$repo_root/firmware" ]] && cp "$build_folder/zephyr/zmk.uf2" "$repo_root/firmware/$uf2_name"
+  echo "Firmware successfully built: $uf2_name"
+fi
 
-  west build -d "$build_folder" -p always -b $board -S studio-rpc-usb-uart -- -DSHIELD="$shield" -DZMK_CONFIG=$zmk_config -DZMK_EXTRA_MODULES=$zmk_extra -DCONFIG_ZMK_STUDIO=y
-  #west build -d "$build_folder" -p always -b $board  -- -DSHIELD="$shield" -DZMK_CONFIG=$zmk_config -DZMK_EXTRA_MODULES=$zmk_extra -DCONFIG_ZMK_STUDIO=y
-  [[ -f "$build_folder/zephyr/zmk.uf2" ]] && cp "$build_folder/zephyr/zmk.uf2" "$l/$build_folder.uf2"
-#done
+popd > /dev/null
 
+echo "Waiting for /run/media/drFaustroll/NICENANO/ ..."
 while [ ! -d /run/media/drFaustroll/NICENANO/ ]; do
   sleep 1
   echo -n "."
 done
 
-echo "done"
+echo " done"
 
 set -x
 
-cp "$l/$build_folder.uf2" /run/media/drFaustroll/NICENANO/
+cp "$repo_root/firmware/$uf2_name" /run/media/drFaustroll/NICENANO/
+
