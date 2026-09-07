@@ -73,7 +73,7 @@ static void draw_top(lv_obj_t *widget, const struct status_state *state) {
 
   lv_draw_label_dsc_t label_dsc;
   init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_18,
-                 LV_TEXT_ALIGN_RIGHT);
+                 LV_TEXT_ALIGN_LEFT);
   lv_draw_label_dsc_t label_dsc_wpm;
   init_label_dsc(&label_dsc_wpm, LVGL_FOREGROUND, &lv_font_unscii_8,
                  LV_TEXT_ALIGN_RIGHT);
@@ -87,15 +87,15 @@ static void draw_top(lv_obj_t *widget, const struct status_state *state) {
   // Fill background
   lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
 
-  // Draw battery (starts in column 1)
+  // Draw battery (left aligned starting in column 1)
   draw_battery(canvas, state);
 
-  // Percentage (starts in column 1)
-  char percentage[8] = {};
+  // Percentage (left aligned starting in column 1, with % sign)
+  char percentage[10] = {};
   snprintf(percentage, sizeof(percentage), "%u%%", state->battery);
-  canvas_draw_text(canvas, 16, 20, 39, &label_dsc, percentage);
+  canvas_draw_text(canvas, 1, 19, 54, &label_dsc, percentage);
 
-  // Draw output status / connection indicator (starts in column 1)
+  // Draw output status / endpoint symbol (left aligned under battery percentage)
   char output_text[10] = {};
   switch (state->selected_endpoint.transport) {
   case ZMK_TRANSPORT_USB:
@@ -116,7 +116,7 @@ static void draw_top(lv_obj_t *widget, const struct status_state *state) {
     break;
   }
 
-  canvas_draw_text(canvas, 34, 38, 21, &label_dsc, output_text);
+  canvas_draw_text(canvas, 1, 38, 54, &label_dsc, output_text);
 #if IS_ENABLED(CONFIG_ZMK_WIDGET_WPM_STATUS)
 
   // Draw WPM
