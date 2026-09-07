@@ -26,9 +26,10 @@ jobs:
       output_folder: "keymap-drawer"            # path to save produced SVG and keymap YAML files
       parse_args: ""  # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
       draw_args: "mlego_m66_rev4:'-d config/boards/shields/mlego_m66_rev4/mlego_m66_rev4_layout.dtsi' mlego_m66_rev4_rp2040:'-d config/boards/shields/mlego_m66_rev4/mlego_m66_rev4_layout.dtsi'"   # map of extra args to pass to `keymap draw`, e.g. "corne:'-k corne_rotated' cradio:'-k paroxysm'"
-      amend_commit: true # whether to amend the commit or create a new one
+      amend_commit: false # whether to amend the commit or create a new one
       fail_on_error: true
   draw_m65_r8_61:
+    needs: draw
     uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
     permissions:
       contents: write  # allow workflow to commit to the repo
@@ -39,9 +40,10 @@ jobs:
       output_folder: "keymap-drawer"            # path to save produced SVG and keymap YAML files
       parse_args: ""  # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
       draw_args: "mlego5x13_61_r8:'-d config/boards/shields/mlego5x13_61_r8/mlego5x13_61_r8_layout.dtsi'"
-      amend_commit: true # whether to amend the commit or create a new one
+      amend_commit: false # whether to amend the commit or create a new one
       fail_on_error: true
   draw_m65_rev8:
+    needs: draw_m65_r8_61
     uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@main
     permissions:
       contents: write  # allow workflow to commit to the repo
@@ -52,5 +54,5 @@ jobs:
       output_folder: "keymap-drawer"            # path to save produced SVG and keymap YAML files
       parse_args: ""  # map of extra args to pass to `keymap parse`, e.g. "corne:'-l Def Lwr Rse' cradio:''"
       draw_args: "mlego5x13_rev8:'-d config/boards/shields/mlego5x13_rev8/mlego5x13_rev8_layout.dtsi'"
-      amend_commit: true # whether to amend the commit or create a new one
+      amend_commit: false # whether to amend the commit or create a new one
       fail_on_error: true
