@@ -28,8 +28,8 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #define SPLASH_TIMEOUT_MS 4000
 
-#define SPLASH_W 120
-#define SPLASH_H 64
+#define SPLASH_W 168
+#define SPLASH_H 88
 #define SPLASH_BUF_SIZE \
     LV_CANVAS_BUF_SIZE(SPLASH_W, SPLASH_H, LV_COLOR_FORMAT_GET_BPP(CANVAS_COLOR_FORMAT), \
                        LV_DRAW_BUF_STRIDE_ALIGN)
@@ -62,7 +62,7 @@ static void update_splash_canvas(void) {
     lv_canvas_fill_bg(splash_canvas, LVGL_BACKGROUND, LV_OPA_COVER);
 
     lv_draw_label_dsc_t label_dsc;
-    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_12, LV_TEXT_ALIGN_CENTER);
+    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_14, LV_TEXT_ALIGN_CENTER);
 #if IS_ENABLED(CONFIG_ZMK_BLE)
     char splash_text[128];
     bt_addr_le_t addrs[CONFIG_BT_ID_MAX];
@@ -81,31 +81,36 @@ static void update_splash_canvas(void) {
                          SPLASH_TITLE "\nZephyr: " KERNEL_VERSION_STRING "\nZMK: " APP_VERSION_STRING);
     }
 
-    // 5 circles in a line for the 5 BT profiles
+    // 5 circles in a line for the 5 BT profiles spanning the screen length
     int active_idx = zmk_ble_active_profile_index();
     lv_draw_arc_dsc_t arc_dsc;
     lv_draw_label_dsc_t profile_num_dsc;
-    init_label_dsc(&profile_num_dsc, LVGL_FOREGROUND, &lv_font_montserrat_12, LV_TEXT_ALIGN_CENTER);
+    init_label_dsc(&profile_num_dsc, LVGL_FOREGROUND, &lv_font_montserrat_14, LV_TEXT_ALIGN_CENTER);
 
     for (int i = 0; i < MLEGO_PROFILE_COUNT; i++) {
-        int cx = 20 + i * 20;
-        int cy = 52;
+        int cx = 16 + i * 34;
+        int cy = 69;
         bool is_active = (i == active_idx);
         bool is_connected = zmk_ble_profile_is_connected(i);
+        bool is_bonded = !zmk_ble_profile_is_open(i);
 
         init_arc_dsc(&arc_dsc, LVGL_FOREGROUND, (is_active || is_connected) ? 2 : 1);
-        canvas_draw_arc(splash_canvas, cx, cy, 7, 0, 360, &arc_dsc);
+        canvas_draw_arc(splash_canvas, cx, cy, 11, 0, 360, &arc_dsc);
 
         if (is_connected) {
             lv_draw_arc_dsc_t outer_arc;
             init_arc_dsc(&outer_arc, LVGL_FOREGROUND, 1);
-            canvas_draw_arc(splash_canvas, cx, cy, 9, 0, 360, &outer_arc);
+            canvas_draw_arc(splash_canvas, cx, cy, 14, 0, 360, &outer_arc);
+        } else if (!is_bonded) {
+            lv_draw_arc_dsc_t inner_arc;
+            init_arc_dsc(&inner_arc, LVGL_FOREGROUND, 1);
+            canvas_draw_arc(splash_canvas, cx, cy, 8, 0, 360, &inner_arc);
         }
 
         char p_str[2];
         p_str[0] = '1' + i;
         p_str[1] = '\0';
-        canvas_draw_text(splash_canvas, cx - 6, cy - 6, 13, &profile_num_dsc, p_str);
+        canvas_draw_text(splash_canvas, cx - 8, cy - 7, 17, &profile_num_dsc, p_str);
     }
 #else
     canvas_draw_text(splash_canvas, 0, 8, SPLASH_W, &label_dsc,
