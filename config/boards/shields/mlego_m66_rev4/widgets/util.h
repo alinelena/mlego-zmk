@@ -13,6 +13,8 @@
 #define LVGL_FOREGROUND                                                                            \
     IS_ENABLED(CONFIG_NICE_VIEW_WIDGET_INVERTED) ? lv_color_white() : lv_color_black()
 
+#define MLEGO_PROFILE_COUNT 5
+
 struct status_state {
     uint8_t battery;
     bool charging;
@@ -20,6 +22,8 @@ struct status_state {
     int active_profile_index;
     bool active_profile_connected;
     bool active_profile_bonded;
+    bool profiles_connected[MLEGO_PROFILE_COUNT];
+    bool profiles_bonded[MLEGO_PROFILE_COUNT];
     uint8_t layer_index;
     const char *layer_label;
     uint8_t wpm[10];

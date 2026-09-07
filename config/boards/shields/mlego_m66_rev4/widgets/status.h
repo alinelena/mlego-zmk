@@ -5,8 +5,9 @@
 #include "util.h"
 
 #define ELEP_CANVAS_BUF_SIZE                                                                       \
-    LV_CANVAS_BUF_SIZE(128, 40, LV_COLOR_FORMAT_GET_BPP(CANVAS_COLOR_FORMAT),                      \
+    LV_CANVAS_BUF_SIZE(128, 128, LV_COLOR_FORMAT_GET_BPP(CANVAS_COLOR_FORMAT),                    \
                        LV_DRAW_BUF_STRIDE_ALIGN)
+
 
 struct zmk_widget_status {
     sys_snode_t node;

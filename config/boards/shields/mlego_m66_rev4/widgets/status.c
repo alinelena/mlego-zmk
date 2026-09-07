@@ -39,6 +39,8 @@ struct output_status_state {
     int active_profile_index;
     bool active_profile_connected;
     bool active_profile_bonded;
+    bool profiles_connected[MLEGO_PROFILE_COUNT];
+    bool profiles_bonded[MLEGO_PROFILE_COUNT];
 };
 
 struct layer_status_state {
@@ -99,6 +101,8 @@ static void draw_top(lv_obj_t *widget, const struct status_state *state) {
         } else {
             strcat(output_text, LV_SYMBOL_SETTINGS);
         }
+        break;
+    default:
         break;
     }
 
@@ -163,32 +167,43 @@ static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
     // Fill background
     lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
 
-    // Draw circles
-    int circle_offsets[5][2] = {
-        {20, 13}, {55, 13}, {34, 34}, {13, 55}, {55, 55},
+    // Draw circles (5-dice pattern on 64x64 canvas)
+    int circle_offsets[MLEGO_PROFILE_COUNT][2] = {
+        {13, 13}, {55, 13}, {34, 34}, {13, 55}, {55, 55},
     };
 
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < MLEGO_PROFILE_COUNT; i++) {
         bool selected = i == state->active_profile_index;
 
-        if (selected) {
-            canvas_draw_arc(canvas, circle_offsets[0][0], circle_offsets[0][1], 13, 0, 360,
+        if (state->profiles_connected[i]) {
+            canvas_draw_arc(canvas, circle_offsets[i][0], circle_offsets[i][1], 13, 0, 360,
                             &arc_dsc);
-
-            canvas_draw_arc(canvas, circle_offsets[0][0], circle_offsets[0][1], 9, 0, 359,
-                            &arc_dsc_filled);
-
-            char label[2];
-            snprintf(label, sizeof(label), "%d", i + 1);
-            canvas_draw_text(canvas, circle_offsets[0][0] - 8, circle_offsets[0][1] - 10, 16,
-                             (selected ? &label_dsc_black : &label_dsc), label);
+        } else if (state->profiles_bonded[i]) {
+            const int segments = 8;
+            const int gap = 20;
+            for (int j = 0; j < segments; ++j) {
+                canvas_draw_arc(canvas, circle_offsets[i][0], circle_offsets[i][1], 13,
+                                360. / segments * j + gap / 2.0,
+                                360. / segments * (j + 1) - gap / 2.0, &arc_dsc);
+            }
         }
+
+        if (selected) {
+            canvas_draw_arc(canvas, circle_offsets[i][0], circle_offsets[i][1], 9, 0, 359,
+                            &arc_dsc_filled);
+        }
+
+        char label[2];
+        snprintf(label, sizeof(label), "%d", i + 1);
+        canvas_draw_text(canvas, circle_offsets[i][0] - 8, circle_offsets[i][1] - 10, 16,
+                         (selected ? &label_dsc_black : &label_dsc), label);
     }
 
     // Rotate canvas
     rotate_canvas(canvas);
 #endif
 }
+
 
 static void draw_bottom(lv_obj_t *widget, const struct status_state *state) {
     lv_obj_t *canvas = lv_obj_get_child(widget, 2);
@@ -261,6 +276,10 @@ static void set_output_status(struct zmk_widget_status *widget,
     widget->state.active_profile_index = state->active_profile_index;
     widget->state.active_profile_connected = state->active_profile_connected;
     widget->state.active_profile_bonded = state->active_profile_bonded;
+    for (int i = 0; i < MLEGO_PROFILE_COUNT; ++i) {
+        widget->state.profiles_connected[i] = state->profiles_connected[i];
+        widget->state.profiles_bonded[i] = state->profiles_bonded[i];
+    }
 
     draw_top(widget->obj, &widget->state);
     draw_middle(widget->obj, &widget->state);
@@ -272,13 +291,19 @@ static void output_status_update_cb(struct output_status_state state) {
 }
 
 static struct output_status_state output_status_get_state(const zmk_event_t *_eh) {
-    return (struct output_status_state){
+    struct output_status_state state = {
         .selected_endpoint = zmk_endpoint_get_selected(),
         .active_profile_index = zmk_ble_active_profile_index(),
         .active_profile_connected = zmk_ble_active_profile_is_connected(),
         .active_profile_bonded = !zmk_ble_active_profile_is_open(),
     };
+    for (int i = 0; i < MIN(MLEGO_PROFILE_COUNT, ZMK_BLE_PROFILE_COUNT); ++i) {
+        state.profiles_connected[i] = zmk_ble_profile_is_connected(i);
+        state.profiles_bonded[i] = !zmk_ble_profile_is_open(i);
+    }
+    return state;
 }
+
 
 ZMK_DISPLAY_WIDGET_LISTENER(widget_output_status, struct output_status_state,
                             output_status_update_cb, output_status_get_state)
@@ -392,12 +417,16 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
 #else
     lv_obj_align(picture, LV_ALIGN_CENTER, 30, 0);
 #endif
-#endif
-#if CONFIG_DISP_ROTATE == 1800
+#elif CONFIG_DISP_ROTATE == 1800
+    lv_obj_set_size(picture, elep.header.w, elep.header.h);
+    lv_canvas_set_buffer(picture, widget->cbuf4, elep.header.w, elep.header.h, CANVAS_COLOR_FORMAT);
+    lv_obj_align(picture, LV_ALIGN_CENTER, 0, -20);
+#else
     lv_obj_set_size(picture, elep.header.w, elep.header.h);
     lv_canvas_set_buffer(picture, widget->cbuf4, elep.header.w, elep.header.h, CANVAS_COLOR_FORMAT);
     lv_obj_align(picture, LV_ALIGN_CENTER, 0, -20);
 #endif
+
     draw_image(widget->obj);
 #endif
     sys_slist_append(&widgets, &widget->node);

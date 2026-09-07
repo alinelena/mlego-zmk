@@ -30,10 +30,12 @@ void rotate_canvas(lv_obj_t *canvas) {
 
     lv_draw_sw_rotate(buf_copy, buf, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS, stride, stride,
                       rotation, CANVAS_COLOR_FORMAT);
+    lv_obj_invalidate(canvas);
 #endif
 }
 
 void rotate_img_to_canvas(lv_obj_t *canvas, const lv_image_dsc_t *img) {
+    lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
     uint8_t *dest = lv_canvas_get_draw_buf(canvas)->data;
 #if CONFIG_DISP_ROTATE == 900
     const uint32_t src_stride = lv_draw_buf_width_to_stride(img->header.w, CANVAS_COLOR_FORMAT);
@@ -55,6 +57,7 @@ void rotate_img_to_canvas(lv_obj_t *canvas, const lv_image_dsc_t *img) {
     lv_draw_image_dsc_init(&img_dsc);
     canvas_draw_img(canvas, 0, 0, img, &img_dsc);
 #endif
+    lv_obj_invalidate(canvas);
 }
 
 void draw_battery(lv_obj_t *canvas, const struct status_state *state) {
