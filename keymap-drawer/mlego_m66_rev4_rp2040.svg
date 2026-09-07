@@ -418,8 +418,8 @@ path.combo {
    }
 }
 </style>
-<g transform="translate(60, 0)" class="layer-qw">
-<text x="0" y="30" class="label" id="qw">qw</text>
+<g transform="translate(60, 0)" class="layer-qwerty">
+<text x="0" y="30" class="label" id="qwerty">qwerty</text>
 <g transform="translate(0, 60)">
 <g transform="translate(38, 114)" class="key keypos-0">
 <rect rx="4" ry="4" x="-36" y="-36" width="72" height="72" class="key side"/>

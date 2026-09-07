@@ -1,6 +1,6 @@
 layout: {zmk_keyboard: mlego_m66_rev4_rp2040}
 layers:
-  qw:
+  qwerty:
   - {t: ⎋, h: esc}
   - {t: '1', s: '!'}
   - {t: '2', s: '"'}
