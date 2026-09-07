@@ -154,69 +154,47 @@ static void draw_top(lv_obj_t *widget, const struct status_state *state) {
 
 
 #if IS_ENABLED(CONFIG_ZMK_BLE)
-static const char *profile_labels[MLEGO_PROFILE_COUNT] = {"1", "2", "3", "4", "5"};
-
 static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
     lv_obj_t *canvas = lv_obj_get_child(widget, 1);
     if (canvas == NULL) {
         return;
     }
 
-    lv_draw_label_dsc_t label_dsc;
-    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_12, LV_TEXT_ALIGN_CENTER);
-    lv_draw_label_dsc_t label_dsc_black;
-    init_label_dsc(&label_dsc_black, LVGL_BACKGROUND, &lv_font_montserrat_12, LV_TEXT_ALIGN_CENTER);
-
     // Fill background
     lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
 
-    // Draw circles (5-dice pattern on 64x64 canvas, all centers and radii well within 0..63)
-    const int circle_offsets[MLEGO_PROFILE_COUNT][2] = {
-        {15, 15}, {49, 15}, {32, 32}, {15, 49}, {49, 49},
-    };
-
-    for (int i = 0; i < MLEGO_PROFILE_COUNT; i++) {
-        int cx = circle_offsets[i][0];
-        int cy = circle_offsets[i][1];
-        bool selected = (i == state->active_profile_index);
-        bool connected = state->profiles_connected[i];
-        bool bonded = state->profiles_bonded[i];
-
-        if (selected) {
-            // Filled circle for selected profile
-            lv_draw_rect_dsc_t disc_dsc;
-            init_rect_dsc(&disc_dsc, LVGL_FOREGROUND);
-            disc_dsc.radius = LV_RADIUS_CIRCLE;
-            disc_dsc.bg_opa = LV_OPA_COVER;
-            disc_dsc.border_width = 0;
-            canvas_draw_rect(canvas, cx - 10, cy - 10, 21, 21, &disc_dsc);
-
-            // If connected, draw outer circle ring
-            if (connected) {
-                lv_draw_rect_dsc_t outer_dsc;
-                init_rect_dsc(&outer_dsc, LVGL_BACKGROUND);
-                outer_dsc.radius = LV_RADIUS_CIRCLE;
-                outer_dsc.bg_opa = LV_OPA_TRANSP;
-                outer_dsc.border_color = LVGL_FOREGROUND;
-                outer_dsc.border_width = 1;
-                outer_dsc.border_opa = LV_OPA_COVER;
-                canvas_draw_rect(canvas, cx - 12, cy - 12, 25, 25, &outer_dsc);
-            }
-        } else if (bonded || connected) {
-            // Outline circle for bonded / connected profile
-            lv_draw_rect_dsc_t ring_dsc;
-            init_rect_dsc(&ring_dsc, LVGL_BACKGROUND);
-            ring_dsc.radius = LV_RADIUS_CIRCLE;
-            ring_dsc.bg_opa = LV_OPA_TRANSP;
-            ring_dsc.border_color = LVGL_FOREGROUND;
-            ring_dsc.border_width = connected ? 2 : 1;
-            ring_dsc.border_opa = LV_OPA_COVER;
-            canvas_draw_rect(canvas, cx - 10, cy - 10, 21, 21, &ring_dsc);
-        }
-
-        lv_draw_label_dsc_t *dsc = selected ? &label_dsc_black : &label_dsc;
-        canvas_draw_text(canvas, cx - 8, cy - 6, 17, dsc, profile_labels[i]);
+    int profile_idx = state->active_profile_index;
+    if (profile_idx < 0 || profile_idx >= MLEGO_PROFILE_COUNT) {
+        profile_idx = 0;
     }
+
+    bool connected = state->active_profile_connected;
+    bool bonded = state->active_profile_bonded;
+
+    // Draw active BT profile in a good size circle (centered at 32, 32)
+    lv_draw_arc_dsc_t arc_dsc;
+    init_arc_dsc(&arc_dsc, LVGL_FOREGROUND, connected ? 3 : 2);
+    canvas_draw_arc(canvas, 32, 32, 22, 0, 360, &arc_dsc);
+
+    if (connected) {
+        // Outer concentric ring for connected state
+        lv_draw_arc_dsc_t outer_dsc;
+        init_arc_dsc(&outer_dsc, LVGL_FOREGROUND, 1);
+        canvas_draw_arc(canvas, 32, 32, 26, 0, 360, &outer_dsc);
+    } else if (!bonded) {
+        // Inner ring for unbonded/open profile
+        lv_draw_arc_dsc_t inner_dsc;
+        init_arc_dsc(&inner_dsc, LVGL_FOREGROUND, 1);
+        canvas_draw_arc(canvas, 32, 32, 18, 0, 360, &inner_dsc);
+    }
+
+    // Active profile number in the center of the circle
+    lv_draw_label_dsc_t label_dsc;
+    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_18, LV_TEXT_ALIGN_CENTER);
+
+    char label[4];
+    snprintf(label, sizeof(label), "%d", profile_idx + 1);
+    canvas_draw_text(canvas, 12, 23, 40, &label_dsc, label);
 
     // Rotate canvas
     rotate_canvas(canvas);

@@ -17,6 +17,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 
 #if IS_ENABLED(CONFIG_ZMK_BLE)
 #include <zephyr/bluetooth/bluetooth.h>
+#include <zmk/ble.h>
 #endif
 
 #ifdef CONFIG_USB_DEVICE_PRODUCT
@@ -72,12 +73,39 @@ static void update_splash_canvas(void) {
         char mac_str[BT_ADDR_STR_LEN];
         bt_addr_to_str(&addrs[0].a, mac_str, sizeof(mac_str));
         snprintf(splash_text, sizeof(splash_text),
-                 SPLASH_TITLE "\nZephyr: " KERNEL_VERSION_STRING "\nZMK: " APP_VERSION_STRING "\n%s",
+                 SPLASH_TITLE "\n%s\nZ: " KERNEL_VERSION_STRING " | ZMK: " APP_VERSION_STRING,
                  mac_str);
-        canvas_draw_text(splash_canvas, 0, 2, SPLASH_W, &label_dsc, splash_text);
+        canvas_draw_text(splash_canvas, 0, 1, SPLASH_W, &label_dsc, splash_text);
     } else {
         canvas_draw_text(splash_canvas, 0, 8, SPLASH_W, &label_dsc,
                          SPLASH_TITLE "\nZephyr: " KERNEL_VERSION_STRING "\nZMK: " APP_VERSION_STRING);
+    }
+
+    // 5 circles in a line for the 5 BT profiles
+    int active_idx = zmk_ble_active_profile_index();
+    lv_draw_arc_dsc_t arc_dsc;
+    lv_draw_label_dsc_t profile_num_dsc;
+    init_label_dsc(&profile_num_dsc, LVGL_FOREGROUND, &lv_font_montserrat_12, LV_TEXT_ALIGN_CENTER);
+
+    for (int i = 0; i < MLEGO_PROFILE_COUNT; i++) {
+        int cx = 20 + i * 20;
+        int cy = 52;
+        bool is_active = (i == active_idx);
+        bool is_connected = zmk_ble_profile_is_connected(i);
+
+        init_arc_dsc(&arc_dsc, LVGL_FOREGROUND, (is_active || is_connected) ? 2 : 1);
+        canvas_draw_arc(splash_canvas, cx, cy, 7, 0, 360, &arc_dsc);
+
+        if (is_connected) {
+            lv_draw_arc_dsc_t outer_arc;
+            init_arc_dsc(&outer_arc, LVGL_FOREGROUND, 1);
+            canvas_draw_arc(splash_canvas, cx, cy, 9, 0, 360, &outer_arc);
+        }
+
+        char p_str[2];
+        p_str[0] = '1' + i;
+        p_str[1] = '\0';
+        canvas_draw_text(splash_canvas, cx - 6, cy - 6, 13, &profile_num_dsc, p_str);
     }
 #else
     canvas_draw_text(splash_canvas, 0, 8, SPLASH_W, &label_dsc,
@@ -109,6 +137,15 @@ static void update_splash_canvas(void) {
     lv_obj_center(splash_canvas);
 }
 
+static void show_splash_work_handler(struct k_work *work) {
+    if (splash_screen != NULL) {
+        update_splash_canvas();
+        lv_scr_load(splash_screen);
+    }
+}
+
+static K_WORK_DEFINE(show_splash_work, show_splash_work_handler);
+
 static void dismiss_splash_work_handler(struct k_work *work) {
     if (!splash_active) {
         return;
@@ -117,6 +154,8 @@ static void dismiss_splash_work_handler(struct k_work *work) {
     splash_is_manual = false;
     if (status_screen != NULL) {
         lv_scr_load(status_screen);
+        zmk_widget_status_refresh(&status_widget);
+        lv_obj_invalidate(status_screen);
     }
 }
 
@@ -133,6 +172,8 @@ static void splash_toggle_work_handler(struct k_work *work) {
         k_work_cancel_delayable(&splash_timeout_work);
         if (status_screen != NULL) {
             lv_scr_load(status_screen);
+            zmk_widget_status_refresh(&status_widget);
+            lv_obj_invalidate(status_screen);
         }
     } else {
         if (splash_screen == NULL) {
@@ -196,8 +237,8 @@ lv_obj_t *zmk_display_status_screen() {
     k_work_init_delayable(&splash_timeout_work, dismiss_splash_work_handler);
     k_work_schedule_for_queue(zmk_display_work_q(), &splash_timeout_work, K_MSEC(SPLASH_TIMEOUT_MS));
 
-    update_splash_canvas();
+    k_work_submit_to_queue(zmk_display_work_q(), &show_splash_work);
 
-    return splash_screen;
+    return status_screen;
 }
 
