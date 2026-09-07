@@ -82,16 +82,26 @@ void draw_battery(lv_obj_t *canvas, const struct status_state *state) {
     lv_draw_rect_dsc_t rect_white_dsc;
     init_rect_dsc(&rect_white_dsc, LVGL_FOREGROUND);
 
-    canvas_draw_rect(canvas, 0, 2, 29, 12, &rect_white_dsc);
-    canvas_draw_rect(canvas, 1, 3, 27, 10, &rect_black_dsc);
-    canvas_draw_rect(canvas, 2, 4, (state->battery + 2) / 4, 8, &rect_white_dsc);
-    canvas_draw_rect(canvas, 30, 5, 3, 6, &rect_white_dsc);
-    canvas_draw_rect(canvas, 31, 6, 1, 4, &rect_black_dsc);
+    // Battery body from src_x = 26 to 54 (maps to screen columns 1 to 29)
+    canvas_draw_rect(canvas, 26, 2, 29, 12, &rect_white_dsc);
+    canvas_draw_rect(canvas, 27, 3, 27, 10, &rect_black_dsc);
+
+    int fw = (state->battery + 2) / 4;
+    if (fw > 25) {
+        fw = 25;
+    }
+    if (fw > 0) {
+        canvas_draw_rect(canvas, 54 - fw, 4, fw, 8, &rect_white_dsc);
+    }
+
+    // Battery positive terminal at src_x = 23 to 25 (maps to screen columns 30 to 32)
+    canvas_draw_rect(canvas, 23, 5, 3, 6, &rect_white_dsc);
+    canvas_draw_rect(canvas, 23, 6, 1, 4, &rect_black_dsc);
 
     if (state->charging) {
         lv_draw_image_dsc_t img_dsc;
         lv_draw_image_dsc_init(&img_dsc);
-        canvas_draw_img(canvas, 9, -1, &bolt, &img_dsc);
+        canvas_draw_img(canvas, 35, -1, &bolt, &img_dsc);
     }
 }
 
