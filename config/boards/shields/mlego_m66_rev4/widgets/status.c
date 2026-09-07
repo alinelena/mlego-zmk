@@ -61,8 +61,8 @@ static void draw_image(lv_obj_t *widget) {
 }
 #endif
 
-static void draw_top(lv_obj_t *widget, const struct status_state *state) {
 #if IS_ENABLED(CONFIG_ZMK_BLE)
+static void draw_top(lv_obj_t *widget, const struct status_state *state) {
     lv_obj_t *canvas = lv_obj_get_child(widget, 0);
 
     lv_draw_label_dsc_t label_dsc;
@@ -144,11 +144,12 @@ static void draw_top(lv_obj_t *widget, const struct status_state *state) {
 
     // Rotate canvas
     rotate_canvas(canvas);
-#endif
 }
+#endif
 
-static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
+
 #if IS_ENABLED(CONFIG_ZMK_BLE)
+static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
     lv_obj_t *canvas = lv_obj_get_child(widget, 1);
 
     lv_draw_rect_dsc_t rect_black_dsc;
@@ -201,8 +202,8 @@ static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
 
     // Rotate canvas
     rotate_canvas(canvas);
-#endif
 }
+#endif
 
 
 static void draw_bottom(lv_obj_t *widget, const struct status_state *state) {
@@ -233,19 +234,17 @@ static void draw_bottom(lv_obj_t *widget, const struct status_state *state) {
     rotate_canvas(canvas);
 }
 
+#if IS_ENABLED(CONFIG_ZMK_BLE)
 static void set_battery_status(struct zmk_widget_status *widget,
                                struct battery_status_state state) {
 #if IS_ENABLED(CONFIG_USB_DEVICE_STACK)
     widget->state.charging = state.usb_present;
 #endif /* IS_ENABLED(CONFIG_USB_DEVICE_STACK) */
-#if IS_ENABLED(CONFIG_ZMK_BLE)
     widget->state.battery = state.level;
 
     draw_top(widget->obj, &widget->state);
-#endif
 }
 
-#if IS_ENABLED(CONFIG_ZMK_BLE)
 static void battery_status_update_cb(struct battery_status_state state) {
     struct zmk_widget_status *widget;
     SYS_SLIST_FOR_EACH_CONTAINER(&widgets, widget, node) { set_battery_status(widget, state); }
@@ -442,3 +441,34 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
 }
 
 lv_obj_t *zmk_widget_status_obj(struct zmk_widget_status *widget) { return widget->obj; }
+ 
+void zmk_widget_status_refresh(struct zmk_widget_status *widget) {
+    if (widget == NULL || widget->obj == NULL) {
+        return;
+    }
+#if IS_ENABLED(CONFIG_ZMK_BLE)
+    widget->state.battery = zmk_battery_state_of_charge();
+#if IS_ENABLED(CONFIG_USB_DEVICE_STACK)
+    widget->state.charging = zmk_usb_is_powered();
+#endif
+    widget->state.selected_endpoint = zmk_endpoint_get_selected();
+    widget->state.active_profile_index = zmk_ble_active_profile_index();
+    widget->state.active_profile_connected = zmk_ble_active_profile_is_connected();
+    widget->state.active_profile_bonded = !zmk_ble_active_profile_is_open();
+    for (int i = 0; i < MIN(MLEGO_PROFILE_COUNT, ZMK_BLE_PROFILE_COUNT); ++i) {
+        widget->state.profiles_connected[i] = zmk_ble_profile_is_connected(i);
+        widget->state.profiles_bonded[i] = !zmk_ble_profile_is_open(i);
+    }
+    draw_middle(widget->obj, &widget->state);
+    draw_top(widget->obj, &widget->state);
+#endif
+    zmk_keymap_layer_index_t index = zmk_keymap_highest_layer_active();
+    widget->state.layer_index = index;
+    widget->state.layer_label = zmk_keymap_layer_name(zmk_keymap_layer_index_to_id(index));
+    draw_bottom(widget->obj, &widget->state);
+
+#if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT) && CONFIG_DISP_HEIGHT>103
+    draw_image(widget->obj);
+#endif
+
+}
