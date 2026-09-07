@@ -109,15 +109,6 @@ static void update_splash_canvas(void) {
     lv_obj_center(splash_canvas);
 }
 
-static void show_splash_work_handler(struct k_work *work) {
-    if (splash_screen != NULL) {
-        update_splash_canvas();
-        lv_scr_load(splash_screen);
-    }
-}
-
-static K_WORK_DEFINE(show_splash_work, show_splash_work_handler);
-
 static void dismiss_splash_work_handler(struct k_work *work) {
     if (!splash_active) {
         return;
@@ -132,7 +123,7 @@ static void dismiss_splash_work_handler(struct k_work *work) {
 }
 
 static void dismiss_splash(void) {
-    if (splash_active) {
+    if (splash_active && !splash_is_manual) {
         k_work_reschedule_for_queue(zmk_display_work_q(), &splash_timeout_work, K_NO_WAIT);
     }
 }
@@ -209,8 +200,8 @@ lv_obj_t *zmk_display_status_screen() {
     k_work_init_delayable(&splash_timeout_work, dismiss_splash_work_handler);
     k_work_schedule_for_queue(zmk_display_work_q(), &splash_timeout_work, K_MSEC(SPLASH_TIMEOUT_MS));
 
-    k_work_submit_to_queue(zmk_display_work_q(), &show_splash_work);
+    update_splash_canvas();
 
-    return status_screen;
+    return splash_screen;
 }
 

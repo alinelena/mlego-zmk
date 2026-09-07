@@ -57,13 +57,18 @@ struct wpm_status_state {
 #if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT) && CONFIG_DISP_HEIGHT>103
 static void draw_image(lv_obj_t *widget) {
     lv_obj_t *canvas = lv_obj_get_child(widget, 3);
-    rotate_img_to_canvas(canvas, &elep);
+    if (canvas != NULL) {
+        rotate_img_to_canvas(canvas, &elep);
+    }
 }
 #endif
 
 #if IS_ENABLED(CONFIG_ZMK_BLE)
 static void draw_top(lv_obj_t *widget, const struct status_state *state) {
     lv_obj_t *canvas = lv_obj_get_child(widget, 0);
+    if (canvas == NULL) {
+        return;
+    }
 
     lv_draw_label_dsc_t label_dsc;
     init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_18, LV_TEXT_ALIGN_RIGHT);
@@ -151,54 +156,77 @@ static void draw_top(lv_obj_t *widget, const struct status_state *state) {
 #if IS_ENABLED(CONFIG_ZMK_BLE)
 static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
     lv_obj_t *canvas = lv_obj_get_child(widget, 1);
+    if (canvas == NULL) {
+        return;
+    }
 
-    lv_draw_rect_dsc_t rect_black_dsc;
-    init_rect_dsc(&rect_black_dsc, LVGL_BACKGROUND);
-    lv_draw_rect_dsc_t rect_white_dsc;
-    init_rect_dsc(&rect_white_dsc, LVGL_FOREGROUND);
-    lv_draw_arc_dsc_t arc_dsc;
-    init_arc_dsc(&arc_dsc, LVGL_FOREGROUND, 2);
-    lv_draw_arc_dsc_t arc_dsc_filled;
-    init_arc_dsc(&arc_dsc_filled, LVGL_FOREGROUND, 9);
     lv_draw_label_dsc_t label_dsc;
-    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_18, LV_TEXT_ALIGN_CENTER);
+    init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_12, LV_TEXT_ALIGN_CENTER);
     lv_draw_label_dsc_t label_dsc_black;
-    init_label_dsc(&label_dsc_black, LVGL_BACKGROUND, &lv_font_montserrat_18, LV_TEXT_ALIGN_CENTER);
+    init_label_dsc(&label_dsc_black, LVGL_BACKGROUND, &lv_font_montserrat_12, LV_TEXT_ALIGN_CENTER);
 
     // Fill background
     lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
 
-    // Draw circles (5-dice pattern on 64x64 canvas)
-    int circle_offsets[MLEGO_PROFILE_COUNT][2] = {
-        {13, 13}, {55, 13}, {34, 34}, {13, 55}, {55, 55},
+    // Draw circles (5-dice pattern on 64x64 canvas, all centers and radii well within 0..63)
+    const int circle_offsets[MLEGO_PROFILE_COUNT][2] = {
+        {15, 15}, {49, 15}, {32, 32}, {15, 49}, {49, 49},
     };
 
-    for (int i = 0; i < MLEGO_PROFILE_COUNT; i++) {
-        bool selected = i == state->active_profile_index;
+    lv_layer_t layer;
+    lv_canvas_init_layer(canvas, &layer);
 
-        if (state->profiles_connected[i]) {
-            canvas_draw_arc(canvas, circle_offsets[i][0], circle_offsets[i][1], 13, 0, 360,
-                            &arc_dsc);
-        } else if (state->profiles_bonded[i]) {
-            const int segments = 8;
-            const int gap = 20;
-            for (int j = 0; j < segments; ++j) {
-                canvas_draw_arc(canvas, circle_offsets[i][0], circle_offsets[i][1], 13,
-                                360. / segments * j + gap / 2.0,
-                                360. / segments * (j + 1) - gap / 2.0, &arc_dsc);
-            }
-        }
+    for (int i = 0; i < MLEGO_PROFILE_COUNT; i++) {
+        int cx = circle_offsets[i][0];
+        int cy = circle_offsets[i][1];
+        bool selected = (i == state->active_profile_index);
+        bool connected = state->profiles_connected[i];
+        bool bonded = state->profiles_bonded[i];
 
         if (selected) {
-            canvas_draw_arc(canvas, circle_offsets[i][0], circle_offsets[i][1], 9, 0, 359,
-                            &arc_dsc_filled);
+            // Filled circle for selected profile
+            lv_area_t disc_area = {cx - 10, cy - 10, cx + 10, cy + 10};
+            lv_draw_rect_dsc_t disc_dsc;
+            init_rect_dsc(&disc_dsc, LVGL_FOREGROUND);
+            disc_dsc.radius = LV_RADIUS_CIRCLE;
+            disc_dsc.bg_opa = LV_OPA_COVER;
+            disc_dsc.border_width = 0;
+            lv_draw_rect(&layer, &disc_dsc, &disc_area);
+
+            // If connected, draw outer circle ring
+            if (connected) {
+                lv_area_t outer_area = {cx - 12, cy - 12, cx + 12, cy + 12};
+                lv_draw_rect_dsc_t outer_dsc;
+                init_rect_dsc(&outer_dsc, LVGL_BACKGROUND);
+                outer_dsc.radius = LV_RADIUS_CIRCLE;
+                outer_dsc.bg_opa = LV_OPA_TRANSP;
+                outer_dsc.border_color = LVGL_FOREGROUND;
+                outer_dsc.border_width = 1;
+                outer_dsc.border_opa = LV_OPA_COVER;
+                lv_draw_rect(&layer, &outer_dsc, &outer_area);
+            }
+        } else if (bonded || connected) {
+            // Outline circle for bonded / connected profile
+            lv_area_t ring_area = {cx - 10, cy - 10, cx + 10, cy + 10};
+            lv_draw_rect_dsc_t ring_dsc;
+            init_rect_dsc(&ring_dsc, LVGL_BACKGROUND);
+            ring_dsc.radius = LV_RADIUS_CIRCLE;
+            ring_dsc.bg_opa = LV_OPA_TRANSP;
+            ring_dsc.border_color = LVGL_FOREGROUND;
+            ring_dsc.border_width = connected ? 2 : 1;
+            ring_dsc.border_opa = LV_OPA_COVER;
+            lv_draw_rect(&layer, &ring_dsc, &ring_area);
         }
 
         char label[2];
         snprintf(label, sizeof(label), "%d", i + 1);
-        canvas_draw_text(canvas, circle_offsets[i][0] - 8, circle_offsets[i][1] - 10, 16,
-                         (selected ? &label_dsc_black : &label_dsc), label);
+        lv_area_t text_area = {cx - 8, cy - 6, cx + 7, cy + 7};
+        lv_draw_label_dsc_t *dsc = selected ? &label_dsc_black : &label_dsc;
+        dsc->text = label;
+        lv_draw_label(&layer, dsc, &text_area);
     }
+
+    lv_canvas_finish_layer(canvas, &layer);
 
     // Rotate canvas
     rotate_canvas(canvas);
@@ -208,6 +236,9 @@ static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
 
 static void draw_bottom(lv_obj_t *widget, const struct status_state *state) {
     lv_obj_t *canvas = lv_obj_get_child(widget, 2);
+    if (canvas == NULL) {
+        return;
+    }
 
     lv_draw_rect_dsc_t rect_black_dsc;
     init_rect_dsc(&rect_black_dsc, LVGL_BACKGROUND);
