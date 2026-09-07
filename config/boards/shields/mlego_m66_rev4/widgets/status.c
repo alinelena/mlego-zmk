@@ -154,6 +154,8 @@ static void draw_top(lv_obj_t *widget, const struct status_state *state) {
 
 
 #if IS_ENABLED(CONFIG_ZMK_BLE)
+static const char *profile_labels[MLEGO_PROFILE_COUNT] = {"1", "2", "3", "4", "5"};
+
 static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
     lv_obj_t *canvas = lv_obj_get_child(widget, 1);
     if (canvas == NULL) {
@@ -173,9 +175,6 @@ static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
         {15, 15}, {49, 15}, {32, 32}, {15, 49}, {49, 49},
     };
 
-    lv_layer_t layer;
-    lv_canvas_init_layer(canvas, &layer);
-
     for (int i = 0; i < MLEGO_PROFILE_COUNT; i++) {
         int cx = circle_offsets[i][0];
         int cy = circle_offsets[i][1];
@@ -185,17 +184,15 @@ static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
 
         if (selected) {
             // Filled circle for selected profile
-            lv_area_t disc_area = {cx - 10, cy - 10, cx + 10, cy + 10};
             lv_draw_rect_dsc_t disc_dsc;
             init_rect_dsc(&disc_dsc, LVGL_FOREGROUND);
             disc_dsc.radius = LV_RADIUS_CIRCLE;
             disc_dsc.bg_opa = LV_OPA_COVER;
             disc_dsc.border_width = 0;
-            lv_draw_rect(&layer, &disc_dsc, &disc_area);
+            canvas_draw_rect(canvas, cx - 10, cy - 10, 21, 21, &disc_dsc);
 
             // If connected, draw outer circle ring
             if (connected) {
-                lv_area_t outer_area = {cx - 12, cy - 12, cx + 12, cy + 12};
                 lv_draw_rect_dsc_t outer_dsc;
                 init_rect_dsc(&outer_dsc, LVGL_BACKGROUND);
                 outer_dsc.radius = LV_RADIUS_CIRCLE;
@@ -203,11 +200,10 @@ static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
                 outer_dsc.border_color = LVGL_FOREGROUND;
                 outer_dsc.border_width = 1;
                 outer_dsc.border_opa = LV_OPA_COVER;
-                lv_draw_rect(&layer, &outer_dsc, &outer_area);
+                canvas_draw_rect(canvas, cx - 12, cy - 12, 25, 25, &outer_dsc);
             }
         } else if (bonded || connected) {
             // Outline circle for bonded / connected profile
-            lv_area_t ring_area = {cx - 10, cy - 10, cx + 10, cy + 10};
             lv_draw_rect_dsc_t ring_dsc;
             init_rect_dsc(&ring_dsc, LVGL_BACKGROUND);
             ring_dsc.radius = LV_RADIUS_CIRCLE;
@@ -215,18 +211,12 @@ static void draw_middle(lv_obj_t *widget, const struct status_state *state) {
             ring_dsc.border_color = LVGL_FOREGROUND;
             ring_dsc.border_width = connected ? 2 : 1;
             ring_dsc.border_opa = LV_OPA_COVER;
-            lv_draw_rect(&layer, &ring_dsc, &ring_area);
+            canvas_draw_rect(canvas, cx - 10, cy - 10, 21, 21, &ring_dsc);
         }
 
-        char label[2];
-        snprintf(label, sizeof(label), "%d", i + 1);
-        lv_area_t text_area = {cx - 8, cy - 6, cx + 7, cy + 7};
         lv_draw_label_dsc_t *dsc = selected ? &label_dsc_black : &label_dsc;
-        dsc->text = label;
-        lv_draw_label(&layer, dsc, &text_area);
+        canvas_draw_text(canvas, cx - 8, cy - 6, 17, dsc, profile_labels[i]);
     }
-
-    lv_canvas_finish_layer(canvas, &layer);
 
     // Rotate canvas
     rotate_canvas(canvas);
