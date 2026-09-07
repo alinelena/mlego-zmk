@@ -28,11 +28,10 @@ pushd "$zmk_folder" > /dev/null
 
 rm -rf "$build_folder"
 
-$WEST_CMD -z "$ZEPHYR_BASE" build -d "$build_folder" -p always -b "$board" -S studio-rpc-usb-uart -- \
+$WEST_CMD -z "$ZEPHYR_BASE" build -d "$build_folder" -p always -b "$board" -- \
   -DSHIELD="$shield" \
   -DZMK_CONFIG="$zmk_config" \
-  -DZMK_EXTRA_MODULES="$zmk_extra" \
-  -DCONFIG_ZMK_STUDIO=y
+  -DZMK_EXTRA_MODULES="$zmk_extra"
 
 if [[ -f "$build_folder/zephyr/zmk.uf2" ]]; then
   cp "$build_folder/zephyr/zmk.uf2" "$l/$uf2_name"
