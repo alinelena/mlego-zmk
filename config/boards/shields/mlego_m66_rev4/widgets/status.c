@@ -413,30 +413,3 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
 }
 
 lv_obj_t *zmk_widget_status_obj(struct zmk_widget_status *widget) { return widget->obj; }
-
-void zmk_widget_status_refresh(struct zmk_widget_status *widget) {
-    if (widget == NULL || widget->obj == NULL) {
-        return;
-    }
-#if !IS_ENABLED(CONFIG_MLEGO_BONGO_CAT) && CONFIG_DISP_HEIGHT>103
-    draw_image(widget->obj);
-#endif
-#if IS_ENABLED(CONFIG_ZMK_BLE)
-    widget->state.selected_endpoint = zmk_endpoint_get_selected();
-    widget->state.active_profile_index = zmk_ble_active_profile_index();
-    widget->state.active_profile_connected = zmk_ble_active_profile_is_connected();
-    widget->state.active_profile_bonded = !zmk_ble_active_profile_is_open();
-    widget->state.battery = zmk_battery_state_of_charge();
-#if IS_ENABLED(CONFIG_USB_DEVICE_STACK)
-    widget->state.charging = zmk_usb_is_powered();
-#endif
-    draw_top(widget->obj, &widget->state);
-    draw_middle(widget->obj, &widget->state);
-#endif
-    zmk_keymap_layer_index_t index = zmk_keymap_highest_layer_active();
-    widget->state.layer_index = index;
-    widget->state.layer_label = zmk_keymap_layer_name(zmk_keymap_layer_index_to_id(index));
-    draw_bottom(widget->obj, &widget->state);
-
-    lv_obj_invalidate(widget->obj);
-}
