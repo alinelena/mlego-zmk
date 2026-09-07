@@ -26,7 +26,7 @@ config SYSTEM_WORKQUEUE_STACK_SIZE
     default 2048
 
 config LV_Z_MEM_POOL_SIZE
-     default 4096
+     default 32768
 
 choice LV_FONT_DEFAULT
     default LV_FONT_DEFAULT_MONTSERRAT_26

@@ -12,7 +12,14 @@ LV_IMG_DECLARE(bolt);
 
 void rotate_canvas(lv_obj_t *canvas) {
 #if CONFIG_DISP_ROTATE != 0
-    uint8_t *buf = lv_canvas_get_draw_buf(canvas)->data;
+    if (canvas == NULL) {
+        return;
+    }
+    lv_draw_buf_t *draw_buf = lv_canvas_get_draw_buf(canvas);
+    if (draw_buf == NULL || draw_buf->data == NULL) {
+        return;
+    }
+    uint8_t *buf = draw_buf->data;
     static uint8_t buf_copy[CANVAS_BUF_SIZE];
     memcpy(buf_copy, buf, sizeof(buf_copy));
 
@@ -35,8 +42,15 @@ void rotate_canvas(lv_obj_t *canvas) {
 }
 
 void rotate_img_to_canvas(lv_obj_t *canvas, const lv_image_dsc_t *img) {
+    if (canvas == NULL || img == NULL || img->data == NULL) {
+        return;
+    }
+    lv_draw_buf_t *draw_buf = lv_canvas_get_draw_buf(canvas);
+    if (draw_buf == NULL || draw_buf->data == NULL) {
+        return;
+    }
     lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
-    uint8_t *dest = lv_canvas_get_draw_buf(canvas)->data;
+    uint8_t *dest = draw_buf->data;
 #if CONFIG_DISP_ROTATE == 900
     const uint32_t src_stride = lv_draw_buf_width_to_stride(img->header.w, CANVAS_COLOR_FORMAT);
     const uint32_t dest_stride = lv_draw_buf_width_to_stride(img->header.h, CANVAS_COLOR_FORMAT);

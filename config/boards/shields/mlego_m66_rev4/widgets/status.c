@@ -418,7 +418,7 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     lv_obj_t *bottom = lv_canvas_create(widget->obj);
     lv_obj_set_size(bottom, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS);
 #if CONFIG_DISP_ROTATE == 900
-    lv_obj_align(bottom, LV_ALIGN_TOP_LEFT, CONFIG_DISP_CANVAS, CONFIG_DISP_CANVAS * 2);
+    lv_obj_align(bottom, LV_ALIGN_BOTTOM_LEFT, CONFIG_DISP_CANVAS, 0);
 #elif CONFIG_DISP_ROTATE == 1800
     lv_obj_align(bottom, LV_ALIGN_BOTTOM_RIGHT, -2 * CONFIG_DISP_CANVAS, 0);
 #elif CONFIG_DISP_ROTATE == 2700
