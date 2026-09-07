@@ -117,6 +117,8 @@ static void dismiss_splash_work_handler(struct k_work *work) {
     splash_is_manual = false;
     if (status_screen != NULL) {
         lv_scr_load_anim(status_screen, LV_SCR_LOAD_ANIM_NONE, 0, 0, false);
+        zmk_widget_status_refresh(&status_widget);
+        lv_obj_invalidate(status_screen);
     }
 }
 
@@ -134,6 +136,8 @@ static void splash_toggle_work_handler(struct k_work *work) {
         k_work_cancel_delayable(&splash_timeout_work);
         if (status_screen != NULL) {
             lv_scr_load_anim(status_screen, LV_SCR_LOAD_ANIM_NONE, 0, 0, false);
+            zmk_widget_status_refresh(&status_widget);
+            lv_obj_invalidate(status_screen);
         }
     } else {
         if (splash_screen == NULL) {
