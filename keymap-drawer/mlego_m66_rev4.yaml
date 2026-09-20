@@ -212,9 +212,9 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: '&aq_Q_lower', s: '&aq_Q_upper'}
+  - {t: ≜, s: ≣}
   - {t: ▽, type: trans}
-  - {t: '&ae_E_lower', s: '&ae_E_upper'}
+  - {t: ≃, s: ≔ }
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
