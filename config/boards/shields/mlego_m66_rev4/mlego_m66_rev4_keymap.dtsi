@@ -53,19 +53,6 @@
     keymap {
         compatible = "zmk,keymap";
 
-/*
-┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┐
-│ ⎋  │ 1  │ 2  │ 3  │ 4  │ 5  │ 6  │ 7  │ 8  │ 9  │ 0  │ -  │ ⌫  │ 🕨  │
-├────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┘
-│ ↹  │ q  │ w  │ e  │ r  │ t  │ y  │ u  │ i  │ o  │ p  │ [  │ ]  │
-├────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┤
-│ #  │ a  │ s  │ d  │ f  │ g  │ h  │ j  │ k  │ l  │ ;  │ '  │ ⏎  │
-├────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┤
-│ ⇧( │ \  │ z  │ x  │ c  │ v  │ b  │ n  │ m  │ ,  │ .  │ ↑  │ /  │
-├────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┼────┤
-│ ⎈  │   │ ⇓  │ ⎇  │ ⇑  │    │    │    │ ⎇  │ ⇧) │ ←  │ ↓  │ →  │
-└────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┘
-*/
         qw_layer {
             display-name = "qwerty";
             bindings = <
@@ -100,26 +87,11 @@
       sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
-/*
-adj layer
- * ┌───┬────┬───┬───┬───┬───┬────┬───┬───┬───┬───┬────┬────┐
- * │TOG│bt0 │bt1│bt2│bt3│bt4│    │   │   │   │   │ SPI│ SPD│
- * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
- * │HUI│HUD │   │   │rst│   │    │   │   │   │   │ EFF│ EFR│
- * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
- * │SAI│SAD │   │DSP│   │   │    │   │   │   │   │    │    │
- * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
- * │BRI│BRD │   │   │   │   │boot│   │   │   │   │bt  │    │
- * ├───┼────┼───┼───┼───┼───┼────┼───┼───┼───┼───┼────┼────┤
- * │ ON│OFF │   │   │   │   │    │   │   │USB│btN│btC │ btP│
- * └───┴────┴───┴───┴───┴───┴────┴───┴───┴───┴───┴────┴────┘
-*/
-
         adjust_layer {
             display-name = "adjust";
             bindings = <
-                &trans  &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans      &trans &trans &trans &trans       &trans       &trans &trans
-                &trans  &trans          &trans       &trans       &sys_reset   &trans        &trans      &trans &trans &trans &trans       &trans       &trans
+                &trans  &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans      &trans &trans &trans &aq_Q       &trans       &ae_E &trans
+                &trans  &trans          &trans       &trans       &sys_reset   &trans        &trans      &trans &trans &trans &trans      &trans       &trans
                 &trans  &trans          &trans       &disp_info   &trans       &trans       &trans      &trans &trans &trans &trans       &trans       &trans
                 &trans  &trans          &trans       &trans       &trans       &trans       &bootloader &trans &trans &trans &out OUT_USB &out OUT_BLE &out OUT_TOG 
                 &trans  &trans          &trans       &trans       &trans       &trans       &trans      &trans &trans &trans &bt BT_NXT   &bt BT_CLR   &bt BT_PRV   
